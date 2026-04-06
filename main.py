@@ -1,33 +1,49 @@
+# main.py - Entry point for the pipeline execution
 from pipeline_flow import Pipeline
 from pathlib import Path
+from config import SOURCES
+import glob
 
+# Main execution
 if __name__ == "__main__":
-    pipeline = Pipeline()
+    # Initialize pipeline with agentic chunking
+    pipeline = Pipeline(
+        enable_agentic=False,   # turn on later
+        agentic_rpm=3,
+        batch_size=5,
+        checkpoint_every=10
+    )
 
-    # Supported file extensions
-    SUPPORTED_EXTENSIONS = [".pdf", ".txt", ".json", ".html"]
+    # Process local files first
+    local_files = (
+        glob.glob("sources/*.pdf") +
+        glob.glob("sources/*.txt") +
+        glob.glob("sources/*.json") +
+        glob.glob("sources/*.html")
+    )
 
-    # Scan sources folder
-    sources_path = Path("sources")
-    files_to_process = [
-        f for f in sources_path.iterdir() 
-        if f.suffix.lower() in SUPPORTED_EXTENSIONS
-    ]
+    for f in local_files:
+        input_id = Path(f).stem
 
-    if not files_to_process:
-        print("No supported files found in sources/ folder.")
-    else:
-        print(f"Found {len(files_to_process)} files to process:")
-        for f in files_to_process:
-            print(f" - {f.name}")
+        partial = Path("chunk_store/agentic") / f"{input_id}_partial.json"
 
-    # Process each file
-    for f in files_to_process:
-        pipeline.process_file(str(f))
+        if partial.exists():
+            print(f"[Skip] Partial exists: {input_id}")
+            continue
 
-    for f in files_to_process:
-        chunks = pipeline.process_file(f)
-        files_to_process.extend(chunks)
+        pipeline.process(f)
 
-    pipeline.save_chunks(files_to_process)
-    print(f"Saved {len(files_to_process )} chunks to firestore/chunk_store")
+    print("[Done] Local files processed")
+
+    for src in SOURCES:
+        input_id = src.get("id", "remote")
+
+        partial = Path("chunk_store/agentic") / f"{input_id}_partial.json"
+
+        if partial.exists():
+            print(f"[Skip] Partial exists: {input_id}")
+            continue
+
+        pipeline.process(src)
+
+    print("[Done] All sources processed")

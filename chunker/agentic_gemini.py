@@ -1,7 +1,11 @@
 import json
 import re
-from google import genai
 import os
+import time
+from google import genai
+from google.genai import Client
+from google.genai.types import Content, Part
+
 from dotenv import load_dotenv
 
 SYSTEM_PROMPT = """
@@ -37,15 +41,17 @@ DO NOT include:
 
 ONLY RETURN VALID JSON.
 """
+load_dotenv()
+GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")
+GEMINI_MODEL_NAME = os.getenv("GEMINI_MODEL_NAME")
 
 class GeminiChunker:
-
     def __init__(self):
-        load_dotenv()  # This loads the variables from the .env file
-        GEMINI_API_KEY=os.getenv("GEMINI_API_KEY")
+        if not GEMINI_API_KEY:
+            raise ValueError("No Gemini API key found. Set GEMINI_API_KEY in your .env file.")
         self.client = genai.Client(api_key=GEMINI_API_KEY)
 
-    def _extract_json(self, text):
+    def extract_json(self, text):
         match = re.search(r"\[.*\]", text, re.DOTALL)
         if match:
             try:
@@ -54,7 +60,7 @@ class GeminiChunker:
                 return []
         return []
 
-    def _validate(self, chunks):
+    def validate(self, chunks):
         valid = []
 
         for c in chunks:
@@ -72,19 +78,20 @@ class GeminiChunker:
 
         return valid
 
-    def chunk(self, text: str):
+    def chunk(self, texts):
+        chunk_text = "\n\n".join([t if isinstance(t, str) else str(t) for t in texts])
 
+        contents = [
+            Content(parts=[Part(text=SYSTEM_PROMPT)]),  # system prompt
+            Content(parts=[Part(text=chunk_text)])      # user content
+        ] 
         response = self.client.models.generate_content(
-            model= os.getenv("GEMINI_MODEL_NAME"),
-            contents=[
-                {
-                    "role": "user",
-                    "parts": [
-                        {"text": SYSTEM_PROMPT},
-                        {"text": text[:15000]}
-                    ]
-                }
-            ]
+            model=GEMINI_MODEL_NAME,
+            contents=contents, 
+            config={
+                "temperature": 0,
+                "max_output_tokens": 16384,
+            }
         )
 
         raw = response.text
@@ -92,6 +99,6 @@ class GeminiChunker:
         try:
             chunks = json.loads(raw)
         except:
-            chunks = self._extract_json(raw)
+            chunks = self.extract_json(raw)
 
-        return self._validate(chunks)
+        return self.validate(chunks)

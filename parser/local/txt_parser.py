@@ -1,16 +1,15 @@
+# parser/local/txt_parser.py
 import re
 from pathlib import Path
 
 # Primary TXT extraction
 def extract_txt(path: str) -> str:
-    path_obj = Path(path)
-    if not path_obj.exists():
-        raise FileNotFoundError(f"File not found: {path}")
-    
-    with open(path, "r", encoding="utf-8") as f:
-        text = f.read()
-    
-    return text
+    try:
+        with open(path, "r", encoding="utf-8") as f:
+            return f.read()
+    except UnicodeDecodeError:
+        with open(path, "r", encoding="latin-1", errors="ignore") as f:
+            return f.read()
 
 # Cleaning function (similar to PDF)
 def clean_text(text: str) -> str:

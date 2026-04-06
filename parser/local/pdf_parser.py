@@ -1,3 +1,4 @@
+# parser/local/pdf_parser.py
 import pdfplumber # for PDF parsing
 import fitz  # PyMuPDF for fallback PDF parsing
 import re # for cleaning text
