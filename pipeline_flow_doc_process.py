@@ -1,4 +1,4 @@
-# pipeline.py
+# pipeline_flow_doc_process
 from dotenv import load_dotenv
 from parser.local.local_ingest import ingest_local
 from parser.remote.remote_ingest import ingest_remote
@@ -14,7 +14,7 @@ import random
 
 load_dotenv()
 
-class Pipeline:
+class Doc_Process_Pipeline:
     # Configurable parameters:
     def __init__(self, enable_agentic=True, agentic_rpm=3, batch_size=5, checkpoint_every=10):
         print("Initializing pipeline...")

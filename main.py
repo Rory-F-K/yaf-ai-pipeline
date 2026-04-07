@@ -1,6 +1,6 @@
 # main.py - Entry point for the pipeline execution
 import os
-from pipeline_flow import Pipeline
+from pipeline_flow_doc_process import Doc_Process_Pipeline
 from pathlib import Path
 from config import Config
 import glob
@@ -9,7 +9,7 @@ import glob
 # Main execution
 if __name__ == "__main__":
     # Initialize pipeline with agentic chunking
-    pipeline = Pipeline(
+    pipeline = Doc_Process_Pipeline(
         enable_agentic=Config.ENABLE_AGENT_CHUNKS,
         agentic_rpm=3,
         batch_size=3,
