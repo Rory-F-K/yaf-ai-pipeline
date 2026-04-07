@@ -5,6 +5,7 @@ from parser.remote.remote_ingest import ingest_remote
 from chunker.semantic import semantic_chunk
 from chunker.agentic_gemini import GeminiChunker
 
+
 from pathlib import Path
 import json
 import time
@@ -52,16 +53,16 @@ class Pipeline:
         return unique
 
     # Agentic chunking with retry logic and exponential backoff
-    def agentic_with_retry(self, text, retries=5):
+    def agentic_with_retry(self, semantic_batch, retries=5):
         if not self.enable_agentic:
             return []
 
         for attempt in range(retries):
             try:
-                return self.chunker.chunk(text)
+                return self.chunker.chunk(semantic_batch)
 
             except Exception as e:
-                wait = (2 ** attempt) + random.uniform(0, 1)
+                wait = (2 ** attempt)
                 print(f"[Agentic] Retry {attempt+1}/{retries} | Error: {e}")
                 time.sleep(wait)
 
@@ -97,9 +98,16 @@ class Pipeline:
                 all_semantic = json.load(f)
         else:
             all_semantic = []
-
+            debug = ""
             for page in pages:
                 raw_text = page["text"]
+
+                """
+                all_debug =  debug.extend(f"\n\n--- PAGE {len(all_semantic)+1} ---\n\n{raw_text}\n\n"))
+                Path("debug").mkdir(parents=True, exist_ok=True) # Debugging: save raw text for inspection
+                open(f"debug/{input_id}_page_.txt", "w", encoding="utf-8").write(raw_text)
+                """
+
                 sem_chunks = semantic_chunk(raw_text)
 
                 for c in sem_chunks:
@@ -125,9 +133,7 @@ class Pipeline:
 
             for batch in self.batch_chunks(all_semantic):
 
-                batch_text = self.flatten_chunks(batch)
-
-                agentic_out = self.agentic_with_retry(batch_text)
+                agentic_out = self.agentic_with_retry(batch)
 
                 for c in agentic_out:
                     c["source"] = source_url
@@ -146,6 +152,7 @@ class Pipeline:
                     self.save_chunks(all_agentic, partial)
 
             all_agentic = self.dedupe(all_agentic)
+
 
             self.save_chunks(all_agentic, agentic_file)
 

@@ -55,11 +55,12 @@ It detects updates across websites, PDFs, and other document sources, then proce
 
 ## Module Breakdown
 - **Chunker:** Handles splitting large documents into smaller, manageable pieces for AI processing.
+- **ChunkStore:** Manages storage and retrieval of document chunks
 - **Extractor:** Uses LLMs to analyze text chunks and extract structured rules based on predefined templates.
 - **Firestore:** Stores raw documents, processed chunks, and extracted rules for easy retrieval and versioning. 
 - **Models:** Defines data models for documents, chunks, and rules to ensure consistent structure and validation across the pipeline.
 - **Parser:** Parses different document formats (HTML, PDF, JSON, TXT) and extracting relevant text for processing.
-- **Scraper:** Contains logic for scraping various sources, including airline websites and regulatory bodies, to gather raw data for processing.
+	- Contains logic for scraping various sources, including airline websites and regulatory bodies, to gather raw data for parsing.
 - **Sources:** Currently includes sources until firestore implemented
 	- May be changed to include configurations and definitions for different data sources, such as URLs, scraping rules, and update frequencies. (may be placed in Firestore)
 - **Utils:** Utility functions for common tasks such as logging, error handling, and configuration management.
