@@ -1,16 +1,18 @@
 # main.py - Entry point for the pipeline execution
+import os
 from pipeline_flow import Pipeline
 from pathlib import Path
-from config import SOURCES
+from config import Config
 import glob
+
 
 # Main execution
 if __name__ == "__main__":
     # Initialize pipeline with agentic chunking
     pipeline = Pipeline(
-        enable_agentic=False,   # turn on later
+        enable_agentic=Config.ENABLE_AGENT_CHUNKS,
         agentic_rpm=3,
-        batch_size=5,
+        batch_size=3,
         checkpoint_every=10
     )
 
@@ -35,7 +37,7 @@ if __name__ == "__main__":
 
     print("[Done] Local files processed")
 
-    for src in SOURCES:
+    for src in Config.SOURCES:
         input_id = src.get("id", "remote")
 
         partial = Path("chunk_store/agentic") / f"{input_id}_partial.json"

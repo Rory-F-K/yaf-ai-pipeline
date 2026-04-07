@@ -1,7 +1,11 @@
 # parser/local/pdf_parser.py
-import pdfplumber # for PDF parsing
-import fitz  # PyMuPDF for fallback PDF parsing
-import re # for cleaning text
+import pdfplumber
+import fitz  # PyMuPDF
+from PIL import Image
+import pytesseract
+import io
+import re
+
 
 # Primary PDF extraction method using pdfplumber
 def extract_pdf_primary(path: str) -> str:
@@ -10,11 +14,9 @@ def extract_pdf_primary(path: str) -> str:
     with pdfplumber.open(path) as pdf:
         for page in pdf.pages:
             words = page.extract_words()
-
             if not words:
                 continue
 
-            # Group words into lines based on vertical position
             lines = {}
             for w in words:
                 y = round(w["top"], 1)
@@ -26,14 +28,25 @@ def extract_pdf_primary(path: str) -> str:
 
     return "\n".join(text_blocks)
 
+
 # Fallback PDF extraction method using PyMuPDF (fitz) for cases where pdfplumber fails
-def extract_pdf_fallback(path):
+def extract_pdf_fallback(path: str) -> str:
     doc = fitz.open(path)
     text = ""
-
     for page in doc:
-        text += page.get_text("text")
+        page_text = page.get_text("text")
+        text += page_text + "\n"
+    return text
 
+# Final fallback using OCR for scanned PDFs or those with embedded images
+def extract_pdf_ocr(path: str) -> str:
+    doc = fitz.open(path)
+    text = ""
+    for page in doc:
+        pix = page.get_pixmap(dpi=300)
+        img = Image.open(io.BytesIO(pix.tobytes()))
+        page_text = pytesseract.image_to_string(img)
+        text += page_text + "\n"
     return text
 
 # Main function to extract PDF text, trying primary method first and falling back if necessary
@@ -80,11 +93,20 @@ def detect_headings(text: str) -> str:
 
 # Main function to extract and clean PDF text
 def extract_clean_pdf(path: str) -> str:
+    text = extract_pdf_primary(path)
+    text = extract_pdf_fallback(path)
 
-    text = extract_pdf(path)
+    # Always attempt OCR if text is very small
+    if len(text.strip()) < 500:
+        print("[PDF] Using OCR fallback...")
+        text_ocr = extract_pdf_ocr(path)
+        if len(text_ocr.strip()) > len(text.strip()):
+            text = text_ocr
 
     text = clean_text(text)
-
     text = detect_headings(text)
+
+    if len(text.strip()) < 50:
+        print("[PDF] WARNING: extracted text still very small")
 
     return text

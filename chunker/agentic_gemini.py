@@ -11,33 +11,44 @@ from dotenv import load_dotenv
 SYSTEM_PROMPT = """
 You are an expert in aviation accessibility policies.
 
-Your task is to transform raw extracted document text into structured semantic chunks.
+You are given PRE-CHUNKED semantic data.
+
+Your job is to REFINE it into higher-quality chunks.
 
 STRICT RULES:
 - Each chunk MUST represent ONE clear topic
-- DO NOT mix multiple topics
-- Prefer smaller, precise chunks over large ones
-- Focus on rules, constraints, requirements, and procedures
-- Ignore navigation text, headers, footers, and duplicates
+- You MAY split chunks if they contain multiple ideas
+- You MAY rewrite for clarity
+- DO NOT merge unrelated topics
+- KEEP content factual and grounded in input
+- DO NOT hallucinate new information
 
-For each chunk:
-- "section": short descriptive title
-- "text": clean, complete explanation
+IMPORTANT:
+- Preserve meaning, improve structure
+- Prefer smaller, precise chunks
 
-OUTPUT FORMAT (STRICT JSON ONLY):
-
+INPUT FORMAT:
 [
   {
-    "section": "Battery Rules",
-    "text": "Lithium-ion batteries must not exceed 300Wh..."
+    "id": "...",
+    "section": "...",
+    "text": "...",
+    "source": "...",
+    "source_id": "...",
+    "type": "..."
   }
 ]
 
-DO NOT include:
-- explanations
-- markdown
-- comments
-- extra text
+OUTPUT FORMAT (STRICT JSON ONLY):
+[
+  {
+    "section": "Short title",
+    "text": "Clear explanation",
+    "source": "...",
+    "source_id": "...",
+    "type": "..."
+  }
+]
 
 ONLY RETURN VALID JSON.
 """
@@ -51,6 +62,7 @@ class GeminiChunker:
             raise ValueError("No Gemini API key found. Set GEMINI_API_KEY in your .env file.")
         self.client = genai.Client(api_key=GEMINI_API_KEY)
 
+    # Utility to extract JSON from text using regex (fallback if response is not pure JSON)
     def extract_json(self, text):
         match = re.search(r"\[.*\]", text, re.DOTALL)
         if match:
@@ -60,6 +72,7 @@ class GeminiChunker:
                 return []
         return []
 
+    # Validate that chunks have required fields and reasonable content length
     def validate(self, chunks):
         valid = []
 
@@ -73,8 +86,12 @@ class GeminiChunker:
             if section and text and len(text) > 30:
                 valid.append({
                     "section": section,
-                    "text": text
+                    "text": text,
+                    "source": c.get("source"),
+                    "source_id": c.get("source_id"),
+                    "type": c.get("type"),
                 })
+
 
         return valid
 
