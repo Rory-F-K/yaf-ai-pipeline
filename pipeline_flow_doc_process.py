@@ -102,11 +102,6 @@ class Doc_Process_Pipeline:
             for page in pages:
                 raw_text = page["text"]
 
-                """
-                all_debug =  debug.extend(f"\n\n--- PAGE {len(all_semantic)+1} ---\n\n{raw_text}\n\n"))
-                Path("debug").mkdir(parents=True, exist_ok=True) # Debugging: save raw text for inspection
-                open(f"debug/{input_id}_page_.txt", "w", encoding="utf-8").write(raw_text)
-                """
 
                 sem_chunks = semantic_chunk(raw_text)
 
