@@ -9,7 +9,7 @@
 #   - allowed_domains: optional, list of domains to restrict crawling
 
 class Config:
-    ENABLE_AGENT_CHUNKS=False
+    ENABLE_AGENT_CHUNKS=True
     SOURCES = [   
         {
             "id": "iata_accessibility_fact_sheet",
