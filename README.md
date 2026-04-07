@@ -40,7 +40,7 @@ It detects updates across websites, PDFs, and other document sources, then proce
    Large documents are split into manageable text chunks suitable for AI processing.  
 
 4. **Rule Extraction**  
-   The LLM model analyzes chunks and generates structured rules, including title, condition, action, and confidence.  
+   Analyzes chunks and generates structured rules, including title, condition, action, and confidence.  
 
 5. **Rules Storage**  
    Validated rules are stored in Firestore for downstream consumption via API or other applications.  
@@ -49,8 +49,8 @@ It detects updates across websites, PDFs, and other document sources, then proce
 ## Getting Started
 - Clone the repository and set up a Python environment
 	- requirements.txt contains all necessary dependencies
-	- .env file for API keys and configuration
-- pipeline.py contains the main ingestion and processing logic
+	- create a .env file for API keys and configuration
+- pipeline_flow_doc_process.py contains the main ingestion and processing logic
 - main.py serves as the entry point for running the pipeline
 
 ## Module Breakdown
