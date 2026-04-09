@@ -26,6 +26,7 @@ It detects updates across websites, PDFs, and other document sources, then proce
 - **google-cloud-firestore** – Firestore database integration  
 - **python-dotenv** – environment variable management  
 - **pytest** – unit testing and validation  
+- **Selenium (with undetected-chromedriver)** – Extracts data from dynamic, JavaScript-heavy sites while bypassing anti-bot protections.
 
 ---
 
