@@ -8,8 +8,11 @@ from urllib.parse import urlparse, urljoin
 from bs4 import BeautifulSoup
 
 from parser.site_scrapers import get_scraper
+
 from parser.remote.generic_scraper import generic_scrape
 from parser.remote.intercept_scraper import intercept_scrape
+from parser.remote.html_cleaner import clean_html
+
 from parser.local.local_ingest import ingest_local
 from parser.local.pdf_parser import detect_headings
 
@@ -118,9 +121,24 @@ def ingest_remote(config):
                 print("[Skip] Low-value")
                 continue
 
+            # Preserve raw HTML separately
             raw_html = text
-            text = clean_text(text)
-            pages.append({"url": url, "text": text})
+
+            # Step 1: Clean HTML to extract visible text and remove noise before further processing
+            cleaned_html = clean_html(raw_html)
+
+            # Skip if nothing meaningful remains
+            if not cleaned_html or len(cleaned_html) < 100:
+                print("[Skip] After HTML cleaning → Low-value")
+                continue
+
+            # Step 2: Clean text to fix encoding issues, normalize spacing, and detect headings for better chunking later on
+            text = clean_text(cleaned_html)
+
+            pages.append({
+                "url": url,
+                "text": text
+            })
 
         except Exception as e:
             print(f"[Error] {e}")
@@ -128,14 +146,20 @@ def ingest_remote(config):
 
         # enqueue new links
         try:
-            soup = BeautifulSoup(raw_html, "html.parser")
-            for link in soup.find_all("a", href=True):
-                full_url = urljoin(url, link["href"])
-                domain = urlparse(full_url).netloc
-                if allowed_domains and not any(ad in domain for ad in allowed_domains):
-                    continue
-                if full_url not in visited:
-                    queue.append(full_url)
+            # Only parse links if we have raw HTML content, to avoid false positives from text that looks like HTML but isn't.
+            if raw_html and "<a" in raw_html:  # only parse if real HTML
+                soup = BeautifulSoup(raw_html, "html.parser")
+
+                for link in soup.find_all("a", href=True):
+                    full_url = urljoin(url, link["href"])
+                    domain = urlparse(full_url).netloc
+
+                    if allowed_domains and not any(ad in domain for ad in allowed_domains):
+                        continue
+
+                    if full_url not in visited:
+                        queue.append(full_url)
+
         except Exception as e:
             print(f"[Link Parsing Error] {e}")
 
