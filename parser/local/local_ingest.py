@@ -1,7 +1,8 @@
 # parser/local/local_ingest.py
 from pathlib import Path
 
-from parser.local.txt_parser import extract_clean_txt
+from .txt_parser import extract_clean_txt
+from .pdf_cleaner import clean_pdf_text
 from .pdf_parser import extract_clean_pdf
 # future imports:
 # from .json_parser import extract_clean_json
@@ -9,7 +10,9 @@ from .pdf_parser import extract_clean_pdf
 def ingest_local(file_path: str) -> str:
     suffix = Path(file_path).suffix.lower()
     if suffix == ".pdf":
-        return extract_clean_pdf(file_path)
+        text = extract_clean_pdf(file_path)
+        text = clean_pdf_text(text)
+        return text
     elif suffix == ".txt":
          return extract_clean_txt(file_path)
     # elif suffix == ".json":
