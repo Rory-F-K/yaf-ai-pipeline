@@ -1,54 +1,96 @@
 # chunker/semantic.py
+
 from typing import List, Dict
 import re
 import hashlib
 
 
-# ID generation based on text content for deduplication and reference
+# ID generation using MD5 hash of the text content, which is approach for deduplication and consistent referencing.
 def generate_id(text: str) -> str:
     return hashlib.md5(text.encode()).hexdigest()
 
 
-# Heading detection with enhanced heuristics, including question-style headings which are common in FAQs and help centers.
+# Heading detection using multiple heuristics:
 def is_heading(line: str) -> bool:
     line = line.strip()
 
     if not line:
         return False
 
-    # NEW: question-style headings (VERY IMPORTANT)
+    # Question-style headings (FAQs, docs)
     if line.endswith("?") and len(line) < 120:
         return True
 
-    # Existing heuristics
-    if len(line) < 80 and (
-        line.isupper() or
-        line.endswith(":") or
-        re.match(r'^\d+(\.\d+)*\s', line)
+    # Short lines likely to be headings
+    if len(line) < 100:
+        if (
+            line.isupper()
+            or line.endswith(":")
+            or re.match(r'^\d+(\.\d+)*\s', line)
+        ):
+            return True
+
+    # Title Case heuristic (e.g., "Air Travel Accessibility Background")
+    if (
+        len(line.split()) <= 10
+        and all(word[0].isupper() for word in line.split() if word.isalpha())
     ):
         return True
 
     return False
 
 
-# Text normalization to ensure consistent chunking, including converting single newlines to paragraph breaks and adding spacing after sentence endings.
+# Text cleaning to fix common PDF encoding issues and normalize spacing, which is crucial for accurate chunking and heading detection.
+def clean_text(text: str) -> str:
+    # Fix common PDF encoding issues
+    text = text.replace("�", "")
+    text = text.replace("  ", " ")
+
+    # Remove weird spacing in words (e.g., "Disserta o")
+    text = re.sub(r'(\w)\s+(\w)', r'\1 \2', text)
+
+    # Normalize unicode quotes/dashes if needed
+    text = text.replace("–", "-").replace("—", "-")
+
+    return text
+
+
+# Normalize text by cleaning, breaking inline headings, and ensuring proper paragraphing
 def normalize_text(text: str) -> str:
-    # Convert single newlines into paragraph breaks
+    text = clean_text(text)
+
+    # Break inline headings (VERY IMPORTANT for your data)
+    # e.g. "... Thank you. Abstract The aviation industry..."
+    text = re.sub(
+        r'(?<=[.!?])\s+(?=[A-Z][a-z]+(?:\s+[A-Z][a-z]+){0,6}\s)',
+        '\n\n',
+        text
+    )
+
+    # Convert newlines properly
     text = re.sub(r'\n+', '\n\n', text)
 
-    # Add spacing after sentence endings
+    # Split sentences into cleaner blocks
     text = re.sub(r'(?<=[.!?])\s+', '\n\n', text)
 
-    # Clean excessive spacing
+    # Remove excessive spacing
     text = re.sub(r'\n{3,}', '\n\n', text)
 
     return text.strip()
 
 
-# Semantic chunking that respects both heading boundaries and a maximum chunk size, ensuring that chunks are coherent and appropriately sized for embedding and retrieval.
-def semantic_chunk(text: str, chunk_size: int = 1200) -> List[Dict]:
+# Sentence splitting for large paragraphs that exceed chunk size, to ensure we don't break in the middle of sentences.
+def split_sentences(text: str) -> List[str]:
+    sentences = re.split(r'(?<=[.!?])\s+', text)
+    return [s.strip() for s in sentences if s.strip()]
 
-    # CRITICAL: normalize first
+
+# Semantic chunking that respects headings and logical sections.
+def semantic_chunk(
+    text: str,
+    chunk_size: int = 1200
+) -> List[Dict]:
+
     text = normalize_text(text)
 
     paragraphs = text.split("\n\n")
@@ -59,13 +101,11 @@ def semantic_chunk(text: str, chunk_size: int = 1200) -> List[Dict]:
 
     for p in paragraphs:
         p = p.strip()
-
         if not p:
             continue
 
-        # Headings always start a new chunk, even if the previous chunk is not full.
+        # Heading detection: If we hit a heading, we flush the current chunk and start a new section
         if is_heading(p):
-            # Flush previous chunk
             if current_text:
                 chunk_text = current_text.strip()
 
@@ -80,7 +120,33 @@ def semantic_chunk(text: str, chunk_size: int = 1200) -> List[Dict]:
             current_section = p
             continue
 
-        # Chunking logic: if adding the next paragraph exceeds the chunk size, flush the current chunk and start a new one.
+        # Size control: If a single paragraph is too big, split it into sentences
+        if len(p) > chunk_size:
+            sentences = split_sentences(p)
+
+            temp = ""
+            for s in sentences:
+                if len(temp) + len(s) + 2 > chunk_size:
+                    if temp:
+                        chunks.append({
+                            "id": generate_id(temp.strip()),
+                            "section": current_section,
+                            "text": temp.strip()
+                        })
+                    temp = s + " "
+                else:
+                    temp += s + " "
+
+            if temp:
+                chunks.append({
+                    "id": generate_id(temp.strip()),
+                    "section": current_section,
+                    "text": temp.strip()
+                })
+
+            continue
+
+        # Normal accumulation of paragraphs into chunks
         if len(current_text) + len(p) + 2 > chunk_size:
             if current_text:
                 chunk_text = current_text.strip()
@@ -92,11 +158,10 @@ def semantic_chunk(text: str, chunk_size: int = 1200) -> List[Dict]:
                 })
 
             current_text = p + "\n\n"
-
         else:
             current_text += p + "\n\n"
 
-    # Final chunk
+    # Final flush of remaining text
     if current_text:
         chunk_text = current_text.strip()
 

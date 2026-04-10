@@ -9,7 +9,7 @@
 #   - allowed_domains: optional, list of domains to restrict crawling
 
 class Config:
-    ENABLE_AGENT_CHUNKS=True
+    ENABLE_AGENT_CHUNKS=False
     SOURCES = [   
         {
             "id": "iata_accessibility_fact_sheet",
@@ -31,6 +31,13 @@ class Config:
             "max_pages": 2,
             "dedup": True,
             "allowed_domains": ["portoairport.pt"]
+        },  
+        {
+            "id": "lufthansa",
+            "url": "https://www.lufthansa.com/be/en/accessible-travel",
+            "max_pages": 2,
+            "dedup": True,
+            "allowed_domains": ["lufthansa.com"]
         }
     ]
 
