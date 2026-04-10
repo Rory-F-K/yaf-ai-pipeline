@@ -21,7 +21,7 @@ class Doc_Process_Pipeline:
         agentic_rpm=10, # increased safe baseline
         batch_size=30, # increased (fewer LLM calls)
         checkpoint_every=10,
-        max_workers=3 # parallel Gemini calls
+        max_workers=15 # parallel Gemini calls, limited by 15 per minute
     ):
         print("Initializing pipeline...")
 
