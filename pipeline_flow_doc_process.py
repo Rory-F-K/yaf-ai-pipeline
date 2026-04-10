@@ -1,77 +1,105 @@
-# pipeline_flow_doc_process
 from dotenv import load_dotenv
 from parser.local.local_ingest import ingest_local
 from parser.remote.remote_ingest import ingest_remote
 from chunker.semantic import semantic_chunk
 from chunker.agentic_gemini import GeminiChunker
 
-
 from pathlib import Path
 import json
 import time
 import os
-import random
+from concurrent.futures import ThreadPoolExecutor, as_completed
 
 load_dotenv()
 
+
 class Doc_Process_Pipeline:
-    # Configurable parameters:
-    def __init__(self, enable_agentic=True, agentic_rpm=3, batch_size=5, checkpoint_every=10):
+
+    def __init__(
+        self,
+        enable_agentic=True,
+        agentic_rpm=10, # increased safe baseline
+        batch_size=30, # increased (fewer LLM calls)
+        checkpoint_every=10,
+        max_workers=3 # parallel Gemini calls
+    ):
         print("Initializing pipeline...")
 
         self.enable_agentic = enable_agentic
         self.chunker = GeminiChunker() if enable_agentic else None
 
-        self.delay = 60 / agentic_rpm
+        self.agentic_rpm = agentic_rpm
         self.batch_size = batch_size
         self.checkpoint_every = checkpoint_every
+        self.max_workers = max_workers
 
-        print(f"Pipeline initialized | Agentic: {self.enable_agentic} | Delay: {self.delay:.2f}s")
+        print(f"Pipeline ready | Agentic: {enable_agentic}")
 
-    # HELPER FUNCTIONS
 
-    # Helper to yield batches of chunks
+    # Helper to batch chunks for agentic processing
     def batch_chunks(self, chunks):
         for i in range(0, len(chunks), self.batch_size):
             yield chunks[i:i + self.batch_size]
 
-    # Helper to flatten chunk texts for agentic processing
-    def flatten_chunks(self, chunks):
-        return "\n\n".join(c["text"] for c in chunks if "text" in c)
-
-    # Helper to deduplicate chunks based on text content
     def dedupe(self, chunks):
         seen = set()
         unique = []
 
         for c in chunks:
-            key = c.get("text", "")[:200]
+            key = (c.get("text", "")[:200], c.get("section", ""))
             if key not in seen:
                 seen.add(key)
                 unique.append(c)
 
         return unique
 
-    # Agentic chunking with retry logic and exponential backoff
-    def agentic_with_retry(self, semantic_batch, retries=5):
+
+    # Agentic chunking with retry logic and fixed backoff
+    def agentic_with_retry(self, batch, retries=3):
         if not self.enable_agentic:
             return []
 
         for attempt in range(retries):
             try:
-                return self.chunker.chunk(semantic_batch)
+                # pass JSON instead of huge string concat
+                return self.chunker.chunk(batch)
 
             except Exception as e:
-                wait = (2 ** attempt)
-                print(f"[Agentic] Retry {attempt+1}/{retries} | Error: {e}")
-                time.sleep(wait)
+                print(f"[Agentic] Retry {attempt+1}/{retries}: {e}")
 
-        print("[Agentic] Failed — fallback to empty")
+                # small fixed backoff (not exponential explosion)
+                time.sleep(1)
+
         return []
 
-    # MAIN PIPELINE LOGIC
+
+    # Parallel processing of batches with ThreadPoolExecutor
+    def process_batches_parallel(self, batches):
+        results = []
+        completed = 0
+
+        def run(batch):
+            return self.agentic_with_retry(batch)
+
+        with ThreadPoolExecutor(max_workers=self.max_workers) as executor:
+            futures = [executor.submit(run, b) for b in batches]
+
+            for f in as_completed(futures):
+                try:
+                    out = f.result()
+                    results.extend(out)
+                except Exception as e:
+                    print(f"[Batch Error] {e}")
+
+                completed += 1
+                print(f"[Agentic] Completed batch {completed}/{len(batches)}")
+
+        return results
+
+
+    # Main processing function
     def process(self, input_item, output_dir="chunk_store"):
-        # Determine if input is remote (dict) or local (file path)
+        # ingest docs
         if isinstance(input_item, dict):
             pages = ingest_remote(input_item)
             input_id = input_item.get("id", "remote")
@@ -84,26 +112,21 @@ class Doc_Process_Pipeline:
             source_url = str(input_item)
             source_type = "local"
 
-
         print(f"[Ingest] {input_id} → {len(pages)} pages")
 
         semantic_file = Path(output_dir) / "semantic" / f"{input_id}.json"
         agentic_file = Path(output_dir) / "agentic" / f"{input_id}.json"
 
-        # Semantic chunking with caching
-        # Check for existing semantic cache and load if available
+
+        # Semantic chunking (no retries, deterministic)
         if semantic_file.exists():
             print("[Resume] Loading semantic cache")
-            with open(semantic_file, "r", encoding="utf-8") as f:
-                all_semantic = json.load(f)
+            all_semantic = json.load(open(semantic_file, "r", encoding="utf-8"))
         else:
             all_semantic = []
-            debug = ""
+
             for page in pages:
-                raw_text = page["text"]
-
-
-                sem_chunks = semantic_chunk(raw_text)
+                sem_chunks = semantic_chunk(page["text"])
 
                 for c in sem_chunks:
                     c["source"] = source_url
@@ -118,41 +141,32 @@ class Doc_Process_Pipeline:
 
         print(f"[Semantic] {len(all_semantic)} chunks")
 
-        # Agentic chunking with batching, rate limiting, and checkpointing
+
+        # Agentic chunking (LLM-based, with retries and parallelism)
         all_agentic = []
 
-        # Only run agentic chunking if enabled
         if self.enable_agentic:
 
-            batch_count = 0
+            batches = list(self.batch_chunks(all_semantic))
 
-            for batch in self.batch_chunks(all_semantic):
+            print(f"[Agentic] {len(batches)} batches starting...")
 
-                agentic_out = self.agentic_with_retry(batch)
+            all_agentic = self.process_batches_parallel(batches)
 
-                for c in agentic_out:
-                    c["source"] = source_url
-                    c["source_id"] = input_id
-                    c["type"] = source_type
-
-                all_agentic.extend(agentic_out)
-
-                batch_count += 1
-                print(f"[Agentic] Batch {batch_count} → total {len(all_agentic)}")
-
-                time.sleep(self.delay)
-
-                if batch_count % self.checkpoint_every == 0:
-                    partial = Path(output_dir) / "agentic" / f"{input_id}_partial.json"
-                    self.save_chunks(all_agentic, partial)
+            # attach metadata
+            for c in all_agentic:
+                c["source"] = source_url
+                c["source_id"] = input_id
+                c["type"] = source_type
 
             all_agentic = self.dedupe(all_agentic)
-
 
             self.save_chunks(all_agentic, agentic_file)
 
         return all_semantic, all_agentic
 
+
+    # Save chunks to JSON with pretty formatting and ensure directory exists
     @staticmethod
     def save_chunks(chunks, output_file):
         Path(output_file).parent.mkdir(parents=True, exist_ok=True)
