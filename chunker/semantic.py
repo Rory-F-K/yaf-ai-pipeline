@@ -131,7 +131,8 @@ def semantic_chunk(
                         chunks.append({
                             "id": generate_id(temp.strip()),
                             "section": current_section,
-                            "text": temp.strip()
+                            "text": temp.strip(),
+                            "sent": False
                         })
                     temp = s + " "
                 else:
@@ -141,7 +142,8 @@ def semantic_chunk(
                 chunks.append({
                     "id": generate_id(temp.strip()),
                     "section": current_section,
-                    "text": temp.strip()
+                    "text": temp.strip(),
+                    "sent": False
                 })
 
             continue
@@ -154,7 +156,8 @@ def semantic_chunk(
                 chunks.append({
                     "id": generate_id(chunk_text),
                     "section": current_section,
-                    "text": chunk_text
+                    "text": chunk_text,
+                    "sent": False
                 })
 
             current_text = p + "\n\n"
@@ -168,7 +171,8 @@ def semantic_chunk(
         chunks.append({
             "id": generate_id(chunk_text),
             "section": current_section,
-            "text": chunk_text
+            "text": chunk_text,
+            "sent": False
         })
 
     print(f"[Semantic] Generated {len(chunks)} chunks")

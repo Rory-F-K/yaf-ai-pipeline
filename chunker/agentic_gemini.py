@@ -7,6 +7,10 @@ from google.genai import Client
 from google.genai.types import Content, Part
 
 from dotenv import load_dotenv
+import hashlib
+
+def generate_id(text: str) -> str:
+    return hashlib.md5(text.encode()).hexdigest()
 
 SYSTEM_PROMPT = """
 You are an expert in aviation accessibility policies.
@@ -26,6 +30,9 @@ STRICT RULES:
 IMPORTANT:
 - Preserve meaning, improve structure
 - Prefer smaller, precise chunks
+- Each output chunk MUST include the original "id" from input
+- Do NOT generate new IDs
+- If splitting a chunk, reuse the same "id" for all resulting chunks
 
 INPUT FORMAT:
 [
@@ -42,6 +49,7 @@ INPUT FORMAT:
 OUTPUT FORMAT (STRICT JSON ONLY):
 [
   {
+    "parent_id": "...",
     "section": "Short title",
     "text": "Clear explanation",
     "source": "...",
@@ -82,21 +90,34 @@ class GeminiChunker:
 
             section = c.get("section", "").strip()
             text = c.get("text", "").strip()
+            cid = c.get("parent_id")
 
             if section and text and len(text) > 30:
                 valid.append({
+                    "id": generate_id(text),
+                    "parent_id": cid,
                     "section": section,
                     "text": text,
                     "source": c.get("source"),
                     "source_id": c.get("source_id"),
                     "type": c.get("type"),
+                    "sent": False # track if this chunk has been sent to rule extraction yet
                 })
 
 
         return valid
 
     def chunk(self, texts):
-        chunk_text = json.dumps(texts, indent=2)
+        # Only process chunks that have not been sent
+        unsent = [t for t in texts if not t.get("sent", False)]
+
+        # If all chunks have been sent, skip processing
+        if not unsent:
+            print("[Gemini] No new chunks to process")
+            return []
+
+        # Pass the data as JSON to avoid token issues with large concatenated strings
+        chunk_text = json.dumps(unsent, indent=2)
 
         contents = [
             Content(parts=[Part(text=SYSTEM_PROMPT)]),  # system prompt
@@ -118,4 +139,13 @@ class GeminiChunker:
         except:
             chunks = self.extract_json(raw)
 
-        return self.validate(chunks)
+        result = self.validate(chunks)
+
+        # Mark original chunks as sent
+        unsent_ids = {t["id"] for t in unsent if "id" in t}
+
+        for t in texts:
+            if t.get("id") in unsent_ids:
+                t["sent"] = True
+
+        return result
