@@ -43,24 +43,38 @@ GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")
 GEMINI_MODEL_NAME = os.getenv("GEMINI_MODEL_NAME")
 
 RULE_EXTRACTION_PROMPT = """
-You are an expert in extracting structured rules, regulations, and policies from documents.
+You are an expert in aviation accessibility and services for passengers with reduced mobility (PRM).
 
-Your task is to identify and extract clear, actionable rules from the provided text.
+Your task is to extract ALL information that would be useful to a person with reduced mobility
+travelling by air — including rules, services, procedures, entitlements, tips, and updates.
+
+EXTRACT anything that is:
+- A rule, regulation, requirement, or restriction affecting PRM travellers
+- A service or assistance offered (wheelchair, escort, lounge access, special seating, etc.)
+- A procedure a PRM traveller must follow (how to request help, when to notify, what to bring)
+- An entitlement or right the traveller has under law or airline policy
+- Practical information (what equipment is allowed, battery limits, booking steps, contacts)
+- Important updates or changes to PRM policies or services
 
 STRICT RULES:
-- Extract ONLY explicit rules, regulations, requirements, restrictions, or policies
-- Each rule must be self-contained and unambiguous
-- DO NOT include navigation text, advertisements, menus, or generic descriptions
-- DO NOT hallucinate or infer rules not explicitly stated in the text
-- SKIP vague, decorative, or non-actionable statements
+- Every item must be self-contained and directly useful to a PRM traveller
+- DO NOT include navigation text, advertisements, menus, or generic marketing copy
+- DO NOT hallucinate or infer anything not explicitly stated in the text
+- SKIP vague filler sentences with no actionable content
+
+CATEGORY — pick the best fit from:
+Accessibility, Assistance, Baggage, Boarding, Booking, Check-in, Compensation,
+Complaints, Documentation, Facilities, General, Information, Legal Rights, Medical,
+Mobility Aid, Notification, Pre-Flight, Safety, Security, Service, Special Equipment,
+Training, Travel Policy
 
 OUTPUT FORMAT (STRICT JSON ONLY):
 [
   {
     "rule_id": "R001",
-    "category": "short category label (e.g. Baggage, Security, Accessibility)",
-    "title": "short rule title",
-    "description": "clear and concise rule statement",
+    "category": "one category from the list above",
+    "title": "short descriptive title (max 10 words)",
+    "description": "clear, complete statement of the rule / service / information",
     "source": "source URL or file path provided"
   }
 ]
@@ -99,7 +113,7 @@ class RuleExtractor:
             if not title or not description or len(description) < 20:
                 continue
             valid.append({
-                "rule_id": r.get("rule_id", self._next_id()),
+                "rule_id": self._next_id(),   # always self-generated — never trust Gemini's IDs
                 "category": r.get("category", "General").strip(),
                 "title": title,
                 "description": description,

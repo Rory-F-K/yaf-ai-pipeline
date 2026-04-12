@@ -48,16 +48,17 @@ GEMINI_MODEL_NAME = os.getenv("GEMINI_MODEL_NAME")
 REQUIRED_FIELDS = {"rule_id", "title", "description", "category", "source"}
 
 KNOWN_CATEGORIES = {
-    "Accessibility", "Aircraft Safety", "Assistance", "Baggage", "Boarding",
-    "Booking", "Check-in", "Complaints", "Compensation", "Documentation",
-    "General", "Information", "Infrastructure", "Legal Rights", "Medical",
-    "Pre-Flight", "Safety", "Security", "Service", "Training", "Travel Policy",
+    "Accessibility", "Assistance", "Baggage", "Boarding", "Booking",
+    "Check-in", "Compensation", "Complaints", "Documentation", "Facilities",
+    "General", "Information", "Legal Rights", "Medical", "Mobility Aid",
+    "Notification", "Pre-Flight", "Safety", "Security", "Service",
+    "Special Equipment", "Training", "Travel Policy",
 }
 
 VAGUE_PHRASES = [
-    "as needed", "if applicable", "in some cases", "may or may not",
-    "various", "etc", "and so on", "general information", "subject to change",
-    "based on circumstances", "at the discretion",
+    "may or may not", "and so on", "general information",
+    "based on circumstances", "click here", "learn more", "read more",
+    "for more information", "please visit", "contact us for details",
 ]
 
 DUPLICATE_THRESHOLD = 0.85    # similarity score to flag as duplicate
