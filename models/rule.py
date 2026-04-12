@@ -30,10 +30,11 @@ from pydantic import BaseModel, field_validator, model_validator
 
 
 KNOWN_CATEGORIES = {
-    "Accessibility", "Aircraft Safety", "Assistance", "Baggage", "Boarding",
-    "Booking", "Check-in", "Complaints", "Compensation", "Documentation",
-    "General", "Information", "Infrastructure", "Legal Rights", "Medical",
-    "Pre-Flight", "Safety", "Security", "Service", "Training", "Travel Policy",
+    "Accessibility", "Assistance", "Baggage", "Boarding", "Booking",
+    "Check-in", "Compensation", "Complaints", "Documentation", "Facilities",
+    "General", "Information", "Legal Rights", "Medical", "Mobility Aid",
+    "Notification", "Pre-Flight", "Safety", "Security", "Service",
+    "Special Equipment", "Training", "Travel Policy",
 }
 
 
