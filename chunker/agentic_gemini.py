@@ -96,7 +96,7 @@ class GeminiChunker:
         return valid
 
     def chunk(self, texts):
-        chunk_text = "\n\n".join([t if isinstance(t, str) else str(t) for t in texts])
+        chunk_text = json.dumps(texts, indent=2)
 
         contents = [
             Content(parts=[Part(text=SYSTEM_PROMPT)]),  # system prompt

@@ -147,6 +147,11 @@ class Doc_Process_Pipeline:
 
         if self.enable_agentic:
 
+            if agentic_file.exists():
+                print("[Resume] Loading agentic cache")
+                all_agentic = json.load(open(agentic_file, "r", encoding="utf-8"))
+                return all_semantic, all_agentic
+
             batches = list(self.batch_chunks(all_semantic))
 
             print(f"[Agentic] {len(batches)} batches starting...")
