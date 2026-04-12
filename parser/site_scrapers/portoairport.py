@@ -8,11 +8,10 @@ def extract_page(page):
     sections = []
 
     buttons = page.query_selector_all(".accordion-button")
-
     for btn in buttons:
         try:
-            btn.scroll_into_view_if_needed(timeout=5000)
-            btn.click(timeout=5000)
+            btn.scroll_into_view_if_needed(timeout=50)
+            btn.click(timeout=5)
             time.sleep(0.3)
 
             content = btn.evaluate_handle(
