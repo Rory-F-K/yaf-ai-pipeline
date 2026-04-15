@@ -42,18 +42,33 @@ def is_heading(line: str) -> bool:
 
 # Text cleaning to fix common PDF encoding issues and normalize spacing, which is crucial for accurate chunking and heading detection.
 def clean_text(text: str) -> str:
-    # Fix common PDF encoding issues
+    if not text:
+        return ""
+
+    # bad chars
     text = text.replace("�", "")
-    text = text.replace("  ", " ")
+    text = text.replace("\xa0", " ")
 
-    # Remove weird spacing in words (e.g., "Disserta o")
-    text = re.sub(r'(\w)\s+(\w)', r'\1 \2', text)
-
-    # Normalize unicode quotes/dashes if needed
+    # normalize dashes / quotes
     text = text.replace("–", "-").replace("—", "-")
+    text = text.replace("“", '"').replace("”", '"')
+    text = text.replace("’", "'")
 
-    return text
+    # tabs
+    text = text.replace("\t", " ")
 
+    # collapse spaces
+    text = re.sub(r"[ ]{2,}", " ", text)
+
+    return text.strip()
+
+# Bullet detection for lists
+def is_bullet(line: str) -> bool:
+    return bool(
+        re.match(r"^[-•*]\s+", line)
+        or re.match(r"^\d+\.\s+", line)
+        or re.match(r"^[a-zA-Z]\)\s+", line)
+    )
 
 # Normalize text by cleaning, breaking inline headings, and ensuring proper paragraphing
 def normalize_text(text: str) -> str:
@@ -84,6 +99,19 @@ def split_sentences(text: str) -> List[str]:
     sentences = re.split(r'(?<=[.!?])\s+', text)
     return [s.strip() for s in sentences if s.strip()]
 
+# Flush the current accumulated text into a chunk when we hit a new section or exceed size limits, ensuring we don't lose any content.
+def flush_chunk(chunks, section, current_text):
+    chunk_text = current_text.strip()
+
+    if not chunk_text:
+        return
+
+    chunks.append({
+        "id": generate_id(chunk_text),
+        "section": section,
+        "text": chunk_text,
+        "sent": False
+    })
 
 # Semantic chunking that respects headings and logical sections.
 def semantic_chunk(
@@ -120,6 +148,16 @@ def semantic_chunk(
             current_section = p
             continue
 
+        if is_bullet(p):
+            candidate = current_text + p + "\n"
+
+            if len(candidate) > chunk_size:
+                flush_chunk(chunks, current_section, current_text)
+                current_text = p + "\n"
+            else:
+                current_text += p + "\n"
+
+            continue
         # Size control: If a single paragraph is too big, split it into sentences
         if len(p) > chunk_size:
             sentences = split_sentences(p)
