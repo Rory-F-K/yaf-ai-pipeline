@@ -19,4 +19,6 @@ def get_scraper(url: str):
 
 from . import lufthansa
 from . import portoairport
+from . import ryanair
+from . import swiss
 

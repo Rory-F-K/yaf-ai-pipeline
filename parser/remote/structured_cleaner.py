@@ -1,7 +1,7 @@
 # parser/remote/structured_cleaner.py
 import re
 from bs4 import BeautifulSoup
-
+import html
 
 # detect language with simple heuristics to help guide cleaning and chunking
 def detect_language(text: str) -> str:
@@ -16,6 +16,21 @@ def detect_language(text: str) -> str:
     if any(w in text_lower for w in [" o ", " de ", " para ", " serviços "]):
         return "pt"
     return "en"
+
+
+def decode_weird_encoding(text: str) -> str:
+    if not text:
+        return ""
+
+    # step 1: unescape unicode HTML sequences
+    text = text.replace("\\u003c", "<")
+    text = text.replace("\\u003e", ">")
+    text = text.replace("\\u0026", "&")
+
+    # step 2: normal HTML entity decode
+    text = html.unescape(text)
+
+    return text
 
 
 # remove boilerplate content based on tag types and common class/id patterns
@@ -109,35 +124,37 @@ def flatten_content(blocks):
 
     return "\n\n".join(parts)
 
-
-# main cleaning function that combines all steps
-def clean_records(html: str):
-    if not html or not isinstance(html, str):
+# decode text with multiple steps to handle common encoding issues found in web content, especially from APIs that escape HTML in weird ways
+def decode_text(text: str) -> str:
+    if not text:
         return ""
 
-    soup = BeautifulSoup(html, "html.parser")
+    # fix escaped unicode HTML (very common in Zendesk / APIs)
+    text = text.replace("\\u003c", "<")
+    text = text.replace("\\u003e", ">")
+    text = text.replace("\\u0026", "&")
 
-    parts = []
-
-    # detect language
-    if soup.title and soup.title.string:
-        parts.append(soup.title.string.strip())
-
-    # headings are often important for structure
-    for h in soup.find_all(["h1", "h2", "h3"]):
-        text = h.get_text(" ", strip=True)
-        if text:
-            parts.append(text)
-
-    # paragraphs and list items are often the main content
-    for p in soup.find_all("p"):
-        text = p.get_text(" ", strip=True)
-        if text:
-            parts.append(text)
-
-    # list items can contain important details
-    text = "\n\n".join(parts)
-    text = re.sub(r'\n+', '\n\n', text)
-    text = re.sub(r'[ \t]+', ' ', text).strip()
+    # HTML entity decode
+    text = html.unescape(text)
 
     return text
+
+# main cleaning function that combines all steps
+def clean_records(html_str: str):
+    if not html_str:
+        return ""
+
+    # STEP 1: decode BEFORE parsing (IMPORTANT FIX)
+    html_str = decode_text(html_str)
+
+    soup = BeautifulSoup(html_str, "html.parser")
+    soup = remove_boilerplate(soup)
+
+    # STEP 2: structured extraction
+    blocks = extract_structured_content(soup)
+
+    # STEP 3: dedupe
+    blocks = deduplicate_blocks(blocks)
+
+    # STEP 4: flatten
+    return flatten_content(blocks)

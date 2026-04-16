@@ -18,20 +18,20 @@ class Config:
             "dedup": True,
             "allowed_domains": ["iata.org"]
         },  
-        # {
-        #     "id": "iata_mobility-aid-guidance-document",
-        #     "url": "https://www.iata.org/contentassets/6fea26dd84d24b26a7a1fd5788561d6e/mobility-aid-guidance-document.pdf",
-        #     "max_pages": 3,
-        #     "dedup": True,
-        #     "allowed_domains": ["iata.org"]
-        # },  
-        # {
-        #     "id": "iata_accessibility_program",
-        #     "url": "https://www.iata.org/en/programs/passenger/accessibility/",
-        #     "max_pages": 3,
-        #     "dedup": True,
-        #     "allowed_domains": ["iata.org"]
-        # },  
+        {
+            "id": "iata_mobility-aid-guidance-document",
+            "url": "https://www.iata.org/contentassets/6fea26dd84d24b26a7a1fd5788561d6e/mobility-aid-guidance-document.pdf",
+            "max_pages": 3,
+            "dedup": True,
+            "allowed_domains": ["iata.org"]
+        },  
+        {
+            "id": "iata_accessibility_program",
+            "url": "https://www.iata.org/en/programs/passenger/accessibility/",
+            "max_pages": 3,
+            "dedup": True,
+            "allowed_domains": ["iata.org"]
+        },  
         {
             "id": "eur_lex_32006R1107_html",
             "url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32006R1107",
@@ -49,23 +49,65 @@ class Config:
         {
             "id": "lufthansa_accessible_travel",
             "url": "https://www.lufthansa.com/be/en/accessible-travel",
-            "max_pages": 3,
+            "max_pages": 1,
             "dedup": True,
             "allowed_domains": ["lufthansa.com"]
-        # },
+        }, 
+        {
+            "id": "lufthansa_accessible_travel_wheelchairs",
+            "url": "https://www.lufthansa.com/be/en/passengers-using-wheelchairs.html",
+            "max_pages": 1,
+            "dedup": True,
+            "allowed_domains": ["lufthansa.com"]
+        },
+        {
+            "id": "lufthansa_accessible_travel_cognitive_impairment",
+            "url": "https://www.lufthansa.com/be/en/prepare-for-your-trip/special-travel-needs/travel-with-needs/cognitive-impairment.html",
+            "max_pages": 1,
+            "dedup": True,
+            "allowed_domains": ["lufthansa.com"]
+        },
+        {
+            "id": "lufthansa_accessible_travel_hearing_impairment",
+            "url": "https://www.lufthansa.com/be/en/prepare-for-your-trip/special-travel-needs/travel-with-needs/hearing-impairment.html",
+            "max_pages": 1,
+            "dedup": True,
+            "allowed_domains": ["lufthansa.com"]
+        },
+        {
+            "id": "lufthansa_accessible_travel_visual_impairment",
+            "url": "https://www.lufthansa.com/be/en/prepare-for-your-trip/special-travel-needs/travel-with-needs/visual-impairment.html",
+            "max_pages": 1,
+            "dedup": True,
+            "allowed_domains": ["lufthansa.com"]
+        },
+        {
+            "id": "lufthansa_accessible_travel_assistance_dogs",
+            "url": "https://www.lufthansa.com/be/en/assistenzhunde.html",
+            "max_pages": 1,
+            "dedup": True,
+            "allowed_domains": ["lufthansa.com"]
+        },
+        {
+            "id": "lufthansa_accessible_travel_sensory_impairment",
+            "url": "https://www.lufthansa.com/be/en/passengers-with-sensory-impairment.html",
+            "max_pages": 1,
+            "dedup": True,
+            "allowed_domains": ["lufthansa.com"]
+        },
         # {
         #     "id": "swiss_accessible_travel",
         #     "url": "https://www.swiss.com/ch/en/prepare/special-care/accessible-travel.html",
-        #     "max_pages": 3,
+        #     "max_pages": 1,
         #     "dedup": True,
         #     "allowed_domains": ["swiss.com"]
         # },  
-        # {
-        #     "id": "ryanair_accessible_travel",
-        #     "url": "https://help.ryanair.com/hc/en-lv/categories/12489466690833",
-        #     "max_pages": 3,
-        #     "dedup": True,
-        #     "allowed_domains": ["ryanair.com"]
+        {
+            "id": "ryanair_accessible_travel",
+            "url": "https://help.ryanair.com/hc/en-lv/categories/12489466690833",
+            "max_pages": 1,
+            "dedup": True,
+            "allowed_domains": ["ryanair.com"]
         # },  
         # {
         #     "id": "vueling_wheelchair_checkin",

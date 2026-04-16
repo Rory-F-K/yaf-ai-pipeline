@@ -1,14 +1,13 @@
-# parser/remote/remote_ingest.py
 import re
 import requests
 import tempfile
 import os
 from collections import deque
 from urllib.parse import urlparse, urljoin
+
 from bs4 import BeautifulSoup
 
 from parser.site_scrapers import get_scraper
-
 from parser.remote.generic_scraper import generic_scrape
 from parser.remote.intercept_scraper import intercept_scrape
 from parser.remote.html_cleaner import clean_html
@@ -17,14 +16,13 @@ from parser.local.local_ingest import ingest_local
 from parser.local.pdf_parser import detect_headings
 
 
+# PDF handling heuristics
 def is_pdf_response(resp):
-    """Detect PDF by content type header or magic bytes."""
     content_type = resp.headers.get("Content-Type", "").lower()
     return "application/pdf" in content_type or resp.content[:4] == b"%PDF"
 
 
 def download_pdf(url):
-    """Download a PDF to a temporary file and return the path."""
     resp = requests.get(url, headers={"User-Agent": "Mozilla/5.0"}, timeout=30)
     if is_pdf_response(resp):
         tmp = tempfile.NamedTemporaryFile(suffix=".pdf", delete=False)
@@ -34,13 +32,14 @@ def download_pdf(url):
     return None
 
 
+# Text cleaning heuristics
 def clean_text(text: str) -> str:
-    """Unified cleaning for HTML and PDF text."""
     text = re.sub(r'\r', '\n', text)
     text = re.sub(r'(?<=[.!?])\s+', '\n\n', text)
 
     lines = []
     seen = set()
+
     for l in text.split("\n"):
         l = l.strip()
         if len(l) < 20 or l in seen:
@@ -49,11 +48,24 @@ def clean_text(text: str) -> str:
         lines.append(l)
 
     text = "\n".join(lines)
-    # Detect headings (capitalized short lines)
-    text = detect_headings(text)
-    return text
+    return detect_headings(text)
 
 
+# Type Detection Heuristics
+def is_html(text: str) -> bool:
+    if not isinstance(text, str):
+        return False
+    t = text.lower()
+    return "<html" in t or "<body" in t or "<a " in t or "<div" in t
+
+def is_json(text: str) -> bool:
+    if not isinstance(text, str):
+        return False
+    stripped = text.strip()
+    return (stripped.startswith("{") and stripped.endswith("}")) or \
+           (stripped.startswith("[") and stripped.endswith("]"))
+
+# Pipeline entry point for remote ingestion
 def ingest_remote(config):
     start_url = config["url"]
     allowed_domains = config.get("allowed_domains", [])
@@ -65,96 +77,91 @@ def ingest_remote(config):
 
     while queue and len(pages) < max_pages:
         url = queue.popleft()
+
         if url in visited:
             continue
+
         if any(x in url for x in ["ref_=", "#", "calendar", "chart"]):
             continue
 
         visited.add(url)
         print(f"[Remote] Processing: {url}")
 
-        # PDF handling 
+        # PDF detection and handling
         try:
             pdf_path = download_pdf(url)
             if pdf_path:
                 print("[PDF] Detected")
                 try:
-                    # Robust ingestion via ingest_local, which triggers OCR if needed
                     raw_text = ingest_local(pdf_path)
                     text = clean_text(raw_text)
+
                     pages.append({"url": url, "text": text})
-                    print(f"[Ingest] {url} → 1 pages")
+                    print(f"[Ingest] {url} → PDF page")
                 finally:
                     os.remove(pdf_path)
                 continue
         except Exception as e:
             print(f"[PDF] Failed: {e}")
 
-        # HTML scraping
+        # Scraping
         scraper = get_scraper(url)
         text = ""
-        raw_html = ""
+        raw_output = ""
 
         try:
-            # reset browser state to prevent cross-page contamination
-            try:
-                if os.path.exists("browser_state.json"):
-                    os.remove("browser_state.json")
-            except Exception:
-                pass
             # site-specific scraper
-            try:
-                if scraper:
-                    text = scraper(url)
-            except Exception as e:
-                print(f"[Scraper Error] {e}")
+            if scraper:
+                print("try site specific scraper")
+                text = scraper(url)
 
             # intercept scraper
-            try:
-                if not text or len(text) < 200:
-                    text, _ = intercept_scrape(url)
-            except Exception as e:
-                print(f"[Intercept Error] {e}")
-    
+            if not text or len(text) < 200:
+                print("try intercept scraper")
+                result = intercept_scrape(url)
+
+                if isinstance(result, tuple):
+                    text = result[0]
+                else:
+                    text = result
+
             # generic scraper
-            try:
-                if not text or len(text) < 200:
-                    text = generic_scrape(url)
-            except Exception as e:
-                print(f"[Generic Scraper Error] {e}")
+            if not text or len(text) < 200:
+                print("try generic scraper")
+                text = generic_scrape(url)
 
             if not text or len(text) < 100:
                 print("[Skip] Low-value")
                 continue
 
-            # Preserve raw HTML separately
-            raw_html = text
+            raw_output = text
 
-            # Step 1: Clean HTML to extract visible text and remove noise before further processing
-            cleaned_html = clean_html(raw_html)
+            # Type detection and cleaning
+            if is_json(raw_output):
+                cleaned_text = raw_output   
+            elif is_html(raw_output):
+                cleaned_html = clean_html(raw_output)
+                cleaned_text = clean_text(cleaned_html)
+            else:
+                cleaned_text = clean_text(raw_output)
 
-            # Skip if nothing meaningful remains
-            if not cleaned_html or len(cleaned_html) < 100:
-                print("[Skip] After HTML cleaning → Low-value")
+            if not cleaned_text or len(cleaned_text) < 100:
+                print("[Skip] After cleaning → Low-value")
                 continue
-
-            # Step 2: Clean text to fix encoding issues, normalize spacing, and detect headings for better chunking later on
-            text = clean_text(cleaned_html)
 
             pages.append({
                 "url": url,
-                "text": text
+                "text": cleaned_text
             })
 
         except Exception as e:
             print(f"[Error] {e}")
             continue
 
-        # enqueue new links
+        # Link extraction and queuing
         try:
-            # Only parse links if we have raw HTML content, to avoid false positives from text that looks like HTML but isn't.
-            if raw_html and "<a" in raw_html:  # only parse if real HTML
-                soup = BeautifulSoup(raw_html, "html.parser")
+            if is_html(raw_output):
+                soup = BeautifulSoup(raw_output, "html.parser")
 
                 for link in soup.find_all("a", href=True):
                     full_url = urljoin(url, link["href"])

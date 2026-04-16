@@ -1,172 +1,141 @@
-"""
-Lufthansa Accessibility Scraper
-==========================================================
-Returns:
-    str → chunk-ready output for pipeline ingestion
-
-Register:
-    @register("lufthansa_accessible_travel")
-"""
-
 import time
 import json
 import logging
-from typing import List, Dict
 
 from bs4 import BeautifulSoup
-from selenium import webdriver
 from selenium.webdriver.common.by import By
-from selenium.webdriver.chrome.options import Options
-
+from selenium.webdriver.support.ui import WebDriverWait
+import undetected_chromedriver as uc
 from parser.site_scrapers import register
 
-
 log = logging.getLogger(__name__)
-logging.basicConfig(level=logging.INFO)
 
 
 URL = "https://www.lufthansa.com/be/en/accessible-travel"
 
+def create_driver():
+    log.info("Launching Chrome...")
 
-# Cookie handling
-def accept_cookies(driver):
+    options = uc.ChromeOptions()
+    options.add_argument("--no-sandbox")
+    options.add_argument("--disable-dev-shm-usage")
+    options.add_argument("--window-size=1920,1080")
+
+    driver = uc.Chrome(options=options)
+    return driver
+
+# Force render by scrolling through the page to trigger lazy loading and any scroll-based hydration
+def force_render(driver):
     try:
+        driver.execute_script("window.scrollTo(0, 300);")
+        time.sleep(1)
+
+        driver.execute_script("window.scrollTo(0, document.body.scrollHeight/2);")
+        time.sleep(1)
+
+        driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
         time.sleep(2)
-
-        buttons = driver.find_elements(By.XPATH, "//button")
-        for b in buttons:
-            txt = (b.text or "").lower()
-            if "accept" in txt or "agree" in txt:
-                b.click()
-                log.info("Cookie banner accepted")
-                time.sleep(2)
-                return
-
-        log.warning("No cookie button found (likely pre-accepted or blocked)")
-    except Exception as e:
-        log.warning(f"Cookie handling failed: {e}")
+    except:
+        pass
 
 
-# Accordions are used extensively on the Lufthansa page, and must be expanded to access content.
-def expand_accordions(driver):
-    time.sleep(2)
-
-    buttons = driver.find_elements(By.CSS_SELECTOR, "button")
-
+# Generic clicker for likely accordion triggers
+def expand_all_clickables(driver):
     clicked = 0
-    for b in buttons:
+
+    # ONLY likely accordion triggers
+    candidates = driver.find_elements(
+        By.CSS_SELECTOR,
+        "maui-collapsible-item button, details summary"
+    )
+
+    for el in candidates:
         try:
-            aria = b.get_attribute("aria-expanded")
-            if aria == "false":
-                driver.execute_script("arguments[0].scrollIntoView({block:'center'});", b)
-                time.sleep(0.2)
-                b.click()
-                clicked += 1
-                time.sleep(0.3)
+            driver.execute_script(
+                "arguments[0].scrollIntoView({block:'center'});", el
+            )
+            time.sleep(0.2)
+
+            driver.execute_script("arguments[0].click();", el)
+            clicked += 1
+            time.sleep(0.2)
         except:
             continue
 
-    log.info(f"Expanded {clicked} accordions")
+    log.info(f"Expanded {clicked} real accordions")
 
 
-# Parse the final HTML with BeautifulSoup to extract clean sections
-def parse_sections(html: str) -> List[Dict]:
+# Safe parsing of any text content
+def parse_any_content(html: str):
     soup = BeautifulSoup(html, "html.parser")
 
-    sections = []
+    content = []
 
-    # Lufthansa uses multiple container patterns
-    blocks = soup.select("maui-collapsible-item")
+    # remove junk
+    for tag in soup(["script", "style", "noscript"]):
+        tag.decompose()
 
-    for b in blocks:
-        title = b.get("headline") or "Unknown section"
+    # try structured blocks first
+    headers = soup.find_all(["h1", "h2", "h3"])
 
-        # tables
-        table = b.select_one("maui-table")
-        if table:
-            rows = []
-            for r in table.select("maui-table-row"):
-                cols = [c.get_text(strip=True) for c in r.select("maui-table-cell")]
-                if cols:
-                    rows.append(cols)
+    for h in headers:
+        text_block = []
 
-            sections.append({
-                "section": title,
-                "type": "table",
-                "content": rows
-            })
-        else:
-            text = b.get_text(" ", strip=True)
-            sections.append({
-                "section": title,
+        for sib in h.find_all_next():
+            if sib.name in ["h1", "h2", "h3"]:
+                break
+
+            txt = sib.get_text(" ", strip=True)
+            if txt and len(txt) > 20:
+                text_block.append(txt)
+
+        if text_block:
+            content.append({
+                "section": h.get_text(strip=True),
                 "type": "text",
-                "content": text
+                "content": " ".join(text_block)[:2000]
             })
 
-    return sections
+    # fallback: full page text
+    if not content:
+        text = soup.get_text(" ", strip=True)
+        content.append({
+            "section": "page",
+            "type": "text",
+            "content": text
+        })
 
-def create_driver():
-    opts = Options()
+    return content
 
-    # HARD RESET STATE (this is what fixes repeat failure)
-    opts.add_argument("--headless=new")
-    opts.add_argument("--incognito")
-    opts.add_argument("--no-first-run")
-    opts.add_argument("--no-default-browser-check")
 
-    # IMPORTANT: prevent shared cache/session reuse
-    opts.add_argument("--disable-application-cache")
-    opts.add_argument("--disable-cache")
-    opts.add_argument("--disk-cache-size=0")
-
-    # fingerprint variation (light but effective)
-    opts.add_argument("--lang=en-GB")
-    opts.add_argument("--window-size=1920,1080")
-
-    driver = webdriver.Chrome(options=opts)
-
-    # extra hard reset at runtime
-    driver.delete_all_cookies()
-
-    return driver
-
-# Pipeline entrypoint
-@register("lufthansa_accessible_travel")
+# Pipeline entry point
+@register("lufthansa.com")
 def lufthansa_accessible_travel(url: str = URL) -> str:
-    """
-    Pipeline entrypoint:
-    MUST return string (NOT file, NOT driver, NOT dict)
-    """
-
-    driver = create_driver()
-
     try:
-        log.info(f"Loading: {url}")
+        log.info(f"[Lufthansa DOM Scraper] {url}")
+
+        driver = create_driver()
         driver.get(url)
 
-        accept_cookies(driver)
-        expand_accordions(driver)
+        time.sleep(3)  # allow initial render
+
+        force_render(driver)
+        expand_all_clickables(driver)
+        force_render(driver)
 
         html = driver.page_source
-        sections = parse_sections(html)
 
-        # IMPORTANT: pipeline-safe output
+        sections = parse_any_content(html)
+
         output = []
 
         for s in sections:
-            if s["type"] == "text":
-                output.append(f"### {s['section']}\n{s['content']}")
-            else:
-                output.append(f"### {s['section']}\nTABLE:\n{json.dumps(s['content'], indent=2)}")
+            output.append(f"### {s['section']}\n{s['content']}")
+
+        driver.quit()
 
         return "\n\n".join(output)
 
     except Exception as e:
-        log.error(f"Scraper failed: {e}", exc_info=True)
-        return f"[ERROR] Lufthansa scraper failed: {str(e)}"
-
-    finally:
-        try:
-            driver.quit()
-        except:
-            pass
+        log.error(f"Lufthansa DOM scraper failed: {e}", exc_info=True)
+        return f"[ERROR] {str(e)}"
