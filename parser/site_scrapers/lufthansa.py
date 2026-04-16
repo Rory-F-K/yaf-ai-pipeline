@@ -1,205 +1,187 @@
 """
-Lufthansa Accessibility Scraper
-================================
-Scrapes wheelchair/accessibility info from Lufthansa's website and outputs:
-  - output_accessibility.json   accordion sections (text + tables)
-  - output_door_dimensions.csv aircraft cargo door dimensions table
+Lufthansa Accessibility Scraper (PIPELINE SAFE - Option B)
+==========================================================
+Returns:
+    str → chunk-ready output for pipeline ingestion
+
+Register:
+    @register("lufthansa_accessible_travel")
 """
 
-import json
 import time
-import random
+import json
 import logging
-import numpy as np
-import pandas as pd
-import undetected_chromedriver as uc
+from typing import List, Dict
 
 from bs4 import BeautifulSoup
+from selenium import webdriver
 from selenium.webdriver.common.by import By
-from selenium.webdriver.common.action_chains import ActionChains
+from selenium.webdriver.chrome.options import Options
 
-# ── Logging ───────────────────────────────────────────────────────────────────
-logging.basicConfig(
-    level=logging.INFO,
-    format="%(asctime)s [%(levelname)s] %(message)s"
-)
+from parser.site_scrapers import register
+
+
 log = logging.getLogger(__name__)
-
-# ── Config ────────────────────────────────────────────────────────────────────
-URL = "https://www.lufthansa.com/be/en/passengers-using-wheelchairs.html"
-OUTPUT_JSON = "output_accessibility.json"
-OUTPUT_CSV  = "output_door_dimensions.csv"
-CHROME_VERSION = 146
+logging.basicConfig(level=logging.INFO)
 
 
-# ── Driver ────────────────────────────────────────────────────────────────────
-def init_driver(version: int) -> uc.Chrome:
-    log.info("Launching Chrome...")
-    driver = uc.Chrome(version_main=version)
+URL = "https://www.lufthansa.com/be/en/accessible-travel"
+
+
+# ─────────────────────────────────────────────────────────────
+# DRIVER (PIPELINE SAFE)
+# ─────────────────────────────────────────────────────────────
+# def create_driver() -> webdriver.Chrome:
+#     opts = Options()
+#     opts.add_argument("--headless=new")
+#     opts.add_argument("--no-sandbox")
+#     opts.add_argument("--disable-dev-shm-usage")
+#     opts.add_argument("--disable-blink-features=AutomationControlled")
+
+#     driver = webdriver.Chrome(options=opts)
+#     driver.set_page_load_timeout(60)
+#     return driver
+
+
+# Cookie handling
+def accept_cookies(driver):
+    try:
+        time.sleep(2)
+
+        buttons = driver.find_elements(By.XPATH, "//button")
+        for b in buttons:
+            txt = (b.text or "").lower()
+            if "accept" in txt or "agree" in txt:
+                b.click()
+                log.info("Cookie banner accepted")
+                time.sleep(2)
+                return
+
+        log.warning("No cookie button found (likely pre-accepted or blocked)")
+    except Exception as e:
+        log.warning(f"Cookie handling failed: {e}")
+
+
+# Accordions are used extensively on the Lufthansa page, and must be expanded to access content.
+def expand_accordions(driver):
+    time.sleep(2)
+
+    buttons = driver.find_elements(By.CSS_SELECTOR, "button")
+
+    clicked = 0
+    for b in buttons:
+        try:
+            aria = b.get_attribute("aria-expanded")
+            if aria == "false":
+                driver.execute_script("arguments[0].scrollIntoView({block:'center'});", b)
+                time.sleep(0.2)
+                b.click()
+                clicked += 1
+                time.sleep(0.3)
+        except:
+            continue
+
+    log.info(f"Expanded {clicked} accordions")
+
+
+# Parse the final HTML with BeautifulSoup to extract clean sections
+def parse_sections(html: str) -> List[Dict]:
+    soup = BeautifulSoup(html, "html.parser")
+
+    sections = []
+
+    # Lufthansa uses multiple container patterns
+    blocks = soup.select("maui-collapsible-item")
+
+    for b in blocks:
+        title = b.get("headline") or "Unknown section"
+
+        # tables
+        table = b.select_one("maui-table")
+        if table:
+            rows = []
+            for r in table.select("maui-table-row"):
+                cols = [c.get_text(strip=True) for c in r.select("maui-table-cell")]
+                if cols:
+                    rows.append(cols)
+
+            sections.append({
+                "section": title,
+                "type": "table",
+                "content": rows
+            })
+        else:
+            text = b.get_text(" ", strip=True)
+            sections.append({
+                "section": title,
+                "type": "text",
+                "content": text
+            })
+
+    return sections
+
+def create_driver():
+    opts = Options()
+
+    # HARD RESET STATE (this is what fixes repeat failure)
+    opts.add_argument("--headless=new")
+    opts.add_argument("--incognito")
+    opts.add_argument("--no-first-run")
+    opts.add_argument("--no-default-browser-check")
+
+    # IMPORTANT: prevent shared cache/session reuse
+    opts.add_argument("--disable-application-cache")
+    opts.add_argument("--disable-cache")
+    opts.add_argument("--disk-cache-size=0")
+
+    # fingerprint variation (light but effective)
+    opts.add_argument("--lang=en-GB")
+    opts.add_argument("--window-size=1920,1080")
+
+    driver = webdriver.Chrome(options=opts)
+
+    # extra hard reset at runtime
+    driver.delete_all_cookies()
+
     return driver
 
+# Pipeline entrypoint
+@register("lufthansa_accessible_travel")
+def lufthansa_accessible_travel(url: str = URL) -> str:
+    """
+    Pipeline entrypoint:
+    MUST return string (NOT file, NOT driver, NOT dict)
+    """
 
-# ── Human-like click ──────────────────────────────────────────────────────────
-def human_click(driver, element) -> None:
-    """Move to element and click with a random delay to mimic human behaviour."""
-    ActionChains(driver).move_to_element(element).perform()
-    time.sleep(random.uniform(0.5, 1.5))
-    ActionChains(driver).click().perform()
-
-
-# ── Shadow DOM helpers ────────────────────────────────────────────────────────
-SHADOW_WALK_JS = """
-    function findInShadow(root, selector, found = []) {
-        root.querySelectorAll('*').forEach(el => {
-            if (el.matches && el.matches(selector)) found.push(el);
-            if (el.shadowRoot) findInShadow(el.shadowRoot, selector, found);
-        });
-        return found;
-    }
-    window.__accordionButtons = findInShadow(document, 'button.header');
-"""
-
-def expand_all_accordions(driver) -> None:
-    """Walk the full shadow DOM tree and click every collapsed accordion button."""
-    driver.execute_script(SHADOW_WALK_JS)
-    count = driver.execute_script("return window.__accordionButtons.length;")
-    log.info(f"Found {count} accordion buttons")
-
-    for i in range(count):
-        expanded, label = driver.execute_script("""
-            const btn = window.__accordionButtons[arguments[0]];
-            return [btn.getAttribute('aria-expanded'), btn.textContent.trim()];
-        """, i)
-
-        log.info(f"  [{i}] '{label[:60]}' | expanded: {expanded}")
-
-        if expanded == "false":
-            driver.execute_script(
-                "window.__accordionButtons[arguments[0]].scrollIntoView({block: 'center'});", i
-            )
-            time.sleep(0.4)
-            driver.execute_script("window.__accordionButtons[arguments[0]].click();", i)
-            time.sleep(random.uniform(0.8, 1.5))
-
-    time.sleep(2)  # let final renders settle
-
-
-# ── Accordion extraction ──────────────────────────────────────────────────────
-def extract_table_from_item(item) -> list[dict]:
-    """Extract rows from a maui-table inside a collapsible item."""
-    rows = item.find_elements(By.TAG_NAME, "maui-table-row")[2:]  # skip header rows
-    table_data = []
-    for row in rows:
-        cells = row.find_elements(By.TAG_NAME, "maui-table-cell")
-        if len(cells) >= 3:
-            table_data.append({
-                "aircraft": cells[0].text.strip(),
-                "height":   cells[1].text.strip(),
-                "width":    cells[2].text.strip(),
-            })
-    return table_data
-
-
-def extract_accordion_data(driver) -> list[dict]:
-    """Return a list of {section, content, type} dicts from all accordion items."""
-    items = driver.find_elements(By.CSS_SELECTOR, "maui-collapsible-item")
-    log.info(f"Extracting {len(items)} accordion sections...")
-    data = []
-
-    for item in items:
-        headline = item.get_attribute("headline")
-        tables   = item.find_elements(By.TAG_NAME, "maui-table")
-
-        if tables:
-            content      = extract_table_from_item(item)
-            content_type = "table"
-        else:
-            raw_text   = item.text
-            clean_text = raw_text.replace(headline, "", 1).strip()
-            clean_text = clean_text.replace("The link will be opened in a new browser tab", "")
-            content      = " ".join(clean_text.split())
-            content_type = "text"
-
-        data.append({
-            "section": headline,
-            "content": content,
-            "type":    content_type,
-        })
-
-    return data
-
-
-# ── Door dimensions table ─────────────────────────────────────────────────────
-def extract_door_dimensions(html: str) -> pd.DataFrame:
-    """Parse the aircraft door dimensions table from saved page HTML."""
-    soup       = BeautifulSoup(html, "html.parser")
-    table_divs = soup.find_all("div", class_="table event")
-
-    if not table_divs:
-        log.warning("No door dimensions table found on page.")
-        return pd.DataFrame()
-
-    table_div  = table_divs[0]
-    header_row = table_div.find("maui-table-head").find("maui-table-row")
-    headers    = [c.get_text(strip=True) for c in header_row.find_all("maui-table-cell")]
-
-    rows = []
-    for row in table_div.find("maui-table-body").find_all("maui-table-row"):
-        cells = row.find_all("maui-table-cell")
-        rows.append([c.get_text(strip=True) for c in cells])
-
-    df = pd.DataFrame(rows, columns=headers)
-    df = df.replace("", np.nan).dropna(axis=1, how="all").iloc[1:].reset_index(drop=True)
-    df.columns = ["Aircraft type", "Cargo Door Height", "Cargo Door Width"]
-    df.insert(0, "Airline", "Lufthansa")
-    return df
-
-
-# ── Main ──────────────────────────────────────────────────────────────────────
-def main():
-    driver = init_driver(CHROME_VERSION)
+    driver = create_driver()
 
     try:
-        # 1. Load page
-        log.info(f"Loading {URL}")
-        driver.get(URL)
-        time.sleep(2)
+        log.info(f"Loading: {url}")
+        driver.get(url)
 
-        # 2. Decline cookies
-        cookie_btn = driver.find_element(By.ID, "cm-acceptNone")
-        human_click(driver, cookie_btn)
-        log.info("Declined cookies")
+        accept_cookies(driver)
+        expand_accordions(driver)
 
-        # 3. Navigate to Aircraft door dimensions tab
-        tab = driver.find_element(By.LINK_TEXT, "Aircraft door dimensions")
-        human_click(driver, tab)
-        log.info("Clicked 'Aircraft door dimensions' tab")
-        time.sleep(2)
+        html = driver.page_source
+        sections = parse_sections(html)
 
-        # 4. Expand all accordions
-        expand_all_accordions(driver)
+        # IMPORTANT: pipeline-safe output
+        output = []
 
-        # 5. Extract accordion sections (JSON)
-        accordion_data = extract_accordion_data(driver)
-        with open(OUTPUT_JSON, "w", encoding="utf-8") as f:
-            json.dump(accordion_data, f, indent=4, ensure_ascii=False)
-        log.info(f"Saved {len(accordion_data)} sections - {OUTPUT_JSON}")
+        for s in sections:
+            if s["type"] == "text":
+                output.append(f"### {s['section']}\n{s['content']}")
+            else:
+                output.append(f"### {s['section']}\nTABLE:\n{json.dumps(s['content'], indent=2)}")
 
-        # 6. Grab full page HTML parse door dimensions table CSV
-        html = driver.execute_script("return document.documentElement.outerHTML")
-        df   = extract_door_dimensions(html)
-
-        # if not df.empty:
-        #     df.to_csv(OUTPUT_CSV, index=False)
-        #     log.info(f"Saved door dimensions ({len(df)} rows) - {OUTPUT_CSV}")
-        #     print(df.to_string(index=False))
-        # else:
-        #     log.warning("Door dimensions table was empty — CSV not saved.")
+        return "\n\n".join(output)
 
     except Exception as e:
         log.error(f"Scraper failed: {e}", exc_info=True)
+        return f"[ERROR] Lufthansa scraper failed: {str(e)}"
 
-
-
-if __name__ == "__main__":
-    main()
+    finally:
+        try:
+            driver.quit()
+        except:
+            pass
