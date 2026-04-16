@@ -96,6 +96,12 @@ def ingest_remote(config):
         raw_html = ""
 
         try:
+            # reset browser state to prevent cross-page contamination
+            try:
+                if os.path.exists("browser_state.json"):
+                    os.remove("browser_state.json")
+            except Exception:
+                pass
             # site-specific scraper
             try:
                 if scraper:
@@ -109,7 +115,7 @@ def ingest_remote(config):
                     text, _ = intercept_scrape(url)
             except Exception as e:
                 print(f"[Intercept Error] {e}")
-
+    
             # generic scraper
             try:
                 if not text or len(text) < 200:
