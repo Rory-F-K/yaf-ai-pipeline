@@ -1,5 +1,5 @@
 """
-Lufthansa Accessibility Scraper (PIPELINE SAFE - Option B)
+Lufthansa Accessibility Scraper
 ==========================================================
 Returns:
     str → chunk-ready output for pipeline ingestion
@@ -26,21 +26,6 @@ logging.basicConfig(level=logging.INFO)
 
 
 URL = "https://www.lufthansa.com/be/en/accessible-travel"
-
-
-# ─────────────────────────────────────────────────────────────
-# DRIVER (PIPELINE SAFE)
-# ─────────────────────────────────────────────────────────────
-# def create_driver() -> webdriver.Chrome:
-#     opts = Options()
-#     opts.add_argument("--headless=new")
-#     opts.add_argument("--no-sandbox")
-#     opts.add_argument("--disable-dev-shm-usage")
-#     opts.add_argument("--disable-blink-features=AutomationControlled")
-
-#     driver = webdriver.Chrome(options=opts)
-#     driver.set_page_load_timeout(60)
-#     return driver
 
 
 # Cookie handling
