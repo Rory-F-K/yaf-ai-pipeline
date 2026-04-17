@@ -21,4 +21,5 @@ from . import lufthansa
 from . import portoairport
 from . import ryanair
 from . import swiss
-
+from . import us_gov_transportation
+from . import vueling

@@ -48,9 +48,7 @@ MAIN_CONTENT_SELECTORS = [
 # Fetch with Playwright in stealth mode to bypass bot protection and get fully-rendered HTML
 def _fetch_html(url: str) -> str:
     """
-    Launch a headless Chromium browser with stealth patches applied,
-    navigate to `url`, wait for the main content to settle, and return
-    the fully-rendered page HTML.
+    Launch a headless Chromium browser with stealth patches applied, navigate to `url`, wait for the main content to settle, and return the fully-rendered page HTML.
 
     Supports both playwright-stealth API versions:
       - v2.x: Stealth class  (pip install playwright-stealth)
@@ -146,8 +144,7 @@ def _table_to_text(table) -> str:
         |   | Width in cm/in | Height in cm/in |
         | A220-100 | 118 / 46,5 | 83 / 32,6 |
     """
-    # Identify which rows belong to the header section so we know where to
-    # place the Markdown separator.
+    # Identify which rows belong to the header section so we know where to place the Markdown separator.
     head_rows = set()
     for head_section in table.find_all(_HEAD_TAGS):
         for tr in head_section.find_all(_ROW_TAGS):
@@ -189,8 +186,7 @@ def _table_to_text(table) -> str:
 def _extract_sections(container) -> list[dict]:
     from bs4 import NavigableString
 
-    # Replace every table (HTML or maui) with its rendered text so the
-    # descendant walk below never sees raw cell tags.
+    # Replace every table (HTML or maui) with its rendered text so the descendant walk below never sees raw cell tags.
     for table in container.find_all(_TABLE_TAGS):
         text = _table_to_text(table)
         if text:
@@ -210,12 +206,8 @@ def _extract_sections(container) -> list[dict]:
             sections.append({"heading": current_heading, "body": body})
 
     for el in container.descendants:
-        """
-        NavigableString (and bare Python strings) both land here.
-        BeautifulSoup NavigableStrings have .name == None, so we must
-        treat "name is None" as text — not skip it — otherwise the
-        pipe-delimited table strings injected by replace_with() are lost.
-        """
+        # NavigableString (and bare Python strings) both land here.
+        # BeautifulSoup NavigableStrings have .name == None, treat "name is None" as text — not skip it — otherwise the pipe-delimited table strings injected by replace_with() are lost.
         if not hasattr(el, "name") or el.name is None:
             text = str(el).strip()
             if text and len(text) > 15:
