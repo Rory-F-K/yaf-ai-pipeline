@@ -54,48 +54,6 @@ class Config:
             "allowed_domains": ["lufthansa.com"]
         }, 
         {
-            "id": "lufthansa_accessible_travel_wheelchairs",
-            "url": "https://www.lufthansa.com/be/en/passengers-using-wheelchairs.html",
-            "max_pages": 1,
-            "dedup": True,
-            "allowed_domains": ["lufthansa.com"]
-        },
-        {
-            "id": "lufthansa_accessible_travel_cognitive_impairment",
-            "url": "https://www.lufthansa.com/be/en/prepare-for-your-trip/special-travel-needs/travel-with-needs/cognitive-impairment.html",
-            "max_pages": 1,
-            "dedup": True,
-            "allowed_domains": ["lufthansa.com"]
-        },
-        {
-            "id": "lufthansa_accessible_travel_hearing_impairment",
-            "url": "https://www.lufthansa.com/be/en/prepare-for-your-trip/special-travel-needs/travel-with-needs/hearing-impairment.html",
-            "max_pages": 1,
-            "dedup": True,
-            "allowed_domains": ["lufthansa.com"]
-        },
-        {
-            "id": "lufthansa_accessible_travel_visual_impairment",
-            "url": "https://www.lufthansa.com/be/en/prepare-for-your-trip/special-travel-needs/travel-with-needs/visual-impairment.html",
-            "max_pages": 1,
-            "dedup": True,
-            "allowed_domains": ["lufthansa.com"]
-        },
-        {
-            "id": "lufthansa_accessible_travel_assistance_dogs",
-            "url": "https://www.lufthansa.com/be/en/assistenzhunde.html",
-            "max_pages": 1,
-            "dedup": True,
-            "allowed_domains": ["lufthansa.com"]
-        },
-        {
-            "id": "lufthansa_accessible_travel_sensory_impairment",
-            "url": "https://www.lufthansa.com/be/en/passengers-with-sensory-impairment.html",
-            "max_pages": 1,
-            "dedup": True,
-            "allowed_domains": ["lufthansa.com"]
-        },
-        {
             "id": "swiss_accessible_travel",
             "url": "https://www.swiss.com/ch/en/prepare/special-care/accessible-travel.html",
             "max_pages": 1,
@@ -108,13 +66,13 @@ class Config:
             "max_pages": 1,
             "dedup": True,
             "allowed_domains": ["ryanair.com"]
-        # },  
-        # {
-        #     "id": "vueling_wheelchair_checkin",
-        #     "url": "https://help.vueling.com/hc/en-gb/articles/30891224305425-Wheelchair-Check-in",
-        #     "max_pages": 3,
-        #     "dedup": True,
-        #     "allowed_domains": ["vueling.com"]
+        },  
+        {
+            "id": "vueling_special_assistance",
+            "url": "https://help.vueling.com/hc/en-gb/categories/19798714411665-Special-Assistance",
+            "max_pages": 1,
+            "dedup": True,
+            "allowed_domains": ["vueling.com"]
         # },  
         # {
         #     "id": "us_transportation_passengers_disabilities",

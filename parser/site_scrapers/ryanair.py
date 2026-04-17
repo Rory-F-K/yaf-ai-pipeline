@@ -28,17 +28,15 @@ SESSION.headers.update({
 # Zendesk API helpers
 
 def _get_json(url: str, params: dict = None) -> dict:
-    """GET a Zendesk API endpoint and return parsed JSON."""
+    # GET a Zendesk API endpoint and return parsed JSON.
     response = SESSION.get(url, params=params, timeout=15)
     response.raise_for_status()
     return response.json()
 
 
 def _paginate(url: str, key: str, params: dict = None) -> list:
-    """
-    Follow Zendesk's next_page cursor until exhausted and collect all items
-    under `key` (e.g. 'sections', 'articles').
-    """
+    # Follow Zendesk's next_page cursor until exhausted and collect all items
+    # under `key` (e.g. 'sections', 'articles').
     params = dict(params or {})
     params.setdefault("per_page", 100)
 
@@ -54,7 +52,7 @@ def _paginate(url: str, key: str, params: dict = None) -> list:
 # Helpers to extract resource IDs and locale from URLs
 
 def _locale_from_url(parsed) -> str:
-    """Extract locale from path, e.g. /hc/en-lv/categories/… → 'en-lv'."""
+    # Extract locale from path, e.g. /hc/en-lv/categories/… → 'en-lv'.
     parts = parsed.path.strip("/").split("/")
     # parts[0] == 'hc', parts[1] == locale
     if len(parts) >= 2:
@@ -79,7 +77,7 @@ def _get_article(article_id: str, locale: str) -> dict:
 
 
 def _html_to_text(html: str) -> str:
-    """Strip HTML tags and return clean plain text."""
+    # Strip HTML tags and return clean plain text.
     if not html:
         return ""
     return BeautifulSoup(html, "html.parser").get_text(separator="\n", strip=True)
@@ -141,7 +139,7 @@ def scrape(url: str) -> list[dict]:
 
 
 def _normalise(article: dict) -> dict:
-    """Convert a raw Zendesk article dict into our standard schema."""
+    # Convert a raw Zendesk article dict into standard schema.
     return {
         "id":         article.get("id"),
         "title":      article.get("title", ""),
