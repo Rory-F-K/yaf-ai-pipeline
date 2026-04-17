@@ -1,3 +1,4 @@
+# Scraper for Ryanair Help Center (Zendesk)
 
 import json
 import requests
