@@ -162,8 +162,21 @@ def split_sentences(text: str) -> List[str]:
     return [s.strip() for s in sentences if s.strip()]
 
 
+def finalise_text(text: str) -> str:
+    # Clean up text before finalizing a chunk: collapse newlines and trim spaces
+
+    # Collapse paragraph breaks into a single space
+    text = re.sub(r'\n{2,}', ' ', text)
+    # Collapse any remaining single newlines
+    text = text.replace('\n', ' ')
+    # Clean up any double spaces that result
+    text = re.sub(r' {2,}', ' ', text)
+    return text.strip()
+
+
 def flush_chunk(chunks, section, current_text):
-    chunk_text = current_text.strip()
+    chunk_text = finalise_text(current_text)
+
 
     if not chunk_text:
         return
