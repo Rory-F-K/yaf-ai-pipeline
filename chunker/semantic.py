@@ -4,6 +4,12 @@ from typing import List, Dict
 import re
 import hashlib
 
+# Regex to detect lines that look like raw JSON key-value pairs, which are common artifacts in extracted text from HTML/JSON sources.
+_JSON_FIELD_RE = re.compile(
+    r'^"[a-z_]+":\s*' # "some_key":
+    r'(?:"[^"]*"|[\d\-]+)' # "string value" or number
+    r',?\s*$' # optional trailing comma
+)
 
 def generate_id(text: str) -> str:
     return hashlib.md5(text.encode()).hexdigest()
@@ -13,9 +19,12 @@ def clean_text(text: str) -> str:
     if not text:
         return ""
 
-    # First, decode common escape sequences that may be present in raw extracted text
-    text = text.replace('\\n', ' ').replace('\\t', ' ')
-    text = text.replace('\\r', '')
+    # Strip JSON field prefixes that survived extraction ("body": "..., "title": "...)
+    text = re.sub(r'^"[a-z_]+":\s*"?', '', text, flags=re.MULTILINE)
+    text = re.sub(r'",$', '', text, flags=re.MULTILINE)   # trailing ",
+
+    # Unescape JSON-style \n \t \r
+    text = text.replace('\\n', ' ').replace('\\t', ' ').replace('\\r', '')
 
     # Strip markdown heading prefixes
     text = re.sub(r'^#{1,6}\s+', '', text, flags=re.MULTILINE)
@@ -56,33 +65,43 @@ def clean_section(section: str) -> str:
     return section or "General"
 
 
+def is_json_artifact(line: str) -> bool:
+    # True if the line looks like a raw JSON key-value pair.
+    return bool(_JSON_FIELD_RE.match(line.strip()))
+
 def is_heading(line: str) -> bool:
     line = line.strip()
-
     if not line:
         return False
 
-    # Explicit markdown headings (## or ###) — always a heading
+    if line in ('{', '}', '[', ']'):
+        return False
+    if is_json_artifact(line):
+        return False
     if re.match(r'^#{1,6}\s+', line):
         return True
-
-    # Question-style headings (FAQs, docs)
     if line.endswith("?") and len(line) < 120:
         return True
 
-    # Short lines likely to be headings
     if len(line) < 100:
-        if (
-            line.isupper()
-            or line.endswith(":")
-            or re.match(r'^\d+(\.\d+)*\s', line)
-        ):
+        if line.isupper():
+            return True
+        if line.endswith(":"):
+            return True
+        # Numbered section: must be digits+dot followed by a capital letter
+        # "1. Introduction" ✓   "10 kg and..." ✗   "40x20x30 cm" ✗
+        if re.match(r'^\d+(\.\d+)*\.\s+[A-Z]', line):
             return True
 
-    # Title Case heuristic
+    # Title Case: requires at least one alpha word, all alpha words start uppercase,
+    # and no word is all-lowercase (filters "cm", "kg", "and", "or" etc.)
+    alpha_words = [w for w in line.split() if w.isalpha()]
     if (
-        len(line.split()) <= 10
-        and all(word[0].isupper() for word in line.split() if word.isalpha())
+        alpha_words
+        and len(line.split()) <= 10
+        and all(w[0].isupper() for w in alpha_words)
+        # Reject if any alpha word is short and lowercase — indicates prose, not a title
+        and not any(w.islower() and len(w) <= 4 for w in alpha_words)
     ):
         return True
 
@@ -94,6 +113,14 @@ def is_fragment(line: str) -> bool:
     line = line.strip()
     if not line:
         return False
+    
+    # Structural punctuation lines are almost always extraction artifacts, not meaningful content
+    if line in ('{', '}', '[', ']'):
+        return True
+
+    # JSON field lines are extraction artifacts, not content fragments
+    if is_json_artifact(line):
+        return True
 
     # Starts with a closing bracket — orphaned end of a parenthetical
     if line[0] in ')]}':
@@ -188,7 +215,7 @@ def flush_chunk(chunks, section, current_text):
     chunks.append({
         "id": generate_id(chunk_text),
         "section": section,
-        "text": chunk_text,
+        "text": finalise_text(chunk_text),
         "sent": False
     })
 
@@ -221,7 +248,7 @@ def semantic_chunk(
                     chunks.append({
                         "id": generate_id(chunk_text),
                         "section": current_section,
-                        "text": chunk_text,
+                        "text": finalise_text(chunk_text),
                         "sent": False
                     })
                 current_text = ""

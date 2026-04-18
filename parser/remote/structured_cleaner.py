@@ -137,40 +137,81 @@ def flatten_content(blocks: list) -> str:
 
     return "\n\n".join(parts)
 
+# Regex to detect lines that look like raw JSON key-value pairs, which are common artifacts in extracted text from HTML/JSON sources.
+_JSON_FIELD_RE = re.compile(
+    r'^"[a-z_]+":\s*' # "some_key":
+    r'(?:"[^"]*"|[\d\-]+)' # "string value" or number
+    r',?\s*$' # optional trailing comma
+)
+
 # If the input is a JSON API response, extract the HTML body field and return it for normal HTML processing.
 def extract_body_if_json(raw: str) -> str:
     raw = raw.strip()
-    if not raw.startswith('{') and not raw.startswith('['):
+    if not raw.startswith(('{', '[')):
         return raw
 
     try:
         data = json.loads(raw)
     except (json.JSONDecodeError, ValueError):
-        return raw
+        lines = raw.splitlines()
+        cleaned = [l for l in lines if not _JSON_FIELD_RE.match(l.strip())]
+        return "\n".join(cleaned)
 
-    # Article API
+    # Unwrap common envelope keys
     if isinstance(data, dict):
-        for key in ("article", "result", "data"):
-            if key in data and isinstance(data[key], dict):
+        for key in ("article", "result", "data", "results"):
+            if key in data and isinstance(data[key], (dict, list)):
                 data = data[key]
                 break
 
+    if isinstance(data, dict):
         for key in ("body", "html", "content", "description"):
             if key in data and isinstance(data[key], str):
-                return data[key]
+                value = data[key]
+                if value.strip().startswith(('{', '[')):
+                    try:
+                        inner = json.loads(value)
+                        if isinstance(inner, dict):
+                            for inner_key in ("body", "html", "content", "description"):
+                                if inner_key in inner and isinstance(inner[inner_key], str):
+                                    return inner[inner_key]
+                    except (json.JSONDecodeError, ValueError):
+                        pass
+                return value
+
+        # Skip metadata fields that are common in API responses and unlikely to contain relevant content. This prevents emitting raw JSON key-value pairs as text blocks.
+        METADATA_KEYS = {
+            "id", "locale", "url", "html_url", "author_id", "source_locale",
+            "position", "vote_sum", "vote_count", "created_at", "updated_at",
+            "edited_at", "outdated", "outdated_locales", "draft",
+            "comments_disabled", "label_names", "section_id", "promoted",
+        }
+        content_parts = []
+        for key, value in data.items():
+            if key in METADATA_KEYS or not isinstance(value, str):
+                continue
+            if key == "title":
+                # Emit title as a markdown heading so the chunker picks it up
+                content_parts.insert(0, f"## {value}")
+            elif key in ("body", "html", "content", "description"):
+                content_parts.append(value)
+            # Skip all other string fields (url, locale, etc.)
+        if content_parts:
+            return "\n\n".join(content_parts)
 
     if isinstance(data, list):
         bodies = []
         for item in data:
-            if isinstance(item, dict):
-                for key in ("body", "html", "content", "description"):
-                    if key in item and isinstance(item[key], str):
-                        bodies.append(item[key])
-                        break
+            if not isinstance(item, dict):
+                continue
+            # Recurse on each list item using the same logic
+            result = extract_body_if_json(json.dumps(item))
+            if result:
+                bodies.append(result)
         if bodies:
             return "\n\n".join(bodies)
 
-    return raw
+    return ""
 
 def clean_records(html_str: str) -> str:
     if not html_str:
