@@ -1,0 +1,182 @@
+[
+  {
+    "id": "86bb77cd19e6547adc752a591509fe45",
+    "parent_id": "c60c62f2f53c820267a8eff29b00fda2",
+    "section": "Portuguese Airports",
+    "text": "The following airports are listed: Aeroporto da Madeira, Aeroporto do Porto Santo, Aeroporto de Ponta Delgada, Aeroporto de Santa Maria, and Santa Cruz das Flores.",
+    "source": "https://www.portoairport.pt/en/opo/services-shopping/essential-services/reduced-mobility",
+    "source_id": "porto_airport_prm",
+    "type": "remote",
+    "sent": false
+  },
+  {
+    "id": "bfd422e13158782f9d3424b63d05afb9",
+    "parent_id": "cd2478c1d60edb5a688ed95dac3d55a9",
+    "section": "MyWay Assistance Service Overview",
+    "text": "Passengers with reduced mobility can utilize the MyWay travel assistance service, which provides mobility aids and professional support tailored to individual needs during airport transit.",
+    "source": "https://www.portoairport.pt/en/opo/services-shopping/essential-services/reduced-mobility",
+    "source_id": "porto_airport_prm",
+    "type": "remote",
+    "sent": false
+  },
+  {
+    "id": "3e45492926be1944652200abee8e2933",
+    "parent_id": "d5326fd7e702805f47b5adbabd614064",
+    "section": "MyWay Service Eligibility",
+    "text": "The MyWay service is available to any passenger with a disability or reduced mobility who is departing from, arriving at, or in transit through the airport.",
+    "source": "https://www.portoairport.pt/en/opo/services-shopping/essential-services/reduced-mobility",
+    "source_id": "porto_airport_prm",
+    "type": "remote",
+    "sent": false
+  },
+  {
+    "id": "72fd6c5cf86484a1a3406215f712dc4c",
+    "parent_id": "7067c79c53411fc5301c0b6b7beb74f8",
+    "section": "Booking MyWay Assistance",
+    "text": "To request MyWay assistance, passengers must notify their airline or travel agent during the booking process or at least 48 hours before the scheduled flight departure. The airline will then transmit this information to the relevant airports to coordinate the necessary assistance.",
+    "source": "https://www.portoairport.pt/en/opo/services-shopping/essential-services/reduced-mobility",
+    "source_id": "porto_airport_prm",
+    "type": "remote",
+    "sent": false
+  },
+  {
+    "id": "61f1467434e0b26ecbcfe77aeb777153",
+    "parent_id": "7b171016291231d13f4db1e105ffb93d",
+    "section": "Arrival and Connecting Flight Assistance",
+    "text": "Upon disembarking, the airline or travel agent notifies the MyWay service to ensure that all necessary personal and baggage assistance is provided from the aircraft seat to the next point of departure.",
+    "source": "https://www.portoairport.pt/en/opo/services-shopping/essential-services/reduced-mobility",
+    "source_id": "porto_airport_prm",
+    "type": "remote",
+    "sent": false
+  },
+  {
+    "id": "1f091b1336758e9e5540e3a458d97f7d",
+    "parent_id": "d2d9eee2db8e69eafa8d325975a7708c",
+    "section": "MyWay Service Identification",
+    "text": "The MyWay service is identified at the airport through signage that directs passengers to contact points, which provide information on available resources and mechanisms for people with reduced mobility.",
+    "source": "https://www.portoairport.pt/en/opo/services-shopping/essential-services/reduced-mobility",
+    "source_id": "porto_airport_prm",
+    "type": "remote",
+    "sent": false
+  },
+  {
+    "id": "208e05da644b6b0964890818f5e68a88",
+    "parent_id": "1ab7159b5331b51bf37736c0213f4d72",
+    "section": "MyWay Service Location Guides",
+    "text": "Visual aids and images are provided to help passengers locate the MyWay service points within the airport.",
+    "source": "https://www.portoairport.pt/en/opo/services-shopping/essential-services/reduced-mobility",
+    "source_id": "porto_airport_prm",
+    "type": "remote",
+    "sent": false
+  },
+  {
+    "id": "d035794e9bdc6bf88f57e850308afb03",
+    "parent_id": "5953da78d55e30dea5d298d808dd0ab6",
+    "section": "Parking for Passengers with Reduced Mobility",
+    "text": "Designated parking spaces for private vehicles bearing the reduced mobility sign are available and properly identified near the exits in all airport parking areas.",
+    "source": "https://www.portoairport.pt/en/opo/services-shopping/essential-services/reduced-mobility",
+    "source_id": "porto_airport_prm",
+    "type": "remote",
+    "sent": false
+  },
+  {
+    "id": "fcde76d3a6c0c9d9f568fbba811433ed",
+    "parent_id": "0b3feb5cbbc269abbbc119216fd7ccd4",
+    "section": "Guide Dog Access to Airport Terminals",
+    "text": "Guide dogs are permitted to circulate throughout the airport, including within the boarding terminals.",
+    "source": "https://www.portoairport.pt/en/opo/services-shopping/essential-services/reduced-mobility",
+    "source_id": "porto_airport_prm",
+    "type": "remote",
+    "sent": false
+  },
+  {
+    "id": "48ecb693c2912ad65c6d6f98b75cb62f",
+    "parent_id": "0b3feb5cbbc269abbbc119216fd7ccd4",
+    "section": "Guide Dog Access to Aircraft",
+    "text": "Passengers must contact their airline or travel agent to confirm the specific requirements and permissions for guide dogs on aircraft.",
+    "source": "https://www.portoairport.pt/en/opo/services-shopping/essential-services/reduced-mobility",
+    "source_id": "porto_airport_prm",
+    "type": "remote",
+    "sent": false
+  },
+  {
+    "id": "b15240b829468e19b11c9749bee01a97",
+    "parent_id": "1897b270bb6dd233a571344bc0fd8653",
+    "section": "Rights and Protections for Passengers with Reduced Mobility",
+    "text": "Passengers with disabilities or reduced mobility are protected against discrimination and are entitled to appropriate assistance at all EU airports, subject to certain conditions.",
+    "source": "https://www.portoairport.pt/en/opo/services-shopping/essential-services/reduced-mobility",
+    "source_id": "porto_airport_prm",
+    "type": "remote",
+    "sent": false
+  },
+  {
+    "id": "230269dfe0a7026171844db0b2a92f2c",
+    "parent_id": "c2034f2c04dab778d35d0c0af9ee99fa",
+    "section": "Companion Accompaniment",
+    "text": "Passengers who have booked assistance and require a carer or companion to travel through the airport will be ensured that one such person can accompany them throughout the entire journey.",
+    "source": "https://www.portoairport.pt/en/opo/services-shopping/essential-services/reduced-mobility",
+    "source_id": "porto_airport_prm",
+    "type": "remote",
+    "sent": false
+  },
+  {
+    "id": "351693af1b0679b5b5e6c427579db085",
+    "parent_id": "c2034f2c04dab778d35d0c0af9ee99fa",
+    "section": "Group Travel Assistance",
+    "text": "Passengers traveling in a larger group are advised to nominate one specific person to remain with them during the assistance process.",
+    "source": "https://www.portoairport.pt/en/opo/services-shopping/essential-services/reduced-mobility",
+    "source_id": "porto_airport_prm",
+    "type": "remote",
+    "sent": false
+  },
+  {
+    "id": "73af64053ba360baaf161dce51f76ac3",
+    "parent_id": "c2034f2c04dab778d35d0c0af9ee99fa",
+    "section": "Mobility Equipment Usage",
+    "text": "Companions may be required to vacate airport mobility equipment if it is needed for passengers requiring special assistance.",
+    "source": "https://www.portoairport.pt/en/opo/services-shopping/essential-services/reduced-mobility",
+    "source_id": "porto_airport_prm",
+    "type": "remote",
+    "sent": false
+  },
+  {
+    "id": "f33d1a42054b4711325a89e85f567c91",
+    "parent_id": "bb9967e15b0a27e70e36c7bda42efb4b",
+    "section": "MyWay Accessibility Infrastructure",
+    "text": "MyWay provides accessibility infrastructure including escalators, lifts, moving walkways, and clear signage and guidance to facilitate airport navigation.",
+    "source": "https://www.portoairport.pt/en/opo/services-shopping/essential-services/reduced-mobility",
+    "source_id": "porto_airport_prm",
+    "type": "remote",
+    "sent": false
+  },
+  {
+    "id": "a3d49a4e955332fbac610b77b37d63c4",
+    "parent_id": "bb9967e15b0a27e70e36c7bda42efb4b",
+    "section": "MyWay Professional Support",
+    "text": "MyWay offers escort and support services provided by specialized, identified professionals during the embarking and disembarking process.",
+    "source": "https://www.portoairport.pt/en/opo/services-shopping/essential-services/reduced-mobility",
+    "source_id": "porto_airport_prm",
+    "type": "remote",
+    "sent": false
+  },
+  {
+    "id": "8ab17025989edb3b13b85823d8f55391",
+    "parent_id": "4c8451fd0b36d9be45b3059a91a8a9be",
+    "section": "Requesting MyWay Assistance",
+    "text": "Upon arrival at the airport, passengers can request assistance by using the telephone booth at the Designated Point of Arrival, which is clearly marked with the MyWay logo.",
+    "source": "https://www.portoairport.pt/en/opo/services-shopping/essential-services/reduced-mobility",
+    "source_id": "porto_airport_prm",
+    "type": "remote",
+    "sent": false
+  },
+  {
+    "id": "07e3d985f2313a062b9eaf096e6e66ce",
+    "parent_id": "4c8451fd0b36d9be45b3059a91a8a9be",
+    "section": "Scope of MyWay Airport Assistance",
+    "text": "MyWay provides personal and baggage assistance starting from check-in, through the security checkpoint, border control, and boarding, ending once the passenger reaches their seat on the aircraft.",
+    "source": "https://www.portoairport.pt/en/opo/services-shopping/essential-services/reduced-mobility",
+    "source_id": "porto_airport_prm",
+    "type": "remote",
+    "sent": false
+  }
+]

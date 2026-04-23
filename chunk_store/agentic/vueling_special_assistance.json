@@ -1,0 +1,482 @@
+[
+  {
+    "id": "44bc1925477f1a76ed67dd852425bcaa",
+    "parent_id": "2815631794d8c0c98a46fd4cc75d8597",
+    "section": "Hearlo Vueling: Purpose",
+    "text": "Hearlo is designed to improve communication flow and create a more accessible and autonomous airport experience for passengers without the need for interpreters.",
+    "source": "https://help.vueling.com/hc/en-gb/categories/19798714411665-Special-Assistance",
+    "source_id": "vueling_special_assistance",
+    "type": "remote",
+    "sent": false
+  },
+  {
+    "id": "4fc182a8c6841c7b5551e1ddf0ef8c21",
+    "parent_id": "2815631794d8c0c98a46fd4cc75d8597",
+    "section": "Hearlo Vueling: Communication Features",
+    "text": "Hearlo provides several communication tools: \n- Messaging: Generates audio from written messages, supporting up to 40 languages.\n- Hearlo Cards: Generates audio from pictograms related to airport activities (e.g., check-in, boarding).\n- Shortcuts: Generates audio from predefined phrases linked to airport activities.\n- Phrases: Allows the construction of complex sentences using a combination of text and pictograms to generate audio.",
+    "source": "https://help.vueling.com/hc/en-gb/categories/19798714411665-Special-Assistance",
+    "source_id": "vueling_special_assistance",
+    "type": "remote",
+    "sent": false
+  },
+  {
+    "id": "34a8ee60a7aeb74bfb5f0d3ff0d096f5",
+    "parent_id": "2815631794d8c0c98a46fd4cc75d8597",
+    "section": "Hearlo Vueling: Tours and Usage",
+    "text": "The 'Tours' feature provides step-by-step descriptions of the travel process, including airport arrival, check-in, security, boarding, the flight, and disembarking. The app can be used at the airport and on board the plane without an internet connection, provided it is downloaded before the trip.",
+    "source": "https://help.vueling.com/hc/en-gb/categories/19798714411665-Special-Assistance",
+    "source_id": "vueling_special_assistance",
+    "type": "remote",
+    "sent": false
+  },
+  {
+    "id": "ec0ab28114809510b184e565c8aee12c",
+    "parent_id": "475c3ba7628bc4fe4cab280864f2482c",
+    "section": "How to Download Hearlo",
+    "text": "To obtain the Hearlo app, scan the provided QR code or use the available download link. Once installed, users can choose the communication method that best suits their needs.",
+    "source": "https://help.vueling.com/hc/en-gb/categories/19798714411665-Special-Assistance",
+    "source_id": "vueling_special_assistance",
+    "type": "remote",
+    "sent": false
+  },
+  {
+    "id": "64ea1c90e4dd8770fa1b090e7d1ce345",
+    "parent_id": "ebd31b65d4e0fa21f1b013120818d8e2",
+    "section": "Extra Seat: General Booking",
+    "text": "Passengers may book an Extra Seat for increased space and privacy, or when traveling with a musical instrument. The Extra Seat is always adjoining the passenger's allocated seat and can be booked for any area of the aircraft except for emergency exits.",
+    "source": "https://help.vueling.com/hc/en-gb/categories/19798714411665-Special-Assistance",
+    "source_id": "vueling_special_assistance",
+    "type": "remote",
+    "sent": false
+  },
+  {
+    "id": "59dc5c866c1b72dc665d68220396a6d1",
+    "parent_id": "ebd31b65d4e0fa21f1b013120818d8e2",
+    "section": "Extra Seat: Medical and Size Requirements",
+    "text": "Larger passengers may request double space by booking an extra seat. Passengers with a plaster cast who are unable to bend their knee must book two adjoining seats through Customer Services in addition to their own seat.",
+    "source": "https://help.vueling.com/hc/en-gb/categories/19798714411665-Special-Assistance",
+    "source_id": "vueling_special_assistance",
+    "type": "remote",
+    "sent": false
+  },
+  {
+    "id": "9568ca7af72bbb559eb484d6accf9611",
+    "parent_id": "ebd31b65d4e0fa21f1b013120818d8e2",
+    "section": "Extra Seat: Prohibitions",
+    "text": "Stretchers are not permitted on board the aircraft.",
+    "source": "https://help.vueling.com/hc/en-gb/categories/19798714411665-Special-Assistance",
+    "source_id": "vueling_special_assistance",
+    "type": "remote",
+    "sent": false
+  },
+  {
+    "id": "7b3274fab2ed07ed6c4429f49feff24a",
+    "parent_id": "a0648f96ac0815d2682b2e4ba9627a60",
+    "section": "General Information",
+    "text": "Vueling provides comprehensive travel information and support for passengers with any kind of disability or reduced mobility.",
+    "source": "https://help.vueling.com/hc/en-gb/categories/19798714411665-Special-Assistance",
+    "source_id": "vueling_special_assistance",
+    "type": "remote",
+    "sent": false
+  },
+  {
+    "id": "e78bf46c59eeefb1ded504de55cf2231",
+    "parent_id": "a23bf73cba99a4d54ca6de2623985ef0",
+    "section": "Airport Assistance Eligibility",
+    "text": "Airport assistance is available for passengers who: travel in a wheelchair, have limbs in plaster casts, have mobility, sight, or hearing impairments, have an intellectual disability, or are not self-sufficient.",
+    "source": "https://help.vueling.com/hc/en-gb/categories/19798714411665-Special-Assistance",
+    "source_id": "vueling_special_assistance",
+    "type": "remote",
+    "sent": false
+  },
+  {
+    "id": "b1f4af3fbe9f9ff1787089dc9433cb56",
+    "parent_id": "a23bf73cba99a4d54ca6de2623985ef0",
+    "section": "Companion Requirements",
+    "text": "Passengers who are not self-sufficient must always travel with a companion. Airport assistance for minors is only provided if they are accompanied. Specific additional information is available for passengers traveling with children with autism.",
+    "source": "https://help.vueling.com/hc/en-gb/categories/19798714411665-Special-Assistance",
+    "source_id": "vueling_special_assistance",
+    "type": "remote",
+    "sent": false
+  },
+  {
+    "id": "d2e24f21324869ea95e3a916c7fdcba0",
+    "parent_id": "a23bf73cba99a4d54ca6de2623985ef0",
+    "section": "Assistance Request Timeline",
+    "text": "To guarantee service quality and availability, assistance should be requested at least 48 hours before flight departure. Failure to provide advance notice may result in the unavailability of required assistance, potentially affecting travel plans.",
+    "source": "https://help.vueling.com/hc/en-gb/categories/19798714411665-Special-Assistance",
+    "source_id": "vueling_special_assistance",
+    "type": "remote",
+    "sent": false
+  },
+  {
+    "id": "6414945ea13522b7fa561a7b6f67756d",
+    "parent_id": "2694eae8cf05fdc5a7a4faddad4d4648",
+    "section": "Requesting Assistance Online",
+    "text": "Assistance can be requested during the booking process on the Vueling website by specifying the type of need and whether an assistance dog will be present. If the booking was made via the app or the request was not made during purchase, assistance can be requested through the 'REQUEST ASSISTANCE' section of the website.",
+    "source": "https://help.vueling.com/hc/en-gb/categories/19798714411665-Special-Assistance",
+    "source_id": "vueling_special_assistance",
+    "type": "remote",
+    "sent": false
+  },
+  {
+    "id": "74fed1ca9b6c1025326bef4035c34702",
+    "parent_id": "2694eae8cf05fdc5a7a4faddad4d4648",
+    "section": "Requesting Assistance by Phone",
+    "text": "Dedicated phone lines for passengers with special needs are available: Spain (+931222230), France (+33185148077), Italy (+390694802424), UK (+442045710521), and the rest of the world (+34931222251).",
+    "source": "https://help.vueling.com/hc/en-gb/categories/19798714411665-Special-Assistance",
+    "source_id": "vueling_special_assistance",
+    "type": "remote",
+    "sent": false
+  },
+  {
+    "id": "2cd8a7ebcc940eea7f95345b13c2c341",
+    "parent_id": null,
+    "section": "Airport Check-in Assistance",
+    "text": "Passengers can request assistance by going directly to the Vueling check-in desks, where staff will notify the assistance service of their arrival.",
+    "source": "https://help.vueling.com/hc/en-gb/categories/19798714411665-Special-Assistance",
+    "source_id": "vueling_special_assistance",
+    "type": "remote",
+    "sent": false
+  },
+  {
+    "id": "1720700d90567631cd1558d07a170870",
+    "parent_id": null,
+    "section": "Boarding Process for Reduced Mobility",
+    "text": "Customers with reduced mobility board the aircraft first to ensure comfortable seating. Depending on the level of assistance requested, airport services will escort the passenger to the boarding gate, the aircraft door, or their specific seat.",
+    "source": "https://help.vueling.com/hc/en-gb/categories/19798714411665-Special-Assistance",
+    "source_id": "vueling_special_assistance",
+    "type": "remote",
+    "sent": false
+  },
+  {
+    "id": "8a2fe57f0e611ff76156c062ca638274",
+    "parent_id": null,
+    "section": "Onboard Accessibility Facilities",
+    "text": "Vueling provides onboard wheelchairs across its entire fleet to assist passengers with reduced mobility in moving around the cabin. Additionally, safety leaflets in braille are available on all aircraft upon request, and crew members are available to provide further assistance during the flight.",
+    "source": "https://help.vueling.com/hc/en-gb/categories/19798714411665-Special-Assistance",
+    "source_id": "vueling_special_assistance",
+    "type": "remote",
+    "sent": false
+  },
+  {
+    "id": "b2af1cb907b0443b3f40d58f8cc3fff4",
+    "parent_id": null,
+    "section": "Disembarkation Process",
+    "text": "Upon landing, assisted customers are the last to disembark the aircraft and are escorted by ground staff to their designated location.",
+    "source": "https://help.vueling.com/hc/en-gb/categories/19798714411665-Special-Assistance",
+    "source_id": "vueling_special_assistance",
+    "type": "remote",
+    "sent": false
+  },
+  {
+    "id": "1f28ba4b263afde66aae64ef5596a858",
+    "parent_id": null,
+    "section": "Assistance Dogs",
+    "text": "Passengers traveling with an assistance dog can consult Vueling's specific guidelines for relevant information and requirements.",
+    "source": "https://help.vueling.com/hc/en-gb/categories/19798714411665-Special-Assistance",
+    "source_id": "vueling_special_assistance",
+    "type": "remote",
+    "sent": false
+  },
+  {
+    "id": "0031c128d2825e636a121fb8bb2fc53d",
+    "parent_id": null,
+    "section": "Lost or Damaged Mobility Equipment",
+    "text": "If mobility equipment is delayed, damaged, or lost, it must be reported to the Lost and Found office before the passenger leaves the arrivals terminal.",
+    "source": "https://help.vueling.com/hc/en-gb/categories/19798714411665-Special-Assistance",
+    "source_id": "vueling_special_assistance",
+    "type": "remote",
+    "sent": false
+  },
+  {
+    "id": "f75a19b257a6c4bd33266c85304fcf84",
+    "parent_id": null,
+    "section": "Mobility Device Check-in Allowance",
+    "text": "Passengers traveling with a wheelchair or mobility aid can check in up to two mobility devices (e.g., a wheelchair and a walker) free of charge.",
+    "source": "https://help.vueling.com/hc/en-gb/categories/19798714411665-Special-Assistance",
+    "source_id": "vueling_special_assistance",
+    "type": "remote",
+    "sent": false
+  },
+  {
+    "id": "86a267454a40caa72d97d109d7ff333c",
+    "parent_id": null,
+    "section": "Battery-Powered Device Documentation",
+    "text": "For mobility aids with batteries, passengers must check transport restrictions based on the battery type. It is recommended to have the manufacturer's instructions available, detailing the battery type, dimensions, weight, and disconnection procedure.",
+    "source": "https://help.vueling.com/hc/en-gb/categories/19798714411665-Special-Assistance",
+    "source_id": "vueling_special_assistance",
+    "type": "remote",
+    "sent": false
+  },
+  {
+    "id": "bbbefa831e78bc70f10fe0dec37076d3",
+    "parent_id": null,
+    "section": "Battery-Powered Device Verification",
+    "text": "For safety, battery-powered wheelchairs or mobility aids must be verified at the airport before being accepted on board. Passengers should provide documentation covering the device brand, model, weight, dimensions, battery type (including watt-hours for lithium batteries), and instructions on how to isolate the battery to prevent accidental activation. Transport may be refused if the device does not meet these conditions.",
+    "source": "https://help.vueling.com/hc/en-gb/categories/19798714411665-Special-Assistance",
+    "source_id": "vueling_special_assistance",
+    "type": "remote",
+    "sent": false
+  },
+  {
+    "id": "06656ec2a39e1528e1c74a29b611c39a",
+    "parent_id": null,
+    "section": "Battery Safety Requirements",
+    "text": "Battery-powered mobility devices must adhere to the following safety rules: battery terminals and electrical circuits must be isolated; the battery must be securely attached or removed per manufacturer instructions; and a maximum of one spare battery with no power limitation is permitted.",
+    "source": "https://help.vueling.com/hc/en-gb/categories/19798714411665-Special-Assistance",
+    "source_id": "vueling_special_assistance",
+    "type": "remote",
+    "sent": false
+  },
+  {
+    "id": "7bdb6d7614a628bd775152dab266f162",
+    "parent_id": null,
+    "section": "Assistance Dogs - UK Flights",
+    "text": "For flights to or from the UK, passengers must comply with Department for Environment, Food and Rural Affairs (DEFRA) requirements: \n1. Notify the airline at least 48 hours before departure (via booking or Customer Service Center).\n2. Provide training certification from an accredited organization (ADI, IGDF, or ADAA) or proof that the training meets or exceeds these standards.\n3. Provide a written declaration from the owner or handler detailing the specific tasks the dog performs to assist with the disability.\n4. An Assistance Dog ID card is recommended to facilitate airport verification.",
+    "source": "https://help.vueling.com/hc/en-gb/categories/19798714411665-Special-Assistance",
+    "source_id": "vueling_special_assistance",
+    "type": "remote",
+    "sent": false
+  },
+  {
+    "id": "190aaf03a6a6918da2811ed252c0e55d",
+    "parent_id": null,
+    "section": "Assistance Dogs - Ireland Flights (EU/Schengen)",
+    "text": "For flights to or from Ireland, passengers traveling from EU or Schengen countries must provide proof of tapeworm treatment in addition to general requirements.",
+    "source": "https://help.vueling.com/hc/en-gb/categories/19798714411665-Special-Assistance",
+    "source_id": "vueling_special_assistance",
+    "type": "remote",
+    "sent": false
+  },
+  {
+    "id": "ab50887b5c2cd09f9009b9ca47e40260",
+    "parent_id": null,
+    "section": "Assistance Dogs - Ireland Flights (Non-EU/Schengen)",
+    "text": "For flights to or from Ireland from countries outside the EU or Schengen area, the following are required: tapeworm treatment, a blood test confirming the treatment's effectiveness, and an email notification sent to petmove@agriculture.gov.ie.",
+    "source": "https://help.vueling.com/hc/en-gb/categories/19798714411665-Special-Assistance",
+    "source_id": "vueling_special_assistance",
+    "type": "remote",
+    "sent": false
+  },
+  {
+    "id": "1cf0c1b62942b8a4490c3c89a1f0e165",
+    "parent_id": null,
+    "section": "Assistance Dogs - Ireland Arrival Notice",
+    "text": "Passengers arriving in Ireland from countries outside the EU or Schengen area must notify the Ministry of Agriculture, Food and the Marine via the Pet Import Portal at least 24 hours before the scheduled arrival time.",
+    "source": "https://help.vueling.com/hc/en-gb/categories/19798714411665-Special-Assistance",
+    "source_id": "vueling_special_assistance",
+    "type": "remote",
+    "sent": false
+  },
+  {
+    "id": "1f19581a80a0a99416889e5b50e1eefa",
+    "parent_id": null,
+    "section": "Assistance Dog On-Board Requirements",
+    "text": "To be accepted on board, assistance dogs must be clean, well-behaved, and under the passenger's control at all times. Dogs must remain on the floor under the seat, secured with a safety harness during takeoff and landing, and must not block aisles or emergency evacuation areas. Passengers are responsible for bringing necessary care items, such as water bowls, blankets, absorbent pads, and sanitary bags.",
+    "source": "https://help.vueling.com/hc/en-gb/categories/19798714411665-Special-Assistance",
+    "source_id": "vueling_special_assistance",
+    "type": "remote",
+    "sent": false
+  },
+  {
+    "id": "4f1c4e253ab177cc5fc4029c524cf8d8",
+    "parent_id": null,
+    "section": "Accessible Communication",
+    "text": "Vueling provides the Hearlo app, a free tool designed to facilitate communication between staff and passengers with hearing impairments, speech disorders, or language barriers.",
+    "source": "https://help.vueling.com/hc/en-gb/categories/19798714411665-Special-Assistance",
+    "source_id": "vueling_special_assistance",
+    "type": "remote",
+    "sent": false
+  },
+  {
+    "id": "c064dfc1c374b9891b340194dad07970",
+    "parent_id": "9e98c4e691892dd1601c363bf543fe4b",
+    "section": "Other Special Needs",
+    "text": "Vueling provides informative articles for various special needs, including larger passengers requiring an extra seat, pregnancy, traveling with children and infants, unaccompanied minors, traveling with pets, and traveling with medication.",
+    "source": "https://help.vueling.com/hc/en-gb/categories/19798714411665-Special-Assistance",
+    "source_id": "vueling_special_assistance",
+    "type": "remote",
+    "sent": false
+  },
+  {
+    "id": "3f4ba1a0ac213b556de8b2af24498f9e",
+    "parent_id": "9e98c4e691892dd1601c363bf543fe4b",
+    "section": "Assistance or Service Animals",
+    "text": "Assistance or service dogs are individually trained to help people with special needs. Emotional support animals are not globally recognized as service animals. To travel with an assistance dog, passengers must indicate this during the booking process in the Passenger details section by selecting the 'Special needs passengers' option.",
+    "source": "https://help.vueling.com/hc/en-gb/categories/19798714411665-Special-Assistance",
+    "source_id": "vueling_special_assistance",
+    "type": "remote",
+    "sent": false
+  },
+  {
+    "id": "870dd1e772a29fff312d2cab963a4d8c",
+    "parent_id": "a637de5a709e6a5e7950c686b0e20644",
+    "section": "Assistance Dog Notification",
+    "text": "Passengers should notify Vueling at least 48 hours before flight departure via the Customer Service Centre, virtual assistant, or the exclusive assistance service lines: Spain (+34 931222230), France (+33 185148077), Italy (+39 0694802424), UK (+44 2045710521), or the rest of the world (+34 931222251). Notifications made less than 48 hours in advance will be handled on a best-effort basis.",
+    "source": "https://help.vueling.com/hc/en-gb/categories/19798714411665-Special-Assistance",
+    "source_id": "vueling_special_assistance",
+    "type": "remote",
+    "sent": false
+  },
+  {
+    "id": "810d6492cfa84ae4a8c2f30c547828b1",
+    "parent_id": "a637de5a709e6a5e7950c686b0e20644",
+    "section": "Assistance Dog Capacity",
+    "text": "In accordance with internal safety procedures, the maximum number of assistance dogs allowed on board is two. This limit may only be exceeded in exceptional cases, making early requests essential for proper management.",
+    "source": "https://help.vueling.com/hc/en-gb/categories/19798714411665-Special-Assistance",
+    "source_id": "vueling_special_assistance",
+    "type": "remote",
+    "sent": false
+  },
+  {
+    "id": "12fedadf796ce1d22158ffbeaaf20ae1",
+    "parent_id": "a637de5a709e6a5e7950c686b0e20644",
+    "section": "Assistance Dog Documentation",
+    "text": "To validate required documentation before a flight, passengers should contact the Customer Service Centre via the virtual assistant or the exclusive assistance service. An official physical certificate qualifying the animal as an assistance or guide dog must be presented; a doctor's note is not sufficient to certify the need for an assistance animal.",
+    "source": "https://help.vueling.com/hc/en-gb/categories/19798714411665-Special-Assistance",
+    "source_id": "vueling_special_assistance",
+    "type": "remote",
+    "sent": false
+  },
+  {
+    "id": "f330e8909b9e01c3a87ab9cee662a350",
+    "parent_id": "f58425699d114e7ab49d92cc95da0db9",
+    "section": "Assistance Dog Certification",
+    "text": "Assistance dogs must be certified by an accredited organization, such as Assistance Dogs International (ADI), International Guide Dog Federation (IGDF), Assistance Dogs Assessment Association (ADAA), or the Spanish National Organization for the Blind (ONCE). Dogs without an official certificate will not be admitted on board.",
+    "source": "https://help.vueling.com/hc/en-gb/categories/19798714411665-Special-Assistance",
+    "source_id": "vueling_special_assistance",
+    "type": "remote",
+    "sent": false
+  },
+  {
+    "id": "c2d2d9149a62de5928da259604864730",
+    "parent_id": "f58425699d114e7ab49d92cc95da0db9",
+    "section": "Assistance Dog Health and Identification",
+    "text": "Assistance dogs must be at least 3 months old and identified by a tattoo or microchip. Passengers must carry the dog's immunization record, certifying that the dog was vaccinated for rabies at least 21 days before the flight.",
+    "source": "https://help.vueling.com/hc/en-gb/categories/19798714411665-Special-Assistance",
+    "source_id": "vueling_special_assistance",
+    "type": "remote",
+    "sent": false
+  },
+  {
+    "id": "5058b9cb13f40c0c505ca51e66e19494",
+    "parent_id": "f58425699d114e7ab49d92cc95da0db9",
+    "section": "Regional Requirements for Assistance Dogs",
+    "text": "For travel to Sweden, Ireland, and the United Kingdom, a tapeworm treatment is required. The veterinarian must provide the product name, manufacturer, date and time of treatment, and a stamp and signature.",
+    "source": "https://help.vueling.com/hc/en-gb/categories/19798714411665-Special-Assistance",
+    "source_id": "vueling_special_assistance",
+    "type": "remote",
+    "sent": false
+  },
+  {
+    "id": "4bf36c4806ee1b9727a6be4326e7af65",
+    "parent_id": "f58425699d114e7ab49d92cc95da0db9",
+    "section": "International Travel for Assistance Dogs",
+    "text": "For international flights, an animal passport is required. Passengers traveling outside the European Union should verify specific travel requirements with the consulate of the destination country.",
+    "source": "https://help.vueling.com/hc/en-gb/categories/19798714411665-Special-Assistance",
+    "source_id": "vueling_special_assistance",
+    "type": "remote",
+    "sent": false
+  },
+  {
+    "id": "d1bd50eff8780284788a552a81347aed",
+    "parent_id": null,
+    "section": "Safety Self-Sufficiency Requirements",
+    "text": "To travel independently, passengers must be self-sufficient in the following safety tasks: understanding safety instructions, fastening and unfastening seat belts, locating and donning life jackets, exiting their seats to reach emergency exits, using oxygen masks, and using the toilet independently (as accessible toilets are not available).",
+    "source": "https://help.vueling.com/hc/en-gb/categories/19798714411665-Special-Assistance",
+    "source_id": "vueling_special_assistance",
+    "type": "remote",
+    "sent": false
+  },
+  {
+    "id": "5201ecf33d2c68e18ccf47d0ebd89d69",
+    "parent_id": null,
+    "section": "Companion Requirements for Safety",
+    "text": "Passengers unable to perform the required safety tasks must travel with a non-disabled adult companion (18 years or older) who can provide the necessary assistance. Failure to do so will result in denied boarding for the safety of the passenger and others.",
+    "source": "https://help.vueling.com/hc/en-gb/categories/19798714411665-Special-Assistance",
+    "source_id": "vueling_special_assistance",
+    "type": "remote",
+    "sent": false
+  },
+  {
+    "id": "e888308347dcda00eb2c28f063cd8af1",
+    "parent_id": null,
+    "section": "Booking and Seat Assignment for Special Needs",
+    "text": "Passengers with special needs and one companion are entitled to a free adapted seat. These can be assigned during online check-in (7 days before departure), by contacting dedicated phone lines (Spain: 931222230, France: +33185148077, Italy: +390694802424, UK: +442045710521, Rest of World: +34931222251), or requested from the crew on the day of the flight.",
+    "source": "https://help.vueling.com/hc/en-gb/categories/19798714411665-Special-Assistance",
+    "source_id": "vueling_special_assistance",
+    "type": "remote",
+    "sent": false
+  },
+  {
+    "id": "f723e8b9ed6c4f3c072e7a67dac5fd50",
+    "parent_id": null,
+    "section": "Check-in Recommendation",
+    "text": "To ensure suitable seat placement and facilitate traveling together, it is recommended that passengers with special needs check in as early as possible within the available timeframe.",
+    "source": "https://help.vueling.com/hc/en-gb/categories/19798714411665-Special-Assistance",
+    "source_id": "vueling_special_assistance",
+    "type": "remote",
+    "sent": false
+  },
+  {
+    "id": "40fe1153adcab6a71b613857a7b046c8",
+    "parent_id": null,
+    "section": "Aircraft Capacity Limits for Special Assistance",
+    "text": "Internal security procedures limit the total number of passengers with special needs (accompanied or unaccompanied) and their companions to 10% of the aircraft's capacity. Exceptional increases for groups may be granted if requested in advance via the Customer Service Centre.",
+    "source": "https://help.vueling.com/hc/en-gb/categories/19798714411665-Special-Assistance",
+    "source_id": "vueling_special_assistance",
+    "type": "remote",
+    "sent": false
+  },
+  {
+    "id": "0f1a129ccf77962cdc1df4109d771700",
+    "parent_id": null,
+    "section": "Seat Allocation Rules",
+    "text": "Passengers with disabilities or reduced mobility are typically allocated window seats; reassignment can be requested via the Customer Services Centre. Seats in the first or last rows, and those at or near emergency exits, cannot be occupied by these passengers.",
+    "source": "https://help.vueling.com/hc/en-gb/categories/19798714411665-Special-Assistance",
+    "source_id": "vueling_special_assistance",
+    "type": "remote",
+    "sent": false
+  },
+  {
+    "id": "570b22a13b6a37c2b5896b3bb1c55c4f",
+    "parent_id": null,
+    "section": "Additional Seat Requirements for Plaster Casts",
+    "text": "Specific seat booking requirements apply for passengers with plaster casts: those with casts from the waist up require one seat, while those with casts from the waist down (whole leg) must book three seats.",
+    "source": "https://help.vueling.com/hc/en-gb/categories/19798714411665-Special-Assistance",
+    "source_id": "vueling_special_assistance",
+    "type": "remote",
+    "sent": false
+  },
+  {
+    "id": "6d95d837d5d631dbb553b723b681b807",
+    "parent_id": null,
+    "section": "Additional Seat Requirements for Plaster Casts",
+    "text": "Passengers with a plaster cast only on the lower leg must book two seats to travel.",
+    "source": "https://help.vueling.com/hc/en-gb/categories/19798714411665-Special-Assistance",
+    "source_id": "vueling_special_assistance",
+    "type": "remote",
+    "sent": false
+  },
+  {
+    "id": "b823d9dff5bba79281871e78f1646500",
+    "parent_id": null,
+    "section": "Hand Luggage and Medical Equipment",
+    "text": "Passengers requesting airport assistance are allowed one free onboard piece of luggage (max 10 kg, 55x40x20 cm) and one underseat cabin bag (max 40x20x30 cm), with the option to check this luggage for free. Permitted onboard items include crutches, walking sticks, umbrellas, walking frames, and apnea machines. Medicine or diabetes kits are allowed in cabin bags, provided a medical certificate is presented.",
+    "source": "https://help.vueling.com/hc/en-gb/categories/19798714411665-Special-Assistance",
+    "source_id": "vueling_special_assistance",
+    "type": "remote",
+    "sent": false
+  },
+  {
+    "id": "a6832b894c70705ff73d89b212ba3740",
+    "parent_id": null,
+    "section": "Airport Arrival and Services",
+    "text": "Passengers who have requested assistance should arrive at the airport meeting point at least 2.5 hours before scheduled departure. Because departure and arrival services are provided by the airport and vary by destination, passengers are encouraged to check the specific airport's website for information on facilities and services.",
+    "source": "https://help.vueling.com/hc/en-gb/categories/19798714411665-Special-Assistance",
+    "source_id": "vueling_special_assistance",
+    "type": "remote",
+    "sent": false
+  }
+]

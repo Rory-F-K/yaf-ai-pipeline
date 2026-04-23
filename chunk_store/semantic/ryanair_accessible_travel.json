@@ -1,0 +1,407 @@
+[
+  {
+    "id": "42bdc4adf272aa6aae57bfc20fbbab89",
+    "section": "General",
+    "text": "[{\"id\": 38726667314577, \"title\": \"Booking Assisted Travel\", \"url\": \"https://help.ryanair.com/hc/en-lv/articles/38726667314577-Booking-Assisted-Travel\", \"section_id\": 12489453221905, \"locale\": \"en-lv\", \"body\": \"\", \"created_at\": \"2025-09-04T12:03:44Z\", \"updated_at\": \"2026-02-13T11:01:54Z\"}, {\"id\": 16888064139665, \"title\": \"How to add Assistance to an existing booking?\", \"url\": \"https://help.ryanair.com/hc/en-lv/articles/16888064139665-How-to-add-Assistance-to-an-existing-booking\", \"section_id\": 12489453221905, \"locale\": \"en-lv\", \"body\": \"Click 'My Bookings\u2019 on Ryanair\u2019s website. Log into your myRyanair account. Select 'Manage this booking\u2019 on the booking you need to change. Select the 'Assisted Travel\u2019 option. Choose the passenger(s) that require Assisted Travel. Confirm the type of Assisted Travel required for outbound and return flight. In case you need a different type of Assisted Travel for the return flight, toggle on the option below. Click 'Save\u2019 to save new details to your booking. You will receive an updated email itinerary with the Assisted Travel required, added.",
+    "sent": false,
+    "source": "https://help.ryanair.com/hc/en-lv/categories/12489466690833",
+    "source_id": "ryanair_accessible_travel",
+    "type": "remote"
+  },
+  {
+    "id": "c96318b1fead0ad047483f817b5b41c4",
+    "section": "General",
+    "text": "Add Assisted Travel\", \"created_at\": \"2023-07-11T06:58:38Z\", \"updated_at\": \"2026-02-13T11:01:54Z\"}, {\"id\": 12889553266705, \"title\": \"Requesting Assistance\", \"url\": \"https://help.ryanair.com/hc/en-lv/articles/12889553266705-Requesting-Assistance\", \"section_id\": 12489453221905, \"locale\": \"en-lv\", \"body\": \"We recommend that you request these services when you book your flight, but you can pre-book them on the Ryanair website up to 48 hours before the scheduled flight departure time. After this time and up to 12 hours prior to scheduled flight departure, passengers should contact our Assistance team (subject to opening hours). If you do not provide 48 hours' notice, the required assistance may not be available and your travel plans may be disrupted.",
+    "sent": false,
+    "source": "https://help.ryanair.com/hc/en-lv/categories/12489466690833",
+    "source_id": "ryanair_accessible_travel",
+    "type": "remote"
+  },
+  {
+    "id": "bdac009fbe2a7f79522a93ad4887b1bc",
+    "section": "General",
+    "text": "In order for an airport to provide pre-booked Assisted Travel, passengers should present themselves at the airport assistance desk 2 hours before their flight departure time.\", \"created_at\": \"2023-02-10T10:05:05Z\", \"updated_at\": \"2026-02-13T11:01:54Z\"}, {\"id\": 12889396904849, \"title\": \"What types of airport assistance are available?\", \"url\": \"https://help.ryanair.com/hc/en-lv/articles/12889396904849-What-types-of-airport-assistance-are-available\", \"section_id\": 12489453221905, \"locale\": \"en-lv\", \"body\": \"There are a number of different types of airport assisted travel available which can be booked in advance online or by contacting our Assistance Team.",
+    "sent": false,
+    "source": "https://help.ryanair.com/hc/en-lv/categories/12489466690833",
+    "source_id": "ryanair_accessible_travel",
+    "type": "remote"
+  },
+  {
+    "id": "8e6ae2adc8b19908e0005f377ab49ca3",
+    "section": "General",
+    "text": "Please see a summary below which should assist you in choosing the correct level of assistance: Passenger requires assistance (departure & arrival) through the airport to the boarding gate - select option WCHR Passenger requires assistance (departure & arrival) through the airport and lift on/off to/from the aircraft seat - select option WCHC Passenger requires assistance (departure & arrival) through the airport and up/down the aircraft steps - select option WCHS Blind/vision impaired passenger requires a walker (departure & arrival) through the airport to the aircraft seat and separate safety briefing from the cabin crew - select option BLND Passenger travelling with a guide/assistance dog that requires a walker (departure & arrival) through the airport to the aircraft seat and separate safety briefing from the cabin crew - select option BDGR Passenger is blind or vision impaired but requires no assistance (travelling alone or accompanied) - select option BLDP Passenger with cognitive or non-visible disability requiring assistance- select option DPNA.",
+    "sent": false,
+    "source": "https://help.ryanair.com/hc/en-lv/categories/12489466690833",
+    "source_id": "ryanair_accessible_travel",
+    "type": "remote"
+  },
+  {
+    "id": "c6c0a45f2a9dd25453ce9e0636c6fabe",
+    "section": "General",
+    "text": "Please contact our Assisted Travel Team to provide details on the type and level of assistance required Passenger is profoundly deaf - select option DEAF Passenger travelling with a guide / assistance dog - no special assistance services required - select option SVAN A passenger requiring in-flight therapeutic oxygen must pre-book and pay for the service at least 7 days prior to travel, by contacting our Special Assistance Line - select option OXYG\", \"created_at\": \"2023-02-10T10:02:36Z\", \"updated_at\": \"2026-02-13T11:01:54Z\"}, {\"id\": 12889350422289, \"title\": \"Allocated seats for Special Assistance\", \"url\": \"https://help.ryanair.com/hc/en-lv/articles/12889350422289-Allocated-seats-for-Special-Assistance\", \"section_id\": 12489453221905, \"locale\": \"en-lv\", \"body\": \"We are committed to providing appropriate seating for those requiring special assistance, within the constraints of safety guidelines and available seating options. If you have booked one of the below We are committed to providing appropriate seating for those requiring special assistance, within the constraints of safety guidelines and available seating options.",
+    "sent": false,
+    "source": "https://help.ryanair.com/hc/en-lv/categories/12489466690833",
+    "source_id": "ryanair_accessible_travel",
+    "type": "remote"
+  },
+  {
+    "id": "1574948c9b7b11e906df99904ae24007",
+    "section": "General",
+    "text": "If you have booked one of the below types of assistance, we will allocate you a suitable seat on-board, free of charge, along with one travel companion. For safety reasons customers requiring one of the below types of airport special assistance should be seated next to a window UNLESS the window seat is occupied by a travel companion or the flight load allows for empty seats between the disabled customer and the window. Assistance type (BDGR) - Customer travelling with a guide/assistance dog that requires a walker through the airport (departure & arrival) to the aircraft seat and separate safety briefing from cabin crew. Assistance type (SVAN) - Customer travelling with a guide/assistance dog, but requires no special airport special services. Assistance type (WCHC) - Customer requires assistance through the airport (departure & arrival) and to be lifted on/off the aircraft and to the aircraft seat. Assistance type (WCHS) - Customer requires assistance through the airport (departure & arrival) and up/down the aircraft steps. Assistance type (DPNA): Passenger with cognitive or non-visible disability requiring assistance - select option DPNA.",
+    "sent": false,
+    "source": "https://help.ryanair.com/hc/en-lv/categories/12489466690833",
+    "source_id": "ryanair_accessible_travel",
+    "type": "remote"
+  },
+  {
+    "id": "a36c6859901389869284c79e8cd61738",
+    "section": "General",
+    "text": "Please contact our Special Assistance team to provide details on the type and level of assistance required. Assistance type (BLND) - Blind/Vision impaired customer requires a walker (departure & arrival) through the airport to the aircraft seat and separate safety briefing from the cabin crew. Please note: Emergency exit row seats cannot be used by passengers requiring airport special assistance of any kind. To ensure your safety and comfort, cabin crew must ensure that access to emergency equipment and escape routes is not obstructed. As a result, you may not be able to sit in certain seats, or you may need to be moved to another seat for safety reasons.",
+    "sent": false,
+    "source": "https://help.ryanair.com/hc/en-lv/categories/12489466690833",
+    "source_id": "ryanair_accessible_travel",
+    "type": "remote"
+  },
+  {
+    "id": "037cb4c24fcdd71b5c954c40ca8fa6af",
+    "section": "General",
+    "text": "To ensure your safety and comfort, cabin crew must ensure that access to emergency equipment and To ensure your safety and comfort, cabin crew must ensure that access to emergency equipment and\", \"created_at\": \"2023-02-10T10:01:07Z\", \"updated_at\": \"2026-02-13T11:01:54Z\"}, {\"id\": 31352078107921, \"title\": \"Seat Information\", \"url\": \"https://help.ryanair.com/hc/en-lv/articles/31352078107921-Seat-Information\", \"section_id\": 12489453221905, \"locale\": \"en-lv\", \"body\": \"Our seat rows are spaced 73.66 cm (29 inches) apart, and the minimum width between armrests is 39.37 cm (15.5 inches). The minimum size of our plane doors is 76.2 cm x 165.1 cm (30 x 65 inches). If the size of our seats or doors does not meet your specific needs, you may not be able to board the plane. Aircraft Capacity Emergency Exit Boeing 737-800 189 1ABC, 16A-F, and 17A-F No movable armrests are available on all seats located next to a window, as well as in row/seat 1ABC, 2DEF, 16A-F, and 17A-F.",
+    "sent": false,
+    "source": "https://help.ryanair.com/hc/en-lv/categories/12489466690833",
+    "source_id": "ryanair_accessible_travel",
+    "type": "remote"
+  },
+  {
+    "id": "739cc720a763336d4799fa8150105968",
+    "section": "General",
+    "text": "Boeing 737-Max 8200 197 1BC, 2ABC, 17A-F, 18A-F, 28B-E, 29A-F No movable armrests are available on all seats located next to a window, as well as in row/seat 1BC, 2A, 2DEF, 17A-F, 18A-F, 28B-E, 29A, F and 34A, B, E, F.\", \"created_at\": \"2024-12-30T11:15:24Z\", \"updated_at\": \"2026-02-13T11:01:54Z\"}, {\"id\": 12889291387921, \"title\": \"Assisted Travel Queries\", \"url\": \"https://help.ryanair.com/hc/en-lv/articles/12889291387921-Assisted-Travel-Queries\", \"section_id\": 12489453221905, \"locale\": \"en-lv\", \"body\": \"Need more help? Speak directly to one of our assistance agents by phone. +35315757852 Calls charged at local rate. Calls from mobiles and other networks may cost more. The above Assisted Travel phone line is open: Monday-Friday - 9:00-22:00 - CET Saturday - 9:00-19:00 CET Sunday - 10:00-19:00 CET Chat with an Assisted Travel Agent for free. Please note only calls connected with our customer support agents are recorded for training and quality purposes, in addition to the purposes indicated in our privacy policy. All recordings are retained for at least 90 days.",
+    "sent": false,
+    "source": "https://help.ryanair.com/hc/en-lv/categories/12489466690833",
+    "source_id": "ryanair_accessible_travel",
+    "type": "remote"
+  },
+  {
+    "id": "bcb82d0550074278c0fcbedecb37f62a",
+    "section": "General",
+    "text": "If you have a query or wish to make a complaint in relation to Assisted Travel you can do so by following the link below: Queries/Feedback\", \"created_at\": \"2023-02-10T09:59:28Z\", \"updated_at\": \"2026-02-13T11:01:54Z\"}, {\"id\": 12894513385361, \"title\": \"Hidden Disabilities Sunflower\", \"url\": \"https://help.ryanair.com/hc/en-lv/articles/12894513385361-Hidden-Disabilities-Sunflower\", \"section_id\": 12489506468241, \"locale\": \"en-lv\", \"body\": \"We understand that having a hidden disability can often make travelling a more daunting and challenging experience. As an airline we are committed to making your journey as accessible and smooth as possible. The sunflower lanyard is designed as a subtle way of indicating someone has a hidden disability and may require some extra assistance. We are proud to say that Ryanair officially recognises the sunflower symbol and the benefits it brings to our customers. Lanyards are available at all participating airports on our network and can be collected from 'special assistance\u2019 and reception areas.",
+    "sent": false,
+    "source": "https://help.ryanair.com/hc/en-lv/categories/12489466690833",
+    "source_id": "ryanair_accessible_travel",
+    "type": "remote"
+  },
+  {
+    "id": "b99fdfb9a9b489c02f17206c724ff75b",
+    "section": "General",
+    "text": "For more information about the Hidden Disabilities Sunflower, you can visit their website here .\", \"created_at\": \"2023-02-10T12:40:22Z\", \"updated_at\": \"2023-08-11T12:17:06Z\"}, {\"id\": 12894565929617, \"title\": \"Can I fly with a medical condition? \", \"url\": \"https://help.ryanair.com/hc/en-lv/articles/12894565929617-Can-I-fly-with-a-medical-condition\", \"section_id\": 12489506468241, \"locale\": \"en-lv\", \"body\": \"If you are in any doubt about your fitness to fly we recommend that you contact your doctor. Ryanair only requests medical clearance in certain circumstances. Examples include recent illness, hospitalization, injury, surgery or a long standing condition when special services may be required, e.g.",
+    "sent": false,
+    "source": "https://help.ryanair.com/hc/en-lv/categories/12489466690833",
+    "source_id": "ryanair_accessible_travel",
+    "type": "remote"
+  },
+  {
+    "id": "72a6e2c28784254930c555a4f3fbfb2e",
+    "section": "General",
+    "text": "Customers with medical conditions such as heart disease or breathing difficulties are recommended to discuss their trip with their doctor prior to making a reservation.\", \"created_at\": \"2023-02-10T12:39:32Z\", \"updated_at\": \"2023-07-05T10:53:49Z\"}, {\"id\": 12894496246289, \"title\": \"Can I travel with a broken limb in a cast?\", \"url\": \"https://help.ryanair.com/hc/en-lv/articles/12894496246289-Can-I-travel-with-a-broken-limb-in-a-cast\", \"section_id\": 12489506468241, \"locale\": \"en-lv\", \"body\": \"If you have a broken limb in a cast you should advise Ryanair of both your condition and assistance requirements (if applicable). If you are traveling with upper limbs in cast, waist and above, you will only require one seat. If you are travelling with a full leg in cast you must purchase *3 seats* in total, per journey, to travel. This will enable the leg to be elevated during the flight and reduce swelling. If you are travelling with lower leg in plaster, below the knee only, you will only require one seat. If a plaster cast has been fitted on any limb for less than 48 hours then the cast needs to be split (the split needs to run along the entire length of the cast).",
+    "sent": false,
+    "source": "https://help.ryanair.com/hc/en-lv/categories/12489466690833",
+    "source_id": "ryanair_accessible_travel",
+    "type": "remote"
+  },
+  {
+    "id": "2421b2a965f0fd51aa4534f7586481e2",
+    "section": "General",
+    "text": "If the plaster cast been fitted for more than 48 hours there is no requirement for the cast to be split. This is applicable for both plaster of pairs and resin casts.\", \"created_at\": \"2023-02-10T12:38:56Z\", \"updated_at\": \"2023-07-05T11:05:06Z\"}, {\"id\": 12894493819793, \"title\": \"Can I fly with diabetes?\", \"url\": \"https://help.ryanair.com/hc/en-lv/articles/12894493819793-Can-I-fly-with-diabetes\", \"section_id\": 12489506468241, \"locale\": \"en-lv\", \"body\": \"There is no reason why a person with insulin-dependent diabetes cannot fly. However, it is best to discuss with your doctor how to manage your insulin needs. Passengers with diabetes do not require a medical agreement to travel on Ryanair flights as long as their condition is stable, and they are able to administer their own medical treatment. If you are unable to administer your own treatment, you should bring someone with you to provide the necessary assistance. Passengers must be provided with a letter from their doctor confirming their need to carry syringes, needles, and medication in the aircraft cabin.",
+    "sent": false,
+    "source": "https://help.ryanair.com/hc/en-lv/categories/12489466690833",
+    "source_id": "ryanair_accessible_travel",
+    "type": "remote"
+  },
+  {
+    "id": "7426443801b4af06bc98dd16f9dacd1c",
+    "section": "General",
+    "text": "Since airport security checks are not Ryanair's responsibility, you will always need to have a doctor's letter stating that you need to carry \\\"sharp\\\" objects on board an aircraft. Passengers should keep and then discard any syringes, needles or medication after leaving the aircraft as these should not be disposed of onboard.\", \"created_at\": \"2023-02-10T12:38:24Z\", \"updated_at\": \"2023-06-15T13:10:48Z\"}, {\"id\": 12894491842577, \"title\": \"Can I travel with a nut allergy?\", \"url\": \"https://help.ryanair.com/hc/en-lv/articles/12894491842577-Can-I-travel-with-a-nut-allergy\", \"section_id\": 12489506468241, \"locale\": \"en-lv\", \"body\": \"Customers with nut allergies are asked to inform cabin crew when boarding the flight and a public address is then made informing other customers and advising that no products containing nuts will be sold onboard.",
+    "sent": false,
+    "source": "https://help.ryanair.com/hc/en-lv/categories/12489466690833",
+    "source_id": "ryanair_accessible_travel",
+    "type": "remote"
+  },
+  {
+    "id": "7fb6d5406434dd897aab746015e8ed59",
+    "section": "General",
+    "text": "While other customers are asked not to open peanut products on board, Ryanair cannot guarantee a peanut-free aircraft.\", \"created_at\": \"2023-02-10T12:38:00Z\", \"updated_at\": \"2023-06-27T14:18:09Z\"}, {\"id\": 12894483085585, \"title\": \"On-board facilities\", \"url\": \"https://help.ryanair.com/hc/en-lv/articles/12894483085585-On-board-facilities\", \"section_id\": 12489506468241, \"locale\": \"en-lv\", \"body\": \"Wheelchair Every Ryanair aircraft has an onboard aisle wheelchair, which crew use to assist reduced mobility passengers getting to and from the aircraft toilet door. For health and safety reasons our crew cannot assist customers with the following: Moving customers from their seat to the onboard wheelchair or from the chair onto the toilet; Administering medication. Toilets We have 3 toilets onboard - 2 at the rear and 1 at the front of the aircraft.",
+    "sent": false,
+    "source": "https://help.ryanair.com/hc/en-lv/categories/12489466690833",
+    "source_id": "ryanair_accessible_travel",
+    "type": "remote"
+  },
+  {
+    "id": "7defb4c04876bca2a4b661900796d690",
+    "section": "General",
+    "text": "They are all equipped with a grip bar.\", \"created_at\": \"2023-02-10T12:37:27Z\", \"updated_at\": \"2023-06-26T13:03:45Z\"}, {\"id\": 12894467407761, \"title\": \"Medical Conditions - Travel Clearance Guidelines\", \"url\": \"https://help.ryanair.com/hc/en-lv/articles/12894467407761-Medical-Conditions-Travel-Clearance-Guidelines\", \"section_id\": 12489506468241, \"locale\": \"en-lv\", \"body\": \"All air carriers reserve the right to refuse to carry passengers with conditions that may worsen, or have serious consequences for them or their fellow passengers during the flight. There are some conditions that require medical clearance before you will be allowed to fly. We recommend that you consult with your doctor in advance of travel if you have recently had surgery or if you suffer from any of the conditions listed below. Please note that this list is simply a guideline, you should contact your doctor with any queries about your own suitability to fly.",
+    "sent": false,
+    "source": "https://help.ryanair.com/hc/en-lv/categories/12489466690833",
+    "source_id": "ryanair_accessible_travel",
+    "type": "remote"
+  },
+  {
+    "id": "c2048475bdd829ff7f9e7005b62a4365",
+    "section": "Condition/Surgery Travel Allowed After (No.",
+    "text": "Major chest, abdominal or cranial surgery, or middle ear surgery 10 days Tonsillectomy 6 days\", \"created_at\": \"2023-02-10T12:36:21Z\", \"updated_at\": \"2023-07-13T09:38:20Z\"}, {\"id\": 12894395750801, \"title\": \"Guidelines for Accompanying Passengers\", \"url\": \"https://help.ryanair.com/hc/en-lv/articles/12894395750801-Guidelines-for-Accompanying-Passengers\", \"section_id\": 12489557515281, \"locale\": \"en-lv\", \"body\": \"For safety reasons on Ryanair flights we require a non disabled person aged 18 and over to accompany a reduced mobility passenger who is not self-reliant.\", \"created_at\": \"2023-02-10T12:35:21Z\", \"updated_at\": \"2024-09-27T07:03:25Z\"}, {\"id\": 12894393502993, \"title\": \"Guidelines for Air Passenger- Definition of Self Reliance \", \"url\": \"https://help.ryanair.com/hc/en-lv/articles/12894393502993-Guidelines-for-Air-Passenger-Definition-of-Self-Reliance\", \"section_id\": 12489557515281, \"locale\": \"en-lv\", \"body\": \"The following information regarding air passenger self-reliance is set out by the UK Department for Transport - Access to Air Travel for Disabled People: Code of Practice (July 2008) and in the Guidelines of the European Commission on the application of Regulation EC 1107/2006 (2012).\", \"created_at\": \"2023-02-10T12:34:54Z\", \"updated_at\": \"2023-08-10T10:23:10Z\"}, {\"id\": 12894382413329, \"title\": \"Self-reliant requirements\", \"url\": \"https://help.ryanair.com/hc/en-lv/articles/12894382413329-Self-reliant-requirements\", \"section_id\": 12489557515281, \"locale\": \"en-lv\", \"body\": \"Each passenger must be self-reliant by reference to all of the categories below.",
+    "sent": false,
+    "source": "https://help.ryanair.com/hc/en-lv/categories/12489466690833",
+    "source_id": "ryanair_accessible_travel",
+    "type": "remote"
+  },
+  {
+    "id": "91b1d2c8cb04ffd15b79e82ffc9a6b48",
+    "section": "Condition/Surgery Travel Allowed After (No.",
+    "text": "Cataract or corneal laser or other eye surgery 1 day Chronic bronchitis, emphysema or other forms of chronic obstructive pulmonary disease You may be able to travel with therapeutic oxygen. There is a charge for this service and it must be booked in advance of travel by calling our Special Assistance Call Centre line or through our chat. Epilepsy Unless advised otherwise by your doctor you should not travel within 24 hours of a grand mal fit. Heart Attack Unless advised otherwise by your doctor you should not fly within 7 days of a heart attack and only then if it is essential (e.g. Infectious Disease All airlines reserve the right to refuse to carry passengers with conditions that may worsen or have serious consequences for themselves or other passengers during the flight. If not, then he/she must travel with a non disabled accompanying adult aged 18 and over who is capable of providing the assistance required. Otherwise, the passenger will be denied boarding.",
+    "sent": false,
+    "source": "https://help.ryanair.com/hc/en-lv/categories/12489466690833",
+    "source_id": "ryanair_accessible_travel",
+    "type": "remote"
+  },
+  {
+    "id": "30abd0c7b0b9cd9e26d145c10f735e9b",
+    "section": "Condition/Surgery Travel Allowed After (No.",
+    "text": "Passengers must be able to fasten and unfasten their seatbelt when instructed to do so by crew; Passengers must be able to retrieve and fit a lifejacket unaided when instructed to do so by crew; Passengers must be able to don an oxygen mask unaided when instructed to do so by crew; Passengers must be able to understand the safety briefing and any advice and instructions given by the crew in an emergency situation. Additional requirements We also require passengers who need assistance in any of the following areas to travel with a personal assistant. Failure to do so will lead to denial of boarding if we reasonably believe that the passengers\u2019 carriage may pose a risk to safety. Feeding (passengers must be able to feed themselves unaided); Toileting (passengers must be able to use to the toilet facilities unaided); Medicating (passenger must be capable of administering their own medicines and medical procedures). Each non disabled accompanying adult cannot assist more than one reduced mobility passenger and must purchase the prevailing adult fare.",
+    "sent": false,
+    "source": "https://help.ryanair.com/hc/en-lv/categories/12489466690833",
+    "source_id": "ryanair_accessible_travel",
+    "type": "remote"
+  },
+  {
+    "id": "83d6328612dca4832523299503d12c52",
+    "section": "Condition/Surgery Travel Allowed After (No.",
+    "text": "Passengers with pre-booked assistance requirements should arrive at the boarding gate at least 30 minutes prior to the flight departure.\", \"created_at\": \"2023-02-10T12:32:42Z\", \"updated_at\": \"2023-07-12T07:20:56Z\"}, {\"id\": 12894306787473, \"title\": \"Requesting to bring your Postural Support\", \"url\": \"https://help.ryanair.com/hc/en-lv/articles/12894306787473-Requesting-to-bring-your-Postural-Support\", \"section_id\": 12489561032849, \"locale\": \"en-lv\", \"body\": \"If you wish to use one of the accepted postural aids onboard (see list below), please ensure that you contact us at least 48 hours before your scheduled departure time, although we would recommend to add your postural support at the time of booking to inform us and we will allocate a seat that is suitable to the support system, free of charge.\", \"created_at\": \"2023-02-10T12:32:02Z\", \"updated_at\": \"2023-06-26T11:28:10Z\"}, {\"id\": 12894276131985, \"title\": \"Postural Support Requirements\", \"url\": \"https://help.ryanair.com/hc/en-lv/articles/12894276131985-Postural-Support-Requirements\", \"section_id\": 12489561032849, \"locale\": \"en-lv\", \"body\": \"Unfortunately, we cannot accept postural support aids for use on-board if they have not been approved by an aviation authority such as EASA, IAA, UK CAA, FAA or a similar body.",
+    "sent": false,
+    "source": "https://help.ryanair.com/hc/en-lv/categories/12489466690833",
+    "source_id": "ryanair_accessible_travel",
+    "type": "remote"
+  },
+  {
+    "id": "6485a02e1a0b8d42a8dc886ed82261fa",
+    "section": "Condition/Surgery Travel Allowed After (No.",
+    "text": "Where a reduced mobility passenger is travelling with an accompanying adult, we will do our best to ensure the accompanying passenger is seated next to them.\", \"created_at\": \"2023-02-10T12:33:51Z\", \"updated_at\": \"2024-09-27T11:12:19Z\"}, {\"id\": 12894366225297, \"title\": \"Important information \", \"url\": \"https://help.ryanair.com/hc/en-lv/articles/12894366225297-Important-information\", \"section_id\": 12489557515281, \"locale\": \"en-lv\", \"body\": \"In order for an airport to provide pre-booked special assistance, passengers must present at the special assistance desk at least 2 hours before their flight departure. There are a number of child restraints and postural supports that are accepted for use onboard our aircraft. Ryanair do not provide these items. These supports may be used in addition to an aircraft safety belt, subject to certain safety restrictions.",
+    "sent": false,
+    "source": "https://help.ryanair.com/hc/en-lv/categories/12489466690833",
+    "source_id": "ryanair_accessible_travel",
+    "type": "remote"
+  },
+  {
+    "id": "fcba7b99dcd9a00d5b80e299f7a3f817",
+    "section": "Condition/Surgery Travel Allowed After (No.",
+    "text": "Unfortunately we are unable to permit the use of postural supports for children under 2 years.\", \"created_at\": \"2023-02-10T12:31:23Z\", \"updated_at\": \"2023-07-13T09:25:24Z\"}, {\"id\": 12894297356305, \"title\": \"Approved Postural Support Aids\", \"url\": \"https://help.ryanair.com/hc/en-lv/articles/12894297356305-Approved-Postural-Support-Aids\", \"section_id\": 12489561032849, \"locale\": \"en-lv\", \"body\": \"Information on these products listed below can be found on the internet through the links below and we recommend you research this information before making your booking to see if your needs can be met. The following postural supports are permitted for use onboard which must be supplied and fitted by the passenger: Meru Travel Chair (provided by the passeng er) The Meru Travel Chair provides postural support for children aged approximately 3 - 11 years who are unable to use the aircraft seating when flying on commercial aircraft. Crelling Harness (provided by the passen ger) HSB1 - This support consists of shoulder straps only, which are designed to convert a simple belt into a supportive harness - Suitable for passengers from 9 years to adult.",
+    "sent": false,
+    "source": "https://help.ryanair.com/hc/en-lv/categories/12489466690833",
+    "source_id": "ryanair_accessible_travel",
+    "type": "remote"
+  },
+  {
+    "id": "733a899d6b62841be811a471f75dde18",
+    "section": "Condition/Surgery Travel Allowed After (No.",
+    "text": "Model 27 - This is a full 5 point harness designed to offer additional support and is suitable for passengers from 2 years to adult. Passengers using postural supports must be accompanied by an adult (over 18). The Crelling harness must be used as per manufacturer\u2019s instructions (weight, age, installation) and it would be helpful for passengers to have the installation instructions available for reference on board. Amsafe CARES (Child Aviation Restraint System) (provided by the passenger) This is a belt and buckle device that attaches directly to the aircraft seat and is used in conjunction with the aircraft seatbelt. It is designed specifically for aviation use for children who weigh between 22 and 44 pounds (10kg - 20kg). The restraint must be provided by the passenger themselves and must be used as per the manufacturer's instructions (weight, age, installation) and it would be helpful for passengers to have the installation instructions available for reference on-board. A passenger using the CARES restraint must be accompanied by an adult (over 18).",
+    "sent": false,
+    "source": "https://help.ryanair.com/hc/en-lv/categories/12489466690833",
+    "source_id": "ryanair_accessible_travel",
+    "type": "remote"
+  },
+  {
+    "id": "39e9b152ca5f426e5da157081dd78548",
+    "section": "Condition/Surgery Travel Allowed After (No.",
+    "text": "Firefly GoTo Seat Size 2 (provided by the passenger) This is a lightweight, portable seating solution for children 2-5 years needing additional postural support and stability. Burnett Body Support (provided by the passenger ) The system is based around a sealed welded casing filled with micro beads, which flow to mould to an individual's profile. By extracting the air via a valve the casing contracts and the beads static nature bring them together to provide a mould. This system is available in different sizes to meet the physical dimensions of the individual passenger. The above information is for passengers, who cannot sit upright unaided and who do not meet the criteria for sitting on an adults lap or for using a car seat onboard.\", \"created_at\": \"2023-02-10T12:29:59Z\", \"updated_at\": \"2024-09-30T12:31:51Z\"}, {\"id\": 12894110268689, \"title\": \"Adding mobility equipment\", \"url\": \"https://help.ryanair.com/hc/en-lv/articles/12894110268689-Adding-mobility-equipment\", \"section_id\": 12489549688721, \"locale\": \"en-lv\", \"body\": \"You can add your mobility equipment at the time of booking after you have selected the relevant assistance required.",
+    "sent": false,
+    "source": "https://help.ryanair.com/hc/en-lv/categories/12489466690833",
+    "source_id": "ryanair_accessible_travel",
+    "type": "remote"
+  },
+  {
+    "id": "f378b29e6f00a9b518ea0e7a1ea85915",
+    "section": "Condition/Surgery Travel Allowed After (No.",
+    "text": "You must select that you are travelling with an electric wheelchair/mobility scooter, and you will receive an email requesting the details of your mobility device.",
+    "sent": false,
+    "source": "https://help.ryanair.com/hc/en-lv/categories/12489466690833",
+    "source_id": "ryanair_accessible_travel",
+    "type": "remote"
+  },
+  {
+    "id": "83fbd1c87e02d1b83f817fb9001ddffa",
+    "section": "Condition/Surgery Travel Allowed After (No.",
+    "text": "You can also add this information after you have booked via Manage Booking or by contacting us via Chat .\", \"created_at\": \"2023-02-10T12:25:51Z\", \"updated_at\": \"2025-11-04T15:30:24Z\"}, {\"id\": 12894105265041, \"title\": \"Required information to notify us in advance with the following details:\", \"url\": \"https://help.ryanair.com/hc/en-lv/articles/12894105265041-Required-information-to-notify-us-in-advance-with-the-following-details\", \"section_id\": 12489549688721, \"locale\": \"en-lv\", \"body\": \"make weight battery type size dimensions including the lowest collapsed height of the wheelchair\", \"created_at\": \"2023-02-10T12:24:50Z\", \"updated_at\": \"2024-09-23T08:58:32Z\"}, {\"id\": 12894034893201, \"title\": \"Mobility Equipment Onboard\", \"url\": \"https://help.ryanair.com/hc/en-lv/articles/12894034893201-Mobility-Equipment-Onboard\", \"section_id\": 12489549688721, \"locale\": \"en-lv\", \"body\": \"If you have reduced mobility, you are entitled to bring two pieces of mobility equipment, as well as any medical equipment you need for the duration of your stay, on the plane free of charge.",
+    "sent": false,
+    "source": "https://help.ryanair.com/hc/en-lv/categories/12489466690833",
+    "source_id": "ryanair_accessible_travel",
+    "type": "remote"
+  },
+  {
+    "id": "f8b12b88ed10d71a5b49fbd7d5e856ed",
+    "section": "Condition/Surgery Travel Allowed After (No.",
+    "text": "Due to space limitations, we can only accept two Electric Wheelchairs or Mobility Scooters per flight, so we recommend adding equipment at the time of booking. Passengers are asked to bring the operation instructions to the airport. For safety reasons, electric wheelchairs/mobility scooter must comply with the following to be accepted for carriage:\", \"created_at\": \"2023-02-10T12:23:02Z\", \"updated_at\": \"2024-11-27T11:17:02Z\"}, {\"id\": 12893473172753, \"title\": \"Dimensions/Weight limits\", \"url\": \"https://help.ryanair.com/hc/en-lv/articles/12893473172753-Dimensions-Weight-limits\", \"section_id\": 12489549688721, \"locale\": \"en-lv\", \"body\": \"The dimensions of the wheelchair when collapsed must not exceed 81cms (height), 119cms (width) and 119cms (depth). Size restrictions for Wheelchairs/Mobility Scooters are due to the aircraft maximum door opening dimensions.",
+    "sent": false,
+    "source": "https://help.ryanair.com/hc/en-lv/categories/12489466690833",
+    "source_id": "ryanair_accessible_travel",
+    "type": "remote"
+  },
+  {
+    "id": "97c2d964efc359b107c8ecdc09271c13",
+    "section": "Condition/Surgery Travel Allowed After (No.",
+    "text": "Wheelchairs/Mobility Scooters weighing more than 150kg require pre-authorization and will not be accepted for carriage without this.\", \"created_at\": \"2023-02-10T12:04:43Z\", \"updated_at\": \"2024-09-23T08:58:32Z\"}, {\"id\": 12893468614417, \"title\": \"Batteries for Mobility Aids\", \"url\": \"https://help.ryanair.com/hc/en-lv/articles/12893468614417-Batteries-for-Mobility-Aids\", \"section_id\": 12489549688721, \"locale\": \"en-lv\", \"body\": \"Lithium-ion batteries Where a lithium-ion battery is securely attached to the mobility aid: The battery must remain installed in the device, securely contained, and isolated so it cannot be accidentally activated. No Watt-hour (Wh) limit applies to batteries that remain installed. The wheelchair or mobility scooter must be made safe by one of the following methods: - Removing the key - Deactivating via joystick, isolation switch or button Using another isolation mechanism (e.g., Anderson Connector, Airsafe plug) In addition, you may carry a maximum of: - One spare battery up to 300Wh, OR - Two spare batteries up to 160Wh each, in the cabin.",
+    "sent": false,
+    "source": "https://help.ryanair.com/hc/en-lv/categories/12489466690833",
+    "source_id": "ryanair_accessible_travel",
+    "type": "remote"
+  },
+  {
+    "id": "dc18a30d6ba6ed656915513ac2a59f66",
+    "section": "Condition/Surgery Travel Allowed After (No.",
+    "text": "If the operating battery is removed from the mobility aid and carried in the cabin, it is treated as a spare battery and is subject to the above Wh limits. Where a lithium-ion battery is not securely attached to the mobility aid: The battery must be removed following the manufacturer\u2019s or device owner\u2019s instructions. Removed batteries must be: - Protected against short circuit (e.g., by covering or taping exposed terminals), and - Individually placed in protective pouches to prevent damage. The operating battery, if removed and carried in the cabin, counts towards this spare battery allowance. The spare battery allowance is: - 1 x 300Wh for a single battery, or - 2 x 160Wh each. Dry Cell / Gel Cell / Non-Spillable Batteries Where a dry cell, gel cell, or non-spillable battery is securely attached to the mobility aid: The battery must remain installed in the device, securely contained, and isolated so it cannot be accidentally activated. No Watt-hour (Wh) restriction applies. Where such a battery is not securely attached to the mobility aid: The battery must be removed following the manufacturer\u2019s or device owner\u2019s instructions.",
+    "sent": false,
+    "source": "https://help.ryanair.com/hc/en-lv/categories/12489466690833",
+    "source_id": "ryanair_accessible_travel",
+    "type": "remote"
+  },
+  {
+    "id": "8a69de7327b44ca6f730f711c392873e",
+    "section": "Condition/Surgery Travel Allowed After (No.",
+    "text": "Batteries must be: - Protected against short circuit (e.g., by covering or taping exposed terminals), and - Placed in strong, rigid packaging for carriage in the aircraft hold.\", \"created_at\": \"2023-02-10T12:04:11Z\", \"updated_at\": \"2025-11-14T09:46:15Z\"}, {\"id\": 12893406995089, \"title\": \"Additional Info\", \"url\": \"https://help.ryanair.com/hc/en-lv/articles/12893406995089-Additional-Info\", \"section_id\": 12489549688721, \"locale\": \"en-lv\", \"body\": \"The 32kg single item weight limit does not apply to mobility equipment.\", \"created_at\": \"2023-02-10T12:03:38Z\", \"updated_at\": \"2024-09-23T08:58:32Z\"}, {\"id\": 12893354523025, \"title\": \"Insurance Cover\", \"url\": \"https://help.ryanair.com/hc/en-lv/articles/12893354523025-Insurance-Cover\", \"section_id\": 12489549688721, \"locale\": \"en-lv\", \"body\": \"We recommend that travel insurance cover for their mobility aids be purchased as an airline\u2019s liability is limited to (1,519 Special Drawing Rights, approx. \u20ac1800) under the Montreal Convention 1999. Customers can make a special declaration of value for their mobility equipment via our Special Declaration of Value Form which raises the liability to 2,262 Special Drawing Rights (approx. \u20ac2,600).",
+    "sent": false,
+    "source": "https://help.ryanair.com/hc/en-lv/categories/12489466690833",
+    "source_id": "ryanair_accessible_travel",
+    "type": "remote"
+  },
+  {
+    "id": "f5cb75ad3e15d68016ce169a8ada9ec6",
+    "section": "Condition/Surgery Travel Allowed After (No.",
+    "text": "Ryanair reserve the right to impose a charge where special declarations are made.\", \"created_at\": \"2023-02-10T12:03:02Z\", \"updated_at\": \"2024-12-27T10:00:15Z\"}, {\"id\": 28591605387281, \"title\": \"Damage to mobility equipment\", \"url\": \"https://help.ryanair.com/hc/en-lv/articles/28591605387281-Damage-to-mobility-equipment\", \"section_id\": 12489549688721, \"locale\": \"en-lv\", \"body\": \"In the unfortunate event that your mobility equipment (wheelchair, mobility scooter, walking aid) is lost, delayed, or damaged, you must report to the Lost Property Desk at your arrival airport. There you will be given a Property Irregularity Report (PIR), which will include a 10-character file reference, which will allow you to verify if there is any update on the tracing of your mobility equipment. Once you have reported your mobility equipment as damaged/delayed/lost at your arrival airport and have received a Property Irregularity Report (PIR), you can submit a claim to Ryanair. You can find this baggage claim form here . The 10-character file reference found on your PIR Report must be included when making your claim. This reference is located at the top of the report (EG.",
+    "sent": false,
+    "source": "https://help.ryanair.com/hc/en-lv/categories/12489466690833",
+    "source_id": "ryanair_accessible_travel",
+    "type": "remote"
+  },
+  {
+    "id": "904bc27975f57302d1a0b2d48b8bead5",
+    "section": "STNFR12345).",
+    "text": "Claims cannot be processed unless the case has been reported at your arrival airport and a PIR has been issued.\", \"created_at\": \"2024-09-23T08:58:17Z\", \"updated_at\": \"2024-09-26T10:58:38Z\"}, {\"id\": 12893297547281, \"title\": \"Guide/Assistance dogs are NOT accepted on the following routes\", \"url\": \"https://help.ryanair.com/hc/en-lv/articles/12893297547281-Guide-Assistance-dogs-are-NOT-accepted-on-the-following-routes\", \"section_id\": 12489582839441, \"locale\": \"en-lv\", \"body\": \"Flights to/from Morocco; Flights to/from Israel.\", \"created_at\": \"2023-02-10T12:02:15Z\", \"updated_at\": \"2023-06-29T14:55:34Z\"}, {\"id\": 12893304498321, \"title\": \"Guide/Assistance dogs are accepted on the following routes\", \"url\": \"https://help.ryanair.com/hc/en-lv/articles/12893304498321-Guide-Assistance-dogs-are-accepted-on-the-following-routes\", \"section_id\": 12489582839441, \"locale\": \"en-lv\", \"body\": \"All Ryanair intra EU/EEA flights; All Ryanair domestic flights.\", \"created_at\": \"2023-02-10T12:01:28Z\", \"updated_at\": \"2023-06-12T07:14:46Z\"}, {\"id\": 12893299928081, \"title\": \"Specific Guidelines for the entry of Guide/Assistance Dog into the UK & Republic of Ireland\", \"url\": \"https://help.ryanair.com/hc/en-lv/articles/12893299928081-Specific-Guidelines-for-the-entry-of-Guide-Assistance-Dog-into-the-UK-Republic-of-Ireland\", \"section_id\": 12489582839441, \"locale\": \"en-lv\", \"body\": \"When entering the UK or Republic of Ireland, passenger\u2019s travelling with a guide/assistance dog must carry either a Valid EU pet passport or Third country official veterinary health certificate (plus required medical documentation).",
+    "sent": false,
+    "source": "https://help.ryanair.com/hc/en-lv/categories/12489466690833",
+    "source_id": "ryanair_accessible_travel",
+    "type": "remote"
+  },
+  {
+    "id": "30bee9ca5e92a7183c8e00e22330a461",
+    "section": "STNFR12345).",
+    "text": "The EU Pet Passport or veterinary health certificate must be supported with documentation confirming that the guide/assistance dog is affiliated to one of the following organisations to enable entry to the UK or the Republic of Ireland: International Guide Dog Federation; Assistance Dogs UK; Assistance Dogs International (ADI).\", \"created_at\": \"2023-02-10T12:00:48Z\", \"updated_at\": \"2025-06-12T14:29:52Z\"}, {\"id\": 12893106452241, \"title\": \"Specific Guidelines for Guide/Assistance Dog Entry travelling on Intra EU/EEA Flights\", \"url\": \"https://help.ryanair.com/hc/en-lv/articles/12893106452241-Specific-Guidelines-for-Guide-Assistance-Dog-Entry-travelling-on-Intra-EU-EEA-Flights\", \"section_id\": 12489582839441, \"locale\": \"en-lv\", \"body\": \"Passengers travelling with a guide/assistance dog must carry a valid Pets Passport or third country official veterinary certificate (plus required medical documentation) on all EU/EEA flights.",
+    "sent": false,
+    "source": "https://help.ryanair.com/hc/en-lv/categories/12489466690833",
+    "source_id": "ryanair_accessible_travel",
+    "type": "remote"
+  },
+  {
+    "id": "4b47b5f0e74c029b005f6d10f9bfd65b",
+    "section": "STNFR12345).",
+    "text": "The EU Pet Passport or veterinary health certificate must be supported with documentation confirming that the guide/assistance dog is affiliated to one of the following organizations to enable entry to EU/EEA countries: International Guide Dog Federation; Assistance Dogs International (ADI).\", \"created_at\": \"2023-02-10T11:55:32Z\", \"updated_at\": \"2023-08-10T11:27:44Z\"}, {\"id\": 12893068305041, \"title\": \"Pet Passport/Veterinary Health Certificate\", \"url\": \"https://help.ryanair.com/hc/en-lv/articles/12893068305041-Pet-Passport-Veterinary-Health-Certificate\", \"section_id\": 12489582839441, \"locale\": \"en-lv\", \"body\": \"The dogs must have a pet passport or, in countries that don\u2019t issue pet passports, they must have an official veterinary health certificate. It is the passenger\u2019s responsibility to ensure that the Pet Passport presented is up to date and complies with the vaccination and treatment requirements of the destination country. We cannot accept liability for any guide/assistance dogs that are incorrectly documented.",
+    "sent": false,
+    "source": "https://help.ryanair.com/hc/en-lv/categories/12489466690833",
+    "source_id": "ryanair_accessible_travel",
+    "type": "remote"
+  },
+  {
+    "id": "003bf5f62df77cec8648a8c0c35f18a5",
+    "section": "STNFR12345).",
+    "text": "Guide dog and assistance dog owners in countries which do not issue Pet Passports, will need to obtain an official veterinary health certificate to show that their dog complies with the rules of the Pet Travel Scheme.\", \"created_at\": \"2023-02-10T11:54:33Z\", \"updated_at\": \"2023-07-27T06:52:00Z\"}, {\"id\": 12893012349969, \"title\": \"General Guidelines for Travel\", \"url\": \"https://help.ryanair.com/hc/en-lv/articles/12893012349969-General-Guidelines-for-Travel\", \"section_id\": 12489582839441, \"locale\": \"en-lv\", \"body\": \"To be accepted on a Ryanair flight a guide/assistance dog must be trained to perform tasks for the benefit of an individual with a disability (physical, sensory or psychiatric) and must be certified by an organization that is a full member of Assistance Dogs International (ADI), Assistance Dogs UK or International Guide Dog Federation (IGDF), the accrediting bodies for assistance dog organizations worldwide; Emotional support or therapy dogs that are not recognized as assistance dogs by the above organizations are not permitted to travel with Ryanair; The guide/assistance dog shall wear a standard identifying jacket or harness throughout the journey; Guide/assistance dogs travel in the aircraft cabin and must sit on the floor at the passenger's feet.",
+    "sent": false,
+    "source": "https://help.ryanair.com/hc/en-lv/categories/12489466690833",
+    "source_id": "ryanair_accessible_travel",
+    "type": "remote"
+  },
+  {
+    "id": "60e6ee1d3a086467319657a74298cbe8",
+    "section": "STNFR12345).",
+    "text": "We recommend if you have any doubts about your dog\u2019s eligibility to travel that you contact the destination airport prior to travel, to confirm Pet Passport details. A maximum of four guide/assistance dogs are permitted per flight. The dog along with containers and food are carried free of charge; Any passenger wishing to travel with their guide/assistance dog on board should pre-advise us preferably on the same day as booking. This can be done online or via the Ryanair Special Assistance team ; A suitable harness, (which must be provided by the owner) must be attached to the owners seat belt or to the seat belt buckle and must be utilized to provide the dog with an effective level of restraint during take-off, landing and turbulence. There may be other devices available with alternative attachment points that would also provide adequate restraint. Any arrangement that adequately secures the assistance dog is acceptable. Please note: failure to pre-advise us may result in the service being unavailable on arrival at the airport and you being unable to travel on your booked flight.",
+    "sent": false,
+    "source": "https://help.ryanair.com/hc/en-lv/categories/12489466690833",
+    "source_id": "ryanair_accessible_travel",
+    "type": "remote"
+  },
+  {
+    "id": "a1dc7da05354dc7ca3094af8cceb8ecb",
+    "section": "STNFR12345).",
+    "text": "If you are blind/visually impaired, but do not require any airport assistance, you should still notify us in advance of your flight, preferably on the day of booking. This is to ensure that the cabin crew can provide an appropriate safety demonstration.\", \"created_at\": \"2023-02-10T11:53:19Z\", \"updated_at\": \"2025-02-07T09:36:23Z\"}, {\"id\": 12892770395921, \"title\": \"Adding Medical Equipment\", \"url\": \"https://help.ryanair.com/hc/en-lv/articles/12892770395921-Adding-Medical-Equipment\", \"section_id\": 12489639235857, \"locale\": \"en-lv\", \"body\": \"If you wish to carry or use a special medical item onboard you must submit your requirements for via the online form . Our special assistance team will review and determine if your request can be approved. If approved, we will provide you with written authorisation of this. Bringing Medical Equipment as Checked Luggage If you need to include medical equipment in your checked-in luggage, please contact our Special Assistance Line to obtain a 'Checked Baggage Waiver\u2019 letter. You will need to present this letter to staff at the bag-drop desk.",
+    "sent": false,
+    "source": "https://help.ryanair.com/hc/en-lv/categories/12489466690833",
+    "source_id": "ryanair_accessible_travel",
+    "type": "remote"
+  },
+  {
+    "id": "e876e36e95aabded00f646cba5743f43",
+    "section": "STNFR12345).",
+    "text": "Bringing Medical Equipment as Carry-On Baggage If you prefer to bring medical equipment as carry-on, please reach out to our Special Assistance Line to request a 'Cabin Baggage Waiver\u2019 letter. This letter must be shown to staff at the boarding gate. For any additional assistance or questions, our Special Assistance team is here to help ensure a smooth and comfortable journey. You can reach out to them via chat or phone for support.\", \"created_at\": \"2023-02-10T11:44:46Z\", \"updated_at\": \"2025-03-26T14:32:27Z\"}, {\"id\": 12892718483089, \"title\": \"Medical Equipment Baggage Waiver Letter\", \"url\": \"https://help.ryanair.com/hc/en-lv/articles/12892718483089-Medical-Equipment-Baggage-Waiver-Letter\", \"section_id\": 12489639235857, \"locale\": \"en-lv\", \"body\": \"A medical equipment baggage waiver letter is required to carry any medical equipment onboard a Ryanair flight. Passengers with pre - existing medical conditions who need to carry medical equipment in addition to their checked/hand baggage allowance must contact our Special Assistance team in advance. On provision of a doctor\u2019s letter confirming the requirements a medical baggage waiver letter will be issued.",
+    "sent": false,
+    "source": "https://help.ryanair.com/hc/en-lv/categories/12489466690833",
+    "source_id": "ryanair_accessible_travel",
+    "type": "remote"
+  },
+  {
+    "id": "f255bd67694ae7fc522e599effcfc41f",
+    "section": "STNFR12345).",
+    "text": "Only Items listed in the waiver letter will be accepted for carriage free of charge. Please ensure that these items are packed separately and available for inspection at the airport.\", \"created_at\": \"2023-02-10T11:43:42Z\", \"updated_at\": \"2025-02-07T09:43:58Z\"}, {\"id\": 12892657494417, \"title\": \"Fit to Fly form\", \"url\": \"https://help.ryanair.com/hc/en-lv/articles/12892657494417-Fit-to-Fly-form\", \"section_id\": 12489639235857, \"locale\": \"en-lv\", \"body\": \"A Fit to Fly Form is required to be completed when fitness to travel is in doubt as a result of recent illness, hospitalization, injury or surgery, if you have an existing unstable medical condition, if you wish to use medical equipment or therapeutic oxygen on-board. If you are in any doubt about your fitness to fly, please consult your doctor before booking your flight.",
+    "sent": false,
+    "source": "https://help.ryanair.com/hc/en-lv/categories/12489466690833",
+    "source_id": "ryanair_accessible_travel",
+    "type": "remote"
+  },
+  {
+    "id": "9a8c12a02a27e364ae6b4fb9e7f2149a",
+    "section": "STNFR12345).",
+    "text": "A Fit to Fly Form can be obtained by contacting our Special Assistance team .\", \"created_at\": \"2023-02-10T11:41:24Z\", \"updated_at\": \"2025-02-06T21:00:05Z\"}, {\"id\": 12892454741521, \"title\": \"Dialysis Machine, CPAP Machine, or Bipap Machine\", \"url\": \"https://help.ryanair.com/hc/en-lv/articles/12892454741521-Dialysis-Machine-CPAP-Machine-or-Bipap-Machine\", \"section_id\": 12489639235857, \"locale\": \"en-lv\", \"body\": \"These devices may be carried in the cabin of the aircraft without prior notification if the device fits in your cabin baggage.",
+    "sent": false,
+    "source": "https://help.ryanair.com/hc/en-lv/categories/12489466690833",
+    "source_id": "ryanair_accessible_travel",
+    "type": "remote"
+  },
+  {
+    "id": "9a9c93dbd443dd1def1e9da3131260b9",
+    "section": "STNFR12345).",
+    "text": "However, if the device will be carried in addition to your baggage allowance you must obtain a medical baggage waiver letter by contacting our Special Assistance team .\", \"created_at\": \"2023-02-10T11:33:56Z\", \"updated_at\": \"2026-04-20T13:11:27Z\"}, {\"id\": 19595813725585, \"title\": \"Nebuliser, ventilator, respirator or any other respiratory device\", \"url\": \"https://help.ryanair.com/hc/en-lv/articles/19595813725585-Nebuliser-ventilator-respirator-or-any-other-respiratory-device\", \"section_id\": 12489639235857, \"locale\": \"en-lv\", \"body\": \"These devices may be carried in the cabin of the aircraft without prior notification if the device fits in your cabin baggage. However, if the device will be carried in addition to your baggage allowance you must obtain a medical baggage waiver letter by contacting our Special Assistance team . If you wish to use a nebuliser, ventilator, respirator or any other respiratory device during your flight please contact our Special Assistance line to obtain prior approval.",
+    "sent": false,
+    "source": "https://help.ryanair.com/hc/en-lv/categories/12489466690833",
+    "source_id": "ryanair_accessible_travel",
+    "type": "remote"
+  },
+  {
+    "id": "5f7ec65f9c08e001c535a70a367248e5",
+    "section": "STNFR12345).",
+    "text": "To use one of these machines onboard you will need to complete a \"Fit to fly form\" which will be sent to you once you have contacted our Special Assistance team .\", \"created_at\": \"2023-10-24T11:18:03Z\", \"updated_at\": \"2025-02-28T10:26:20Z\"}, {\"id\": 12892310831121, \"title\": \"Medical Items On-Board\", \"url\": \"https://help.ryanair.com/hc/en-lv/articles/12892310831121-Medical-Items-On-Board\", \"section_id\": 12489639235857, \"locale\": \"en-lv\", \"body\": \"Certain items such as Portable Oxygen Concentrators (POC) that meet regulatory requirements are approved for onboard use. Other medical equipment such as a CPAP or Portable Dialysis machine can be carried but not used onboard. Passengers are permitted to carry syringes in the aircraft cabin, if they are needed for medical reasons (for example a diabetic passenger). However, passengers should carry a doctor's letter confirming their requirement. Should you wish to carry a defibrillator in addition to or in your cabin baggage must obtain a medical equipment baggage waiver letter by contacting our Special Assistance team .",
+    "sent": false,
+    "source": "https://help.ryanair.com/hc/en-lv/categories/12489466690833",
+    "source_id": "ryanair_accessible_travel",
+    "type": "remote"
+  },
+  {
+    "id": "d98bd33bf50c01abd39ac96e24f31c17",
+    "section": "STNFR12345).",
+    "text": "This waiver letter must be presented at the bag drop desk or at the boarding gate if travelling with no checked baggage. You will need to also carry a \"fit to fly form\" with you to show staff on the day of travel at the airport.\", \"created_at\": \"2023-02-10T11:28:28Z\", \"updated_at\": \"2025-02-06T21:00:06Z\"}, {\"id\": 12892267378449, \"title\": \"Portable Oxygen Concentrator (POC)\", \"url\": \"https://help.ryanair.com/hc/en-lv/articles/12892267378449-Portable-Oxygen-Concentrator-POC\", \"section_id\": 12489639235857, \"locale\": \"en-lv\", \"body\": \"If you wish to travel with a POC please contact our Special Assistance team to obtain prior approval and a Medical Equipment Approval & Baggage Waiver. This approval & waiver letter must be presented at the Bag Drop desk or at the boarding gate if travelling with no checked baggage. If you wish to use a POC during your flight please contact our Special Assistance team to obtain prior approval. Once your device has been approved for use onboard, you must also carry your doctor\u2019s letter confirming that you are fit to fly.",
+    "sent": false,
+    "source": "https://help.ryanair.com/hc/en-lv/categories/12489466690833",
+    "source_id": "ryanair_accessible_travel",
+    "type": "remote"
+  },
+  {
+    "id": "b9ffa1ffa2143646bfa2efdcbca67dd3",
+    "section": "STNFR12345).",
+    "text": "If the POC is to be used onboard it is the passenger\u2019s responsibility to ensure that they have a sufficient number of fully charged batteries for the duration of the flight and any possible delays, as POC or batteries cannot be charged on board. Approved models\", \"created_at\": \"2023-02-10T11:26:58Z\", \"updated_at\": \"2026-04-16T15:19:23Z\"}, {\"id\": 12892120437777, \"title\": \"Therapeutic Oxygen\", \"url\": \"https://help.ryanair.com/hc/en-lv/articles/12892120437777-Therapeutic-Oxygen\", \"section_id\": 12489639235857, \"locale\": \"en-lv\", \"body\": \"Therapeutic Oxygen is restricted to one customer per flight. If you require it, please contact our Special Assistance team . We recommend contacting us on the same day as the flight booking is made. The team will send a medical clearance form. This form must be completed and sent back to us for validation between 14 days up to 2 days prior to your outbound flight. The customer must carry the validated Therapeutic Oxygen Medical Clearance form on all flights and cannot be accepted for travel without it. A fee per flight applies to the provision of therapeutic oxygen.",
+    "sent": false,
+    "source": "https://help.ryanair.com/hc/en-lv/categories/12489466690833",
+    "source_id": "ryanair_accessible_travel",
+    "type": "remote"
+  },
+  {
+    "id": "287fc8eb8078878b9059a248ba052f48",
+    "section": "STNFR12345).",
+    "text": "The fee is payable at the time the Therapeutic Oxygen Medical Clearance Form is returned for validation. Once validated the form will be returned to you via email and should then be presented to cabin crew on boarding the aircraft. Ryanair supplies therapeutic oxygen at a continuous flow rate of 2 litres per minute - max duration of 250 minutes. Ryanair cannot accept passengers for travel requiring a continuous supply of oxygen of more than 250 minutes. See Table of Fees for more details.\", \"created_at\": \"2023-02-10T11:23:48Z\", \"updated_at\": \"2025-02-07T09:58:19Z\"}]",
+    "sent": false,
+    "source": "https://help.ryanair.com/hc/en-lv/categories/12489466690833",
+    "source_id": "ryanair_accessible_travel",
+    "type": "remote"
+  }
+]

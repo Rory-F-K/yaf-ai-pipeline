@@ -24,6 +24,13 @@ class Config:
             "max_pages": 1,
             "dedup": True,
             "allowed_domains": ["iata.org"]
+        },   
+        {
+            "id": "iata_mobility-aid-guidance-document",
+            "url": "https://www.iata.org/contentassets/7b3762815ac44a10b83ccf5560c1b308/iata-guidance-on-the-transport-of-mobility-aids-final-feb2023.pdf",
+            "max_pages": 1,
+            "dedup": True,
+            "allowed_domains": ["iata.org"]
         },  
         {
             "id": "iata_accessibility_program",
@@ -73,12 +80,12 @@ class Config:
             "max_pages": 1,
             "dedup": True,
             "allowed_domains": ["vueling.com"]
-        # },  
-        # {
-        #     "id": "us_transportation_passengers_disabilities",
-        #     "url": "https://www.transportation.gov/airconsumer/passengers-disabilities",
-        #     "max_pages": 3,
-        #     "dedup": True,
-        #     "allowed_domains": ["transportation.gov"]
+        },  
+        {
+            "id": "us_transportation_passengers_disabilities",
+            "url": "https://www.transportation.gov/airconsumer/passengers-disabilities",
+            "max_pages": 3,
+            "dedup": True,
+            "allowed_domains": ["transportation.gov"]
         }
     ]

@@ -1,0 +1,522 @@
+[
+  {
+    "id": "db59dd88dcbcc0ee616c2257b656e0d3",
+    "parent_id": "b67ee48326aa5ac5065bc540581e249f",
+    "section": "Mobility Device Cargo Dimensions",
+    "text": "To ensure mobility devices fit through the cargo door, please refer to the following aircraft dimensions:\n- A220-100: Width 118 cm / 46.5 in, Height 83 cm / 32.6 in\n- A220-300: Width 118 cm / 46.5 in, Height 83 cm / 32.7 in\n- A320/321: Width 182 cm / 71.6 in, Height 124 cm / 48.8 in\n- A330-343: Width 270 cm / 106.3 in, Height 168 cm / 66.1 in\n- A340-313: Width 270 cm / 106.3 in, Height 168 cm / 66.1 in\n- B777-300: Width 246 cm / 96.9 in, Height 170 cm / 66.9 in\n- Embraer E290/E295: Width 118 cm / 46.5 in, Height 90 cm / 35.4 in\n- Embraer E90/E95: Width 114 cm / 44.8 in, Height 78-88 cm / 30.7-34.6 in\n\nWeight restrictions apply: 80 kg for the Embraer fleet and 149 kg for A220-100/A220-300.",
+    "source": "https://www.swiss.com/ch/en/prepare/special-care/accessible-travel.html",
+    "source_id": "swiss_accessible_travel",
+    "type": "remote",
+    "sent": false
+  },
+  {
+    "id": "68017a354e3cd58cd3fa0d4a83681735",
+    "parent_id": "b67ee48326aa5ac5065bc540581e249f",
+    "section": "Booking for Passengers with Restricted Mobility",
+    "text": "Passengers with restricted mobility should book their flights in good time and notify the airline of any special requirements.",
+    "source": "https://www.swiss.com/ch/en/prepare/special-care/accessible-travel.html",
+    "source_id": "swiss_accessible_travel",
+    "type": "remote",
+    "sent": false
+  },
+  {
+    "id": "a5006cb1fc4d9a1895eeaf15d3ca18a4",
+    "parent_id": "70711e894ce7d5d27e2bbd14b82964a1",
+    "section": "Booking and Seat Reservations",
+    "text": "Passengers with restricted mobility are asked to contact the Service Centre to make bookings and advance seat reservations.",
+    "source": "https://www.swiss.com/ch/en/prepare/special-care/accessible-travel.html",
+    "source_id": "swiss_accessible_travel",
+    "type": "remote",
+    "sent": false
+  },
+  {
+    "id": "8e646b3461632b3f3b78cd00c48b66d2",
+    "parent_id": "70711e894ce7d5d27e2bbd14b82964a1",
+    "section": "Travelling and Health",
+    "text": "Because long flights are physically demanding, passengers with health problems should obtain evidence of their fitness to fly.",
+    "source": "https://www.swiss.com/ch/en/prepare/special-care/accessible-travel.html",
+    "source_id": "swiss_accessible_travel",
+    "type": "remote",
+    "sent": false
+  },
+  {
+    "id": "0f09c7f0f2937225fd7136420334c447",
+    "parent_id": "11421e379a8901ee0fb0f43138c0bb8c",
+    "section": "Additional Seat Booking",
+    "text": "Passengers who require an additional seat for physical reasons or for more room can book one on all SWISS flights by contacting the Service Centre. Booking an extra seat helps avoid being denied carriage in the event that the flight is fully booked.",
+    "source": "https://www.swiss.com/ch/en/prepare/special-care/accessible-travel.html",
+    "source_id": "swiss_accessible_travel",
+    "type": "remote",
+    "sent": false
+  },
+  {
+    "id": "2aa673153db487bf915a41d4cc23f5c4",
+    "parent_id": null,
+    "section": "General Assistance",
+    "text": "SWISS provides assistance to passengers with disabilities both at the airport and during flights to ensure a seamless travel experience.",
+    "source": "https://www.swiss.com/ch/en/prepare/special-care/accessible-travel.html",
+    "source_id": "swiss_accessible_travel",
+    "type": "remote",
+    "sent": false
+  },
+  {
+    "id": "0a2148050046eb138a6be2dbc6fd446c",
+    "parent_id": null,
+    "section": "Travel Preparation",
+    "text": "Passengers with disabilities are advised to consult their doctor regarding trip preparations and to book their flight at least two days before departure, notifying the SWISS Service Centre of their specific needs.",
+    "source": "https://www.swiss.com/ch/en/prepare/special-care/accessible-travel.html",
+    "source_id": "swiss_accessible_travel",
+    "type": "remote",
+    "sent": false
+  },
+  {
+    "id": "670c9421447640d8e9bb9917f8d17a2d",
+    "parent_id": null,
+    "section": "Group Travel Requirements",
+    "text": "Groups traveling with their own mobility aids must notify SWISS of their specific care requirements as early as possible.",
+    "source": "https://www.swiss.com/ch/en/prepare/special-care/accessible-travel.html",
+    "source_id": "swiss_accessible_travel",
+    "type": "remote",
+    "sent": false
+  },
+  {
+    "id": "c2f2d320bb534c661d52dd7226b2194c",
+    "parent_id": null,
+    "section": "Mobility Aid Battery Regulations",
+    "text": "Effective October 1, 2025, wheelchairs or other mobility aids with permanently installed, non-removable lithium batteries are limited to a maximum of two batteries, each with a capacity of up to 160 Wh.",
+    "source": "https://www.swiss.com/ch/en/prepare/special-care/accessible-travel.html",
+    "source_id": "swiss_accessible_travel",
+    "type": "remote",
+    "sent": false
+  },
+  {
+    "id": "7a6b33d5ff490edc1288bbc77429c6fc",
+    "parent_id": null,
+    "section": "Battery Regulation Grace Period",
+    "text": "The lithium battery limits for mobility aids do not apply if the booking request was confirmed or the trip commenced before October 1, 2025.",
+    "source": "https://www.swiss.com/ch/en/prepare/special-care/accessible-travel.html",
+    "source_id": "swiss_accessible_travel",
+    "type": "remote",
+    "sent": false
+  },
+  {
+    "id": "f16cc0726aa8ea3c10daf1c1e332d640",
+    "parent_id": null,
+    "section": "Airport Assistance Services",
+    "text": "Specially trained staff are available to assist passengers with disabilities at all airports. Complimentary wheelchairs and accompanied transport vehicles are provided for passengers at both departure and arrival.",
+    "source": "https://www.swiss.com/ch/en/prepare/special-care/accessible-travel.html",
+    "source_id": "swiss_accessible_travel",
+    "type": "remote",
+    "sent": false
+  },
+  {
+    "id": "6f2709eb74c38be22d17b1eedbbd739e",
+    "parent_id": null,
+    "section": "Wheelchair Return Process",
+    "text": "Upon arrival at the destination airport, personal wheelchairs are returned either immediately or at the baggage carousel. If returned at the carousel, the passenger will be transported there via an airport wheelchair.",
+    "source": "https://www.swiss.com/ch/en/prepare/special-care/accessible-travel.html",
+    "source_id": "swiss_accessible_travel",
+    "type": "remote",
+    "sent": false
+  },
+  {
+    "id": "36e5d6339681ad556df00ae0dce05201",
+    "parent_id": "27852f6b04a5dc52006316be9f11a285",
+    "section": "DOT Contact Information",
+    "text": "The Department of Transportation is located at 1200 New Jersey Ave., SE., West Building, Room W96-432, Washington, DC 20590, USA. Additional information can be found via the Aviation Consumer Protection Division website. Please note that external websites may not follow the same privacy, security, or accessibility policies as SWISS.",
+    "source": "https://www.swiss.com/ch/en/prepare/special-care/accessible-travel.html",
+    "source_id": "swiss_accessible_travel",
+    "type": "remote",
+    "sent": false
+  },
+  {
+    "id": "aa0504936452194d52a745540f65ccb1",
+    "parent_id": "27852f6b04a5dc52006316be9f11a285",
+    "section": "Mobility Device Care Commitment",
+    "text": "SWISS is committed to handling wheelchairs and scooters (referred to as mobility devices) with care. However, despite these efforts, mobility devices may occasionally be damaged or delayed.",
+    "source": "https://www.swiss.com/ch/en/prepare/special-care/accessible-travel.html",
+    "source_id": "swiss_accessible_travel",
+    "type": "remote",
+    "sent": false
+  },
+  {
+    "id": "ff1c9dc552e1868389ff103591a74726",
+    "parent_id": "27852f6b04a5dc52006316be9f11a285",
+    "section": "Reporting Mobility Device Issues",
+    "text": "To report a delayed or damaged mobility device during a trip, passengers should file a report online via the SWISS 'Create a New Report' portal or contact the lost and found office at their destination airport.",
+    "source": "https://www.swiss.com/ch/en/prepare/special-care/accessible-travel.html",
+    "source_id": "swiss_accessible_travel",
+    "type": "remote",
+    "sent": false
+  },
+  {
+    "id": "9a9ddc813ecf5c13436e6f3cfa72b70a",
+    "parent_id": "ecaf79178b51a8f9079d7d7dc94ab5f4",
+    "section": "Reimbursement for Mobility Device Issues",
+    "text": "Passengers may request a reimbursement of expenses resulting from baggage problems or the mishandling of a mobility device by completing the SWISS application form for reimbursement of costs.",
+    "source": "https://www.swiss.com/ch/en/prepare/special-care/accessible-travel.html",
+    "source_id": "swiss_accessible_travel",
+    "type": "remote",
+    "sent": false
+  },
+  {
+    "id": "12fac09638e081b61d80eca23e0cf068",
+    "parent_id": "ecaf79178b51a8f9079d7d7dc94ab5f4",
+    "section": "Complaint Resolution Official (CRO)",
+    "text": "In the event of mobility device mishandling, passengers may request assistance from a Complaint Resolution Official (CRO). CROs are specially trained employees who understand the relevant US authority regulations and are available to address passenger concerns.",
+    "source": "https://www.swiss.com/ch/en/prepare/special-care/accessible-travel.html",
+    "source_id": "swiss_accessible_travel",
+    "type": "remote",
+    "sent": false
+  },
+  {
+    "id": "a21122830dd4c32961048c7d0bc795ad",
+    "parent_id": "ae9bbd2bded9d83b7ee461bf52267665",
+    "section": "CRO Availability",
+    "text": "Complaint Resolution Officials (CROs) are available at all SWISS destinations in the United States, as well as in Zurich and Geneva, Switzerland.",
+    "source": "https://www.swiss.com/ch/en/prepare/special-care/accessible-travel.html",
+    "source_id": "swiss_accessible_travel",
+    "type": "remote",
+    "sent": false
+  },
+  {
+    "id": "3b7a4d5eb27785f78dd1adde77f2fb3d",
+    "parent_id": "ae9bbd2bded9d83b7ee461bf52267665",
+    "section": "Delayed Mobility Device Return Options",
+    "text": "If a mobility device is delayed, the passenger can choose to either pick up the device at the destination airport or have it delivered to a reasonable location, such as a home or hotel.",
+    "source": "https://www.swiss.com/ch/en/prepare/special-care/accessible-travel.html",
+    "source_id": "swiss_accessible_travel",
+    "type": "remote",
+    "sent": false
+  },
+  {
+    "id": "d34a15ca1d927bab91ef82d55f7b501f",
+    "parent_id": "ae9bbd2bded9d83b7ee461bf52267665",
+    "section": "Transportation Reimbursement for Delays",
+    "text": "SWISS will reimburse transportation expenses to and from the airport that were incurred as a direct result of a delayed mobility device. Passengers may be required to submit documentation to substantiate these costs.",
+    "source": "https://www.swiss.com/ch/en/prepare/special-care/accessible-travel.html",
+    "source_id": "swiss_accessible_travel",
+    "type": "remote",
+    "sent": false
+  },
+  {
+    "id": "e97524db9d4bb7c9f0c6aeb0709322cc",
+    "parent_id": null,
+    "section": "Medical Requests",
+    "text": "Please submit your medical requests at med.swiss.com.",
+    "source": "https://www.swiss.com/ch/en/prepare/special-care/accessible-travel.html",
+    "source_id": "swiss_accessible_travel",
+    "type": "remote",
+    "sent": false
+  },
+  {
+    "id": "ff0ca670ee671a8f5396fc0e9a7edcd1",
+    "parent_id": null,
+    "section": "Travelling Companions",
+    "text": "A travelling companion is required if the passenger is unable to help themselves in the event of an emergency evacuation, unable to communicate with cabin crew regarding safety instructions, or unable to understand or follow safety instructions.",
+    "source": "https://www.swiss.com/ch/en/prepare/special-care/accessible-travel.html",
+    "source_id": "swiss_accessible_travel",
+    "type": "remote",
+    "sent": false
+  },
+  {
+    "id": "65df2cc2a03890bece00876346962ff4",
+    "parent_id": null,
+    "section": "Hidden Disabilities Sunflower",
+    "text": "SWISS has joined the Hidden Disabilities Sunflower program, which supports people with invisible disabilities.",
+    "source": "https://www.swiss.com/ch/en/prepare/special-care/accessible-travel.html",
+    "source_id": "swiss_accessible_travel",
+    "type": "remote",
+    "sent": false
+  },
+  {
+    "id": "95259ca76e992feb0549dd3b8c1284e9",
+    "parent_id": null,
+    "section": "Hidden Disabilities Sunflower",
+    "text": "Wearing the sunflower symbol is a discreet way of indicating invisible disabilities, letting others know that the passenger may need assistance or extra time. While the sunflower does not guarantee special services, SWISS staff will do their best to help passengers travel in comfort.",
+    "source": "https://www.swiss.com/ch/en/prepare/special-care/accessible-travel.html",
+    "source_id": "swiss_accessible_travel",
+    "type": "remote",
+    "sent": false
+  },
+  {
+    "id": "946238e2bb9a5597ee97e428083a89da",
+    "parent_id": null,
+    "section": "USA Flight Regulations",
+    "text": "For all flights that start or end in the USA, a copy of the precise wording of the accessibility regulations is available upon request at all airports from which SWISS flies to the USA.",
+    "source": "https://www.swiss.com/ch/en/prepare/special-care/accessible-travel.html",
+    "source_id": "swiss_accessible_travel",
+    "type": "remote",
+    "sent": false
+  },
+  {
+    "id": "c8de6ff8ffa0de7fcbda1046c5845491",
+    "parent_id": null,
+    "section": "US Department of Transportation Forms",
+    "text": "Forms can be obtained from the US Department of Transportation via the following methods: 1) Free hotline for passengers with disabilities: +1-800-778-4838 (voice) or +1-800-455-9880 (TTY); 2) Aviation Consumer Protection Division: +1 202-366-2220 (voice) or +1 202-366-0511 (TTY); 3) In writing: Air Consumer Protection Division, C-75, U.S. Department of Transportation, 1200 New Jersey Ave., SE., West Building, Room W96-432, Washington, DC 20590, USA.",
+    "source": "https://www.swiss.com/ch/en/prepare/special-care/accessible-travel.html",
+    "source_id": "swiss_accessible_travel",
+    "type": "remote",
+    "sent": false
+  },
+  {
+    "id": "f7fbcc27fb7e1d01ffa242139a5baed5",
+    "parent_id": "dbd0de9af964954cf41ec84b5d058828",
+    "section": "Cost Documentation",
+    "text": "Passengers may be required to submit documentation to substantiate costs associated with mobility device issues.",
+    "source": "https://www.swiss.com/ch/en/prepare/special-care/accessible-travel.html",
+    "source_id": "swiss_accessible_travel",
+    "type": "remote",
+    "sent": false
+  },
+  {
+    "id": "043f053f64d296af48192db351cbedb0",
+    "parent_id": "dbd0de9af964954cf41ec84b5d058828",
+    "section": "Loaner Wheelchairs",
+    "text": "If a mobility device is mishandled during a flight, the passenger is entitled to a loaner wheelchair from SWISS. The loaner will be customized to meet function and safety requirements as closely as possible while the original device is being returned, repaired, or replaced.",
+    "source": "https://www.swiss.com/ch/en/prepare/special-care/accessible-travel.html",
+    "source_id": "swiss_accessible_travel",
+    "type": "remote",
+    "sent": false
+  },
+  {
+    "id": "ad42d6cd4d47938773084b5b35c69d50",
+    "parent_id": "dbd0de9af964954cf41ec84b5d058828",
+    "section": "Alternative Loaner Devices",
+    "text": "If SWISS cannot provide a suitable loaner wheelchair, passengers may secure their own alternative loaner mobility device.",
+    "source": "https://www.swiss.com/ch/en/prepare/special-care/accessible-travel.html",
+    "source_id": "swiss_accessible_travel",
+    "type": "remote",
+    "sent": false
+  },
+  {
+    "id": "c9cf37e9678b45ba4163739120816c94",
+    "parent_id": "47f10f8f3e5de5e8f7fe29d7827dd18d",
+    "section": "Loaner Reimbursement",
+    "text": "Costs for alternative loaner mobility devices will be reimbursed within 30 days of the submission of documentation substantiating the expense.",
+    "source": "https://www.swiss.com/ch/en/prepare/special-care/accessible-travel.html",
+    "source_id": "swiss_accessible_travel",
+    "type": "remote",
+    "sent": false
+  },
+  {
+    "id": "f4bec71e16cf478adfe788ca55d15ff2",
+    "parent_id": "47f10f8f3e5de5e8f7fe29d7827dd18d",
+    "section": "Mobility Device Repair and Replacement",
+    "text": "If a mobility device is damaged or lost, SWISS will handle the repair or replacement with a device of comparable function and safety at SWISS's expense.",
+    "source": "https://www.swiss.com/ch/en/prepare/special-care/accessible-travel.html",
+    "source_id": "swiss_accessible_travel",
+    "type": "remote",
+    "sent": false
+  },
+  {
+    "id": "9c347ad9387e2da1afaca4613382568e",
+    "parent_id": "be33ae43a3b94a49de187c534dae9a18",
+    "section": "Preferred Vendor Repair",
+    "text": "Passengers may arrange for the repair or replacement of their mobility device through a preferred vendor. SWISS will be responsible for transporting the device to the vendor and paying the vendor directly for the associated costs.",
+    "source": "https://www.swiss.com/ch/en/prepare/special-care/accessible-travel.html",
+    "source_id": "swiss_accessible_travel",
+    "type": "remote",
+    "sent": false
+  },
+  {
+    "id": "69cd32f0495e89eb850d33b322572ff7",
+    "parent_id": "be33ae43a3b94a49de187c534dae9a18",
+    "section": "Aircraft Door Dimensions",
+    "text": "To ensure a mobility device fits through the cargo door, passengers should verify the door sizes of the aircraft. SWISS will make every effort to accommodate the device.",
+    "source": "https://www.swiss.com/ch/en/prepare/special-care/accessible-travel.html",
+    "source_id": "swiss_accessible_travel",
+    "type": "remote",
+    "sent": false
+  },
+  {
+    "id": "327b9caabde258dcd927d212bd595319",
+    "parent_id": "0dd3082f3ca526619ea8ad3bdc2db3d0",
+    "section": "Wheelchair Return",
+    "text": "Wheelchairs cannot be returned immediately after disembarkation at the following airports: Catania, Hanover, Nuremberg, Olbia, Palermo, Rotterdam, Stuttgart, and Valencia.",
+    "source": "https://www.swiss.com/ch/en/prepare/special-care/accessible-travel.html",
+    "source_id": "swiss_accessible_travel",
+    "type": "remote",
+    "sent": false
+  },
+  {
+    "id": "e808a1b21e6b1e8f5e86cf1e36b06c90",
+    "parent_id": "0dd3082f3ca526619ea8ad3bdc2db3d0",
+    "section": "Check-in Recommendation",
+    "text": "Passengers with disabilities are recommended to arrive at the check-in desk 90 minutes before the latest check-in time.",
+    "source": "https://www.swiss.com/ch/en/prepare/special-care/accessible-travel.html",
+    "source_id": "swiss_accessible_travel",
+    "type": "remote",
+    "sent": false
+  },
+  {
+    "id": "b65969be581e8f3ae66701f5f096eafe",
+    "parent_id": "0dd3082f3ca526619ea8ad3bdc2db3d0",
+    "section": "Boarding and Equipment",
+    "text": "Passengers with disabilities receive priority boarding. The airline will carry up to two wheelchairs and assistance dogs at no extra charge.",
+    "source": "https://www.swiss.com/ch/en/prepare/special-care/accessible-travel.html",
+    "source_id": "swiss_accessible_travel",
+    "type": "remote",
+    "sent": false
+  },
+  {
+    "id": "0e1c0c2891317e7d45971611ad6b4ad8",
+    "parent_id": "0dd3082f3ca526619ea8ad3bdc2db3d0",
+    "section": "Special Services Language",
+    "text": "Special services are not available in all languages.",
+    "source": "https://www.swiss.com/ch/en/prepare/special-care/accessible-travel.html",
+    "source_id": "swiss_accessible_travel",
+    "type": "remote",
+    "sent": false
+  },
+  {
+    "id": "28c7b5daa11fd56cd349e6e8e78217f2",
+    "parent_id": "f7316841ec39244c9109ea2f9789bb13",
+    "section": "Communication Language",
+    "text": "If a passenger's preferred language is not offered, further communication regarding their application will be conducted in English.",
+    "source": "https://www.swiss.com/ch/en/prepare/special-care/accessible-travel.html",
+    "source_id": "swiss_accessible_travel",
+    "type": "remote",
+    "sent": false
+  },
+  {
+    "id": "e6dcace5cfdb88068797e1709532b01f",
+    "parent_id": "f7316841ec39244c9109ea2f9789bb13",
+    "section": "Onboard Wheelchairs",
+    "text": "Onboard wheelchairs, designed to fit along the aircraft aisle, are provided on all long-haul flights and on short-haul flights upon request.",
+    "source": "https://www.swiss.com/ch/en/prepare/special-care/accessible-travel.html",
+    "source_id": "swiss_accessible_travel",
+    "type": "remote",
+    "sent": false
+  },
+  {
+    "id": "b50a2e909a093eed119d24af39045f2b",
+    "parent_id": "f7316841ec39244c9109ea2f9789bb13",
+    "section": "Cabin Crew Assistance",
+    "text": "Cabin crew provide assistance with stowing hand baggage, helping wheelchair users to and from the lavatory, and unpacking or identifying food on the meal tray.",
+    "source": "https://www.swiss.com/ch/en/prepare/special-care/accessible-travel.html",
+    "source_id": "swiss_accessible_travel",
+    "type": "remote",
+    "sent": false
+  },
+  {
+    "id": "f63278603756c589211feab10655fb87",
+    "parent_id": "f7316841ec39244c9109ea2f9789bb13",
+    "section": "Assistance Limitations",
+    "text": "Cabin crew are unable to provide medical services, assistance with eating and drinking, or assistance with toileting.",
+    "source": "https://www.swiss.com/ch/en/prepare/special-care/accessible-travel.html",
+    "source_id": "swiss_accessible_travel",
+    "type": "remote",
+    "sent": false
+  },
+  {
+    "id": "f8f7e64086fa626bd7c5b2c3c2b3ae21",
+    "parent_id": "bbed627906c2217fc19536f8dadd6c26",
+    "section": "Aircraft Seat Features",
+    "text": "Seats on all aircraft are equipped with removable armrests.",
+    "source": "https://www.swiss.com/ch/en/prepare/special-care/accessible-travel.html",
+    "source_id": "swiss_accessible_travel",
+    "type": "remote",
+    "sent": false
+  },
+  {
+    "id": "203a3915b0dd8b93d7a137be669c08a2",
+    "parent_id": "bbed627906c2217fc19536f8dadd6c26",
+    "section": "Accessible Toilets",
+    "text": "Currently, 5 out of 12 Airbus A330-300 aircraft are equipped with wheelchair-accessible toilets.",
+    "source": "https://www.swiss.com/ch/en/prepare/special-care/accessible-travel.html",
+    "source_id": "swiss_accessible_travel",
+    "type": "remote",
+    "sent": false
+  },
+  {
+    "id": "0f8e2cdd155286b65d08f5ba1dae0729",
+    "parent_id": "bbed627906c2217fc19536f8dadd6c26",
+    "section": "Emergency Row Restrictions",
+    "text": "For safety reasons, passengers with disabilities cannot be seated in emergency rows.",
+    "source": "https://www.swiss.com/ch/en/prepare/special-care/accessible-travel.html",
+    "source_id": "swiss_accessible_travel",
+    "type": "remote",
+    "sent": false
+  },
+  {
+    "id": "415f2348bee55eaa4ae82ce3a1a55a7a",
+    "parent_id": "bbed627906c2217fc19536f8dadd6c26",
+    "section": "Hearing and Vision Impairment",
+    "text": "An airport escort service is available upon request for passengers with impaired hearing or vision. Certified assistance dogs are carried in the cabin free of charge.",
+    "source": "https://www.swiss.com/ch/en/prepare/special-care/accessible-travel.html",
+    "source_id": "swiss_accessible_travel",
+    "type": "remote",
+    "sent": false
+  },
+  {
+    "id": "6014fed04955e6a569c3bc13601b9a41",
+    "parent_id": null,
+    "section": "Assistance Animals",
+    "text": "Passengers bringing an assistance animal on flights with a scheduled flight time of eight hours or more are asked to notify the airline at least 48 hours in advance. Certified assistance dogs are carried in the cabin free of charge, and an airport escort service is available upon request.",
+    "source": "https://www.swiss.com/ch/en/prepare/special-care/accessible-travel.html",
+    "source_id": "swiss_accessible_travel",
+    "type": "remote",
+    "sent": false
+  },
+  {
+    "id": "125c3b804bb213f3cc5479c2f11098c6",
+    "parent_id": null,
+    "section": "Assistance Animals",
+    "text": "Many countries impose strict vaccination rules and entry restrictions for animals, including assistance dogs. Destination countries may refuse entry to a dog if the required documentation or certificates are not provided.",
+    "source": "https://www.swiss.com/ch/en/prepare/special-care/accessible-travel.html",
+    "source_id": "swiss_accessible_travel",
+    "type": "remote",
+    "sent": false
+  },
+  {
+    "id": "dd89ce611ce37496be6a1847929bc125",
+    "parent_id": null,
+    "section": "Medical Care Form (MEDIF)",
+    "text": "A Medical Care Form (MEDIF) may be required depending on the severity of a disability. A MEDIF is mandatory for passengers with an acute disease or accident, those requiring a stretcher or oxygen, or those who require a traveling companion for health reasons. Note that cabin crew can only provide limited assistance.",
+    "source": "https://www.swiss.com/ch/en/prepare/special-care/accessible-travel.html",
+    "source_id": "swiss_accessible_travel",
+    "type": "remote",
+    "sent": false
+  },
+  {
+    "id": "ac743400c3ccaacea5033dcdcc2c3f98",
+    "parent_id": null,
+    "section": "Medical Care Form (MEDIF)",
+    "text": "The MEDIF form can be requested at the time of booking or downloaded as a PDF. Completed forms should be uploaded to med.swiss.com.",
+    "source": "https://www.swiss.com/ch/en/prepare/special-care/accessible-travel.html",
+    "source_id": "swiss_accessible_travel",
+    "type": "remote",
+    "sent": false
+  },
+  {
+    "id": "b73cd6b183a0c830c10c4bcc3295f0f7",
+    "parent_id": null,
+    "section": "Medical Care Form (MEDIF)",
+    "text": "For group travel involving passengers with disabilities, a specific group form (PDF) must be completed.",
+    "source": "https://www.swiss.com/ch/en/prepare/special-care/accessible-travel.html",
+    "source_id": "swiss_accessible_travel",
+    "type": "remote",
+    "sent": false
+  },
+  {
+    "id": "add65ecf167f2b07ef31068e49a72414",
+    "parent_id": null,
+    "section": "Medical Care Form (MEDIF)",
+    "text": "MEDIF forms must be uploaded to med.swiss.com no later than 48 hours before departure, or 72 hours before departure for passengers requiring a stretcher.",
+    "source": "https://www.swiss.com/ch/en/prepare/special-care/accessible-travel.html",
+    "source_id": "swiss_accessible_travel",
+    "type": "remote",
+    "sent": false
+  },
+  {
+    "id": "e99fb22748f7ba08ac8b4a3d81280954",
+    "parent_id": null,
+    "section": "Frequent Travellers Medical Card (FREMEC)",
+    "text": "Passengers with a chronic but stable illness who travel frequently can receive a Frequent Travellers Medical Card (FREMEC), which eliminates the need to complete a MEDIF form for every trip.",
+    "source": "https://www.swiss.com/ch/en/prepare/special-care/accessible-travel.html",
+    "source_id": "swiss_accessible_travel",
+    "type": "remote",
+    "sent": false
+  }
+]
