@@ -4,6 +4,13 @@ python-env/
 # Environment variables
 .env
 
+# Firebase service account credentials — NEVER commit this
+firebase_credentials.json
+*service_account*.json
+
+# Generated pipeline outputs
+rules/
+
 # VS Code / Visual Studio
 .vscode/
 .vs/
