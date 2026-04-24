@@ -1,5 +1,5 @@
 SCRAPER_REGISTRY = {}
-
+# Each scraper is designed to get the most out of the specific domain. Will be flattened and filtered for relevance in the next steps of the pipeline
 def register(domain):
     def decorator(func):
         SCRAPER_REGISTRY[domain] = func
@@ -17,6 +17,7 @@ def get_scraper(url: str):
 
     return None
 
+from . import eur_lex
 from . import iata
 from . import lufthansa
 from . import portoairport
