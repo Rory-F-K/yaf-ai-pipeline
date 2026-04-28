@@ -113,6 +113,32 @@ DEDUP_SIMILARITY = 0.92
 
 # Single output file for ALL extracted rules (pre-validation)
 ALL_RULES_PATH = EXTRACTED_DIR / "all_rules.json"
+# Hash manifest — maps chunk-file key → SHA-256 of that file
+MANIFEST_PATH  = EXTRACTED_DIR / ".manifest.json"
+
+
+import hashlib
+
+def _file_hash(path: Path) -> str:
+    """SHA-256 of a file's raw bytes — used to detect chunk file changes."""
+    h = hashlib.sha256()
+    with open(path, "rb") as f:
+        for block in iter(lambda: f.read(65536), b""):
+            h.update(block)
+    return h.hexdigest()
+
+
+def _load_manifest() -> dict:
+    if MANIFEST_PATH.exists():
+        with open(MANIFEST_PATH, "r", encoding="utf-8") as f:
+            return json.load(f)
+    return {}
+
+
+def _save_manifest(manifest: dict):
+    EXTRACTED_DIR.mkdir(parents=True, exist_ok=True)
+    with open(MANIFEST_PATH, "w", encoding="utf-8") as f:
+        json.dump(manifest, f, indent=2)
 
 
 def _extract_from_file(extractor: RuleExtractor, chunk_file: Path, label: str) -> list:
@@ -125,7 +151,7 @@ def _extract_from_file(extractor: RuleExtractor, chunk_file: Path, label: str) -
         return []
 
     print(f"[Extractor] {label}/{chunk_file.stem}: {len(chunks)} chunks...")
-    rules = extractor.run(chunks)   # no per-source output_path — single file only
+    rules = extractor.run(chunks)
     print(f"[Extractor] {label}/{chunk_file.stem}: {len(rules)} rules")
 
     for rule in rules:
@@ -152,7 +178,6 @@ def _dedup_across_stores(rules: list) -> list:
             desc_i = rules[i].get("description", "").lower().strip()
             desc_j = rules[j].get("description", "").lower().strip()
             if SequenceMatcher(None, desc_i, desc_j).ratio() >= DEDUP_SIMILARITY:
-                # drop the one with less content
                 if len(desc_i) >= len(desc_j):
                     drop.add(j)
                 else:
@@ -164,26 +189,21 @@ def _dedup_across_stores(rules: list) -> list:
 
 def stage_extract() -> list:
     """
-    Extract rules from BOTH chunk_store/semantic/ and chunk_store/agentic/,
-    deduplicate across both stores, and save everything to ONE file:
-        rules/extracted/all_rules.json
+    Extract rules from BOTH chunk_store/semantic/ and chunk_store/agentic/.
 
-    If all_rules.json already exists it is loaded directly (cache).
-    Delete it to force a full re-extraction.
+    Hash-based caching:
+      - .manifest.json maps each chunk file key → its SHA-256 hash.
+      - On each run all chunk files are hashed and compared to the manifest.
+        · All hashes match AND all_rules.json exists → return it unchanged (no Gemini calls).
+        · Any file is new or changed → re-extract EVERYTHING, update manifest & all_rules.json.
+      - Bootstrap: if all_rules.json already exists but manifest is missing, the manifest is
+        written now from the current hashes so the next run is a guaranteed no-op.
     """
     print("\n" + "=" * 60)
     print("  STAGE 2: RULE EXTRACTION  (semantic + agentic → single file)")
     print("=" * 60)
 
     EXTRACTED_DIR.mkdir(parents=True, exist_ok=True)
-
-    # ── Load from single cache file if available ──
-    if ALL_RULES_PATH.exists():
-        print(f"[Extractor] Loading cached rules from {ALL_RULES_PATH}")
-        with open(ALL_RULES_PATH, "r", encoding="utf-8") as f:
-            rules = json.load(f)
-        print(f"[Extractor] {len(rules)} rules loaded from cache")
-        return rules
 
     # ── Discover chunk files ──
     semantic_files = sorted(Path("chunk_store/semantic").glob("*.json"))
@@ -199,28 +219,60 @@ def stage_extract() -> list:
     print(f"[Extractor] Semantic files : {len(semantic_files)}")
     print(f"[Extractor] Agentic files  : {len(agentic_files)}")
 
+    # ── Compute current hashes ──
+    current_hashes = {}
+    all_chunk_files = (
+        [(f, "semantic") for f in semantic_files] +
+        [(f, "agentic")  for f in agentic_files]
+    )
+    for f, label in all_chunk_files:
+        current_hashes[f"{label}/{f.stem}"] = _file_hash(f)
+
+    manifest = _load_manifest()
+
+    # ── Bootstrap: manifest missing but all_rules.json exists ──
+    # Save hashes now so next run is a no-op (no re-extraction needed).
+    if not manifest and ALL_RULES_PATH.exists():
+        _save_manifest(current_hashes)
+        print(f"[Extractor] Manifest bootstrapped — loading existing all_rules.json")
+        with open(ALL_RULES_PATH, "r", encoding="utf-8") as f:
+            rules = json.load(f)
+        print(f"[Extractor] {len(rules)} rules loaded (no changes detected)")
+        return rules
+
+    # ── Check for changes ──
+    changed = [k for k, h in current_hashes.items() if manifest.get(k) != h]
+
+    if not changed and ALL_RULES_PATH.exists():
+        print(f"[Extractor] All {len(current_hashes)} chunk files unchanged — skipping extraction")
+        with open(ALL_RULES_PATH, "r", encoding="utf-8") as f:
+            rules = json.load(f)
+        print(f"[Extractor] {len(rules)} rules loaded from cache")
+        return rules
+
+    if changed:
+        print(f"[Extractor] {len(changed)} chunk file(s) changed: {', '.join(changed)}")
+
+    # ── Re-extract everything ──
     extractor      = RuleExtractor()
     semantic_rules = []
     agentic_rules  = []
 
     for f in semantic_files:
         semantic_rules.extend(_extract_from_file(extractor, f, "semantic"))
-
     for f in agentic_files:
         agentic_rules.extend(_extract_from_file(extractor, f, "agentic"))
 
     print(f"\n[Extractor] Before dedup — Semantic: {len(semantic_rules)} | Agentic: {len(agentic_rules)}")
 
-    # ── Deduplicate across both stores ──
     merged = semantic_rules + agentic_rules
     unique = _dedup_across_stores(merged)
     print(f"[Extractor] Dedup removed {len(merged) - len(unique)} duplicate(s) — {len(unique)} unique rules kept")
 
-    # ── Assign sequential IDs ──
     for i, rule in enumerate(unique, start=1):
         rule["rule_id"] = f"R{i:03d}"
 
-    # ── Save to single file ──
+    _save_manifest(current_hashes)
     with open(ALL_RULES_PATH, "w", encoding="utf-8") as f:
         json.dump(unique, f, indent=2)
     print(f"[Extractor] All rules saved → {ALL_RULES_PATH}")

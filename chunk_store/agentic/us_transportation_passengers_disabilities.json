@@ -1,0 +1,162 @@
+[
+  {
+    "id": "954b7a4015c846e6f23bfaf8335cdbe5",
+    "parent_id": "42f99798fb1e179264ad409460af8026",
+    "section": "Partnerships for Accessibility",
+    "text": "The Department of Transportation (DOT) collaborated with disability advocacy organizations, airlines, airports, and ticket agents to develop this accessibility campaign.",
+    "source": "https://www.transportation.gov/airconsumer/passengers-disabilities",
+    "source_id": "us_transportation_passengers_disabilities",
+    "type": "remote",
+    "sent": false
+  },
+  {
+    "id": "a844e986f2a4ec22ea684333674591ad",
+    "parent_id": "0b49cf9c4afa055caab3c0108b448618",
+    "section": "On-board Wheelchair Requirements",
+    "text": "Aircraft with more than 60 seats and an accessible lavatory must be equipped with an on-board wheelchair, regardless of the aircraft's delivery date. For aircraft with more than 60 seats that lack an accessible lavatory, airlines must provide an on-board wheelchair if a passenger with a disability provides 48 hours' notice of their need for the device to reach the lavatory.",
+    "source": "https://www.transportation.gov/airconsumer/passengers-disabilities",
+    "source_id": "us_transportation_passengers_disabilities",
+    "type": "remote",
+    "sent": false
+  },
+  {
+    "id": "12693640e643b11d832e7cc39a1f50ce",
+    "parent_id": "0b49cf9c4afa055caab3c0108b448618",
+    "section": "Accessibility of Airport Facilities",
+    "text": "Airlines must ensure that airport facilities and services they own, lease, or control are accessible in accordance with established rules.",
+    "source": "https://www.transportation.gov/airconsumer/passengers-disabilities",
+    "source_id": "us_transportation_passengers_disabilities",
+    "type": "remote",
+    "sent": false
+  },
+  {
+    "id": "8b5f55c83bb1fdbfae94c9ae5d67a356",
+    "parent_id": "0b49cf9c4afa055caab3c0108b448618",
+    "section": "Assistance for Passengers with Disabilities",
+    "text": "Airlines must provide assistance to passengers with disabilities in a safe and dignified manner. This includes prompt assistance with boarding, deplaning, and making connections. While cabin assistance is required, it does not extend to extensive personal services. Where level-entry boarding is unavailable, ramps or mechanical lifts must be provided for most aircraft with 19 or more seats at U.S. airports.",
+    "source": "https://www.transportation.gov/airconsumer/passengers-disabilities",
+    "source_id": "us_transportation_passengers_disabilities",
+    "type": "remote",
+    "sent": false
+  },
+  {
+    "id": "0ea44a0b9f0d1cb4bfbb4efcbf8cc8e0",
+    "parent_id": "0bde311f2802ef225974bcba75c55d03",
+    "section": "Stowage of Assistive Devices",
+    "text": "Assistive devices do not count toward carry-on baggage limits and must comply with FAA stowage rules. If a passenger with a disability chooses to preboard, their collapsible wheelchairs and other assistive devices have priority for in-cabin storage (including closets) over other passengers' items. These devices also have priority for storage in the baggage compartment.",
+    "source": "https://www.transportation.gov/airconsumer/passengers-disabilities",
+    "source_id": "us_transportation_passengers_disabilities",
+    "type": "remote",
+    "sent": false
+  },
+  {
+    "id": "ac782dc383b34267bbdd74a39ddaa885",
+    "parent_id": "0bde311f2802ef225974bcba75c55d03",
+    "section": "Battery-Powered Wheelchairs and Oxygen",
+    "text": "Airlines must accept battery-powered wheelchairs and provide necessary hazardous materials packaging for batteries at no extra charge. Passengers are permitted to use FAA-approved Portable Oxygen Concentrators during flight. Airlines may charge for optional services, such as the provision of oxygen, but cannot charge for accommodations required by regulation.",
+    "source": "https://www.transportation.gov/airconsumer/passengers-disabilities",
+    "source_id": "us_transportation_passengers_disabilities",
+    "type": "remote",
+    "sent": false
+  },
+  {
+    "id": "de85504555b432dc5d4e3624fc252eb8",
+    "parent_id": "1c20a6db8455714d59e76c27f58e31f4",
+    "section": "Scope of Accessibility Provisions",
+    "text": "Regulations cover the treatment of mobility aids, passenger information, accommodations for vision and hearing impairments, security screening, communicable diseases, medical certificates, and service animals.",
+    "source": "https://www.transportation.gov/airconsumer/passengers-disabilities",
+    "source_id": "us_transportation_passengers_disabilities",
+    "type": "remote",
+    "sent": false
+  },
+  {
+    "id": "ca8b49218d5d36348b5485dd906ea2ac",
+    "parent_id": "1c20a6db8455714d59e76c27f58e31f4",
+    "section": "Administrative and Enforcement Requirements",
+    "text": "Airlines must train personnel and contractors who interact with the public. Airlines are required to provide Complaint Resolution Officials (CROs) to address passenger concerns and must respond to written complaints. The DOT provides an enforcement mechanism, and airlines must ensure their contractors comply with these standards. Copies of 14 CFR Part 382 are available via the DOT.",
+    "source": "https://www.transportation.gov/airconsumer/passengers-disabilities",
+    "source_id": "us_transportation_passengers_disabilities",
+    "type": "remote",
+    "sent": false
+  },
+  {
+    "id": "c48983ff1014c7fa30dd3100d4c49455",
+    "parent_id": "1c20a6db8455714d59e76c27f58e31f4",
+    "section": "Public Awareness Campaign",
+    "text": "In October 2023, the DOT launched the #AccessibleAirTravel campaign to mark the 37th anniversary of the Air Carrier Access Act (ACAA) and raise awareness regarding the rights of air travelers with disabilities.",
+    "source": "https://www.transportation.gov/airconsumer/passengers-disabilities",
+    "source_id": "us_transportation_passengers_disabilities",
+    "type": "remote",
+    "sent": false
+  },
+  {
+    "id": "6440ad0bbeae6fbac1e56f730e5d71b7",
+    "parent_id": "334396e8a7e6bae64d2912c7c30ab6b9",
+    "section": "Resource Information",
+    "text": "This resource provides information regarding the rights of passengers with disabilities and the obligations of airlines under the Air Carrier Access Act, as provided by the U.S. Department of Transportation.",
+    "source": "https://www.transportation.gov/airconsumer/passengers-disabilities",
+    "source_id": "us_transportation_passengers_disabilities",
+    "type": "remote",
+    "sent": false
+  },
+  {
+    "id": "7f112fcb6a61d7302fbd1291e148aebc",
+    "parent_id": "846400a5b3c5eb57f92ea583b0c32a2a",
+    "section": "Air Carrier Access Act Overview",
+    "text": "The Air Carrier Access Act (49 U.S.C. \u00a7 41705) prohibits discrimination on the basis of disability in air travel. The Department of Transportation (DOT) enforces this through Title 14 CFR Part 382, which applies to all flights of U.S. carriers.",
+    "source": "https://www.transportation.gov/airconsumer/passengers-disabilities",
+    "source_id": "us_transportation_passengers_disabilities",
+    "type": "remote",
+    "sent": false
+  },
+  {
+    "id": "b293c808b33ef31710e095629cba5afb",
+    "parent_id": "846400a5b3c5eb57f92ea583b0c32a2a",
+    "section": "Prohibition of Discriminatory Practices",
+    "text": "Airlines may not refuse transportation based on disability. If an airline excludes a passenger with a disability due to safety concerns, they must provide a written explanation. Airlines are prohibited from limiting the number of passengers with disabilities on any flight.",
+    "source": "https://www.transportation.gov/airconsumer/passengers-disabilities",
+    "source_id": "us_transportation_passengers_disabilities",
+    "type": "remote",
+    "sent": false
+  },
+  {
+    "id": "18acd36775358805e538224480d26ee9",
+    "parent_id": "846400a5b3c5eb57f92ea583b0c32a2a",
+    "section": "Advance Notice Requirements",
+    "text": "Airlines may not require advance notice for a person with a disability to travel. However, they may require up to 48 hours' advance notice for specific accommodations requiring preparation, such as respirator hook-ups or transporting an electric wheelchair on aircraft with fewer than 60 seats.",
+    "source": "https://www.transportation.gov/airconsumer/passengers-disabilities",
+    "source_id": "us_transportation_passengers_disabilities",
+    "type": "remote",
+    "sent": false
+  },
+  {
+    "id": "932604336ac64329af21c2861d6ea37a",
+    "parent_id": "6a2f27c90c947c07060c713ccf69c8d4",
+    "section": "Safety Assistants",
+    "text": "Airlines generally cannot require a passenger with a disability to travel with another person. In limited circumstances where a safety assistant is required, if the airline and passenger disagree, the airline may require the assistant but cannot charge for their transportation.",
+    "source": "https://www.transportation.gov/airconsumer/passengers-disabilities",
+    "source_id": "us_transportation_passengers_disabilities",
+    "type": "remote",
+    "sent": false
+  },
+  {
+    "id": "c9b36fa26ad205b445db4215cf566c4c",
+    "parent_id": "6a2f27c90c947c07060c713ccf69c8d4",
+    "section": "Seating Restrictions",
+    "text": "Airlines cannot restrict seating based on disability unless required by FAA or foreign-government safety regulations. For example, exit row seating is restricted to individuals who can perform necessary functions during an emergency evacuation.",
+    "source": "https://www.transportation.gov/airconsumer/passengers-disabilities",
+    "source_id": "us_transportation_passengers_disabilities",
+    "type": "remote",
+    "sent": false
+  },
+  {
+    "id": "7ded2b830c8b951d64cdd0a93731f46b",
+    "parent_id": "6a2f27c90c947c07060c713ccf69c8d4",
+    "section": "Accessibility of Facilities",
+    "text": "New aircraft requirements include: movable aisle armrests on half of aisle seats for aircraft with 30+ seats; accessible lavatories on new twin-aisle aircraft; and priority cabin space for folding wheelchairs on aircraft with 100+ seats.",
+    "source": "https://www.transportation.gov/airconsumer/passengers-disabilities",
+    "source_id": "us_transportation_passengers_disabilities",
+    "type": "remote",
+    "sent": false
+  }
+]
