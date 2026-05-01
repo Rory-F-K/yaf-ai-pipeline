@@ -1,5 +1,7 @@
 SCRAPER_REGISTRY = {}
 # Each scraper is designed to get the most out of the specific domain. Will be flattened and filtered for relevance in the next steps of the pipeline
+
+# Decorator to register a scraper function for a specific domain
 def register(domain):
     def decorator(func):
         SCRAPER_REGISTRY[domain] = func
