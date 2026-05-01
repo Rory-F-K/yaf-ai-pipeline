@@ -42,6 +42,7 @@ from firestore.client import FirestoreClient
 
 # ── Paths ──────────────────────────────────────────────────────────────────────
 SOURCES_DIR    = Path("sources")
+SOCIAL_RAW_DIR = Path("chunk_store") / "social" / "raw"
 AGENTIC_DIR    = Path("chunk_store/agentic")
 EXTRACTED_DIR  = Path("rules/extracted")
 VALIDATED_DIR  = Path("rules/validated")
@@ -101,6 +102,14 @@ def stage_chunk():
             continue
         print(f"[Chunk] Remote: {input_id}")
         pipeline.process(src)
+
+    # Social media sources
+    social_run_id = "x_social"
+    if (SOCIAL_RAW_DIR / f"{social_run_id}.json").exists():
+        print(f"[Skip] Already scraped: {social_run_id}")
+    else:
+        print(f"[Chunk] Social: {social_run_id}")
+        pipeline.process_social(run_id=social_run_id)
 
     print("[Done] All sources processed")
 
