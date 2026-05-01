@@ -88,6 +88,15 @@ class FirestoreClient:
 
     # ── public API ─────────────────────────────────────────────────────────────
 
+    def fetch_all_rules(self) -> list:
+        """
+        Fetch all rules from Firestore and return them as a list of dicts.
+        Each dict contains all stored fields (rule_id, category, title,
+        description, source, version, content_hash, pushed_at).
+        """
+        docs = self.collection.stream()
+        return [doc.to_dict() for doc in docs]
+
     def push_rules(self, rules: list) -> dict:
         """
         Push validated rules to Firestore, skipping any whose content_hash
