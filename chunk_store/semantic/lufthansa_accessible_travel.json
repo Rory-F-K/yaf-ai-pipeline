@@ -1,12 +1,14 @@
 [
   {
-    "id": "f0808a7f054883ed8cf27e509fcbc92c",
+    "id": "c620f5688b6106a30e9e40af346f5b39",
     "section": "General",
-    "text": "Navigation Book & Prepare My bookings Discover Lufthansa 100 Years Lufthansa Navigation Book & Prepare My bookings Discover Lufthansa 100 Years Lufthansa Book & Prepare My bookings Discover Lufthansa 100 Years Lufthansa Start Assistance requirements Accessible travel Start Assistance requirements Accessible travel Start Assistance requirements Accessible travel Assistance requirements Accessible travel Services for travellers with reduced mobility or sensory or cognitive impairments We want you to feel safe, cared for and welcome at all times. Find out more here about our services for passengers with reduced mobility or sensory impairments for an accessible and comfortable journey. To make your time at the airport and your journey on board as comfortable as possible, we ask you to provide us with some information in advance. This allows us to meet your individual needs as best as possible. Please let us know what assistance you require no later than 48 hours before departure. This enables us to provide you with the best possible assistance. If you are travelling in a group with your own mobility aids, please notify us of your care requirements as early as possible.",
+    "text": "Navigation Book & Prepare My bookings Discover Lufthansa 100 Years Lufthansa Navigation Book & Prepare My bookings Discover Lufthansa 100 Years Lufthansa Book & Prepare My bookings Discover Lufthansa 100 Years Lufthansa Assistance requirements Accessible travel Assistance requirements Accessible travel Assistance requirements Accessible travel Assistance requirements Accessible travel Services for travellers with reduced mobility or sensory or cognitive impairments We want you to feel safe, cared for and welcome at all times. Find out more here about our services for passengers with reduced mobility or sensory impairments for an accessible and comfortable journey. To make your time at the airport and your journey on board as comfortable as possible, we ask you to provide us with some information in advance. This allows us to meet your individual needs as best as possible. Please let us know what assistance you require no later than 48 hours before departure. This enables us to provide you with the best possible assistance. If you are travelling in a group with your own mobility aids, please notify us of your care requirements as early as possible.",
     "sent": false,
     "source": "https://www.lufthansa.com/be/en/accessible-travel",
     "source_id": "lufthansa_accessible_travel",
-    "type": "remote"
+    "type": "remote",
+    "entity": "Lufthansa",
+    "entity_type": "airline"
   },
   {
     "id": "d2a2a2b98e96c1b0b9327e68c4608080",
@@ -15,7 +17,9 @@
     "sent": false,
     "source": "https://www.lufthansa.com/be/en/accessible-travel",
     "source_id": "lufthansa_accessible_travel",
-    "type": "remote"
+    "type": "remote",
+    "entity": "Lufthansa",
+    "entity_type": "airline"
   },
   {
     "id": "b43c58d895aa34b3842b510118527d1f",
@@ -24,7 +28,9 @@
     "sent": false,
     "source": "https://www.lufthansa.com/be/en/accessible-travel",
     "source_id": "lufthansa_accessible_travel",
-    "type": "remote"
+    "type": "remote",
+    "entity": "Lufthansa",
+    "entity_type": "airline"
   },
   {
     "id": "d28e6e4c6b3f6b76da7209022973d944",
@@ -33,7 +39,9 @@
     "sent": false,
     "source": "https://www.lufthansa.com/be/en/accessible-travel",
     "source_id": "lufthansa_accessible_travel",
-    "type": "remote"
+    "type": "remote",
+    "entity": "Lufthansa",
+    "entity_type": "airline"
   },
   {
     "id": "68888198d4dbf70d0b7b0f9647e341ed",
@@ -42,7 +50,9 @@
     "sent": false,
     "source": "https://www.lufthansa.com/be/en/accessible-travel",
     "source_id": "lufthansa_accessible_travel",
-    "type": "remote"
+    "type": "remote",
+    "entity": "Lufthansa",
+    "entity_type": "airline"
   },
   {
     "id": "d56cf22e74e369fbec76f8440474c94c",
@@ -51,7 +61,9 @@
     "sent": false,
     "source": "https://www.lufthansa.com/be/en/accessible-travel",
     "source_id": "lufthansa_accessible_travel",
-    "type": "remote"
+    "type": "remote",
+    "entity": "Lufthansa",
+    "entity_type": "airline"
   },
   {
     "id": "73e614e5326999c0830ed0714ad9f8ef",
@@ -60,7 +72,9 @@
     "sent": false,
     "source": "https://www.lufthansa.com/be/en/accessible-travel",
     "source_id": "lufthansa_accessible_travel",
-    "type": "remote"
+    "type": "remote",
+    "entity": "Lufthansa",
+    "entity_type": "airline"
   },
   {
     "id": "d1b7e1db3420c3fa7719321e847f1704",
@@ -69,7 +83,9 @@
     "sent": false,
     "source": "https://www.lufthansa.com/be/en/accessible-travel",
     "source_id": "lufthansa_accessible_travel",
-    "type": "remote"
+    "type": "remote",
+    "entity": "Lufthansa",
+    "entity_type": "airline"
   },
   {
     "id": "5264df8f0b369ebeefd3facce6bc6beb",
@@ -78,7 +94,9 @@
     "sent": false,
     "source": "https://www.lufthansa.com/be/en/accessible-travel",
     "source_id": "lufthansa_accessible_travel",
-    "type": "remote"
+    "type": "remote",
+    "entity": "Lufthansa",
+    "entity_type": "airline"
   },
   {
     "id": "0fef50b29d53986102410dd6c5a0137d",
@@ -87,7 +105,9 @@
     "sent": false,
     "source": "https://www.lufthansa.com/be/en/accessible-travel",
     "source_id": "lufthansa_accessible_travel",
-    "type": "remote"
+    "type": "remote",
+    "entity": "Lufthansa",
+    "entity_type": "airline"
   },
   {
     "id": "8c63b1cf619dc6e21419e0eb3e832b3a",
@@ -96,7 +116,9 @@
     "sent": false,
     "source": "https://www.lufthansa.com/be/en/accessible-travel",
     "source_id": "lufthansa_accessible_travel",
-    "type": "remote"
+    "type": "remote",
+    "entity": "Lufthansa",
+    "entity_type": "airline"
   },
   {
     "id": "72a605617b3a3bbc64f175c8b6c7bb6c",
@@ -105,7 +127,9 @@
     "sent": false,
     "source": "https://www.lufthansa.com/be/en/accessible-travel",
     "source_id": "lufthansa_accessible_travel",
-    "type": "remote"
+    "type": "remote",
+    "entity": "Lufthansa",
+    "entity_type": "airline"
   },
   {
     "id": "8ac3b564778b6a9692c8fbab446b40c2",
@@ -114,16 +138,20 @@
     "sent": false,
     "source": "https://www.lufthansa.com/be/en/accessible-travel",
     "source_id": "lufthansa_accessible_travel",
-    "type": "remote"
+    "type": "remote",
+    "entity": "Lufthansa",
+    "entity_type": "airline"
   },
   {
-    "id": "dbb0f97cda0236a1420149b6865373a7",
+    "id": "6db8736d08887038192401b3827b02db",
     "section": "Find out more about our services for each type of impairment:",
-    "text": "You may freely give, refuse or withdraw your consent at any time using the link provided at the bottom of each page. You can consent to our use of cookies by clicking on Agree. For more information on which data is collected and how it is shared with our partners please read our privacy and cookie policy : Privacy Policy Cookie Policy We use cookies and similar technologies that are necessary to run the app and the website. You may Book & Prepare My bookings Discover Lufthansa 100 Years Lufthansa Start Assistance requirements Accessible travel Services for passengers with reduced mobility Start Assistance requirements Accessible travel Services for passengers with reduced mobility Start Assistance requirements Accessible travel Services for passengers with reduced mobility Assistance requirements Services for passengers with reduced mobility",
+    "text": "You may freely give, refuse or withdraw your consent at any time using the link provided at the bottom of each page. You can consent to our use of cookies by clicking on Agree. For more information on which data is collected and how it is shared with our partners please read our privacy and cookie policy : Privacy Policy Cookie Policy We use cookies and similar technologies that are necessary to run the app and the website. You may Book & Prepare My bookings Discover Lufthansa 100 Years Lufthansa Assistance requirements Accessible travel Services for passengers with reduced mobility Assistance requirements Accessible travel Services for passengers with reduced mobility Assistance requirements Accessible travel Services for passengers with reduced mobility Assistance requirements Services for passengers with reduced mobility",
     "sent": false,
     "source": "https://www.lufthansa.com/be/en/accessible-travel",
     "source_id": "lufthansa_accessible_travel",
-    "type": "remote"
+    "type": "remote",
+    "entity": "Lufthansa",
+    "entity_type": "airline"
   },
   {
     "id": "8f90797ba0ad0a5b034723dd175e7412",
@@ -132,7 +160,9 @@
     "sent": false,
     "source": "https://www.lufthansa.com/be/en/accessible-travel",
     "source_id": "lufthansa_accessible_travel",
-    "type": "remote"
+    "type": "remote",
+    "entity": "Lufthansa",
+    "entity_type": "airline"
   },
   {
     "id": "be28a2ea1f473e855f226ddd1b628949",
@@ -141,7 +171,9 @@
     "sent": false,
     "source": "https://www.lufthansa.com/be/en/accessible-travel",
     "source_id": "lufthansa_accessible_travel",
-    "type": "remote"
+    "type": "remote",
+    "entity": "Lufthansa",
+    "entity_type": "airline"
   },
   {
     "id": "6660ec65105412e0b9657b65bebbd3c6",
@@ -150,7 +182,9 @@
     "sent": false,
     "source": "https://www.lufthansa.com/be/en/accessible-travel",
     "source_id": "lufthansa_accessible_travel",
-    "type": "remote"
+    "type": "remote",
+    "entity": "Lufthansa",
+    "entity_type": "airline"
   },
   {
     "id": "e8ad4b6ce8a034060e42f933c3f9fdfc",
@@ -159,7 +193,9 @@
     "sent": false,
     "source": "https://www.lufthansa.com/be/en/accessible-travel",
     "source_id": "lufthansa_accessible_travel",
-    "type": "remote"
+    "type": "remote",
+    "entity": "Lufthansa",
+    "entity_type": "airline"
   },
   {
     "id": "53bf1197d3158d6305c675c24b56ef1b",
@@ -168,7 +204,9 @@
     "sent": false,
     "source": "https://www.lufthansa.com/be/en/accessible-travel",
     "source_id": "lufthansa_accessible_travel",
-    "type": "remote"
+    "type": "remote",
+    "entity": "Lufthansa",
+    "entity_type": "airline"
   },
   {
     "id": "a0fa9c3db9db1faa27f48f39e0965f89",
@@ -177,7 +215,9 @@
     "sent": false,
     "source": "https://www.lufthansa.com/be/en/accessible-travel",
     "source_id": "lufthansa_accessible_travel",
-    "type": "remote"
+    "type": "remote",
+    "entity": "Lufthansa",
+    "entity_type": "airline"
   },
   {
     "id": "5806eabc2061872e5d93036ee75ce58d",
@@ -186,7 +226,9 @@
     "sent": false,
     "source": "https://www.lufthansa.com/be/en/accessible-travel",
     "source_id": "lufthansa_accessible_travel",
-    "type": "remote"
+    "type": "remote",
+    "entity": "Lufthansa",
+    "entity_type": "airline"
   },
   {
     "id": "977aedd9201ff9c51b135cfb6ff05a55",
@@ -195,7 +237,9 @@
     "sent": false,
     "source": "https://www.lufthansa.com/be/en/accessible-travel",
     "source_id": "lufthansa_accessible_travel",
-    "type": "remote"
+    "type": "remote",
+    "entity": "Lufthansa",
+    "entity_type": "airline"
   },
   {
     "id": "1baba4182454fa84cad876d23e473dc6",
@@ -204,16 +248,20 @@
     "sent": false,
     "source": "https://www.lufthansa.com/be/en/accessible-travel",
     "source_id": "lufthansa_accessible_travel",
-    "type": "remote"
+    "type": "remote",
+    "entity": "Lufthansa",
+    "entity_type": "airline"
   },
   {
-    "id": "a6b224edda8d83f6a0b6781268575378",
+    "id": "443f8a3c0b34452eb6d1611ed5ab4cd1",
     "section": "Find out more about our services for each type of impairment:",
-    "text": "Book & Prepare My bookings Discover Lufthansa 100 Years Lufthansa Start Assistance requirements Accessible travel Cognitive impairment Start Assistance requirements Accessible travel Cognitive impairment Start Assistance requirements Accessible travel Cognitive impairment Assistance requirements Services for passengers with cognitive impairment Airports can be big and confusing. This can make travelling difficult and stressful. Register for any support you may need If you need help, we will accompany you throughout your time at the airport. We will also help you board and disembark before the other passengers. In the event of delays or other travel-related problems, we will give you special instructions. You can register for assistance online here: Register for assistance The link will be opened in a new browser tab Please note that, for your own safety, the crew\u2019s instructions during the flight must be followed. Travelling companion A travelling companion may be helpful for you.",
+    "text": "Book & Prepare My bookings Discover Lufthansa 100 Years Lufthansa Assistance requirements Accessible travel Cognitive impairment Assistance requirements Accessible travel Cognitive impairment Assistance requirements Accessible travel Cognitive impairment Assistance requirements Services for passengers with cognitive impairment Airports can be big and confusing. This can make travelling difficult and stressful. Register for any support you may need If you need help, we will accompany you throughout your time at the airport. We will also help you board and disembark before the other passengers. In the event of delays or other travel-related problems, we will give you special instructions. You can register for assistance online here: Register for assistance The link will be opened in a new browser tab Please note that, for your own safety, the crew\u2019s instructions during the flight must be followed. Travelling companion A travelling companion may be helpful for you.",
     "sent": false,
     "source": "https://www.lufthansa.com/be/en/accessible-travel",
     "source_id": "lufthansa_accessible_travel",
-    "type": "remote"
+    "type": "remote",
+    "entity": "Lufthansa",
+    "entity_type": "airline"
   },
   {
     "id": "6a5ae207b54fb27e92790caa9fa42e72",
@@ -222,7 +270,9 @@
     "sent": false,
     "source": "https://www.lufthansa.com/be/en/accessible-travel",
     "source_id": "lufthansa_accessible_travel",
-    "type": "remote"
+    "type": "remote",
+    "entity": "Lufthansa",
+    "entity_type": "airline"
   },
   {
     "id": "762e1c952c41898edc220000d3114f41",
@@ -231,7 +281,9 @@
     "sent": false,
     "source": "https://www.lufthansa.com/be/en/accessible-travel",
     "source_id": "lufthansa_accessible_travel",
-    "type": "remote"
+    "type": "remote",
+    "entity": "Lufthansa",
+    "entity_type": "airline"
   },
   {
     "id": "1b2d4b642d9dda32bf30134b5193dcca",
@@ -240,16 +292,20 @@
     "sent": false,
     "source": "https://www.lufthansa.com/be/en/accessible-travel",
     "source_id": "lufthansa_accessible_travel",
-    "type": "remote"
+    "type": "remote",
+    "entity": "Lufthansa",
+    "entity_type": "airline"
   },
   {
-    "id": "4fc1e634ad4402f754e74a5cf11867bb",
+    "id": "15c0a7a8e44ac28d3767395e453f170c",
     "section": "Hidden Disabilities Sunflower",
-    "text": "Lufthansa has joined the Hidden Disabilities Sunflower programme, which supports people with invisible disabilities. \u200b Find out more about Hidden Disabilities Sunflower The link will be opened in a new browser tab \u200b Find out more about Hidden Disabilities Sunflower The link will be opened in a new browser tab The link will be opened in a new browser tab Wearing the sunflower symbol is a discreet way of indicating invisible disabilities. However, all our staff will do their Lufthansa partners Sustainability The link will be opened in a new browser tab , Please note that with this link you are visiting an external website that may not follow the sa Book & Prepare My bookings Discover Lufthansa 100 Years Lufthansa Start Assistance requirements Accessible travel Visual impairment Start Assistance requirements Accessible travel Visual impairment Start Assistance requirements Accessible travel Visual impairment Assistance requirements Services for passengers with visual impairments Flying with a visual impairment should be as easy as possible for affected travellers. On this page, you will find helpful tips and support to make your trip safe and comfortable.",
+    "text": "Lufthansa has joined the Hidden Disabilities Sunflower programme, which supports people with invisible disabilities. \u200b Find out more about Hidden Disabilities Sunflower The link will be opened in a new browser tab \u200b Find out more about Hidden Disabilities Sunflower The link will be opened in a new browser tab The link will be opened in a new browser tab Wearing the sunflower symbol is a discreet way of indicating invisible disabilities. However, all our staff will do their Lufthansa partners Sustainability The link will be opened in a new browser tab , Please note that with this link you are visiting an external website that may not follow the sa Book & Prepare My bookings Discover Lufthansa 100 Years Lufthansa Assistance requirements Accessible travel Visual impairment Assistance requirements Accessible travel Visual impairment Assistance requirements Accessible travel Visual impairment Assistance requirements Services for passengers with visual impairments Flying with a visual impairment should be as easy as possible for affected travellers. On this page, you will find helpful tips and support to make your trip safe and comfortable.",
     "sent": false,
     "source": "https://www.lufthansa.com/be/en/accessible-travel",
     "source_id": "lufthansa_accessible_travel",
-    "type": "remote"
+    "type": "remote",
+    "entity": "Lufthansa",
+    "entity_type": "airline"
   },
   {
     "id": "9c83c30686dd9df3f2e1abe18dba2d0c",
@@ -258,7 +314,9 @@
     "sent": false,
     "source": "https://www.lufthansa.com/be/en/accessible-travel",
     "source_id": "lufthansa_accessible_travel",
-    "type": "remote"
+    "type": "remote",
+    "entity": "Lufthansa",
+    "entity_type": "airline"
   },
   {
     "id": "06773fb3ad2582df659189040e2931d7",
@@ -267,34 +325,31 @@
     "sent": false,
     "source": "https://www.lufthansa.com/be/en/accessible-travel",
     "source_id": "lufthansa_accessible_travel",
-    "type": "remote"
+    "type": "remote",
+    "entity": "Lufthansa",
+    "entity_type": "airline"
   },
   {
-    "id": "5bd349a74a54201f5eabce37a62217ce",
+    "id": "ed0fd603e172d20c542dd640cc0ec8d3",
     "section": "Hidden Disabilities Sunflower",
-    "text": "To destination airport To destination airport Our staff will also be happy to help you at your destination or if you need to change flights. The Be My Eyes app offers valuable assistance for people with impaired vision and makes travelling easier. More about the Be My Eyes app The link will be opened in a new browser tab The Be My Eyes app offers valuable assistance for people with impaired vision and makes travelling easier. More about the Be My Eyes app The link will be opened in a new browser tab More about the Be My Eyes app The link will be opened in a new browser tab The link will be opened in a new browser tab More information around this topic Accessible trav Book & Prepare My bookings Discover Lufthansa 100 Years Lufthansa Start Assistance requirements Accessible travel Hearing impairment Start Assistance requirements Accessible travel Hearing impairment Start Assistance requirements Accessible travel Hearing impairment Assistance requirements Services for passengers with hearing impairments Flying with a hearing impairment can have its own particular challenges.",
+    "text": "To destination airport To destination airport Our staff will also be happy to help you at your destination or if you need to change flights. The Be My Eyes app offers valuable assistance for people with impaired vision and makes travelling easier. More about the Be My Eyes app The link will be opened in a new browser tab The Be My Eyes app offers valuable assistance for people with impaired vision and makes travelling easier. More about the Be My Eyes app The link will be opened in a new browser tab More about the Be My Eyes app The link will be opened in a new browser tab The link will be opened in a new browser tab More information around this topic Accessible trav Book & Prepare My bookings Discover Lufthansa 100 Years Lufthansa Assistance requirements Accessible travel Hearing impairment Assistance requirements Accessible travel Hearing impairment Assistance requirements Accessible travel Hearing impairment Assistance requirements Services for passengers with hearing impairments Flying with a hearing impairment can have its own particular challenges. This page contains helpful information and tips to make your journey as comfortable and stress-free as possible.",
     "sent": false,
     "source": "https://www.lufthansa.com/be/en/accessible-travel",
     "source_id": "lufthansa_accessible_travel",
-    "type": "remote"
+    "type": "remote",
+    "entity": "Lufthansa",
+    "entity_type": "airline"
   },
   {
-    "id": "6a03f7d2573c8f7febf0874f6859d2d7",
+    "id": "f924cee42ed7c602d25921c96126d266",
     "section": "Hidden Disabilities Sunflower",
-    "text": "This page contains helpful information and tips to make your journey as comfortable and stress-free as possible. Booking and reservation You can register your assistance requirements online here: \u200b Register your assistance requirements The link will be opened in a new browser tab You can find more information about registering an assistance dog here: \u200b Information about the carriage of assistance dogs At the airport If required, we will be happy to accompany you throughout your entire time at the airport. Upon request, we will also assist you at the gate when boarding and disembarking, preferably before other passengers. If needed, we will provide you with separate instructions in the event of delays or other travel matters. \u200b See check-in information On board Our cabin crew will provide you with separate, personal safety instructions. We offer you a wide range of films with subtitles in German and English.",
+    "text": "Flying with a hearing impairment can have its own particular challenges. More information around this topic Accessible travel Passengers with sensory impairment Services for passengers with reduced mobility Information for the USA Register your assistance requirements online Hearing impairment Visual impairment Cognitive impairment Flying with a hearing impairment can have its own particular challenges. Booking and reservation You can register your assistance requirements online here: \u200b Register your assistance requirements The link will be opened in a new browser tab You can find more information about registering an assistance dog here: \u200b Information about the carriage of assistance dogs At the airport If required, we will be happy to accompany",
     "sent": false,
     "source": "https://www.lufthansa.com/be/en/accessible-travel",
     "source_id": "lufthansa_accessible_travel",
-    "type": "remote"
-  },
-  {
-    "id": "ba4e7090667738a9a21f997f39c8dd0c",
-    "section": "Hidden Disabilities Sunflower",
-    "text": "More information around this topic Accessible travel Passengers with sensory impairment Services for passengers with reduced mobility Information for the USA Register your assistance requirements online Hearing impairment Visual impairment Cognitive impairment Services for passengers with hearing impairments Services for passengers with hearing impairments Flying with a hearing impairment can have its own particular challenges. More information around this topic Accessible travel Passengers with sensory impairment Services for passengers with reduced mobility Information for the USA Register your assistance requirements online Hearing impairment Visual impairment Cognitive impairment Flying with a hearing impairment can have its own particular challenges. Booking and reservation You can register your assistance requirements online here: \u200b Register your assistance requirements The link will be opened in a new browser tab You can find more information about registering an assistance dog here: \u200b Information about the carriage of assistance dogs At the airport If required, we will be happy to accompany",
-    "sent": false,
-    "source": "https://www.lufthansa.com/be/en/accessible-travel",
-    "source_id": "lufthansa_accessible_travel",
-    "type": "remote"
+    "type": "remote",
+    "entity": "Lufthansa",
+    "entity_type": "airline"
   },
   {
     "id": "0cff2844d08106589f790815b466a332",
@@ -303,7 +358,9 @@
     "sent": false,
     "source": "https://www.lufthansa.com/be/en/accessible-travel",
     "source_id": "lufthansa_accessible_travel",
-    "type": "remote"
+    "type": "remote",
+    "entity": "Lufthansa",
+    "entity_type": "airline"
   },
   {
     "id": "a78fb212b8b6e4fe4c624f820f51f5ef",
@@ -312,16 +369,20 @@
     "sent": false,
     "source": "https://www.lufthansa.com/be/en/accessible-travel",
     "source_id": "lufthansa_accessible_travel",
-    "type": "remote"
+    "type": "remote",
+    "entity": "Lufthansa",
+    "entity_type": "airline"
   },
   {
-    "id": "ce8c9a1f118d74ae5f03bafd198abea5",
+    "id": "4bb9ddbe2a7fefa05c405a25d2a8b6b7",
     "section": "Hidden Disabilities Sunflower",
-    "text": "Book & Prepare My bookings Discover Lufthansa 100 Years Lufthansa Start Baggage Travelling with animals Assistance dogs Start Baggage Travelling with animals Assistance dogs Start Baggage Travelling with animals Assistance dogs Travelling with animals Assistance dogs Regardless of its breed or type, an assistance dog is specially trained to take on tasks or work for a person with an impairment. These may include visual, sensory, psychiatric, intellectual or other cognitive impairments. You can take an assistance dog with you on any route free of charge. However, certain requirements must be met for you to take a dog into the cabin: In order to ensure the safe and undisturbed operation of the flight, your dog must be trained to obey your commands and must behave appropriately in a public space (it must not bark, growl or jump up at people or other animals). Your dog must never defecate in an uncontrolled manner in the cabin or at the gate. If it is necessary, it must be done in a way that does not affect the hygiene or health of others.",
+    "text": "Book & Prepare My bookings Discover Lufthansa 100 Years Lufthansa Baggage Travelling with animals Assistance dogs Baggage Travelling with animals Assistance dogs Baggage Travelling with animals Assistance dogs Travelling with animals Assistance dogs Regardless of its breed or type, an assistance dog is specially trained to take on tasks or work for a person with an impairment. These may include visual, sensory, psychiatric, intellectual or other cognitive impairments. You can take an assistance dog with you on any route free of charge. However, certain requirements must be met for you to take a dog into the cabin: In order to ensure the safe and undisturbed operation of the flight, your dog must be trained to obey your commands and must behave appropriately in a public space (it must not bark, growl or jump up at people or other animals). Your dog must never defecate in an uncontrolled manner in the cabin or at the gate. If it is necessary, it must be done in a way that does not affect the hygiene or health of others.",
     "sent": false,
     "source": "https://www.lufthansa.com/be/en/accessible-travel",
     "source_id": "lufthansa_accessible_travel",
-    "type": "remote"
+    "type": "remote",
+    "entity": "Lufthansa",
+    "entity_type": "airline"
   },
   {
     "id": "1ae662b2016bc8601707982819603bec",
@@ -330,7 +391,9 @@
     "sent": false,
     "source": "https://www.lufthansa.com/be/en/accessible-travel",
     "source_id": "lufthansa_accessible_travel",
-    "type": "remote"
+    "type": "remote",
+    "entity": "Lufthansa",
+    "entity_type": "airline"
   },
   {
     "id": "49dbaa0e72a5ae37784d7e391197b4f5",
@@ -339,7 +402,9 @@
     "sent": false,
     "source": "https://www.lufthansa.com/be/en/accessible-travel",
     "source_id": "lufthansa_accessible_travel",
-    "type": "remote"
+    "type": "remote",
+    "entity": "Lufthansa",
+    "entity_type": "airline"
   },
   {
     "id": "092bef4d61cc6ab4620b1a2487f1504c",
@@ -348,7 +413,9 @@
     "sent": false,
     "source": "https://www.lufthansa.com/be/en/accessible-travel",
     "source_id": "lufthansa_accessible_travel",
-    "type": "remote"
+    "type": "remote",
+    "entity": "Lufthansa",
+    "entity_type": "airline"
   },
   {
     "id": "da7fcf9ad11768c4723360f3d342fada",
@@ -357,7 +424,9 @@
     "sent": false,
     "source": "https://www.lufthansa.com/be/en/accessible-travel",
     "source_id": "lufthansa_accessible_travel",
-    "type": "remote"
+    "type": "remote",
+    "entity": "Lufthansa",
+    "entity_type": "airline"
   },
   {
     "id": "faddb9dd97bc8dbe0fe92ce190a49bb6",
@@ -366,16 +435,20 @@
     "sent": false,
     "source": "https://www.lufthansa.com/be/en/accessible-travel",
     "source_id": "lufthansa_accessible_travel",
-    "type": "remote"
+    "type": "remote",
+    "entity": "Lufthansa",
+    "entity_type": "airline"
   },
   {
-    "id": "6d0eb0923b5ce2d8299aae94f3623d1d",
+    "id": "0725dd5307f8aad22a1894105ddc2660",
     "section": "You have the following options for registering your assistance dog:",
-    "text": "Book & Prepare My bookings Discover Lufthansa 100 Years Lufthansa Start Assistance requirements Accessible travel Passengers with sensory impairment Start Assistance requirements Accessible travel Passengers with sensory impairment Start Assistance requirements Accessible travel Passengers with sensory impairment Assistance requirements Passengers with sensory impairment Passengers with sensory impairment Lufthansa provides special services for passengers with hearing or visual impairments or with cognitive disabilities before, during and after the flight. Booking and reservation When you book your trip, you can help us to provide the service you need on the ground and during your flight. We require some advance information from you so that we can ensure your comfort at the airport and on board our aircraft. Please let us know by telephone what assistance you require. You can also register your assistance requirements after booking online. When booking tickets by telephone or at a travel agency, please indicate your needs before completing the booking. Please let us know what assistance you require at least 48 hours before departure to ensure you receive the best support.",
+    "text": "Book & Prepare My bookings Discover Lufthansa 100 Years Lufthansa Assistance requirements Accessible travel Passengers with sensory impairment Assistance requirements Accessible travel Passengers with sensory impairment Assistance requirements Accessible travel Passengers with sensory impairment Assistance requirements Passengers with sensory impairment Passengers with sensory impairment Lufthansa provides special services for passengers with hearing or visual impairments or with cognitive disabilities before, during and after the flight. Booking and reservation When you book your trip, you can help us to provide the service you need on the ground and during your flight. We require some advance information from you so that we can ensure your comfort at the airport and on board our aircraft. Please let us know by telephone what assistance you require. You can also register your assistance requirements after booking online. When booking tickets by telephone or at a travel agency, please indicate your needs before completing the booking. Please let us know what assistance you require at least 48 hours before departure to ensure you receive the best support.",
     "sent": false,
     "source": "https://www.lufthansa.com/be/en/accessible-travel",
     "source_id": "lufthansa_accessible_travel",
-    "type": "remote"
+    "type": "remote",
+    "entity": "Lufthansa",
+    "entity_type": "airline"
   },
   {
     "id": "f29fa6983544e3563d7c2616d640d12e",
@@ -384,7 +457,9 @@
     "sent": false,
     "source": "https://www.lufthansa.com/be/en/accessible-travel",
     "source_id": "lufthansa_accessible_travel",
-    "type": "remote"
+    "type": "remote",
+    "entity": "Lufthansa",
+    "entity_type": "airline"
   },
   {
     "id": "bea5ff076cbdbf4693ded37ecf09938e",
@@ -393,7 +468,9 @@
     "sent": false,
     "source": "https://www.lufthansa.com/be/en/accessible-travel",
     "source_id": "lufthansa_accessible_travel",
-    "type": "remote"
+    "type": "remote",
+    "entity": "Lufthansa",
+    "entity_type": "airline"
   },
   {
     "id": "0a82db60b32e64b0a32276aef25c9954",
@@ -402,7 +479,9 @@
     "sent": false,
     "source": "https://www.lufthansa.com/be/en/accessible-travel",
     "source_id": "lufthansa_accessible_travel",
-    "type": "remote"
+    "type": "remote",
+    "entity": "Lufthansa",
+    "entity_type": "airline"
   },
   {
     "id": "dbebc70f0db600f439c1f7fdacd2dbe7",
@@ -411,7 +490,9 @@
     "sent": false,
     "source": "https://www.lufthansa.com/be/en/accessible-travel",
     "source_id": "lufthansa_accessible_travel",
-    "type": "remote"
+    "type": "remote",
+    "entity": "Lufthansa",
+    "entity_type": "airline"
   },
   {
     "id": "6da32af9ba20097d4f94ba3e42b1f922",
@@ -420,7 +501,9 @@
     "sent": false,
     "source": "https://www.lufthansa.com/be/en/accessible-travel",
     "source_id": "lufthansa_accessible_travel",
-    "type": "remote"
+    "type": "remote",
+    "entity": "Lufthansa",
+    "entity_type": "airline"
   },
   {
     "id": "9b583430220a7a9f198c05f15cd1a24b",
@@ -429,7 +512,9 @@
     "sent": false,
     "source": "https://www.lufthansa.com/be/en/accessible-travel",
     "source_id": "lufthansa_accessible_travel",
-    "type": "remote"
+    "type": "remote",
+    "entity": "Lufthansa",
+    "entity_type": "airline"
   },
   {
     "id": "3a985797703111c6b946e589e96d9c91",
@@ -438,7 +523,9 @@
     "sent": false,
     "source": "https://www.lufthansa.com/be/en/accessible-travel",
     "source_id": "lufthansa_accessible_travel",
-    "type": "remote"
+    "type": "remote",
+    "entity": "Lufthansa",
+    "entity_type": "airline"
   },
   {
     "id": "cd9808b9f19b0266d2e0712342643f8e",
@@ -447,6 +534,8 @@
     "sent": false,
     "source": "https://www.lufthansa.com/be/en/accessible-travel",
     "source_id": "lufthansa_accessible_travel",
-    "type": "remote"
+    "type": "remote",
+    "entity": "Lufthansa",
+    "entity_type": "airline"
   }
 ]

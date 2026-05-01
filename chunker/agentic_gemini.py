@@ -120,8 +120,8 @@ class GeminiChunker:
         chunk_text = json.dumps(unsent, indent=2)
 
         contents = [
-            Content(parts=[Part(text=SYSTEM_PROMPT)]),  # system prompt
-            Content(parts=[Part(text=chunk_text)])      # user content
+            Content(parts=[Part(text=SYSTEM_PROMPT)]), # system prompt
+            Content(parts=[Part(text=chunk_text)]) # user content
         ] 
         response = self.client.models.generate_content(
             model=GEMINI_MODEL_NAME,

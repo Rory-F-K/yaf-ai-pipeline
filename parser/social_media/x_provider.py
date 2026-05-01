@@ -31,7 +31,7 @@ import random
 import time
 from abc import abstractmethod
 
-from social_base import AVIATION_RULES, DEFAULT_SECTION, SocialMediaProvider
+from .social_base import AVIATION_RULES, DEFAULT_SECTION, SocialMediaProvider
 
 logger = logging.getLogger(__name__)
 

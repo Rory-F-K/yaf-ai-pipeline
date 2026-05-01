@@ -19,7 +19,7 @@ import os
 import time
 from urllib.parse import quote
 
-from x_provider import XProvider
+from .x_provider import XProvider
 
 logger = logging.getLogger(__name__)
 

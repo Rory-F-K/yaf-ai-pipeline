@@ -87,7 +87,7 @@ async def _make_context(playwright):
             "sec-ch-ua-platform": '"Windows"',
         },
     )
-    await Stealth().apply_stealth_async(context)
+    context.on("page", lambda page: asyncio.ensure_future(Stealth().apply_stealth_async(page)))
     return browser, context
 
 

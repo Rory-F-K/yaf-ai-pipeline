@@ -6,7 +6,9 @@
     "sent": false,
     "source": "https://www.iata.org/en/iata-repository/pressroom/fact-sheets/fact-sheet-accessibility/",
     "source_id": "iata_accessibility_fact_sheet",
-    "type": "remote"
+    "type": "remote",
+    "entity": "IATA",
+    "entity_type": "industry_body"
   },
   {
     "id": "579900e96895427bc663993200a854ed",
@@ -15,7 +17,9 @@
     "sent": false,
     "source": "https://www.iata.org/en/iata-repository/pressroom/fact-sheets/fact-sheet-accessibility/",
     "source_id": "iata_accessibility_fact_sheet",
-    "type": "remote"
+    "type": "remote",
+    "entity": "IATA",
+    "entity_type": "industry_body"
   },
   {
     "id": "d27d5ecbb5653c2843b7d37454c48d5e",
@@ -24,7 +28,9 @@
     "sent": false,
     "source": "https://www.iata.org/en/iata-repository/pressroom/fact-sheets/fact-sheet-accessibility/",
     "source_id": "iata_accessibility_fact_sheet",
-    "type": "remote"
+    "type": "remote",
+    "entity": "IATA",
+    "entity_type": "industry_body"
   },
   {
     "id": "e82ebaae6af9ce5ef0d8183f8f99afd4",
@@ -33,7 +39,9 @@
     "sent": false,
     "source": "https://www.iata.org/en/iata-repository/pressroom/fact-sheets/fact-sheet-accessibility/",
     "source_id": "iata_accessibility_fact_sheet",
-    "type": "remote"
+    "type": "remote",
+    "entity": "IATA",
+    "entity_type": "industry_body"
   },
   {
     "id": "aa7ecc13237cd69dae792d9ed25c9a40",
@@ -42,7 +50,9 @@
     "sent": false,
     "source": "https://www.iata.org/en/iata-repository/pressroom/fact-sheets/fact-sheet-accessibility/",
     "source_id": "iata_accessibility_fact_sheet",
-    "type": "remote"
+    "type": "remote",
+    "entity": "IATA",
+    "entity_type": "industry_body"
   },
   {
     "id": "0a2de3a71b28a3d5c0119eaee79cbc9e",
@@ -51,7 +61,9 @@
     "sent": false,
     "source": "https://www.iata.org/en/iata-repository/pressroom/fact-sheets/fact-sheet-accessibility/",
     "source_id": "iata_accessibility_fact_sheet",
-    "type": "remote"
+    "type": "remote",
+    "entity": "IATA",
+    "entity_type": "industry_body"
   },
   {
     "id": "6e6b7c69cfcb9e08b788d5b5284ff88c",
@@ -60,7 +72,9 @@
     "sent": false,
     "source": "https://www.iata.org/en/iata-repository/pressroom/fact-sheets/fact-sheet-accessibility/",
     "source_id": "iata_accessibility_fact_sheet",
-    "type": "remote"
+    "type": "remote",
+    "entity": "IATA",
+    "entity_type": "industry_body"
   },
   {
     "id": "a4c7b2809580d73ccdc183db557ec750",
@@ -69,7 +83,9 @@
     "sent": false,
     "source": "https://www.iata.org/en/iata-repository/pressroom/fact-sheets/fact-sheet-accessibility/",
     "source_id": "iata_accessibility_fact_sheet",
-    "type": "remote"
+    "type": "remote",
+    "entity": "IATA",
+    "entity_type": "industry_body"
   },
   {
     "id": "01c8057b4816189bd69de0436d028eb9",
@@ -78,7 +94,9 @@
     "sent": false,
     "source": "https://www.iata.org/en/iata-repository/pressroom/fact-sheets/fact-sheet-accessibility/",
     "source_id": "iata_accessibility_fact_sheet",
-    "type": "remote"
+    "type": "remote",
+    "entity": "IATA",
+    "entity_type": "industry_body"
   },
   {
     "id": "167e4e5e08fd7bb9efb066fae85d8c09",
@@ -87,7 +105,9 @@
     "sent": false,
     "source": "https://www.iata.org/en/iata-repository/pressroom/fact-sheets/fact-sheet-accessibility/",
     "source_id": "iata_accessibility_fact_sheet",
-    "type": "remote"
+    "type": "remote",
+    "entity": "IATA",
+    "entity_type": "industry_body"
   },
   {
     "id": "58539b05c7a5444cea8f3d978d5af119",
@@ -96,7 +116,9 @@
     "sent": false,
     "source": "https://www.iata.org/en/iata-repository/pressroom/fact-sheets/fact-sheet-accessibility/",
     "source_id": "iata_accessibility_fact_sheet",
-    "type": "remote"
+    "type": "remote",
+    "entity": "IATA",
+    "entity_type": "industry_body"
   },
   {
     "id": "97b1dbff54a64876858e99ebbd7d5a85",
@@ -105,7 +127,9 @@
     "sent": false,
     "source": "https://www.iata.org/en/iata-repository/pressroom/fact-sheets/fact-sheet-accessibility/",
     "source_id": "iata_accessibility_fact_sheet",
-    "type": "remote"
+    "type": "remote",
+    "entity": "IATA",
+    "entity_type": "industry_body"
   },
   {
     "id": "a6dbecabbee9c4c3c7ae99ffbc074434",
@@ -114,7 +138,9 @@
     "sent": false,
     "source": "https://www.iata.org/en/iata-repository/pressroom/fact-sheets/fact-sheet-accessibility/",
     "source_id": "iata_accessibility_fact_sheet",
-    "type": "remote"
+    "type": "remote",
+    "entity": "IATA",
+    "entity_type": "industry_body"
   },
   {
     "id": "72062ab0225dfed4d4793b7283604d53",
@@ -123,7 +149,9 @@
     "sent": false,
     "source": "https://www.iata.org/en/iata-repository/pressroom/fact-sheets/fact-sheet-accessibility/",
     "source_id": "iata_accessibility_fact_sheet",
-    "type": "remote"
+    "type": "remote",
+    "entity": "IATA",
+    "entity_type": "industry_body"
   },
   {
     "id": "d8f1dd9457ec40e415574fc9a395c8c1",
@@ -132,7 +160,9 @@
     "sent": false,
     "source": "https://www.iata.org/en/iata-repository/pressroom/fact-sheets/fact-sheet-accessibility/",
     "source_id": "iata_accessibility_fact_sheet",
-    "type": "remote"
+    "type": "remote",
+    "entity": "IATA",
+    "entity_type": "industry_body"
   },
   {
     "id": "8aaea536732d8e0b994f4ceafdf3a76b",
@@ -141,6 +171,8 @@
     "sent": false,
     "source": "https://www.iata.org/en/iata-repository/pressroom/fact-sheets/fact-sheet-accessibility/",
     "source_id": "iata_accessibility_fact_sheet",
-    "type": "remote"
+    "type": "remote",
+    "entity": "IATA",
+    "entity_type": "industry_body"
   }
 ]

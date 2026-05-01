@@ -1,379 +1,197 @@
 # validator/rule_validator.py
 #
 # Purpose:
-#   Validates a list of extracted rules across five independent checks to ensure
-#   quality, consistency, and correctness before rules are stored or used downstream.
+#   Validates a list of airline/airport entities before they are pushed to Firestore.
+#   Checks entity-level structure and each service within the services array.
 #
 # Checks performed:
-#   1. structure     — required fields present, correct types, rule_id format (R<digits>)
-#   2. quality       — description length, vague language, all-caps headings, generic titles
-#   3. consistency   — duplicate rule_ids, non-sequential ordering, unknown categories
-#   4. duplicates    — near-identical descriptions within the ruleset (≥85% similarity)
-#   5. cross_source  — rules from different sources that may conflict (Gemini-confirmed)
+#   1. entity_structure  — required top-level fields present and non-empty
+#   2. entity_type       — entity has exactly one of airline_id or airport_id (not both/neither)
+#   3. services_present  — services array exists and is non-empty
+#   4. service_structure — each service has type, description (min 20 chars), is_presented (bool)
+#   5. duplicate_types   — duplicate service types within the same entity
 #
 # Severity levels:
-#   error   — rule is excluded from clean_rules output
-#   warning — rule is kept but flagged for review
-#   info    — informational note, no action required
+#   error   — entity is excluded from clean_entities output
+#   warning — entity is kept but flagged for review
 #
 # Key class:
 #   RuleValidator — main class with the following public methods:
-#     - validate(rules)                    run all checks on a list of rule dicts
-#     - validate_file(json_path)           load a JSON file and validate it
-#     - save_report(report, output_path)   save full validation report as JSON
-#     - save_clean_rules(report, path)     save only error-free rules as JSON
-#     - print_summary(report)              print human-readable summary to stdout
-#
-# Dependencies:
-#   - GEMINI_API_KEY and GEMINI_MODEL_NAME must be set in .env (only for cross_source check)
-#   - Set use_gemini=False to run fully offline
+#     - validate(entities)                  run all checks on a list of entity dicts
+#     - validate_file(json_path)            load a JSON file and validate it
+#     - save_report(report, output_path)    save full validation report as JSON
+#     - save_clean_entities(report, path)   save only error-free entities as JSON
+#     - print_summary(report)               print human-readable summary to stdout
 
 import json
-import re
-import os
-import time
-from difflib import SequenceMatcher
-from pathlib import Path
 from collections import defaultdict
-
-from dotenv import load_dotenv
-from google import genai
-from google.genai.types import Content, Part
-
-load_dotenv()
-
-GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")
-GEMINI_MODEL_NAME = os.getenv("GEMINI_MODEL_NAME")
-
-REQUIRED_FIELDS = {"rule_id", "title", "description", "category", "source"}
-
-KNOWN_CATEGORIES = {
-    "Accessibility", "Assistance", "Baggage", "Boarding", "Booking",
-    "Check-in", "Compensation", "Complaints", "Documentation", "Facilities",
-    "General", "Information", "Legal Rights", "Medical", "Mobility Aid",
-    "Notification", "Pre-Flight", "Safety", "Security", "Service",
-    "Special Equipment", "Training", "Travel Policy",
-}
-
-VAGUE_PHRASES = [
-    "may or may not", "and so on", "general information",
-    "based on circumstances", "click here", "learn more", "read more",
-    "for more information", "please visit", "contact us for details",
-]
-
-DUPLICATE_THRESHOLD = 0.85    # similarity score to flag as duplicate
-CONFLICT_THRESHOLD  = 0.65    # similarity score to flag as cross-source conflict
-
-CONFLICT_PROMPT = """
-You are a policy expert. You are given two rules from different sources that appear to be about the same topic.
-
-Determine if they CONFLICT with each other (i.e. they make contradictory statements about the same policy).
-
-Rule A (source: {source_a}):
-{desc_a}
-
-Rule B (source: {source_b}):
-{desc_b}
-
-Reply with a single JSON object:
-{{
-  "conflict": true or false,
-  "reason": "one sentence explanation"
-}}
-
-ONLY return valid JSON.
-"""
+from pathlib import Path
 
 
 # ── Issue model ────────────────────────────────────────────────────────────────
 
-def _issue(rule_id, check, severity, message):
+def _issue(entity_id: str, check: str, severity: str, message: str) -> dict:
     return {
-        "rule_id":  rule_id,
-        "check":    check,
-        "severity": severity,   # "error" | "warning" | "info"
-        "message":  message,
+        "entity_id": entity_id,
+        "check":     check,
+        "severity":  severity,
+        "message":   message,
     }
+
+
+def _entity_id(entity: dict) -> str:
+    """Return a stable display ID for an entity dict."""
+    return entity.get("airline_id") or entity.get("airport_id") or "UNKNOWN"
 
 
 # ── Validation checks ──────────────────────────────────────────────────────────
 
-def check_structure(rules: list) -> list:
-    """Check required fields, types, and non-empty values."""
+def check_entity_structure(entities: list) -> list:
+    """Check that required top-level fields are present and non-empty strings."""
     issues = []
-
-    for r in rules:
-        rid = r.get("rule_id", "UNKNOWN")
-
-        # missing or empty required fields
-        for field in REQUIRED_FIELDS:
-            val = r.get(field)
+    for e in entities:
+        eid = _entity_id(e)
+        for field in ("name", "source"):
+            val = e.get(field)
             if not val or not str(val).strip():
-                issues.append(_issue(rid, "structure",  "error",
+                issues.append(_issue(eid, "entity_structure", "error",
                     f"Missing or empty required field: '{field}'"))
-
-        # rule_id format must be R followed by digits
-        if not re.fullmatch(r"R\d+", str(r.get("rule_id", ""))):
-            issues.append(_issue(rid, "structure", "error",
-                f"rule_id '{r.get('rule_id')}' does not match expected format R<number>"))
-
-        # all fields must be strings
-        for field in REQUIRED_FIELDS:
-            val = r.get(field)
-            if val is not None and not isinstance(val, str):
-                issues.append(_issue(rid, "structure", "error",
-                    f"Field '{field}' must be a string, got {type(val).__name__}"))
-
     return issues
 
 
-def check_quality(rules: list) -> list:
-    """Flag rules that are too short, too vague, or look like noise."""
+def check_entity_type(entities: list) -> list:
+    """Check that each entity has exactly one of airline_id or airport_id."""
     issues = []
+    for e in entities:
+        eid = _entity_id(e)
+        has_airline = bool(e.get("airline_id", "").strip() if isinstance(e.get("airline_id"), str) else e.get("airline_id"))
+        has_airport = bool(e.get("airport_id", "").strip() if isinstance(e.get("airport_id"), str) else e.get("airport_id"))
 
-    for r in rules:
-        rid = r.get("rule_id", "UNKNOWN")
-        desc  = r.get("description", "").strip()
-        title = r.get("title", "").strip()
-
-        # description too short
-        if len(desc) < 30:
-            issues.append(_issue(rid, "quality", "error",
-                f"Description too short ({len(desc)} chars) — likely not a real rule"))
-
-        # description is all-caps (looks like a heading, not a rule)
-        if desc.isupper() and len(desc) < 100:
-            issues.append(_issue(rid, "quality", "warning",
-                "Description appears to be a heading, not a rule statement"))
-
-        # vague phrases
-        desc_lower = desc.lower()
-        for phrase in VAGUE_PHRASES:
-            if phrase in desc_lower:
-                issues.append(_issue(rid, "quality", "warning",
-                    f"Description contains vague phrase: '{phrase}'"))
-                break
-
-        # title too generic
-        generic_titles = {"general", "overview", "introduction", "note", "other", "misc"}
-        if title.lower() in generic_titles:
-            issues.append(_issue(rid, "quality", "warning",
-                f"Title '{title}' is too generic"))
-
-        # description same as title
-        if desc.lower() == title.lower():
-            issues.append(_issue(rid, "quality", "warning",
-                "Description is identical to title — add more detail"))
-
+        if has_airline and has_airport:
+            issues.append(_issue(eid, "entity_type", "error",
+                "Entity has both airline_id and airport_id — must have exactly one"))
+        elif not has_airline and not has_airport:
+            issues.append(_issue(eid, "entity_type", "error",
+                "Entity has neither airline_id nor airport_id"))
     return issues
 
 
-def check_consistency(rules: list) -> list:
-    """Check for duplicate IDs, non-sequential ordering, and unknown categories."""
+def check_services_present(entities: list) -> list:
+    """Check that each entity has a non-empty services array."""
     issues = []
-
-    id_counts = defaultdict(list)
-    for r in rules:
-        id_counts[r.get("rule_id", "")].append(r)
-
-    # duplicate rule_ids
-    for rid, group in id_counts.items():
-        if len(group) > 1:
-            issues.append(_issue(rid, "consistency", "error",
-                f"rule_id '{rid}' appears {len(group)} times — IDs must be unique"))
-
-    # non-sequential IDs
-    ids = [r.get("rule_id", "") for r in rules]
-    numeric = []
-    for rid in ids:
-        m = re.match(r"R(\d+)", rid)
-        if m:
-            numeric.append(int(m.group(1)))
-
-    for i, n in enumerate(numeric):
-        expected = i + 1
-        if n != expected:
-            issues.append(_issue(ids[i], "consistency", "warning",
-                f"rule_id sequence broken: expected R{expected:03d}, found {ids[i]}"))
-
-    # unknown categories
-    for r in rules:
-        cat = r.get("category", "").strip()
-        if cat and cat not in KNOWN_CATEGORIES:
-            issues.append(_issue(r.get("rule_id", "UNKNOWN"), "consistency", "info",
-                f"Unknown category '{cat}' — consider aligning to a standard category"))
-
+    for e in entities:
+        eid = _entity_id(e)
+        services = e.get("services")
+        if not isinstance(services, list):
+            issues.append(_issue(eid, "services_present", "error",
+                "Field 'services' is missing or not a list"))
+        elif len(services) == 0:
+            issues.append(_issue(eid, "services_present", "error",
+                "Entity has an empty services array — no PRM services extracted"))
     return issues
 
 
-def check_duplicates(rules: list) -> list:
-    """Flag rules with near-identical descriptions (within same or across sources)."""
+def check_service_structure(entities: list) -> list:
+    """Check each service dict for required fields and minimum description length."""
     issues = []
-    flagged = set()
-
-    for i in range(len(rules)):
-        for j in range(i + 1, len(rules)):
-            pair = (rules[i].get("rule_id"), rules[j].get("rule_id"))
-            if pair in flagged:
+    for e in entities:
+        eid = _entity_id(e)
+        services = e.get("services", [])
+        if not isinstance(services, list):
+            continue
+        for idx, svc in enumerate(services):
+            prefix = f"services[{idx}]"
+            if not isinstance(svc, dict):
+                issues.append(_issue(eid, "service_structure", "error",
+                    f"{prefix} is not a dict"))
                 continue
-
-            desc_i = rules[i].get("description", "").lower().strip()
-            desc_j = rules[j].get("description", "").lower().strip()
-
-            score = SequenceMatcher(None, desc_i, desc_j).ratio()
-
-            if score >= DUPLICATE_THRESHOLD:
-                flagged.add(pair)
-                issues.append(_issue(pair[0], "duplicates", "warning",
-                    f"Near-duplicate of {pair[1]} (similarity {score:.0%}) — consider merging"))
-                issues.append(_issue(pair[1], "duplicates", "warning",
-                    f"Near-duplicate of {pair[0]} (similarity {score:.0%}) — consider merging"))
-
+            svc_type = str(svc.get("type", "")).strip()
+            desc = str(svc.get("description", "")).strip()
+            if not svc_type:
+                issues.append(_issue(eid, "service_structure", "error",
+                    f"{prefix}: 'type' is missing or empty"))
+            if not desc:
+                issues.append(_issue(eid, "service_structure", "error",
+                    f"{prefix}: 'description' is missing or empty"))
+            elif len(desc) < 20:
+                issues.append(_issue(eid, "service_structure", "error",
+                    f"{prefix}: description too short ({len(desc)} chars)"))
+            if "is_presented" in svc and not isinstance(svc["is_presented"], bool):
+                issues.append(_issue(eid, "service_structure", "warning",
+                    f"{prefix}: 'is_presented' should be a boolean"))
     return issues
 
 
-def check_cross_source_conflicts(rules: list, use_gemini: bool = True) -> list:
-    """
-    Find rules from different sources that are similar enough to potentially conflict.
-    Uses SequenceMatcher for candidate selection, then Gemini to confirm actual conflicts.
-    """
+def check_duplicate_types(entities: list) -> list:
+    """Flag duplicate service types within the same entity."""
     issues = []
-
-    # only compare rules from different sources
-    multi_source = len({r.get("source") for r in rules}) > 1
-    if not multi_source:
-        return []
-
-    client = None
-    if use_gemini and GEMINI_API_KEY:
-        client = genai.Client(api_key=GEMINI_API_KEY)
-
-    candidates = []
-    for i in range(len(rules)):
-        for j in range(i + 1, len(rules)):
-            src_i = rules[i].get("source", "")
-            src_j = rules[j].get("source", "")
-
-            if src_i == src_j:
-                continue
-
-            desc_i = rules[i].get("description", "").lower().strip()
-            desc_j = rules[j].get("description", "").lower().strip()
-
-            score = SequenceMatcher(None, desc_i, desc_j).ratio()
-
-            if score >= CONFLICT_THRESHOLD:
-                candidates.append((rules[i], rules[j], score))
-
-    for rule_a, rule_b, score in candidates:
-        rid_a = rule_a.get("rule_id", "?")
-        rid_b = rule_b.get("rule_id", "?")
-
-        if client:
-            conflict, reason = _gemini_conflict_check(client, rule_a, rule_b)
-        else:
-            # fallback: flag as potential without Gemini confirmation
-            conflict = True
-            reason = f"High textual similarity ({score:.0%}) across sources — manual review needed"
-
-        if conflict:
-            issues.append(_issue(rid_a, "cross_source", "warning",
-                f"Possible conflict with {rid_b} (source: {rule_b.get('source')}): {reason}"))
-            issues.append(_issue(rid_b, "cross_source", "warning",
-                f"Possible conflict with {rid_a} (source: {rule_a.get('source')}): {reason}"))
-
+    for e in entities:
+        eid = _entity_id(e)
+        services = e.get("services", [])
+        if not isinstance(services, list):
+            continue
+        type_counts: dict[str, int] = defaultdict(int)
+        for svc in services:
+            if isinstance(svc, dict):
+                t = str(svc.get("type", "")).strip().lower()
+                if t:
+                    type_counts[t] += 1
+        for t, count in type_counts.items():
+            if count > 1:
+                issues.append(_issue(eid, "duplicate_types", "warning",
+                    f"Service type '{t}' appears {count} times — consider merging"))
     return issues
-
-
-def _gemini_conflict_check(client, rule_a: dict, rule_b: dict, retries: int = 3) -> tuple:
-    prompt = CONFLICT_PROMPT.format(
-        source_a=rule_a.get("source", "unknown"),
-        desc_a=rule_a.get("description", ""),
-        source_b=rule_b.get("source", "unknown"),
-        desc_b=rule_b.get("description", ""),
-    )
-    contents = [Content(parts=[Part(text=prompt)])]
-
-    for attempt in range(retries):
-        try:
-            response = client.models.generate_content(
-                model=GEMINI_MODEL_NAME,
-                contents=contents,
-                config={"temperature": 0, "max_output_tokens": 256},
-            )
-            raw = response.text.strip()
-            # strip markdown code fences if present
-            raw = re.sub(r"^```json|```$", "", raw, flags=re.MULTILINE).strip()
-            result = json.loads(raw)
-            return result.get("conflict", False), result.get("reason", "")
-        except Exception as e:
-            wait = 2 ** attempt
-            print(f"[Validator] Gemini conflict check error (attempt {attempt+1}/{retries}): {e} — retrying in {wait}s")
-            time.sleep(wait)
-
-    return False, "Gemini check failed — manual review recommended"
 
 
 # ── Main validator class ───────────────────────────────────────────────────────
 
 class RuleValidator:
-    def __init__(self, use_gemini: bool = True):
+    def validate(self, entities: list) -> dict:
         """
-        Args:
-            use_gemini: if True, uses Gemini to confirm cross-source conflicts.
-                        Set to False to run fully offline.
-        """
-        self.use_gemini = use_gemini
-
-    def validate(self, rules: list) -> dict:
-        """
-        Run all validation checks on a list of rule dicts.
+        Run all validation checks on a list of entity dicts.
 
         Returns a report dict with:
-          - total:        total rules checked
-          - passed:       rules with no errors
-          - issues:       list of all issue dicts
-          - summary:      counts by check type and severity
-          - clean_rules:  rules that passed all error-level checks
+          - total:          total entities checked
+          - passed:         entities with no errors
+          - issues:         list of all issue dicts
+          - summary:        counts by check type and severity
+          - clean_entities: entities that passed all error-level checks
         """
-        if not rules:
-            return {"total": 0, "passed": 0, "issues": [], "summary": {}, "clean_rules": []}
+        if not entities:
+            return {"total": 0, "passed": 0, "issues": [], "summary": {}, "clean_entities": []}
 
-        print(f"[Validator] Running checks on {len(rules)} rules...")
+        print(f"[Validator] Running checks on {len(entities)} entities...")
 
         all_issues = []
-        all_issues += check_structure(rules)
-        all_issues += check_quality(rules)
-        all_issues += check_consistency(rules)
-        all_issues += check_duplicates(rules)
-        all_issues += check_cross_source_conflicts(rules, use_gemini=self.use_gemini)
+        all_issues += check_entity_structure(entities)
+        all_issues += check_entity_type(entities)
+        all_issues += check_services_present(entities)
+        all_issues += check_service_structure(entities)
+        all_issues += check_duplicate_types(entities)
 
-        # summary counts
-        summary = defaultdict(lambda: defaultdict(int))
+        summary: dict[str, dict[str, int]] = defaultdict(lambda: defaultdict(int))
         for issue in all_issues:
             summary[issue["check"]][issue["severity"]] += 1
 
-        # rules with no error-level issues
-        error_ids = {i["rule_id"] for i in all_issues if i["severity"] == "error"}
-        clean_rules = [r for r in rules if r.get("rule_id") not in error_ids]
+        error_ids = {i["entity_id"] for i in all_issues if i["severity"] == "error"}
+        clean_entities = [e for e in entities if _entity_id(e) not in error_ids]
+        passed = len(clean_entities)
 
-        passed = len(clean_rules)
-
-        print(f"[Validator] {passed}/{len(rules)} rules passed | {len(all_issues)} issues found")
+        print(f"[Validator] {passed}/{len(entities)} entities passed | {len(all_issues)} issues found")
 
         return {
-            "total":       len(rules),
-            "passed":      passed,
-            "issues":      all_issues,
-            "summary":     {k: dict(v) for k, v in summary.items()},
-            "clean_rules": clean_rules,
+            "total":          len(entities),
+            "passed":         passed,
+            "issues":         all_issues,
+            "summary":        {k: dict(v) for k, v in summary.items()},
+            "clean_entities": clean_entities,
         }
 
     def validate_file(self, json_path: str) -> dict:
-        """Load a rules JSON file and validate it."""
+        """Load an entities JSON file and validate it."""
         with open(json_path, "r", encoding="utf-8") as f:
-            rules = json.load(f)
-        return self.validate(rules)
+            entities = json.load(f)
+        return self.validate(entities)
 
     def save_report(self, report: dict, output_path: str):
         """Save the full validation report to a JSON file."""
@@ -382,21 +200,21 @@ class RuleValidator:
             json.dump(report, f, indent=2)
         print(f"[Validator] Report saved → {output_path}")
 
-    def save_clean_rules(self, report: dict, output_path: str):
-        """Save only the rules that passed all error-level checks."""
+    def save_clean_entities(self, report: dict, output_path: str):
+        """Save only the entities that passed all error-level checks."""
         Path(output_path).parent.mkdir(parents=True, exist_ok=True)
         with open(output_path, "w", encoding="utf-8") as f:
-            json.dump(report["clean_rules"], f, indent=2)
-        print(f"[Validator] Clean rules saved → {output_path}")
+            json.dump(report["clean_entities"], f, indent=2)
+        print(f"[Validator] Clean entities saved → {output_path}")
 
     def print_summary(self, report: dict):
         """Print a human-readable summary to stdout."""
         print("\n" + "=" * 50)
-        print(f"  VALIDATION REPORT")
+        print("  VALIDATION REPORT")
         print("=" * 50)
-        print(f"  Total rules  : {report['total']}")
-        print(f"  Passed       : {report['passed']}")
-        print(f"  Issues found : {len(report['issues'])}")
+        print(f"  Total entities : {report['total']}")
+        print(f"  Passed         : {report['passed']}")
+        print(f"  Issues found   : {len(report['issues'])}")
         print()
 
         for check, severities in report["summary"].items():
@@ -407,7 +225,7 @@ class RuleValidator:
         if report["issues"]:
             print("\n  ISSUES:")
             for issue in report["issues"]:
-                icon = {"error": "✖", "warning": "⚠", "info": "ℹ"}.get(issue["severity"], "-")
-                print(f"  {icon} [{issue['rule_id']}] ({issue['check']}) {issue['message']}")
+                icon = {"error": "✖", "warning": "⚠"}.get(issue["severity"], "-")
+                print(f"  {icon} [{issue['entity_id']}] ({issue['check']}) {issue['message']}")
 
         print("=" * 50 + "\n")
