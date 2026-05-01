@@ -8,7 +8,7 @@ from urllib.parse import urljoin, urlparse
 
 from bs4 import BeautifulSoup
 from playwright.async_api import async_playwright
-from playwright_stealth import stealth_async
+from playwright_stealth import Stealth
 
 from parser.site_scrapers import register
 
@@ -96,7 +96,7 @@ async def _make_context(playwright):
     )
 
     # Apply stealth to the whole context — every page opened from it is covered
-    context.on("page", lambda page: asyncio.ensure_future(stealth_async(page)))
+    context.on("page", lambda page: asyncio.ensure_future(Stealth().apply_stealth_async(page)))
 
     return browser, context
 
