@@ -5,8 +5,11 @@ python-env/
 .env
 
 # Firebase service account credentials — NEVER commit this
-firebase_credentials.json
+firebase_credentials*.json
 *service_account*.json
+
+# Browser session state (machine-specific, contains expiring tokens)
+browser_state.json
 
 # Generated pipeline outputs
 rules/

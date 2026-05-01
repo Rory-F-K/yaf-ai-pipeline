@@ -1,22 +1,26 @@
 # extractor/rule_extractor.py
 #
 # Purpose:
-#   Extracts structured, actionable rules from multiple source types using Gemini AI.
-#   Handles local PDFs, remote URLs (websites and PDFs), raw text, and pre-processed
-#   pipeline chunks. Large documents are automatically split into batches to stay
-#   within Gemini's token limits, and results are deduplicated and re-sequenced.
+#   Extracts structured PRM services from airline and airport sources using Gemini AI.
+#   Each source is classified as an airline or airport via URL domain lookup.
+#   Output is a single entity document (airline or airport) with a services array.
 #
 # Key class:
 #   RuleExtractor — main class with the following public methods:
-#     - run(source, output_path)       auto-detect source type and extract rules
-#     - extract_from_pdf(path)         parse and extract from a local PDF file
-#     - extract_from_url(url)          scrape a website or remote PDF and extract
-#     - extract_from_text(text)        extract from any raw string
-#     - extract_from_chunks(chunks)    extract from pre-processed pipeline chunks
-#     - save(rules, output_path)       save extracted rules to a JSON file
+#     - run(source, output_path)        auto-detect source type and extract entity
+#     - extract_from_pdf(path)          parse and extract from a local PDF file
+#     - extract_from_url(url)           scrape a website or remote PDF and extract
+#     - extract_from_text(text, source) extract services from any raw string
+#     - extract_from_chunks(chunks)     extract from pre-processed pipeline chunks
+#     - save(entities, output_path)     save extracted entities to a JSON file
 #
-# Output format (each rule):
-#   { rule_id, category, title, description, source }
+# Output format (each entity):
+#   Airline: { airline_id, name, source, services: [{type, description, is_presented}] }
+#   Airport: { airport_id, name, source, services: [{type, description, is_presented}] }
+#
+# Source classification:
+#   Domains are matched against DOMAIN_MAP to determine entity type and identity.
+#   Sources not in DOMAIN_MAP (e.g. eur-lex, iata, transportation.gov) are skipped.
 #
 # Dependencies:
 #   - GEMINI_API_KEY and GEMINI_MODEL_NAME must be set in .env
@@ -28,6 +32,8 @@ import re
 import os
 import time
 from pathlib import Path
+from urllib.parse import urlparse
+from typing import Optional
 
 from dotenv import load_dotenv
 from google import genai
@@ -39,47 +45,48 @@ from parser.remote.pdf_fetcher import fetch_pdf
 
 load_dotenv()
 
-GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")
+GEMINI_API_KEY   = os.getenv("GEMINI_API_KEY")
 GEMINI_MODEL_NAME = os.getenv("GEMINI_MODEL_NAME")
 
-RULE_EXTRACTION_PROMPT = """
-You are an expert in aviation accessibility and services for passengers with reduced mobility (PRM).
+# Maps registrable domain → entity metadata.
+# Add new airlines/airports here as sources are added to config.py.
+DOMAIN_MAP: dict[str, dict] = {
+    "lufthansa.com":     {"entity_type": "airline", "entity_id": "lufthansa", "name": "Lufthansa"},
+    "swiss.com":         {"entity_type": "airline", "entity_id": "swiss",     "name": "Swiss International Air Lines"},
+    "ryanair.com":       {"entity_type": "airline", "entity_id": "ryanair",   "name": "Ryanair"},
+    "vueling.com":       {"entity_type": "airline", "entity_id": "vueling",   "name": "Vueling"},
+    "portoairport.pt":   {"entity_type": "airport", "entity_id": "porto",     "name": "Porto Airport"},
+    "madeiraairport.pt": {"entity_type": "airport", "entity_id": "madeira",   "name": "Madeira Airport"},
+}
 
-Your task is to extract ALL information that would be useful to a person with reduced mobility
-travelling by air — including rules, services, procedures, entitlements, tips, and updates.
+SERVICES_EXTRACTION_PROMPT = """
+You are an expert in aviation accessibility for passengers with reduced mobility (PRM).
 
-EXTRACT anything that is:
-- A rule, regulation, requirement, or restriction affecting PRM travellers
-- A service or assistance offered (wheelchair, escort, lounge access, special seating, etc.)
-- A procedure a PRM traveller must follow (how to request help, when to notify, what to bring)
-- An entitlement or right the traveller has under law or airline policy
-- Practical information (what equipment is allowed, battery limits, booking steps, contacts)
-- Important updates or changes to PRM policies or services
+Extract ALL services, assistance options, procedures, and policies relevant to PRM passengers
+from the provided text.
+
+For each item output:
+- type: a short lowercase snake_case label describing the service
+        (e.g. "wheelchair_assistance", "mobility_aid_transport", "pre_notification",
+              "special_seating", "escort_service", "battery_limit", "documentation_required")
+- description: a clear, complete statement of what is offered, required, or allowed
 
 STRICT RULES:
-- Every item must be self-contained and directly useful to a PRM traveller
-- DO NOT include navigation text, advertisements, menus, or generic marketing copy
-- DO NOT hallucinate or infer anything not explicitly stated in the text
-- SKIP vague filler sentences with no actionable content
+- Only extract what is explicitly stated — do not infer or hallucinate
+- Each item must be directly useful to a PRM traveller
+- Skip navigation text, advertisements, menus, and generic marketing copy
+- Merge closely related details into one description rather than splitting artificially
+- The description must be a full sentence, minimum 20 characters
 
-CATEGORY — pick the best fit from:
-Accessibility, Assistance, Baggage, Boarding, Booking, Check-in, Compensation,
-Complaints, Documentation, Facilities, General, Information, Legal Rights, Medical,
-Mobility Aid, Notification, Pre-Flight, Safety, Security, Service, Special Equipment,
-Training, Travel Policy
-
-OUTPUT FORMAT (STRICT JSON ONLY):
+OUTPUT FORMAT (strict JSON array only):
 [
   {
-    "rule_id": "R001",
-    "category": "one category from the list above",
-    "title": "short descriptive title (max 10 words)",
-    "description": "clear, complete statement of the rule / service / information",
-    "source": "source URL or file path provided"
+    "type": "snake_case_label",
+    "description": "Clear statement of the service, policy, or procedure"
   }
 ]
 
-ONLY RETURN VALID JSON. No explanation or markdown.
+ONLY return valid JSON. No markdown, no explanation.
 """
 
 
@@ -88,11 +95,26 @@ class RuleExtractor:
         if not GEMINI_API_KEY:
             raise ValueError("GEMINI_API_KEY not set in .env")
         self.client = genai.Client(api_key=GEMINI_API_KEY)
-        self._counter = 0
 
-    def _next_id(self):
-        self._counter += 1
-        return f"R{self._counter:03d}"
+    # ── domain / source classification ────────────────────────────────────────
+
+    def _extract_domain(self, url: str) -> str:
+        """Return the registrable domain (e.g. 'lufthansa.com') from a URL."""
+        host = urlparse(url).hostname or ""
+        if host.startswith("www."):
+            host = host[4:]
+        parts = host.split(".")
+        # collapse subdomains: help.ryanair.com → ryanair.com
+        if len(parts) > 2:
+            host = ".".join(parts[-2:])
+        return host
+
+    def _classify_source(self, source: str) -> Optional[dict]:
+        """Return entity metadata dict for a source URL, or None if unrecognised."""
+        domain = self._extract_domain(source)
+        return DOMAIN_MAP.get(domain)
+
+    # ── Gemini interaction ─────────────────────────────────────────────────────
 
     def _extract_json(self, text: str) -> list:
         match = re.search(r"\[.*\]", text, re.DOTALL)
@@ -103,28 +125,27 @@ class RuleExtractor:
                 return []
         return []
 
-    def _validate(self, rules: list, source: str) -> list:
+    def _validate_services(self, raw: list) -> list:
+        """Filter and normalise raw service dicts from Gemini."""
         valid = []
-        for r in rules:
-            if not isinstance(r, dict):
+        for item in raw:
+            if not isinstance(item, dict):
                 continue
-            title = r.get("title", "").strip()
-            description = r.get("description", "").strip()
-            if not title or not description or len(description) < 20:
+            svc_type = str(item.get("type", "")).strip().lower().replace(" ", "_")
+            desc = str(item.get("description", "")).strip()
+            if not svc_type or not desc or len(desc) < 20:
                 continue
             valid.append({
-                "rule_id": self._next_id(),   # always self-generated — never trust Gemini's IDs
-                "category": r.get("category", "General").strip(),
-                "title": title,
-                "description": description,
-                "source": source,
+                "type": svc_type,
+                "description": desc,
+                "is_presented": True,
             })
         return valid
 
-    def _call_gemini(self, text: str, source: str, retries: int = 5) -> list:
+    def _call_gemini(self, text: str, retries: int = 5) -> list:
         contents = [
-            Content(parts=[Part(text=RULE_EXTRACTION_PROMPT)]),
-            Content(parts=[Part(text=text)])
+            Content(parts=[Part(text=SERVICES_EXTRACTION_PROMPT)]),
+            Content(parts=[Part(text=text)]),
         ]
         for attempt in range(retries):
             try:
@@ -135,10 +156,10 @@ class RuleExtractor:
                 )
                 raw = response.text
                 try:
-                    rules = json.loads(raw)
+                    services = json.loads(raw)
                 except json.JSONDecodeError:
-                    rules = self._extract_json(raw)
-                return self._validate(rules, source)
+                    services = self._extract_json(raw)
+                return self._validate_services(services)
             except Exception as e:
                 wait = 2 ** attempt
                 print(f"[RuleExtractor] Gemini error (attempt {attempt+1}/{retries}): {e} — retrying in {wait}s")
@@ -147,49 +168,37 @@ class RuleExtractor:
         return []
 
     def _split_text(self, text: str, chunk_size: int = 50000) -> list:
-        """Split text into chunks at paragraph boundaries to stay within token limits."""
+        """Split text into batches at paragraph boundaries."""
         if len(text) <= chunk_size:
             return [text]
-
-        batches = []
-        paragraphs = text.split("\n\n")
-        current = []
-        current_len = 0
-
-        for para in paragraphs:
+        batches, current, current_len = [], [], 0
+        for para in text.split("\n\n"):
             if current_len + len(para) > chunk_size and current:
                 batches.append("\n\n".join(current))
-                current = []
-                current_len = 0
+                current, current_len = [], 0
             current.append(para)
             current_len += len(para)
-
         if current:
             batches.append("\n\n".join(current))
-
         return batches
 
-    def _dedupe_rules(self, rules: list) -> list:
-        """Remove duplicate rules based on normalized description."""
-        seen = set()
-        unique = []
-        for r in rules:
-            key = re.sub(r"\s+", " ", r.get("description", "").lower().strip())
+    def _dedupe_services(self, services: list) -> list:
+        """Remove services with duplicate types, keeping the first occurrence."""
+        seen, unique = set(), []
+        for s in services:
+            key = s.get("type", "").lower().strip()
             if key not in seen:
                 seen.add(key)
-                unique.append(r)
+                unique.append(s)
         return unique
-
-    def _reassign_ids(self, rules: list) -> list:
-        """Reassign sequential rule IDs after merging batches."""
-        for i, r in enumerate(rules, start=1):
-            r["rule_id"] = f"R{i:03d}"
-        return rules
 
     # ── public extraction methods ──────────────────────────────────────────────
 
-    def extract_from_text(self, text: str, source: str = "unknown") -> list:
-        """Extract rules from a raw text string, batching if text is large."""
+    def extract_from_text(self, text: str) -> list:
+        """
+        Extract a list of service dicts from raw text, batching if necessary.
+        Returns a deduplicated list of {type, description, is_presented} dicts.
+        """
         if not text or not text.strip():
             return []
 
@@ -197,34 +206,64 @@ class RuleExtractor:
         batches = self._split_text(text)
         print(f"[RuleExtractor] {len(text)} chars → {len(batches)} batch(es)")
 
-        all_rules = []
+        all_services = []
         for i, batch in enumerate(batches, start=1):
             print(f"[RuleExtractor] Processing batch {i}/{len(batches)}...")
-            rules = self._call_gemini(batch, source)
-            print(f"[RuleExtractor] Batch {i} → {len(rules)} rules")
-            all_rules.extend(rules)
+            services = self._call_gemini(batch)
+            print(f"[RuleExtractor] Batch {i} → {len(services)} services")
+            all_services.extend(services)
 
-        all_rules = self._dedupe_rules(all_rules)
-        all_rules = self._reassign_ids(all_rules)
-        return all_rules
+        all_services = self._dedupe_services(all_services)
+        return all_services
+
+    def extract_entity(self, text: str, source: str) -> Optional[dict]:
+        """
+        Classify source and extract one entity (airline or airport).
+        Returns an entity dict or None if the source is not in DOMAIN_MAP.
+        """
+        entity_info = self._classify_source(source)
+        if not entity_info:
+            print(f"[RuleExtractor] Skipping unclassified source: {source}")
+            return None
+
+        services = self.extract_from_text(text)
+        if not services:
+            print(f"[RuleExtractor] No services extracted from {source}")
+            return None
+
+        print(f"[RuleExtractor] {entity_info['entity_type'].capitalize()} '{entity_info['name']}' → {len(services)} services")
+
+        if entity_info["entity_type"] == "airline":
+            return {
+                "airline_id": entity_info["entity_id"],
+                "name":       entity_info["name"],
+                "source":     source,
+                "services":   services,
+            }
+        else:
+            return {
+                "airport_id": entity_info["entity_id"],
+                "name":       entity_info["name"],
+                "source":     source,
+                "services":   services,
+            }
 
     def extract_from_pdf(self, path: str) -> list:
-        """Extract rules from a local PDF file."""
+        """Extract entity from a local PDF file. Returns [entity] or []."""
         print(f"[RuleExtractor] Reading PDF: {path}")
         text = extract_clean_pdf(path)
-        return self.extract_from_text(text, source=str(path))
+        entity = self.extract_entity(text, source=str(path))
+        return [entity] if entity else []
 
     def extract_from_url(self, url: str) -> list:
-        """Extract rules from a website URL or remote PDF."""
+        """Extract entity from a website URL or remote PDF. Returns [entity] or []."""
         print(f"[RuleExtractor] Fetching URL: {url}")
-        if url.lower().endswith(".pdf"):
-            text = fetch_pdf(url)
-        else:
-            text = generic_scrape(url)
-        return self.extract_from_text(text, source=url)
+        text = fetch_pdf(url) if url.lower().endswith(".pdf") else generic_scrape(url)
+        entity = self.extract_entity(text, source=url)
+        return [entity] if entity else []
 
     def extract_from_chunks(self, chunks: list) -> list:
-        """Extract rules from pre-processed pipeline chunk list."""
+        """Extract entity from pre-processed pipeline chunks. Returns [entity] or []."""
         if not chunks:
             return []
         text = "\n\n".join(
@@ -233,23 +272,24 @@ class RuleExtractor:
             if c.get("text")
         )
         source = chunks[0].get("source", "unknown")
-        print(f"[RuleExtractor] Extracting from {len(chunks)} chunks")
-        return self.extract_from_text(text, source=source)
+        print(f"[RuleExtractor] Extracting from {len(chunks)} chunks (source: {source})")
+        entity = self.extract_entity(text, source)
+        return [entity] if entity else []
 
     # ── output ─────────────────────────────────────────────────────────────────
 
-    def save(self, rules: list, output_path: str):
-        """Save extracted rules to a JSON file."""
+    def save(self, entities: list, output_path: str):
+        """Save a list of entity dicts to a JSON file."""
         Path(output_path).parent.mkdir(parents=True, exist_ok=True)
         with open(output_path, "w", encoding="utf-8") as f:
-            json.dump(rules, f, indent=2)
-        print(f"[RuleExtractor] Saved {len(rules)} rules → {output_path}")
+            json.dump(entities, f, indent=2)
+        print(f"[RuleExtractor] Saved {len(entities)} entities → {output_path}")
 
-    # ── main entry point ────────────────────────────────────────────────────────
+    # ── main entry point ───────────────────────────────────────────────────────
 
     def run(self, source, output_path: str = None) -> list:
         """
-        Auto-detect source type and extract rules.
+        Auto-detect source type and extract entity.
 
         Args:
             source: one of —
@@ -257,25 +297,26 @@ class RuleExtractor:
                 - str ending with '.pdf'    → local PDF file
                 - str (other)               → treat as raw text
                 - list of dicts             → pre-processed pipeline chunks
-            output_path: optional path to save extracted rules as JSON
+            output_path: optional path to save extracted entities as JSON
 
         Returns:
-            list of rule dicts
+            list containing one entity dict, or empty list if source unclassified
         """
         if isinstance(source, list):
-            rules = self.extract_from_chunks(source)
+            entities = self.extract_from_chunks(source)
         elif isinstance(source, str) and source.startswith("http"):
-            rules = self.extract_from_url(source)
+            entities = self.extract_from_url(source)
         elif isinstance(source, str) and source.lower().endswith(".pdf"):
-            rules = self.extract_from_pdf(source)
+            entities = self.extract_from_pdf(source)
         elif isinstance(source, str):
-            rules = self.extract_from_text(source)
+            entity = self.extract_entity(source, source="unknown")
+            entities = [entity] if entity else []
         else:
             raise ValueError(f"Unsupported source type: {type(source)}")
 
-        print(f"[RuleExtractor] Total rules extracted: {len(rules)}")
+        print(f"[RuleExtractor] Entities extracted: {len(entities)}")
 
-        if output_path:
-            self.save(rules, output_path)
+        if output_path and entities:
+            self.save(entities, output_path)
 
-        return rules
+        return entities
