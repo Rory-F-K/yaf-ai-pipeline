@@ -1,102 +1,158 @@
 [
   {
-    "id": "593cea30c3179cc7b0d718ee046dd464",
+    "id": "b081944636d9ad1261d041382bbb4763",
     "parent_id": "ef0bfcdab1fe9471bb599b595d51ac2f",
-    "section": "General Accessibility Commitment",
-    "text": "The airline industry is dedicated to enhancing air travel accessibility to ensure a safe, reliable, and dignified journey for all passengers, including those with physical or hidden disabilities. Through collaboration between airlines, airports, and the accessibility community, the goal is to transform air travel into an inclusive, barrier-free experience.",
+    "section": "Industry Commitment to Accessibility",
+    "text": "The airline industry is dedicated to enhancing air travel accessibility to ensure a safe, reliable, and dignified journey for all passengers, including those with physical or hidden disabilities. Airlines and airports are collaborating with the accessibility community to remove barriers and transform air travel into an inclusive, hassle-free experience.",
     "source": "https://www.iata.org/en/programs/passenger/accessibility/",
     "source_id": "iata_accessibility_program",
     "type": "remote",
-    "sent": false
+    "sent": false,
+    "entity": "IATA",
+    "entity_type": "industry_body"
   },
   {
-    "id": "b787ccce0267cec68e49a2d2cb43d4d1",
+    "id": "46a430807ad569e97947dd11503dc71b",
     "parent_id": "5e6b14dcb0155961879f37af9c38224e",
-    "section": "Air Travel Accessibility Goals",
-    "text": "IATA aims to achieve equal access to air travel for all individuals, specifically including passengers with physical or hidden disabilities.",
+    "section": "Goal of Equal Access",
+    "text": "IATA, represented by Assistant Director of External Affairs Linda Ristagno, emphasizes the airline industry's goal to achieve equal access to air travel for everyone, including passengers with physical or hidden disabilities.",
     "source": "https://www.iata.org/en/programs/passenger/accessibility/",
     "source_id": "iata_accessibility_program",
     "type": "remote",
-    "sent": false
+    "sent": false,
+    "entity": "IATA",
+    "entity_type": "industry_body"
   },
   {
-    "id": "b099648bbd6cf553d19f1fc0e930dd21",
+    "id": "fba8db5052dc57452c1c450228e848fd",
     "parent_id": "5e6b14dcb0155961879f37af9c38224e",
     "section": "Harmonization of Disability Legislation",
-    "text": "The absence of a universal definition of disability and the lack of consensus on minimum service levels have led to varying disability legislation globally. This inconsistency causes confusion for passengers, operational difficulties for airlines, and potential safety risks.",
+    "text": "The lack of a universal definition for passengers with disabilities and the variation in disability legislation globally cause confusion for passengers, operational difficulties for airlines, and potential safety issues. There is currently no global consensus on the minimum service levels passengers with disabilities should expect when flying.",
     "source": "https://www.iata.org/en/programs/passenger/accessibility/",
     "source_id": "iata_accessibility_program",
     "type": "remote",
-    "sent": false
+    "sent": false,
+    "entity": "IATA",
+    "entity_type": "industry_body"
   },
   {
-    "id": "cf7b274c1872e98eb3beba67e8b2b177",
+    "id": "c69c4edc8f1d9241ca31f8ad88ac0dd6",
     "parent_id": "5e6b14dcb0155961879f37af9c38224e",
-    "section": "IATA and ICAO Advocacy",
-    "text": "IATA advocates for a joint government and industry approach to meet the needs of passengers with disabilities. Working with the International Civil Aviation Organization (ICAO), IATA urges states to integrate the UN Convention on the Rights of People with Disabilities (UN CRPD) into national aviation legislation and policies.",
+    "section": "IATA Advocacy and International Standards",
+    "text": "IATA advocates for a joint government and industry approach to meet the needs of passengers with disabilities. Working with the International Civil Aviation Organization (ICAO), IATA urges states to involve the airline industry in integrating the UN Convention on the Rights of People with Disabilities (UN CRPD) into national aviation legislation and policies.",
     "source": "https://www.iata.org/en/programs/passenger/accessibility/",
     "source_id": "iata_accessibility_program",
     "type": "remote",
-    "sent": false
+    "sent": false,
+    "entity": "IATA",
+    "entity_type": "industry_body"
   },
   {
-    "id": "55397cca66bab11b508a65c839c4825b",
+    "id": "7dddce2810482192d5d9427e58af0979",
     "parent_id": "431a0382d0453c50c0164a07b2300f46",
     "section": "One Person One Fare (1P1F) Policy",
-    "text": "The 'One Person One Fare' (1P1F) concept proposes that travelers requiring extra seats due to obesity or disabilities\u2014including those needing an accompanying carer\u2014should only pay for a single seat. While recommended in some countries, this is not a legal requirement globally, with the exception of certain domestic routes in Canada.",
+    "text": "The 'One Person One Fare' (1P1F) concept suggests that travelers requiring extra seats due to disabilities or obesity\u2014including those needing an accompanying carer\u2014should only pay for one seat. While recommended in some countries, this is not a legal requirement globally, except on certain domestic routes in Canada.",
     "source": "https://www.iata.org/en/programs/passenger/accessibility/",
     "source_id": "iata_accessibility_program",
     "type": "remote",
-    "sent": false
+    "sent": false,
+    "entity": "IATA",
+    "entity_type": "industry_body"
   },
   {
-    "id": "140e29a5893327ebcdda4c79e1a251a1",
+    "id": "1c4c2fe4e8ecd8c7645fbd13cd0113e4",
     "parent_id": null,
-    "section": "Industry Position on One Person One Fare (1P1F)",
-    "text": "The aviation industry does not support the 'One Person One Fare' (1P1F) policy based on several factors: 1) Financial Viability: With an average profit of $2.25 per passenger in 2023 (approximately 3-4 seats per flight), providing free seats could threaten the financial viability of air routes. 2) Definition Challenges: Establishing a global definition for the circumstances under which a disabled or obese traveler requires two seats is difficult and could lead to confusion or abuse. 3) Proportionality: In alignment with the UN Convention, airlines advocate for 'reasonable steps' to ensure equal access. This principle of proportionality is compared to metro systems, where not all stations have step-free access due to disproportionate costs. Airlines remain committed to collaborating with regulators and travelers to find workable, proportionate solutions for fair access.",
+    "section": "Industry Position on 1P1F (One Person One Fare)",
+    "text": "The aviation industry does not support the 1P1F (One Person One Fare) policy due to financial implications. With an average profit per passenger of $2.25 in 2023 (equating to approximately 3-4 seats per flight), providing free seats could threaten the financial viability of air routes.",
     "source": "https://www.iata.org/en/programs/passenger/accessibility/",
     "source_id": "iata_accessibility_program",
     "type": "remote",
-    "sent": false
+    "sent": false,
+    "entity": "IATA",
+    "entity_type": "industry_body"
   },
   {
-    "id": "99ba54f0b2ed849ba951c076ec4e9254",
+    "id": "5f7dfe8fb8828665cf36ba7f4d6352c9",
     "parent_id": null,
-    "section": "Face-Covering Exemptions for Passengers with Disabilities",
-    "text": "Certain passengers may be unable to wear face masks for extended periods, including small children, individuals with specific medical conditions, or those who lack the autonomy to put on or remove a mask. Some governments have issued specific regulations regarding face mask exemptions for these individuals.",
+    "section": "Industry Position on 1P1F (One Person One Fare)",
+    "text": "Implementing 1P1F is challenging because defining the specific circumstances under which a disabled or obese traveler requires two seats is difficult. Without a global definition, this lack of clarity could lead to confusion for both airlines and passengers and may be subject to abuse.",
     "source": "https://www.iata.org/en/programs/passenger/accessibility/",
     "source_id": "iata_accessibility_program",
     "type": "remote",
-    "sent": false
+    "sent": false,
+    "entity": "IATA",
+    "entity_type": "industry_body"
   },
   {
-    "id": "778ae41e8cd60e0acf2e5a1c098953e2",
+    "id": "46920c23d96135d26aabadfb4624b287",
     "parent_id": null,
-    "section": "IATA Position on Face-Covering",
-    "text": "IATA has published a position paper providing guidance on face-covering requirements for passengers with disabilities.",
+    "section": "Accessibility and Proportionality",
+    "text": "Under the UN Convention, the principles of proportionality and 'reasonable steps' are used to ensure equal access for people with disabilities. For example, not all metro stations have step-free access due to disproportionate costs. Airlines remain committed to working with regulators and travelers to find proportionate and workable solutions for fair air travel access.",
     "source": "https://www.iata.org/en/programs/passenger/accessibility/",
     "source_id": "iata_accessibility_program",
     "type": "remote",
-    "sent": false
+    "sent": false,
+    "entity": "IATA",
+    "entity_type": "industry_body"
   },
   {
-    "id": "94450cdd89bc270688f0c185d79d9a6d",
+    "id": "e2754b30fe9b66082862f5ece76da3fb",
+    "parent_id": null,
+    "section": "Face-Covering Exemptions",
+    "text": "Some passengers may be unable to wear face masks for extended periods, including small children, individuals with certain medical conditions, and those lacking the autonomy to put on or remove a mask. Some governments have published specific regulations regarding face mask exemptions for these passengers.",
+    "source": "https://www.iata.org/en/programs/passenger/accessibility/",
+    "source_id": "iata_accessibility_program",
+    "type": "remote",
+    "sent": false,
+    "entity": "IATA",
+    "entity_type": "industry_body"
+  },
+  {
+    "id": "390f1030d3ec344603de64df1b05432a",
+    "parent_id": null,
+    "section": "Face-Covering Resources",
+    "text": "IATA provides a position paper regarding face-covering requirements for passengers with disabilities.",
+    "source": "https://www.iata.org/en/programs/passenger/accessibility/",
+    "source_id": "iata_accessibility_program",
+    "type": "remote",
+    "sent": false,
+    "entity": "IATA",
+    "entity_type": "industry_body"
+  },
+  {
+    "id": "f2b309c34925c236987682f0c5b8487f",
     "parent_id": null,
     "section": "Transport of Battery-Powered Mobility Aids",
-    "text": "The 'Guidance on the Transport of Mobility Aids' assists airlines in the safe and efficient acceptance and transport of battery-powered wheelchairs and mobility aids. This guidance outlines the specific information passengers must provide to airlines to ensure their battery-powered devices are accepted and properly loaded onto the aircraft.",
+    "text": "IATA's Guidance on the Transport of Mobility Aids helps airlines safely and efficiently accept and transport battery-powered wheelchairs and mobility aids. This guidance specifies the information passengers must provide to ensure their equipment can be accepted and loaded onto the aircraft.",
     "source": "https://www.iata.org/en/programs/passenger/accessibility/",
     "source_id": "iata_accessibility_program",
     "type": "remote",
-    "sent": false
+    "sent": false,
+    "entity": "IATA",
+    "entity_type": "industry_body"
   },
   {
-    "id": "21df8e88279358aba4f0aff4c40cd075",
+    "id": "727cea962274beb64fd39be488f0dc67",
     "parent_id": null,
-    "section": "Mobility Aids Action Group",
-    "text": "Launched in 2021, the global Mobility Aids Action Group is a first-of-its-kind initiative dedicated to improving the handling of wheelchairs and other mobility aids for travelers with disabilities. The group comprises a diverse range of stakeholders, including airlines, airports, ground service providers, mobility aid manufacturers, and organizations representing travelers with disabilities.",
+    "section": "Guidance on Service Dogs",
+    "text": "The Guidance on Service Dogs is designed to help airlines understand the considerations for accepting service dogs while maintaining the integrity of accessibility policies across the aviation industry.",
     "source": "https://www.iata.org/en/programs/passenger/accessibility/",
     "source_id": "iata_accessibility_program",
     "type": "remote",
-    "sent": false
+    "sent": false,
+    "entity": "IATA",
+    "entity_type": "industry_body"
+  },
+  {
+    "id": "3887c1856afc3310e374a4683e5766c6",
+    "parent_id": null,
+    "section": "Mobility Aids Action Group",
+    "text": "Launched in 2021, the global Mobility Aids Action Group aims to improve the handling of mobility aids, including wheelchairs, for travelers with disabilities. This initiative involves a wide range of stakeholders, including airlines, airports, ground service providers, mobility aid manufacturers, and organizations representing travelers with disabilities.",
+    "source": "https://www.iata.org/en/programs/passenger/accessibility/",
+    "source_id": "iata_accessibility_program",
+    "type": "remote",
+    "sent": false,
+    "entity": "IATA",
+    "entity_type": "industry_body"
   }
 ]

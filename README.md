@@ -27,6 +27,7 @@ It detects updates across websites, PDFs, and other document sources, then proce
 - **python-dotenv** – environment variable management  
 - **pytest** – unit testing and validation  
 - **Selenium (with undetected-chromedriver)** – Extracts data from dynamic, JavaScript-heavy sites while bypassing anti-bot protections.
+- **Streamlit** – interactive dashboard for monitoring and running the pipeline
 
 ---
 
@@ -53,6 +54,29 @@ It detects updates across websites, PDFs, and other document sources, then proce
 	- create a .env file for API keys and configuration
 - pipeline_flow_doc_process.py contains the main ingestion and processing logic
 - main.py serves as the entry point for running the pipeline
+
+## Dashboard
+
+The pipeline includes a Streamlit dashboard for monitoring pipeline progress and inspecting results without running the pipeline from the command line.
+- Using the dashboard to inspect data does not push any information to the database. All data persistence and write operations are handled exclusively by the core pipeline via main.py.
+
+**Run the dashboard:**
+```bash
+streamlit run dashboard/app.py
+```
+
+**Pages:**
+
+| Page | Description |
+|------|-------------|
+| Home | Overview of all pipeline stages and key metrics |
+| 1. Scrape & Chunk | Shows scraping status per source and runs Stage 1 |
+| 2. Rule Extraction | Browse and filter all extracted rules, runs Stage 2 |
+| 3. Validation | Quality check results across five checks, runs Stage 3 |
+| 4. Versioning | Tracks new, updated, and unchanged rules, runs Stage 4 |
+| 5. Database | Live view of rules in Firestore with a local vs. database comparison |
+
+Each stage page includes a **Run** button in the sidebar with a live progress bar and streaming output log. Stages can be run individually or inspected after a full pipeline run via `main.py`.
 
 ## Module Breakdown
 - **Chunker:** Handles splitting large documents into smaller, manageable pieces for AI processing.

@@ -6,7 +6,9 @@
     "sent": false,
     "source": "https://www.transportation.gov/airconsumer/passengers-disabilities",
     "source_id": "us_transportation_passengers_disabilities",
-    "type": "remote"
+    "type": "remote",
+    "entity": "US Department of Transportation",
+    "entity_type": "regulator"
   },
   {
     "id": "846400a5b3c5eb57f92ea583b0c32a2a",
@@ -15,7 +17,9 @@
     "sent": false,
     "source": "https://www.transportation.gov/airconsumer/passengers-disabilities",
     "source_id": "us_transportation_passengers_disabilities",
-    "type": "remote"
+    "type": "remote",
+    "entity": "US Department of Transportation",
+    "entity_type": "regulator"
   },
   {
     "id": "6a2f27c90c947c07060c713ccf69c8d4",
@@ -24,7 +28,9 @@
     "sent": false,
     "source": "https://www.transportation.gov/airconsumer/passengers-disabilities",
     "source_id": "us_transportation_passengers_disabilities",
-    "type": "remote"
+    "type": "remote",
+    "entity": "US Department of Transportation",
+    "entity_type": "regulator"
   },
   {
     "id": "0b49cf9c4afa055caab3c0108b448618",
@@ -33,7 +39,9 @@
     "sent": false,
     "source": "https://www.transportation.gov/airconsumer/passengers-disabilities",
     "source_id": "us_transportation_passengers_disabilities",
-    "type": "remote"
+    "type": "remote",
+    "entity": "US Department of Transportation",
+    "entity_type": "regulator"
   },
   {
     "id": "0bde311f2802ef225974bcba75c55d03",
@@ -42,7 +50,9 @@
     "sent": false,
     "source": "https://www.transportation.gov/airconsumer/passengers-disabilities",
     "source_id": "us_transportation_passengers_disabilities",
-    "type": "remote"
+    "type": "remote",
+    "entity": "US Department of Transportation",
+    "entity_type": "regulator"
   },
   {
     "id": "1c20a6db8455714d59e76c27f58e31f4",
@@ -51,7 +61,9 @@
     "sent": false,
     "source": "https://www.transportation.gov/airconsumer/passengers-disabilities",
     "source_id": "us_transportation_passengers_disabilities",
-    "type": "remote"
+    "type": "remote",
+    "entity": "US Department of Transportation",
+    "entity_type": "regulator"
   },
   {
     "id": "42f99798fb1e179264ad409460af8026",
@@ -60,6 +72,8 @@
     "sent": false,
     "source": "https://www.transportation.gov/airconsumer/passengers-disabilities",
     "source_id": "us_transportation_passengers_disabilities",
-    "type": "remote"
+    "type": "remote",
+    "entity": "US Department of Transportation",
+    "entity_type": "regulator"
   }
 ]

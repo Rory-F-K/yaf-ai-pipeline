@@ -96,7 +96,7 @@ async def _make_context(playwright):
     )
 
     # Apply stealth to the whole context — every page opened from it is covered
-    await Stealth().apply_stealth_async(context)
+    context.on("page", lambda page: asyncio.ensure_future(Stealth().apply_stealth_async(page)))
 
     return browser, context
 
