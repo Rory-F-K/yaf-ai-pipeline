@@ -6,7 +6,9 @@
     "sent": false,
     "source": "https://www.iata.org/en/programs/passenger/accessibility/",
     "source_id": "iata_accessibility_program",
-    "type": "remote"
+    "type": "remote",
+    "entity": "IATA",
+    "entity_type": "industry_body"
   },
   {
     "id": "5e6b14dcb0155961879f37af9c38224e",
@@ -15,7 +17,9 @@
     "sent": false,
     "source": "https://www.iata.org/en/programs/passenger/accessibility/",
     "source_id": "iata_accessibility_program",
-    "type": "remote"
+    "type": "remote",
+    "entity": "IATA",
+    "entity_type": "industry_body"
   },
   {
     "id": "431a0382d0453c50c0164a07b2300f46",
@@ -24,7 +28,9 @@
     "sent": false,
     "source": "https://www.iata.org/en/programs/passenger/accessibility/",
     "source_id": "iata_accessibility_program",
-    "type": "remote"
+    "type": "remote",
+    "entity": "IATA",
+    "entity_type": "industry_body"
   },
   {
     "id": "1b125d5c080f3e051635b152b3b36be2",
@@ -33,24 +39,30 @@
     "sent": false,
     "source": "https://www.iata.org/en/programs/passenger/accessibility/",
     "source_id": "iata_accessibility_program",
-    "type": "remote"
+    "type": "remote",
+    "entity": "IATA",
+    "entity_type": "industry_body"
   },
   {
-    "id": "16f432a60f34e2c8307b07d144d9b0f2",
+    "id": "5b9b69b0b058b925fa3497a44db81c51",
     "section": "However, the industry does not support 1P1F on several grounds:",
-    "text": "> Read the IATA position paper on face-covering for passengers with disabilities (pdf) Guidance for Airlines: Transport of Battery-Powered Wheelchair and Mobility Aid The Guidance on the Transport of Mobility Aids (pdf) supports airlines in accepting and transporting battery-powered wheelchairs and mobility aids safely and efficiently. It includes details that passengers need to provide to airlines to ensure battery-powered mobility aid can be accepted and loaded onto the aircraft. \u200b\u200b\u200b\u200b\u200b\u200b\u200b\u200b\u200b\u200b\u200b\u200b\u200b\u200b\u200b\u200b\u200b\u200b\u200b\u200b\u200b",
+    "text": "> Read the IATA position paper on face-covering for passengers with disabilities (pdf) Guidance for Airlines: Transport of Battery-Powered Wheelchair and Mobility Aid The Guidance on the Transport of Mobility Aids (pdf) supports airlines in accepting and transporting battery-powered wheelchairs and mobility aids safely and efficiently. It includes details that passengers need to provide to airlines to ensure battery-powered mobility aid can be accepted and loaded onto the aircraft. \u200b\u200b\u200b\u200b\u200b\u200b\u200b\u200b\u200b\u200b\u200b\u200b\u200b\u200b\u200b\u200b\u200b\u200b\u200b\u200b\u200b The Guidance on Service Dogs (pdf) is intended to assist airlines in better understanding considerations related to the acceptance of service dogs, while supporting the integrity of accessibility policies across the aviation industry.",
     "sent": false,
     "source": "https://www.iata.org/en/programs/passenger/accessibility/",
     "source_id": "iata_accessibility_program",
-    "type": "remote"
+    "type": "remote",
+    "entity": "IATA",
+    "entity_type": "industry_body"
   },
   {
-    "id": "fff38136cafed068c18a5a3fe8a3ba80",
+    "id": "b540851fc032cff355c28bc03ab26ec5",
     "section": "Mobility Aids Action Group",
-    "text": "The first of its kind, a global Action Group was launched in 2021 to improve the handling of mobility aids for travelers with disabilities, including wheelchairs. The Action Group will involve a full range of stakeholders, including organizations representing travelers with disabilities, airlines, ground service providers, airports and mobility aids manufacturers. > More details through the press release: Airlines Launch new Mobility Aids Action Group More on Air Travel Accessibility",
+    "text": "The first of its kind, a global Action Group was launched in 2021 to improve the handling of mobility aids for travelers with disabilities, including wheelchairs. The Action Group will involve a full range of stakeholders, including organizations representing travelers with disabilities, airlines, ground service providers, airports and mobility aids manufacturers. > More details through the press release: Airlines Launch new Mobility Aids Action Group Guidance for Airlines: Service Dogs More on Air Travel Accessibility",
     "sent": false,
     "source": "https://www.iata.org/en/programs/passenger/accessibility/",
     "source_id": "iata_accessibility_program",
-    "type": "remote"
+    "type": "remote",
+    "entity": "IATA",
+    "entity_type": "industry_body"
   }
 ]

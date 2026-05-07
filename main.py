@@ -37,8 +37,11 @@ from extractor.rule_extractor import RuleExtractor
 from validator.rule_validator import RuleValidator
 from firestore.client import FirestoreClient
 
+from parser.social_media.twitter_rapid import RapidXProvider
+
 # ── Paths ──────────────────────────────────────────────────────────────────────
 SOURCES_DIR    = Path("sources")
+SOCIAL_RAW_DIR = Path("chunk_store") / "social" / "raw"
 AGENTIC_DIR    = Path("chunk_store/agentic")
 EXTRACTED_DIR  = Path("rules/extracted")
 VALIDATED_DIR  = Path("rules/validated")
@@ -68,6 +71,7 @@ def stage_chunk():
         agentic_rpm=3,
         batch_size=3,
         checkpoint_every=10,
+        social_provider=RapidXProvider(), # add social provider
     )
 
     # Local files
@@ -99,6 +103,9 @@ def stage_chunk():
             continue
         print(f"[Chunk] Remote: {input_id}")
         pipeline.process(src)
+
+    # Social media sources
+    pipeline.process_social(run_id="x_social")
 
     print("[Done] All sources processed")
 

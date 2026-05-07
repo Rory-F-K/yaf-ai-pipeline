@@ -6,7 +6,9 @@
     "sent": false,
     "source": "https://help.vueling.com/hc/en-gb/categories/19798714411665-Special-Assistance",
     "source_id": "vueling_special_assistance",
-    "type": "remote"
+    "type": "remote",
+    "entity": "Vueling",
+    "entity_type": "airline"
   },
   {
     "id": "a23bf73cba99a4d54ca6de2623985ef0",
@@ -15,7 +17,9 @@
     "sent": false,
     "source": "https://help.vueling.com/hc/en-gb/categories/19798714411665-Special-Assistance",
     "source_id": "vueling_special_assistance",
-    "type": "remote"
+    "type": "remote",
+    "entity": "Vueling",
+    "entity_type": "airline"
   },
   {
     "id": "2694eae8cf05fdc5a7a4faddad4d4648",
@@ -24,7 +28,9 @@
     "sent": false,
     "source": "https://help.vueling.com/hc/en-gb/categories/19798714411665-Special-Assistance",
     "source_id": "vueling_special_assistance",
-    "type": "remote"
+    "type": "remote",
+    "entity": "Vueling",
+    "entity_type": "airline"
   },
   {
     "id": "230ec9f66fe3ff2d6ba19cffab1c664a",
@@ -33,7 +39,9 @@
     "sent": false,
     "source": "https://help.vueling.com/hc/en-gb/categories/19798714411665-Special-Assistance",
     "source_id": "vueling_special_assistance",
-    "type": "remote"
+    "type": "remote",
+    "entity": "Vueling",
+    "entity_type": "airline"
   },
   {
     "id": "7f53caef1a3036c5d9f62cd87b2596b7",
@@ -42,7 +50,9 @@
     "sent": false,
     "source": "https://help.vueling.com/hc/en-gb/categories/19798714411665-Special-Assistance",
     "source_id": "vueling_special_assistance",
-    "type": "remote"
+    "type": "remote",
+    "entity": "Vueling",
+    "entity_type": "airline"
   },
   {
     "id": "fb4acbec3c74cf88e9de18b090608a4d",
@@ -51,7 +61,9 @@
     "sent": false,
     "source": "https://help.vueling.com/hc/en-gb/categories/19798714411665-Special-Assistance",
     "source_id": "vueling_special_assistance",
-    "type": "remote"
+    "type": "remote",
+    "entity": "Vueling",
+    "entity_type": "airline"
   },
   {
     "id": "75aca5f6613d25bee1e996ad45716b77",
@@ -60,7 +72,9 @@
     "sent": false,
     "source": "https://help.vueling.com/hc/en-gb/categories/19798714411665-Special-Assistance",
     "source_id": "vueling_special_assistance",
-    "type": "remote"
+    "type": "remote",
+    "entity": "Vueling",
+    "entity_type": "airline"
   },
   {
     "id": "e226c561a26b6c0ffb2f1797123c7162",
@@ -69,7 +83,9 @@
     "sent": false,
     "source": "https://help.vueling.com/hc/en-gb/categories/19798714411665-Special-Assistance",
     "source_id": "vueling_special_assistance",
-    "type": "remote"
+    "type": "remote",
+    "entity": "Vueling",
+    "entity_type": "airline"
   },
   {
     "id": "a7dfd848de98b4b7e34bbfb35e9827fc",
@@ -78,7 +94,9 @@
     "sent": false,
     "source": "https://help.vueling.com/hc/en-gb/categories/19798714411665-Special-Assistance",
     "source_id": "vueling_special_assistance",
-    "type": "remote"
+    "type": "remote",
+    "entity": "Vueling",
+    "entity_type": "airline"
   },
   {
     "id": "9e98c4e691892dd1601c363bf543fe4b",
@@ -87,7 +105,9 @@
     "sent": false,
     "source": "https://help.vueling.com/hc/en-gb/categories/19798714411665-Special-Assistance",
     "source_id": "vueling_special_assistance",
-    "type": "remote"
+    "type": "remote",
+    "entity": "Vueling",
+    "entity_type": "airline"
   },
   {
     "id": "a637de5a709e6a5e7950c686b0e20644",
@@ -96,7 +116,9 @@
     "sent": false,
     "source": "https://help.vueling.com/hc/en-gb/categories/19798714411665-Special-Assistance",
     "source_id": "vueling_special_assistance",
-    "type": "remote"
+    "type": "remote",
+    "entity": "Vueling",
+    "entity_type": "airline"
   },
   {
     "id": "f58425699d114e7ab49d92cc95da0db9",
@@ -105,7 +127,9 @@
     "sent": false,
     "source": "https://help.vueling.com/hc/en-gb/categories/19798714411665-Special-Assistance",
     "source_id": "vueling_special_assistance",
-    "type": "remote"
+    "type": "remote",
+    "entity": "Vueling",
+    "entity_type": "airline"
   },
   {
     "id": "605f4a3ff2841f280f6dac77e001e578",
@@ -114,7 +138,9 @@
     "sent": false,
     "source": "https://help.vueling.com/hc/en-gb/categories/19798714411665-Special-Assistance",
     "source_id": "vueling_special_assistance",
-    "type": "remote"
+    "type": "remote",
+    "entity": "Vueling",
+    "entity_type": "airline"
   },
   {
     "id": "952ba988e71c6781aeb68cec8d7f3e6f",
@@ -123,7 +149,9 @@
     "sent": false,
     "source": "https://help.vueling.com/hc/en-gb/categories/19798714411665-Special-Assistance",
     "source_id": "vueling_special_assistance",
-    "type": "remote"
+    "type": "remote",
+    "entity": "Vueling",
+    "entity_type": "airline"
   },
   {
     "id": "71e9041fed4fa57e70fe89bef974cdcc",
@@ -132,7 +160,9 @@
     "sent": false,
     "source": "https://help.vueling.com/hc/en-gb/categories/19798714411665-Special-Assistance",
     "source_id": "vueling_special_assistance",
-    "type": "remote"
+    "type": "remote",
+    "entity": "Vueling",
+    "entity_type": "airline"
   },
   {
     "id": "2815631794d8c0c98a46fd4cc75d8597",
@@ -141,7 +171,9 @@
     "sent": false,
     "source": "https://help.vueling.com/hc/en-gb/categories/19798714411665-Special-Assistance",
     "source_id": "vueling_special_assistance",
-    "type": "remote"
+    "type": "remote",
+    "entity": "Vueling",
+    "entity_type": "airline"
   },
   {
     "id": "475c3ba7628bc4fe4cab280864f2482c",
@@ -150,7 +182,9 @@
     "sent": false,
     "source": "https://help.vueling.com/hc/en-gb/categories/19798714411665-Special-Assistance",
     "source_id": "vueling_special_assistance",
-    "type": "remote"
+    "type": "remote",
+    "entity": "Vueling",
+    "entity_type": "airline"
   },
   {
     "id": "ebd31b65d4e0fa21f1b013120818d8e2",
@@ -159,6 +193,8 @@
     "sent": false,
     "source": "https://help.vueling.com/hc/en-gb/categories/19798714411665-Special-Assistance",
     "source_id": "vueling_special_assistance",
-    "type": "remote"
+    "type": "remote",
+    "entity": "Vueling",
+    "entity_type": "airline"
   }
 ]

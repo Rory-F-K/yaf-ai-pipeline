@@ -101,8 +101,6 @@ class GeminiChunker:
                     "source": c.get("source"),
                     "source_id": c.get("source_id"),
                     "type": c.get("type"),
-                    "entity": c.get("entity"),
-                    "entity_type": c.get("entity_type"),
                     "sent": False # track if this chunk has been sent to rule extraction yet
                 })
 
@@ -122,8 +120,8 @@ class GeminiChunker:
         chunk_text = json.dumps(unsent, indent=2)
 
         contents = [
-            Content(parts=[Part(text=SYSTEM_PROMPT)]), # system prompt
-            Content(parts=[Part(text=chunk_text)]) # user content
+            Content(parts=[Part(text=SYSTEM_PROMPT)]),  # system prompt
+            Content(parts=[Part(text=chunk_text)])      # user content
         ] 
         response = self.client.models.generate_content(
             model=GEMINI_MODEL_NAME,
