@@ -5,8 +5,10 @@
     "text": "This document is based on the provisions set out in the 2025-2026 Edition of the ICAO Technical Instructions for the Safe Transport of Dangerous Goods by Air (Technical Instructions) and the 67th Edition (2026) of the IATA Dangerous Goods Regulations (DGR). Information on the DGR can be found on https://www.iata.org/dgr. The batteries that power wheelchairs and mobility aids are considered as dangerous goods when transported by air. Inadvertent activation of battery-powered mobility aids can cause friction or electrical load which could lead to a fire. These batteries and some other dangerous goods that are permitted for carriage by passengers, can be transported safely by air provided that certain safety requirements are met. The requirements are detailed in the IATA Dangerous Goods Regulations, which are based on the ICAO Technical Instructions. Training is an essential component in maintaining a safe regulatory regime. It is mandatory for all individuals involved in the preparation or transport of dangerous goods, including battery powered wheelchairs and mobility aids, to successfully complete a function specific training program, to carry out their responsibilities.",
     "sent": false,
     "source": "https://www.iata.org/contentassets/6fea26dd84d24b26a7a1fd5788561d6e/mobility-aid-guidance-document.pdf",
-    "source_id": "iata_mobility-aid-guidance-document",
-    "type": "remote"
+    "source_id": "iata_mobility_aid_guidance_2026",
+    "type": "remote",
+    "entity": "IATA",
+    "entity_type": "industry_body"
   },
   {
     "id": "ebfb86f4d39ed58496de909bc3184016",
@@ -14,8 +16,10 @@
     "text": "It is important to remember that dangerous goods are unlikely to cause a hazard when they are prepared and handled in compliance with the IATA Dangerous Goods Regulations. Good coordination between the passenger and the airline helps ensure all parties involved in transporting the mobility aid: know what device(s) and battery type(s) are being transported; understand how to properly load and handle them; and follow the relevant emergency response procedure(s) should an incident or accident occur during flight or on the ground. To avoid delays during loading, it is important that any instructions and additional information detailed in the operator approval section of this guidance document are provided in advance. The pilot-in-command must be informed of the location of the mobility aid with installed batteries, removed batteries and spare batteries, to best deal with any emergencies that may occur. Note: The battery management function may be integrated into the battery or distributed over the control and drive system.",
     "sent": false,
     "source": "https://www.iata.org/contentassets/6fea26dd84d24b26a7a1fd5788561d6e/mobility-aid-guidance-document.pdf",
-    "source_id": "iata_mobility-aid-guidance-document",
-    "type": "remote"
+    "source_id": "iata_mobility_aid_guidance_2026",
+    "type": "remote",
+    "entity": "IATA",
+    "entity_type": "industry_body"
   },
   {
     "id": "b2c0ab1007b170f21c078e92d04edb89",
@@ -23,8 +27,10 @@
     "text": "Disabled person or person with reduced mobility: Any person whose mobility when using transport is reduced due to any physical disability (sensory or locomotor, permanent or temporary), intellectual disability or impairment, or any other cause of disability, or age, and whose situation needs appropriate attention and the adaptation to his or her particular needs of the service made available to all passengers. Regulation (EC) No 1107/2006, Article 2 Indicated Battery Capacity is to be taken as the indicated remaining usable battery capacity that the user sees via a display gauge or indicator lights. Lithium-ion batteries (sometimes abbreviated Li-ion batteries): A secondary (rechargeable) battery where the lithium is only present in an ionic form in the electrolyte. Also included within the category of lithium-ion batteries are lithium polymer batteries. Lithium-ion batteries are generally used to power devices such as mobile telephones, laptop computers, tablets, power tools and e-bikes.",
     "sent": false,
     "source": "https://www.iata.org/contentassets/6fea26dd84d24b26a7a1fd5788561d6e/mobility-aid-guidance-document.pdf",
-    "source_id": "iata_mobility-aid-guidance-document",
-    "type": "remote"
+    "source_id": "iata_mobility_aid_guidance_2026",
+    "type": "remote",
+    "entity": "IATA",
+    "entity_type": "industry_body"
   },
   {
     "id": "6948ba288fb8f1c241d17d3e628fb82e",
@@ -32,8 +38,10 @@
     "text": "Figure 1 Examples of Lithium Ion Batteries Non-spillable wet batteries: Have an absorbed electrolyte (examples are absorbed glass mat (AGM), gel battery, gel cell and sealed lead-acid (SLS) batteries) and do not leak any electrolyte or liquid even if the battery case is ruptured or cracked. The batteries must be capable of passing certain vibration and pressure differential tests. Examples of dry batteries are alkali-manganese, zinc-carbon, nickel-cadmium and nickel-metal hydride batteries. Figure 3 Examples of Nickel Metal Hydride and Dry Batteries Operator: A person, organisation or enterprise engaged in or offering to engage in an aircraft operation. Spillable wet batteries: Consist of a series of metal plates immersed in an electrolyte. The electrolyte is a corrosive liquid such as dilute sulphuric acid. Spillable batteries will leak the corrosive electrolyte if not maintained in an upright condition throughout transport, including loading and unloading. Figure 4 Example of Spillable Wet Battery Tour operator: An organiser or retailer of package tours and tourism services for sale either directly to travellers or through intermediaries.",
     "sent": false,
     "source": "https://www.iata.org/contentassets/6fea26dd84d24b26a7a1fd5788561d6e/mobility-aid-guidance-document.pdf",
-    "source_id": "iata_mobility-aid-guidance-document",
-    "type": "remote"
+    "source_id": "iata_mobility_aid_guidance_2026",
+    "type": "remote",
+    "entity": "IATA",
+    "entity_type": "industry_body"
   },
   {
     "id": "d87955020131a1e8ae8273dca4a75f5c",
@@ -41,8 +49,10 @@
     "text": "Special Handling Codes: Airlines use several codes to communicate to employees on the type of wheelchair being transported. These include: WCBD: Wheelchair (mobility aid) powered by a non-spillable battery, nickel-metal hydride battery or a dry battery. WCBW: Wheelchair (mobility aid) powered by a wet cell (spillable) battery. WCLB: Wheelchair (mobility aid) with installed lithium battery. WCLX: Wheelchair (mobility aid) with lithium battery removed for transportation. Wheelchair system: The electrical and electronic traction control system for a wheelchair including the battery, its manager, the motor speed controller, the user interface and all wiring and safety devices. It is strongly recommended that the user of the wheelchair or mobility aid, travel agent, tour operator or other third-party booking websites should seek the approval for the carriage of the mobility aid in advance, in order for safety assessments to be made and for handling arrangements for the device to be able to be put in place.",
     "sent": false,
     "source": "https://www.iata.org/contentassets/6fea26dd84d24b26a7a1fd5788561d6e/mobility-aid-guidance-document.pdf",
-    "source_id": "iata_mobility-aid-guidance-document",
-    "type": "remote"
+    "source_id": "iata_mobility_aid_guidance_2026",
+    "type": "remote",
+    "entity": "IATA",
+    "entity_type": "industry_body"
   },
   {
     "id": "15b13017c67c7b3d9534281b52937f24",
@@ -50,8 +60,10 @@
     "text": "The operator is required to have a documented approval process which needs to be published in accessible formats and technologies, such as electronic, web-based, large print and audio, available in a timely manner and without additional cost to the passenger. Details should be easily accessible and clearly described on the operator s website and/or made available to call-centre staff. Web-based material and internet booking should be accessible to persons with disabilities in accordance with international web accessibility standards found at http://www.w3.org/standards/webdesign/accessibility. Operators will often have specialist teams set up to coordinate the carriage of passengers and their mobility devices. Risk Assessment When considering the carriage of large batteries, operators are subject to the provisions of DGR 9.1.9 (Requirement for Safety Risk Assessment) and DGR 1.4.2.2 (Recommendations with respect to approval of dangerous goods carried by passengers and crew). Further guidance can be found in the IATA document Lithium Battery Risk Assessment Guidance for Operators .",
     "sent": false,
     "source": "https://www.iata.org/contentassets/6fea26dd84d24b26a7a1fd5788561d6e/mobility-aid-guidance-document.pdf",
-    "source_id": "iata_mobility-aid-guidance-document",
-    "type": "remote"
+    "source_id": "iata_mobility_aid_guidance_2026",
+    "type": "remote",
+    "entity": "IATA",
+    "entity_type": "industry_body"
   },
   {
     "id": "17d796283e6031d66f164cab6c352b8a",
@@ -59,8 +71,10 @@
     "text": "Limitations and Classification (DGR 2.3.2) All battery-powered wheelchairs or mobility aids must be prepared to prevent unintentional activation during transport, and the battery terminals must be protected from short circuits. The battery(ies) can either be securely attached to the device with the electrical circuits being isolated following the manufacturer s instructions or removed following the manufacturer s instructions if the design of the device cannot provide adequate protection to the battery(ies) against damage. Battery-powered wheelchairs or mobility aids used by passengers are classified in three main categories based on the battery type that powers the device: Wheelchairs / mobility aids with non-spillable wet batteries, nickel-metal hydride batteries or dry batteries (DGR 2.3.2.2); Wheelchairs / mobility aids with spillable batteries (DGR 2.3.2.3); and Wheelchairs / mobility aids with lithium batteries (DGR 2.3.2.4). Each category has its unique requirements, and they must be strictly followed to ensure safe transport of the device. Non-spillable wet batteries. These must comply with Special Provision A67.",
     "sent": false,
     "source": "https://www.iata.org/contentassets/6fea26dd84d24b26a7a1fd5788561d6e/mobility-aid-guidance-document.pdf",
-    "source_id": "iata_mobility-aid-guidance-document",
-    "type": "remote"
+    "source_id": "iata_mobility_aid_guidance_2026",
+    "type": "remote",
+    "entity": "IATA",
+    "entity_type": "industry_body"
   },
   {
     "id": "8ae5b5fe1f60ffc9bf2193a003d89825",
@@ -68,8 +82,10 @@
     "text": "Special Provision A67: Wet cell batteries can be considered as non-spillable provided that they are capable of withstanding the vibration and pressure differential tests given below, without leakage of battery fluid. Vibration test: The battery is rigidly clamped to the platform of a vibration machine and a simple harmonic motion having an amplitude of 0.8 mm (1.6 mm maximum total excursion) is applied. The frequency is varied at the rate of 1 Hz/min between the limits of 10 Hz to 55 Hz. The entire range of frequencies and return is traversed in 95 5 minutes for each mounting position (direction of vibration) of the battery. The battery must be tested in three mutually perpendicular positions (to include testing with fill openings and vents, if any, in an inverted position) for equal time periods. The battery must be tested in three mutually perpendicular positions (to include testing with fill openings and vents, if any, in an inverted position) for at least six hours in each position.",
     "sent": false,
     "source": "https://www.iata.org/contentassets/6fea26dd84d24b26a7a1fd5788561d6e/mobility-aid-guidance-document.pdf",
-    "source_id": "iata_mobility-aid-guidance-document",
-    "type": "remote"
+    "source_id": "iata_mobility_aid_guidance_2026",
+    "type": "remote",
+    "entity": "IATA",
+    "entity_type": "industry_body"
   },
   {
     "id": "9cf3cdcd00fb2291277a1cc509750a87",
@@ -77,8 +93,10 @@
     "text": "In addition to the battery in the wheelchair (which may be removed and caried in the cabin, a passenger may carry a maximum of one spare wet, non-spillable battery meeting Special Provision A67. Nickel-metal hydride batteries must comply with Special Provision A199. Special Provision A199: Nickel-metal hydride batteries or nickel-metal hydride battery-powered devices, equipment or vehicles are not subject to these Regulations (DGR) provided they are prepared for transport so as to prevent: a short circuit (e.g. A passenger may carry a maximum of two spare nickel-metal hydride batteries meeting Special Provision A199. Dry batteries must comply with Special Provision A123. Special Provision A123: Examples of such batteries are: alkali-manganese, zinc-carbon and nickel- cadmium batteries. A passenger may carry a maximum of two spare dry batteries meeting Special Provision A123. All removed and spare batteries must be carried in strong, rigid packagings and must only be carried in the cargo compartment. If the wheelchair or mobility aid does not adequately protect the battery, the battery must be removed.",
     "sent": false,
     "source": "https://www.iata.org/contentassets/6fea26dd84d24b26a7a1fd5788561d6e/mobility-aid-guidance-document.pdf",
-    "source_id": "iata_mobility-aid-guidance-document",
-    "type": "remote"
+    "source_id": "iata_mobility_aid_guidance_2026",
+    "type": "remote",
+    "entity": "IATA",
+    "entity_type": "industry_body"
   },
   {
     "id": "9df5dba08d2a33f23cbe3e87312a4cf8",
@@ -86,8 +104,10 @@
     "text": "The removed battery must be carried in a strong, rigid packaging and must only be carried in the cargo compartment. Wheelchairs / Mobility Aids with Lithium Batteries Lithium batteries that are used to power the wheelchairs and mobility aids must be of a type which meets the requirements of each test in the UN Manual of Tests and Criteria, Part III, subsection 38.3. Approval may be given for the lithium battery(ies) to remain installed in the wheelchair or mobility aid, if the battery(ies) is protected against damage by the design and securely attached or be removed, following the manufacturer s instructions. If the battery remains installed, and the total of the installed batteries exceed 300 Wh, then the operator is required to consider additional safety mitigation measures. Commonly, these will be with certain operators that have either fire-resistant containers in which the mobility aid will be transported, or fire-resistant covers, which can be put over the device. Alternatively, the airline may require the battery to be transported at a reduced Indicated battery charge of 25% or less.",
     "sent": false,
     "source": "https://www.iata.org/contentassets/6fea26dd84d24b26a7a1fd5788561d6e/mobility-aid-guidance-document.pdf",
-    "source_id": "iata_mobility-aid-guidance-document",
-    "type": "remote"
+    "source_id": "iata_mobility_aid_guidance_2026",
+    "type": "remote",
+    "entity": "IATA",
+    "entity_type": "industry_body"
   },
   {
     "id": "64169c84bdde7e764838193e367260cb",
@@ -95,8 +115,10 @@
     "text": "Some operators have determined from their safety risk assessments, that lithium batteries must be removed from the mobility aid and carried in the cabin. The removed battery(ies) must not exceed a total of 300 Wh. A passenger may carry spare batteries up to a cumulative total of 300 Wh per mobility aid. All removed and spare batteries must be protected from damage (e.g. Training Dangerous Goods Regulations mandates the employer (i.e. Additionally, the training program should address attitudinal, physical and environmental factors that ought to be considered, so that persons with reduced mobility receive quality, consistent and respectful service prior to, during, and after their flight. Handling IATA, in conjunction with aviation stakeholders and accessibility organizations, has developed an end-to-end guidance document Guidance on the Transport of Mobility Aids to assist operators in facilitating the transport of their customers. The handling section of this document is designed to support the dangerous goods considerations in accepting, loading and notification processes.",
     "sent": false,
     "source": "https://www.iata.org/contentassets/6fea26dd84d24b26a7a1fd5788561d6e/mobility-aid-guidance-document.pdf",
-    "source_id": "iata_mobility-aid-guidance-document",
-    "type": "remote"
+    "source_id": "iata_mobility_aid_guidance_2026",
+    "type": "remote",
+    "entity": "IATA",
+    "entity_type": "industry_body"
   },
   {
     "id": "bddb8a8f74433f7e928f782009ac28ad",
@@ -104,8 +126,10 @@
     "text": "Acceptance Prior to acceptance, the operator must verify that: the battery terminals are protected from short circuits. This does not necessarily mean removing the battery. There are specific handling requirements for different types of batteries: non-spillable wet batteries, nickel-metal hydride batteries and dry batteries confirm with the passenger that relevant special provision has been complied with (A67 for non-spillable wet batteries, A199 for nickel-metal hydride batteries and A123 for dry batteries). All removed and spare batteries must be placed in strong, rigid packagings and must only be transported in the cargo compartment. They must be removed from the mobility aid if the device cannot be loaded, stowed, secured or unloaded in an upright position. Figure 5 Corrosive label Figure 6 Package Orientation Labels lithium-ion batteries confirm with the passenger that the batteries meet the requirements of the UN Manual of Tests and Criteria, Part III, subsection 38.3. Where the battery(ies) is removed from the mobility aid, the cumulative total must not exceed 300 Wh.",
     "sent": false,
     "source": "https://www.iata.org/contentassets/6fea26dd84d24b26a7a1fd5788561d6e/mobility-aid-guidance-document.pdf",
-    "source_id": "iata_mobility-aid-guidance-document",
-    "type": "remote"
+    "source_id": "iata_mobility_aid_guidance_2026",
+    "type": "remote",
+    "entity": "IATA",
+    "entity_type": "industry_body"
   },
   {
     "id": "216184fb2456c0fa904e11cbcc673885",
@@ -113,8 +137,10 @@
     "text": "All removed and spare batteries must be protected from damage and must only be carried in the passenger cabin. Any exposed terminals including non-shielded cable connectors must be insulated to prevent short- circuit. Once the mobility aid has been prepared for air transport, to verify that electrical circuits have been isolated, place the device into drive mode (i.e. It must also be verified that the circuits of supplemental motorised systems such as seating systems have been isolated to prevent inadvertent operation, e.g. If a battery-powered mobility aid has not been made safe for carriage, it must not be loaded into the aircraft. Figure 7 Battery-powered Wheelchair and Mobility Aid Label left part of the label remains with the wheelchair and indicates whether or not the battery has been removed, and right part of the label can be used where the battery is separated from the wheelchair Loading The wheelchair or mobility aid must be secured against movement in the cargo compartment, by use of straps, tie-downs or other restraint devices.",
     "sent": false,
     "source": "https://www.iata.org/contentassets/6fea26dd84d24b26a7a1fd5788561d6e/mobility-aid-guidance-document.pdf",
-    "source_id": "iata_mobility-aid-guidance-document",
-    "type": "remote"
+    "source_id": "iata_mobility_aid_guidance_2026",
+    "type": "remote",
+    "entity": "IATA",
+    "entity_type": "industry_body"
   },
   {
     "id": "e42c48982e52d78a7739838e9371580d",
@@ -122,8 +148,10 @@
     "text": "The wheelchair or mobility aid, including batteries, electrical cabling and controls must be protected from damage, including damage caused by the movement of baggage, mail and cargo. Accordingly, any battery-powered wheelchair and mobility aid must not be stowed together with loose loaded (bulk) items within a unit load device (ULD) or netted section of the cargo compartment. Examples of good practice for securing mobility aids include: use tie-down points keep the mobility aid in upright position where possible secure the mobility aid on the base frame secure removable and fragile parts in the cabin avoid unnecessary tilting of the mobility aid disengage freewheel mode disconnect/isolate power ensure adequate clearance when loading avoid over-tightening tie-down straps or other securing devices not driving or sitting in the wheelchair or mobility aid load last when possible If the battery-powered wheelchair or mobility aid has loose fitting parts, such as armrests, footrests, or cushions, they should be placed in a suitable pouch/container, prior to loading in the cargo compartment, to prevent any loose parts from being lost or damaged.",
     "sent": false,
     "source": "https://www.iata.org/contentassets/6fea26dd84d24b26a7a1fd5788561d6e/mobility-aid-guidance-document.pdf",
-    "source_id": "iata_mobility-aid-guidance-document",
-    "type": "remote"
+    "source_id": "iata_mobility_aid_guidance_2026",
+    "type": "remote",
+    "entity": "IATA",
+    "entity_type": "industry_body"
   },
   {
     "id": "78007f9d5be281418fb6a0bc46a0a5dd",
@@ -131,8 +159,10 @@
     "text": "It is recommended that passengers to provide their own suitable pouch/container for any removed parts. Many passengers prefer to carry this type of equipment on board the aircraft to prevent loss or damage. These wheelchairs and mobility aids tend to be custom made and may have additional attachments specifically designed and fitted for individual users. These devices are designed and tested for use in upright position only. Turning these devices on their side is not usually recommended by the manufacturer and will inevitably result in the device being damaged. Loading devices on their side in the cargo compartment or unit load device also creates challenges for securing these devices in the aircraft or ULD, as the straps or other means of securing the device will be across the side of the device, which is potentially the weakest point. Where the cargo compartment of the aircraft is too small to load the wheelchair or mobility aid upright, operators should consider offering alternative routings or flights that can accommodate larger devices rather than taking the risk of damaging the device.",
     "sent": false,
     "source": "https://www.iata.org/contentassets/6fea26dd84d24b26a7a1fd5788561d6e/mobility-aid-guidance-document.pdf",
-    "source_id": "iata_mobility-aid-guidance-document",
-    "type": "remote"
+    "source_id": "iata_mobility_aid_guidance_2026",
+    "type": "remote",
+    "entity": "IATA",
+    "entity_type": "industry_body"
   },
   {
     "id": "3623ea9d9378668af5fffdacc829b906",
@@ -140,8 +170,10 @@
     "text": "Notification to Pilot-in-Command The pilot-in-command must be informed of: the location of mobility aids with installed batteries; the location of removed batteries; and the location of spare batteries, either in the cargo compartment, or for lithium batteries in the passenger cabin.",
     "sent": false,
     "source": "https://www.iata.org/contentassets/6fea26dd84d24b26a7a1fd5788561d6e/mobility-aid-guidance-document.pdf",
-    "source_id": "iata_mobility-aid-guidance-document",
-    "type": "remote"
+    "source_id": "iata_mobility_aid_guidance_2026",
+    "type": "remote",
+    "entity": "IATA",
+    "entity_type": "industry_body"
   },
   {
     "id": "da690c7e12d270f43bb46768cc9c96a2",
@@ -149,8 +181,10 @@
     "text": "The Watt-hour (Wh) rating is a measure by which lithium ion batteries are regulated. Section I lithium ion batteries manufactured after 31 December 2011 and Section IB and Section II lithium ion batteries manufactured after 1 January 2009 are required to be marked with the Watt-hour rating on the outside case.",
     "sent": false,
     "source": "https://www.iata.org/contentassets/6fea26dd84d24b26a7a1fd5788561d6e/mobility-aid-guidance-document.pdf",
-    "source_id": "iata_mobility-aid-guidance-document",
-    "type": "remote"
+    "source_id": "iata_mobility_aid_guidance_2026",
+    "type": "remote",
+    "entity": "IATA",
+    "entity_type": "industry_body"
   },
   {
     "id": "88e73a2a7b00424a15a20809cf47b742",
@@ -158,8 +192,10 @@
     "text": "Methods to protect against short-circuit include, but are not limited to: the battery packs of installed batteries are often fully enclosed by the casing which protects the terminals from short-circuit; exposed terminals or connectors must be protected with non-conductive caps, non- conductive tape or by other appropriate means; removed batteries must be fully enclosed within inner packagings made of non-conductive material (such as a plastic bag) and kept away from conductive items. The outer packaging must not be used as the sole means of protecting the battery terminals from damage or short-circuiting. Removed batteries should be packed to prevent shifting which could loosen terminal caps or reorient the terminals to produce short-circuit. Terminal protection methods include, but are not limited to the following: securely attaching covers of sufficient strength to protect the terminals; placing the battery in a rigid plastic package; constructing the battery with terminals that are recessed or otherwise protected so that the terminals will not be subjected to damage if the package is dropped.",
     "sent": false,
     "source": "https://www.iata.org/contentassets/6fea26dd84d24b26a7a1fd5788561d6e/mobility-aid-guidance-document.pdf",
-    "source_id": "iata_mobility-aid-guidance-document",
-    "type": "remote"
+    "source_id": "iata_mobility_aid_guidance_2026",
+    "type": "remote",
+    "entity": "IATA",
+    "entity_type": "industry_body"
   },
   {
     "id": "5ea1822fe7efb53cdd0e373cba9c0591",
@@ -167,8 +203,10 @@
     "text": "If the passenger cannot provide pre-notification, (i.e. However, if the operator is unable to comply with requirements for a battery-powered wheelchair or mobility aid to be carried safely, transportation may be denied.",
     "sent": false,
     "source": "https://www.iata.org/contentassets/6fea26dd84d24b26a7a1fd5788561d6e/mobility-aid-guidance-document.pdf",
-    "source_id": "iata_mobility-aid-guidance-document",
-    "type": "remote"
+    "source_id": "iata_mobility_aid_guidance_2026",
+    "type": "remote",
+    "entity": "IATA",
+    "entity_type": "industry_body"
   },
   {
     "id": "1148bd08eeb556efe2e905d55a02602a",
@@ -176,8 +214,10 @@
     "text": "The passenger travelling with the device should be asked prior to loading if this information has not been provided in advance. Details will also be available in the device manufacturer s instructions. Depending on the design of the wheelchair or mobility aid, the following methods are preferable for ensuring the electrical circuits are isolated: if a key is fitted, switch off the device, remove the key and pass it to the passenger for safekeeping; remove the joystick module; separate power cable plugs or connectors as near to the batteries as possible; or if the design of the wheelchair or mobility aid allows none of the above actions, it is acceptable to: lock out the wheelchair or mobility aid, e.g. Note: This option is not recommended as it can increase the risk of short-circuit leading to fire, if not done properly.",
     "sent": false,
     "source": "https://www.iata.org/contentassets/6fea26dd84d24b26a7a1fd5788561d6e/mobility-aid-guidance-document.pdf",
-    "source_id": "iata_mobility-aid-guidance-document",
-    "type": "remote"
+    "source_id": "iata_mobility_aid_guidance_2026",
+    "type": "remote",
+    "entity": "IATA",
+    "entity_type": "industry_body"
   },
   {
     "id": "fd8fdcadeed9ccc307369a58350c60f8",
@@ -185,8 +225,10 @@
     "text": "Additional Information Further information can be found: IATA Guidance on the Passenger Accessibility https://www.iata.org/en/programs/passenger/accessibility/ IATA Guidance on the Transport of Mobility Aids for Airlines https://www.iata.org/contentassets/7b3762815ac44a10b83ccf5560c1b308/iata-guidance- on-the-transport-of-mobility-aids-final-feb2023.pdf Regulation (EC) No 1107/2006 of the European Parliament and of the Council of 5 July 2006 concerning the rights of disabled persons and persons with reduced mobility when travelling by air http://eur-lex.europa.eu/legal-content/EN/ALL/?uri=CELEX%3A32006R1107 Reduced mobility rights website gives information on passenger rights and provides useful tips for travellers with a disability http://www.reducedmobility.eu/ The European Network for Accessible Tourism. ENAT is a non-profit association for organisations that aim to be frontrunners in the study, promotion and practice of accessible tourism. Please contact the airline or your national civil aviation authority if you have any further concerns about travelling with battery-powered wheelchairs or mobility aids.",
     "sent": false,
     "source": "https://www.iata.org/contentassets/6fea26dd84d24b26a7a1fd5788561d6e/mobility-aid-guidance-document.pdf",
-    "source_id": "iata_mobility-aid-guidance-document",
-    "type": "remote"
+    "source_id": "iata_mobility_aid_guidance_2026",
+    "type": "remote",
+    "entity": "IATA",
+    "entity_type": "industry_body"
   },
   {
     "id": "2fba5204a31c9611928be30afcc53af6",
@@ -194,8 +236,10 @@
     "text": "You can also contact the IATA Dangerous Goods Support team if you have questions or concerns which may not have been addressed in this document: dangood@iata.org.",
     "sent": false,
     "source": "https://www.iata.org/contentassets/6fea26dd84d24b26a7a1fd5788561d6e/mobility-aid-guidance-document.pdf",
-    "source_id": "iata_mobility-aid-guidance-document",
-    "type": "remote"
+    "source_id": "iata_mobility_aid_guidance_2026",
+    "type": "remote",
+    "entity": "IATA",
+    "entity_type": "industry_body"
   },
   {
     "id": "d966af0730375d2f60d9a395eec222dc",
@@ -203,8 +247,10 @@
     "text": "In case the user of the wheelchair or mobility device is unable to provide manufacturer s instructions, the operator may try to obtain the information from the manufacturer s website or from other sources.",
     "sent": false,
     "source": "https://www.iata.org/contentassets/6fea26dd84d24b26a7a1fd5788561d6e/mobility-aid-guidance-document.pdf",
-    "source_id": "iata_mobility-aid-guidance-document",
-    "type": "remote"
+    "source_id": "iata_mobility_aid_guidance_2026",
+    "type": "remote",
+    "entity": "IATA",
+    "entity_type": "industry_body"
   },
   {
     "id": "925a8cbabd6ea76c8782a8ce0849feed",
@@ -212,8 +258,10 @@
     "text": "The presence of a battery(ies) will impact how the wheelchair or mobility aid is transported. Having this information in advance will enable operators to meet international transport regulations.",
     "sent": false,
     "source": "https://www.iata.org/contentassets/6fea26dd84d24b26a7a1fd5788561d6e/mobility-aid-guidance-document.pdf",
-    "source_id": "iata_mobility-aid-guidance-document",
-    "type": "remote"
+    "source_id": "iata_mobility_aid_guidance_2026",
+    "type": "remote",
+    "entity": "IATA",
+    "entity_type": "industry_body"
   },
   {
     "id": "a7db70a31882324cbd5aab31423d6f4e",
@@ -221,8 +269,10 @@
     "text": "Providing the battery type is an essential information the operator requires to determine how to prepare the device prior to and during loading onto the aircraft. The five battery types are: non- spillable, nickel-metal hydride, dry, spillable and lithium ion. For lithium-ion battery-powered wheelchair or mobility aid, do the batteries meet the requirements of the UN Manual of Tests and Criteria, Part III, subsection 38.3? Since mobility aids are carried in the aircraft hold where in-flight monitoring is limited, assurance of compliance with the UN Manual of Tests and Criteria, Part III, subsection 38.3 is essential for operators to confirm the batteries ability to withstand pressure changes, temperature fluctuations, vibration and shock normally experienced during transport without fire or thermal- runaway risks.",
     "sent": false,
     "source": "https://www.iata.org/contentassets/6fea26dd84d24b26a7a1fd5788561d6e/mobility-aid-guidance-document.pdf",
-    "source_id": "iata_mobility-aid-guidance-document",
-    "type": "remote"
+    "source_id": "iata_mobility_aid_guidance_2026",
+    "type": "remote",
+    "entity": "IATA",
+    "entity_type": "industry_body"
   },
   {
     "id": "9dbcfabec2903982602446c8cf4110c5",
@@ -230,8 +280,10 @@
     "text": "This information is required to enable the operator to plan the loading of the device onto the aircraft and help them determine if additional resources are required prior to or during loading and securing within the aircraft. What is the length, width and height (including accessories) of the wheelchair or mobility aid as presented for air travel? The dimensions of the device are required to determine that the aircraft door and cargo compartment can accommodate the wheelchair or mobility aid. Depending on the aircraft type that operates a particular route, including any connecting flights, the wheelchair or mobility aid may be too big to fit in the aircraft. Having the dimensions in advance will provide the operator an opportunity to offer an alternative routing or flights to accommodate passengers travelling with large wheelchair or mobility aids. Does the wheelchair or mobility aid have any removable or adjustable parts (such as a custom seat cushion, joystick or headrest)?",
     "sent": false,
     "source": "https://www.iata.org/contentassets/6fea26dd84d24b26a7a1fd5788561d6e/mobility-aid-guidance-document.pdf",
-    "source_id": "iata_mobility-aid-guidance-document",
-    "type": "remote"
+    "source_id": "iata_mobility_aid_guidance_2026",
+    "type": "remote",
+    "entity": "IATA",
+    "entity_type": "industry_body"
   },
   {
     "id": "0ceca904d12b44700b50e5807a081818",
@@ -239,8 +291,10 @@
     "text": "In the event the mobility aid as presented for travel cannot fit in the aircraft cargo compartment, detaching any removable or adjustable parts will help to reduce the height/width of the wheelchair or mobility aid may help operators to safely accommodate the mobility aid. Smaller removable parts should be placed in a suitable container or bag and stowed in the cabin with the passenger. This typically applies where the battery is not protected by the design of the mobility aid, and the battery must be removed for the device to be folded or otherwise prepared for transport. If the battery(ies) must be removed, the passenger should be prepared to provide instructions on how to remove the battery prior to loading.",
     "sent": false,
     "source": "https://www.iata.org/contentassets/6fea26dd84d24b26a7a1fd5788561d6e/mobility-aid-guidance-document.pdf",
-    "source_id": "iata_mobility-aid-guidance-document",
-    "type": "remote"
+    "source_id": "iata_mobility_aid_guidance_2026",
+    "type": "remote",
+    "entity": "IATA",
+    "entity_type": "industry_body"
   },
   {
     "id": "bafe66246bb8eedd06a92f3de8037ce4",
@@ -248,8 +302,10 @@
     "text": "To prevent accidental activation during flight, the operator is required to verify the power is disconnected and electrical circuits are isolated. The user should provide instructions on how to do this before departure.",
     "sent": false,
     "source": "https://www.iata.org/contentassets/6fea26dd84d24b26a7a1fd5788561d6e/mobility-aid-guidance-document.pdf",
-    "source_id": "iata_mobility-aid-guidance-document",
-    "type": "remote"
+    "source_id": "iata_mobility_aid_guidance_2026",
+    "type": "remote",
+    "entity": "IATA",
+    "entity_type": "industry_body"
   },
   {
     "id": "6df76e6d33b530212b088278b0ea06f8",
@@ -257,7 +313,9 @@
     "text": "Prior to loading the device onto the aircraft, it must be put into freewheel mode. The passenger should be asked for instructions on how to do this before departure. Note: If the user is unable to answer these questions, the agent/operator should collaborate with the passenger, their representative or the manufacturer of the device to obtain instructions before departure. See Additional Information for the link to the IATA Guidance on the Transport of Mobility Aids for Airlines",
     "sent": false,
     "source": "https://www.iata.org/contentassets/6fea26dd84d24b26a7a1fd5788561d6e/mobility-aid-guidance-document.pdf",
-    "source_id": "iata_mobility-aid-guidance-document",
-    "type": "remote"
+    "source_id": "iata_mobility_aid_guidance_2026",
+    "type": "remote",
+    "entity": "IATA",
+    "entity_type": "industry_body"
   }
 ]

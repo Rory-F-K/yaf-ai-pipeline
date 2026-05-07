@@ -6,7 +6,9 @@
     "sent": false,
     "source": "https://www.portoairport.pt/en/opo/services-shopping/essential-services/reduced-mobility",
     "source_id": "porto_airport_prm",
-    "type": "remote"
+    "type": "remote",
+    "entity": "Porto Airport",
+    "entity_type": "airport"
   },
   {
     "id": "d5326fd7e702805f47b5adbabd614064",
@@ -15,7 +17,9 @@
     "sent": false,
     "source": "https://www.portoairport.pt/en/opo/services-shopping/essential-services/reduced-mobility",
     "source_id": "porto_airport_prm",
-    "type": "remote"
+    "type": "remote",
+    "entity": "Porto Airport",
+    "entity_type": "airport"
   },
   {
     "id": "7067c79c53411fc5301c0b6b7beb74f8",
@@ -24,7 +28,9 @@
     "sent": false,
     "source": "https://www.portoairport.pt/en/opo/services-shopping/essential-services/reduced-mobility",
     "source_id": "porto_airport_prm",
-    "type": "remote"
+    "type": "remote",
+    "entity": "Porto Airport",
+    "entity_type": "airport"
   },
   {
     "id": "c2034f2c04dab778d35d0c0af9ee99fa",
@@ -33,7 +39,9 @@
     "sent": false,
     "source": "https://www.portoairport.pt/en/opo/services-shopping/essential-services/reduced-mobility",
     "source_id": "porto_airport_prm",
-    "type": "remote"
+    "type": "remote",
+    "entity": "Porto Airport",
+    "entity_type": "airport"
   },
   {
     "id": "bb9967e15b0a27e70e36c7bda42efb4b",
@@ -42,7 +50,9 @@
     "sent": false,
     "source": "https://www.portoairport.pt/en/opo/services-shopping/essential-services/reduced-mobility",
     "source_id": "porto_airport_prm",
-    "type": "remote"
+    "type": "remote",
+    "entity": "Porto Airport",
+    "entity_type": "airport"
   },
   {
     "id": "4c8451fd0b36d9be45b3059a91a8a9be",
@@ -51,7 +61,9 @@
     "sent": false,
     "source": "https://www.portoairport.pt/en/opo/services-shopping/essential-services/reduced-mobility",
     "source_id": "porto_airport_prm",
-    "type": "remote"
+    "type": "remote",
+    "entity": "Porto Airport",
+    "entity_type": "airport"
   },
   {
     "id": "7b171016291231d13f4db1e105ffb93d",
@@ -60,7 +72,9 @@
     "sent": false,
     "source": "https://www.portoairport.pt/en/opo/services-shopping/essential-services/reduced-mobility",
     "source_id": "porto_airport_prm",
-    "type": "remote"
+    "type": "remote",
+    "entity": "Porto Airport",
+    "entity_type": "airport"
   },
   {
     "id": "d2d9eee2db8e69eafa8d325975a7708c",
@@ -69,7 +83,9 @@
     "sent": false,
     "source": "https://www.portoairport.pt/en/opo/services-shopping/essential-services/reduced-mobility",
     "source_id": "porto_airport_prm",
-    "type": "remote"
+    "type": "remote",
+    "entity": "Porto Airport",
+    "entity_type": "airport"
   },
   {
     "id": "1ab7159b5331b51bf37736c0213f4d72",
@@ -78,7 +94,9 @@
     "sent": false,
     "source": "https://www.portoairport.pt/en/opo/services-shopping/essential-services/reduced-mobility",
     "source_id": "porto_airport_prm",
-    "type": "remote"
+    "type": "remote",
+    "entity": "Porto Airport",
+    "entity_type": "airport"
   },
   {
     "id": "5953da78d55e30dea5d298d808dd0ab6",
@@ -87,7 +105,9 @@
     "sent": false,
     "source": "https://www.portoairport.pt/en/opo/services-shopping/essential-services/reduced-mobility",
     "source_id": "porto_airport_prm",
-    "type": "remote"
+    "type": "remote",
+    "entity": "Porto Airport",
+    "entity_type": "airport"
   },
   {
     "id": "0b3feb5cbbc269abbbc119216fd7ccd4",
@@ -96,7 +116,9 @@
     "sent": false,
     "source": "https://www.portoairport.pt/en/opo/services-shopping/essential-services/reduced-mobility",
     "source_id": "porto_airport_prm",
-    "type": "remote"
+    "type": "remote",
+    "entity": "Porto Airport",
+    "entity_type": "airport"
   },
   {
     "id": "1897b270bb6dd233a571344bc0fd8653",
@@ -105,7 +127,9 @@
     "sent": false,
     "source": "https://www.portoairport.pt/en/opo/services-shopping/essential-services/reduced-mobility",
     "source_id": "porto_airport_prm",
-    "type": "remote"
+    "type": "remote",
+    "entity": "Porto Airport",
+    "entity_type": "airport"
   },
   {
     "id": "c60c62f2f53c820267a8eff29b00fda2",
@@ -114,6 +138,8 @@
     "sent": false,
     "source": "https://www.portoairport.pt/en/opo/services-shopping/essential-services/reduced-mobility",
     "source_id": "porto_airport_prm",
-    "type": "remote"
+    "type": "remote",
+    "entity": "Porto Airport",
+    "entity_type": "airport"
   }
 ]
