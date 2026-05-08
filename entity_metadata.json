@@ -1,0 +1,757 @@
+{
+  "wNEldqMTgEhadVENnwX4": {
+    "entity_type": "airline",
+    "domain": "lufthansa.com",
+    "static": {
+      "icon": "https://firebasestorage.googleapis.com/v0/b/your-accessible-flight.appspot.com/o/airline_lh_icon.png?alt=media&token=9266d5e5-7a60-4ad8-8ab2-3b1242554243",
+      "name": {
+        "en": "LUFTHANSA",
+        "ro": "LUFTHANSA"
+      },
+      "accessibility_info": [],
+      "background_image": "https://firebasestorage.googleapis.com/v0/b/your-accessible-flight.appspot.com/o/airline_lh_background.jpg?alt=media&token=27ecc1ee-6ddd-44fc-bfed-bf2e55e6084f",
+      "sub_rules": [
+        {
+          "icon": "",
+          "id": "sub_rule_0",
+          "subtitle": {
+            "en": "",
+            "ro": ""
+          },
+          "name": {
+            "en": "(Airbus A380-800, Airbus A350, Airbus A350-900, Airbus A340-600, A340-600, Airbus A340-300, Airbus A330-300 / Boeing 747-8, Boeing 747-400, Boeing 787)",
+            "ro": "(Airbus A380-800, Airbus A350, Airbus A350-900, Airbus A340-600, A340-600, Airbus A340-300, Airbus A330-300 / Boeing 747-8, Boeing 747-400, Boeing 787)"
+          }
+        },
+        {
+          "icon": "",
+          "id": "sub_rule_1",
+          "subtitle": {
+            "en": "",
+            "ro": ""
+          },
+          "name": {
+            "en": "(Airbus A220-100 / A220-300 (A221/A223)",
+            "ro": "(Airbus A220-100 / A220-300 (A221/A223)"
+          }
+        },
+        {
+          "icon": "",
+          "id": "sub_rule_2",
+          "subtitle": {
+            "en": "",
+            "ro": ""
+          },
+          "name": {
+            "en": "(Embraer E190 / E195)",
+            "ro": "(Embraer E190 / E195)"
+          }
+        },
+        {
+          "icon": "",
+          "id": "sub_rule_3",
+          "subtitle": {
+            "en": "",
+            "ro": ""
+          },
+          "name": {
+            "en": "(Bombardier CRJ900)",
+            "ro": "(Bombardier CRJ900)"
+          }
+        }
+      ],
+      "accessibility_contacts": {
+        "availability": {
+          "en": "",
+          "ro": ""
+        },
+        "email": "",
+        "whatsapp": "",
+        "phone": "",
+        "url": ""
+      },
+      "id": "4"
+    }
+  },
+  "ozY6JntsXs8xaX5recMq": {
+    "entity_type": "airline",
+    "domain": "swiss.com",
+    "static": {
+      "icon": "https://firebasestorage.googleapis.com/v0/b/your-accessible-flight.appspot.com/o/airline_swiss_icon.png?alt=media&token=aeb1d774-909d-4a05-a1c1-eff178602e99",
+      "name": {
+        "en": "SWISS",
+        "ro": "SWISS"
+      },
+      "accessibility_info": [],
+      "background_image": "https://firebasestorage.googleapis.com/v0/b/your-accessible-flight.appspot.com/o/airline_swiss_background.jpg?alt=media&token=6501e4e0-c841-4a12-bac4-81a683ac15c3",
+      "sub_rules": [
+        {
+          "icon": "",
+          "id": "sub_rule_0",
+          "subtitle": {
+            "en": "",
+            "ro": ""
+          },
+          "name": {
+            "en": "(Airbus A380-800, Airbus A350, Airbus A350-900, Airbus A340-600, A340-600, Airbus A340-300, Airbus A330-300 / Boeing 747-8, Boeing 747-400, Boeing 787)",
+            "ro": "(Airbus A380-800, Airbus A350, Airbus A350-900, Airbus A340-600, A340-600, Airbus A340-300, Airbus A330-300 / Boeing 747-8, Boeing 747-400, Boeing 787)"
+          }
+        },
+        {
+          "icon": "",
+          "id": "sub_rule_1",
+          "subtitle": {
+            "en": "",
+            "ro": ""
+          },
+          "name": {
+            "en": "(Airbus A220-100 / A220-300 (A221/A223)",
+            "ro": "(Airbus A220-100 / A220-300 (A221/A223)"
+          }
+        },
+        {
+          "icon": "",
+          "id": "sub_rule_2",
+          "subtitle": {
+            "en": "",
+            "ro": ""
+          },
+          "name": {
+            "en": "(Embraer E190 / E195)",
+            "ro": "(Embraer E190 / E195)"
+          }
+        },
+        {
+          "icon": "",
+          "id": "sub_rule_3",
+          "subtitle": {
+            "en": "",
+            "ro": ""
+          },
+          "name": {
+            "en": "(Bombardier CRJ900)",
+            "ro": "(Bombardier CRJ900)"
+          }
+        }
+      ],
+      "accessibility_contacts": {
+        "availability": {
+          "en": "",
+          "ro": ""
+        },
+        "email": "",
+        "whatsapp": "",
+        "phone": "",
+        "url": ""
+      },
+      "id": "7"
+    }
+  },
+  "2ikWd2vBkcfYC8pl5ol0": {
+    "entity_type": "airline",
+    "domain": "austrian.com",
+    "static": {
+      "icon": "https://firebasestorage.googleapis.com/v0/b/your-accessible-flight.appspot.com/o/airline_australian_icon.png?alt=media&token=9f39d6de-4a0c-49ad-bbd9-f4f24d273aad",
+      "name": {
+        "en": "Austrian Airlines",
+        "ro": "Austrian Airlines"
+      },
+      "accessibility_info": [],
+      "background_image": "https://firebasestorage.googleapis.com/v0/b/your-accessible-flight.appspot.com/o/airline_australian_background.jpg?alt=media&token=642b7292-79e6-4daf-affa-132b414fe8b3",
+      "sub_rules": [
+        {
+          "icon": "",
+          "id": "sub_rule_0",
+          "subtitle": {
+            "en": "(Airbus A380-800, Airbus A350, Airbus A350-900, Airbus A340-600, A340-600, Airbus A340-300, Airbus A330-300 / Boeing 747-8, Boeing 747-400, Boeing 787)",
+            "ro": "(Airbus A380-800, Airbus A350, Airbus A350-900, Airbus A340-600, A340-600, Airbus A340-300, Airbus A330-300 / Boeing 747-8, Boeing 747-400, Boeing 787)"
+          },
+          "name": {
+            "en": "Long-haul aircrafts",
+            "ro": "Long-haul aircrafts"
+          }
+        },
+        {
+          "icon": "",
+          "id": "sub_rule_1",
+          "subtitle": {
+            "en": "(Airbus A220-100 / A220-300 (A221/A223)",
+            "ro": "(Airbus A220-100 / A220-300 (A221/A223)"
+          },
+          "name": {
+            "en": "Short and medium-haul routes",
+            "ro": "Short and medium-haul routes"
+          }
+        },
+        {
+          "icon": "",
+          "id": "sub_rule_2",
+          "subtitle": {
+            "en": "(Embraer E190 / E195)",
+            "ro": "(Embraer E190 / E195)"
+          },
+          "name": {
+            "en": "Short and medium-haul routes",
+            "ro": "Short and medium-haul routes"
+          }
+        },
+        {
+          "icon": "",
+          "id": "sub_rule_3",
+          "subtitle": {
+            "en": "(Bombardier CRJ900)",
+            "ro": "(Bombardier CRJ900)"
+          },
+          "name": {
+            "en": "Short and medium-haul routes",
+            "ro": "Short and medium-haul routes"
+          }
+        }
+      ],
+      "accessibility_contacts": {
+        "availability": {
+          "en": "",
+          "ro": ""
+        },
+        "email": "",
+        "whatsapp": "",
+        "phone": "",
+        "url": ""
+      },
+      "id": "5"
+    }
+  },
+  "3SiVsDcp48a5m5EqqKha": {
+    "entity_type": "airline",
+    "domain": "transavia.com",
+    "static": {
+      "icon": "https://firebasestorage.googleapis.com/v0/b/your-accessible-flight.appspot.com/o/airline_transavia_icon.png?alt=media&token=ddc03277-6b5d-4163-897f-218537a37b32",
+      "name": {
+        "en": "Transavia",
+        "ro": "Transavia"
+      },
+      "accessibility_info": [
+        {
+          "details": {
+            "en": "Transavia has a wheelchair available on board. It can be used to go to the toilet. The condition for use is that you can get in and out of the wheelchair on your own, both from your chair and the toilet. The cabin crew is not allowed to assist with any lifting.\n\nAt Airbus A321neo there is a wheelchair-friendly toilet.\n\nNote that cabin crew cannot help with eating, personal hygiene, administering medication or with lifting or carrying passengers.",
+            "ro": "Transavia are un scaun cu rotile disponibil la bord. Poate fi folosit pentru a merge la toaletă. Condiția pentru utilizare este că puteți intra și ieși din scaunul cu rotile singur, atât din scaunul dvs., cât și toaleta. Echipajul cabinei nu are voie să vă ajute la ridicare.\n\nLa Airbus A321neo există o toaletă prietenoasă pentru persoanele cu mobilitate redusă.\n\nRețineți că echipajul cabinei nu poate ajuta la mâncare, igienă personală, administrarea medicamentelor sau la ridicarea sau transportul pasagerilor."
+          },
+          "title": {
+            "en": "Accessibility on board",
+            "ro": "Accesibilitate la bord"
+          }
+        },
+        {
+          "details": {
+            "en": "When bringing medicine on board the aircraft, place it in a separate bag in your hand luggage. Bring a prescription for your medicines in English with you. You can show this at the airport abroad if asked during the safety screening. Liquid medicines can be taken on board in unlimited amounts. Medicines that must be refrigerated should be transported in a cooling bag or vacuum bottle. Make sure they meet the safety regulations for hand luggage.\n\nIf you need extra oxygen during the flight, you may bring your own portable oxygen concentrator (such as a nebuliser or respirator) on board as 'extra medical luggage'. That means you can take it for free, in addition to your other luggage. To arrange this, it is important that you inform Transavia no later than 72 hours before departure that you are bringing a portable concentrator.\n\nYour oxygen concentrator must comply with the following:\n- approved by the FAA (Federal Aviation Administration). This is usually indicated by a sticker on the device.\n- fits within the dimensions of 40x30x20 cm and is no heavier than 10 kg. The concentrator should fit under the seat in front of you.\n- oxygen concentrator runs on a dry battery, with an output of up to 100 Wh. The battery should have ample charge. That means your battery can last at least 1.5 times longer than the duration of your flight. An example: your flight is two hours. Your battery should last 1.5 x 2 = 3 hours.\n\nMake sure you bring a spare battery (max 100 Wh) that is sufficiently charged. Crew cannot recharge any batteries on board.\n\nA medical certificate in English is required. The medical statement must have been issued no later than 7 days before the departure of your outbound flight. The statement should indicate the following:\n- Flying has no adverse effects on your health. This is called a Fit to Fly certificate.\n- The portable oxygen concentrator gives you enough oxygen in a pressurised cabin.\n- When you need your oxygen concentrator. For example, during taxiing, take-off, the flight itself (this is called 'flying at cruising altitude') and landing.\n\nNote that it is not possible to book extra onboard oxygen from Transavia.\n\nA medical certificate is required when:\n- You need extra oxygen on board during the flight. The medical statement will include the number of litres of oxygen needed per minute.\n- You are taking medical luggage with you. The maximum weight limit is 15 kg.\n- You are pregnant and there have been complications during your pregnancy. If you have had any complications you may not fly after your 34th week.\n- You or your child has a contagious illness (such as chicken pox). The medical certificate must state that the illness is no longer in the contagious phase. .\n- You are undergoing a medical procedure within 8 days of departure.\n- You have a plaster cast. You can also fly with us without a medical certificate. You are aware of the risks of flying with a cast.\n- You are unable to sit in a normal upright position in the airplane seat during take-off and landing.\n\nThis medical certificate must meet the following conditions:\n- The medical statement must be written in English.\n- A doctor must have signed the certificate.\n- If you have an unexpected medical situation, your medical certificate must not be older than 7 days before the departure of your outbound flight.\n- If you have a certificate for your medical luggage (medicines or equipment) for a chronic condition, your certificate must not be older than 6 months before the departure of your outbound flight.\n- If you are taking medical luggage with you, a number of conditions apply:\n- A medical statement in English is required.\n\nIf you are taking medical luggage due to an unexpected medical situation, your medical certificate must not be older than 7 days before the departure of your outbound flight.\n\nIf you are taking medical luggage because of a chronic condition, such as asthma or sleep apnoea, your medical certificate must not be older than 6 months before the departure of your outbound flight.\n\nMedical luggage that you do not need during the flight is transported as hold luggage.\n\nSensitive medical equipment may be taken as an extra piece of hand luggage. The weight limit is 10 kg and the size limit is 55 x 35 x 25 cm.\n\nYou can inform Transavia that you are taking medical luggage with you up to 48 hours before the departure of your flight. You can notify online when booking your flight, via My Transavia or by calling the Service Centre.",
+            "ro": "Când aduceți medicamente la bord, puneți-le într-un coș separat în bagajul de mână. Aduceți o rețetă pentru medicamentele dvs. în limba engleză. Puteți arăta aceasta la aeroport dacă vi se cere în timpul controlului de siguranță. Medicamentele lichide pot fi aduse la bord în cantități nelimitate. Medicamentele care trebuie refrigerate trebuie transportate într-o geantă frigorifică sau într-o sticlă cu vid. Asigurați-vă că îndeplinesc reglementările de siguranță pentru bagajul de mână.\n\nDacă aveți nevoie de oxigen suplimentar în timpul zborului, puteți aduce propriul concentrator de oxigen portabil (cum ar fi un nebulizor sau un aparat de respirație) la bord ca 'bagaj medical suplimentar'. Aceasta înseamnă că puteți să-l luați gratuit, pe lângă celelalte bagaje. Pentru a aranja acest lucru, este important să informați Transavia nu mai târziu de 72 de ore înainte de plecare că aduceți un concentrator portabil.\n\nConcentratorul de oxigen trebuie să îndeplinească următoarele:\n- aprobat de FAA (Administrația Federală a Aviației). De obicei, aceasta este indicată de o autocolant pe dispozitiv.\n- se încadrează în dimensiunile de 40x30x20 cm și nu cântărește mai mult de 10 kg. Concentratorul ar trebui să se încadreze sub scaunul din fața dvs.\n- concentratorul de oxigen funcționează cu o baterie uscă, cu o putere de până la 100 Wh. Bateria ar trebui să aibă o încărcare suficientă. Aceasta înseamnă că bateria poate dura cel puțin 1,5 ori mai mult decât durata zborului dvs. Exemplu: zborul dvs. este de două ore. Bateria dvs. ar trebui să dureze 1,5 x 2 = 3 ore.\n\nAsigurați-vă că aduceți o baterie de rezervă (max 100 Wh) care este suficient încărcată. Echipajul nu poate reîncărca baterii la bord.\n\nO certificare medicală în limba engleză este necesară. Declarația medicală trebuie să fi fost emisă nu mai târziu de 7 zile înainte de plecarea zborului dumneavoastră. Declarația ar trebui să indice următoarele:\n- Zborul nu are efecte adverse asupra sănătății dvs. Aceasta se numește certificat Fit to Fly.\n- Concentratorul portabil de oxigen vă oferă suficient oxigen într-o cabină sub presiune.\n- Când aveți nevoie de concentratorul de oxigen. De exemplu, în timpul taxierii, decolării, zborului în sine (numită și 'zbor la altitudine de croaziertă') și aterizării.\n\nRețineți că nu este posibil să rezervați oxigen suplimentar la bord de la Transavia.\n\nO certificare medicală este necesară atunci când:\n- Aveți nevoie de oxigen suplimentar la bord în timpul zborului. Declarația medicală va include numărul de litri de oxigen necesari pe minut.\n- Aduceți bagaj medical cu dvs. Limita maximă de greutate este de 15 kg.\n- Sunteți însărcinată și au existat complicații în timpul sarcinii. Dacă ați avut complicații, nu puteți zbura după săptămâna a 34-a.\n- Dvs. sau copilul dvs. aveți o boală contagioasă (cum ar fi variola majoră). Certificarea medicală trebuie să afirme că boala nu mai este în faza contagioasă.\n- Vă supuneți unei proceduri medicale în termen de 8 zile de la plecare.\n- Aveți un ghips. Puteți zbura și cu noi fără certificare medicală. Sunteți conștient de riscurile zborului cu un ghips.\n- Nu puteți sta într-o poziție în picioare normală în scaunul avionului în timpul decolării și aterizării.\n\nAceastă certificare medicală trebuie să îndeplinească următoarele condiții:\n- Declarația medicală trebuie să fie scrisă în limba engleză.\n- Un medic trebuie să fi semnat certificarea.\n- Dacă aveți o situație medicală neașteptată, certificarea dvs. medicală nu trebuie să fie mai veche de 7 zile înainte de plecarea zborului dumneavoastră.\n- Dacă aveți o certificare pentru bagajul medical (medicamente sau echipament) pentru o afecțiune cronică, certificarea dvs. nu trebuie să fie mai veche de 6 luni înainte de plecarea zborului dumneavoastră.\n- Dacă aduceți bagaj medical cu dvs., se aplică o serie de condiții:\n- O declarație medicală în limba engleză este necesară.\n\nDacă aduceți bagaj medical din cauza unei situații medicale neașteptate, certificarea dvs. medicală nu trebuie să fie mai veche de 7 zile înainte de plecarea zborului dumneavoastră.\n\nDacă aduceți bagaj medical din cauza unei afecțiuni cronice, cum ar fi astmul sau apneea de somn, certificarea dvs. medicală nu trebuie să fie mai veche de 6 luni înainte de plecarea zborului dumneavoastră.\n\nBagajul medical pe care nu îl necesitați în timpul zborului este transportat ca bagaj de cală.\n\nEchipamentul medical sensibil poate fi luat ca o bucată extra de bagaj de mână. Limita de greutate este de 10 kg și limita de mărime este de 55 x 35 x 25 cm.\n\nPuteți informa Transavia că aduceți bagaj medical cu dvs. până la 48 de ore înainte de plecarea zborului dvs. Puteți notifica online când rezervați zbor, prin My Transavia sau apelând Centrul de Servicii."
+          },
+          "title": {
+            "en": "Medicine & Health",
+            "ro": "Medicină și sănătate"
+          }
+        },
+        {
+          "details": {
+            "en": "Transavia is familiar with the Hidden Disabilities Sunflower. Please, note, if you wear the Sunflower lanyard, you will not automatically receive special assistance at the airport. Make special assistance request about this no later than 48 hours before departure.",
+            "ro": "Transavia cunoaște Floarea-soarelui pentru dizabilități ascunse. Vă rugăm să rețineți că, dacă purtați brățara Floarea-soarelui, nu veți primi automat asistență specială la aeroport. Formulați o cerere de asistență specială pentru aceasta nu mai târziu de 48 de ore înainte de plecare."
+          },
+          "title": {
+            "en": "Sunflower (Hidden disabilities)",
+            "ro": "Floarea-soarelui (Dizabilități ascunse)"
+          }
+        },
+        {
+          "details": {
+            "en": "The space between the armrests on Transavia aircraft seats is 42 cm. If this does not provide enough space for you, please book an extra seat by contacting Transavia Service Centre.",
+            "ro": "Spațiul dintre cotierele scaunelor aeronavei Transavia este de 42 cm. Dacă acest lucru nu oferă suficient spațiu pentru dvs., vă rugăm să rezervați un loc suplimentar contactând Centrul de Servicii Transavia."
+          },
+          "title": {
+            "en": "Passengers of size",
+            "ro": "Pasageri de dimensiuni mari"
+          }
+        },
+        {
+          "details": {
+            "en": "If you have a food allergy (such as to peanuts or nuts), please, note there is no guarantee that the aircraft is completely free of traces of this allergen. Transavia recommends always bringing allergy control medicine with you on board (such as an EpiPen). Transavia also sells gluten-free sweet and savoury snacks on board. You may also take your own food and drinks on board. If you wish to bring food and/or drinks with you that were not purchased at the airport, keep in mind the rules for bringing liquids in your hand luggage.",
+            "ro": "Dacă aveți o alergie alimentară (cum ar fi la arahide sau nuci), vă rugăm să observați că nu există o garanție că aeronava este complet lipsită de urme ale acestui alergen. Transavia recomandă să aduceți întotdeauna cu voi medicină pentru controlul alergiilor la bord (cum ar fi un EpiPen). Transavia vinde, de asemenea, gustări fără gluten dulci și sărate la bord. Puteți, de asemenea, să aduceți propria voastră mâncare și băuturi la bord. Dacă doriți să aduceți mâncare și/sau băuturi care nu au fost cumpărate la aeroport, rețineți regulile pentru aducerea lichidelor în bagajul dvs. de mână."
+          },
+          "title": {
+            "en": "Dietary needs",
+            "ro": "Nevoi dietetice"
+          }
+        }
+      ],
+      "background_image": "https://firebasestorage.googleapis.com/v0/b/your-accessible-flight.appspot.com/o/airline_transavia_background.png?alt=media&token=54d7cd22-2104-42a3-9584-c8951c3c3fa4",
+      "sub_rules": [],
+      "accessibility_contacts": {
+        "availability": {
+          "en": "Mon – Sun, 5:00 am – 11:00 pm",
+          "ro": "Lun – Dum, 5:00 am – 11:00 pm"
+        },
+        "email": "",
+        "whatsapp": "",
+        "phone": "+31(0)202146032",
+        "url": ""
+      },
+      "id": "3"
+    }
+  },
+  "BnTa7i6dnYUYbSR58ee9": {
+    "entity_type": "airline",
+    "domain": "airdolomiti.eu",
+    "static": {
+      "icon": "https://firebasestorage.googleapis.com/v0/b/your-accessible-flight.appspot.com/o/airline_dolomiti_icon.png?alt=media&token=0f4a1d4a-5180-49b8-9618-14a1ffe97fd5",
+      "name": {
+        "en": "Air Dolomiti",
+        "ro": "Air Dolomiti"
+      },
+      "accessibility_info": [],
+      "background_image": "https://firebasestorage.googleapis.com/v0/b/your-accessible-flight.appspot.com/o/airline_dolomiti_background.jpg?alt=media&token=c7f3c609-90c3-45f0-bb29-35d3a4cd46c1",
+      "sub_rules": [
+        {
+          "icon": "",
+          "id": "sub_rule_0",
+          "subtitle": {
+            "en": "Embraer E190 / E195)",
+            "ro": "Embraer E190 / E195)"
+          },
+          "name": {
+            "en": "Short and medium-haul routes",
+            "ro": "Short and medium-haul routes"
+          }
+        },
+        {
+          "icon": "",
+          "id": "sub_rule_1",
+          "subtitle": {
+            "en": "(Bombardier CRJ900)",
+            "ro": "(Bombardier CRJ900)"
+          },
+          "name": {
+            "en": "Short and medium-haul routes",
+            "ro": "Short and medium-haul routes"
+          }
+        }
+      ],
+      "accessibility_contacts": {
+        "availability": {
+          "en": "",
+          "ro": ""
+        },
+        "email": "",
+        "whatsapp": "",
+        "phone": "",
+        "url": ""
+      },
+      "id": "8"
+    }
+  },
+  "G54BwnVTjLZUfvwHN9x2": {
+    "entity_type": "airline",
+    "domain": "brusselsairlines.com",
+    "static": {
+      "icon": "https://firebasestorage.googleapis.com/v0/b/your-accessible-flight.appspot.com/o/airline_brussels_icon.png?alt=media&token=838e8712-cf37-42e4-ae48-5c338c731532",
+      "name": {
+        "en": "Brussels Airlines",
+        "ro": "Brussels Airlines"
+      },
+      "accessibility_info": [],
+      "background_image": "https://firebasestorage.googleapis.com/v0/b/your-accessible-flight.appspot.com/o/airline_brussels_background.jpg?alt=media&token=a587672f-f62c-454c-993f-d4bd3a670f61",
+      "sub_rules": [
+        {
+          "icon": "",
+          "id": "sub_rule_0",
+          "subtitle": {
+            "en": "(Airbus A380-800, Airbus A350, Airbus A350-900, Airbus A340-600, A340-600, Airbus A340-300, Airbus A330-300 / Boeing 747-8, Boeing 747-400, Boeing 787)",
+            "ro": "(Airbus A380-800, Airbus A350, Airbus A350-900, Airbus A340-600, A340-600, Airbus A340-300, Airbus A330-300 / Boeing 747-8, Boeing 747-400, Boeing 787)"
+          },
+          "name": {
+            "en": "Long-haul aircrafts",
+            "ro": "Long-haul aircrafts"
+          }
+        },
+        {
+          "icon": "",
+          "id": "sub_rule_1",
+          "subtitle": {
+            "en": "(Airbus A220-100 / A220-300 (A221/A223)",
+            "ro": "(Airbus A220-100 / A220-300 (A221/A223)"
+          },
+          "name": {
+            "en": "Short and medium-haul routes",
+            "ro": "Short and medium-haul routes"
+          }
+        },
+        {
+          "icon": "",
+          "id": "sub_rule_2",
+          "subtitle": {
+            "en": "(Embraer E190 / E195)",
+            "ro": "(Embraer E190 / E195)"
+          },
+          "name": {
+            "en": "Short and medium-haul routes",
+            "ro": "Short and medium-haul routes"
+          }
+        },
+        {
+          "icon": "",
+          "id": "sub_rule_3",
+          "subtitle": {
+            "en": "(Bombardier CRJ900)",
+            "ro": "(Bombardier CRJ900)"
+          },
+          "name": {
+            "en": "Short and medium-haul routes",
+            "ro": "Short and medium-haul routes"
+          }
+        }
+      ],
+      "accessibility_contacts": {
+        "availability": {
+          "en": "",
+          "ro": ""
+        },
+        "email": "",
+        "whatsapp": "",
+        "phone": "",
+        "url": ""
+      },
+      "id": "6"
+    }
+  },
+  "LCQwUE5zXgp2nEhXCouz": {
+    "entity_type": "airline",
+    "domain": "klm.com",
+    "static": {
+      "icon": "https://firebasestorage.googleapis.com/v0/b/your-accessible-flight.appspot.com/o/airline_klm_icon.png?alt=media&token=12cf0452-1286-48f8-97d9-2f6351a1f67b",
+      "name": {
+        "en": "KLM",
+        "ro": "KLM"
+      },
+      "accessibility_info": [
+        {
+          "details": {
+            "en": "The toilets in KLM aircraft are equipped with toilet handles.\t\t\t\n\nWheelchair accessible toilets are available on KLM’s Boeing 777, Boeing 787 and Airbus A330 aircraft. Our Boeing 737 and Embraer 190 aircraft have a foldaway curtain to enlarge the lavatory space.\t\t\t\n\nKLM aircrafts have aisle and middle seats with moveable armrests, so you can transfer more easily into your seat.\t\t\t\n\nFoldable wheelchairs designed to fit the aisles of our aircraft are available onboard all KLM and KLM Cityhopper aircraft.\t\t\t\n\nNote: KLM can only transport a limited number of wheelchairs per flight, depending on the aircraft type and the size and weight of your wheelchair.\t\t\t",
+            "ro": "Toaletele din aeronavele KLM sunt echipate cu mânere pentru toaletă. Avioanele noastre Boeing 737 și Embraer 190 au o perdea pliabilă pentru a mări spațiul toaletei.\t\t\t\n\nAvioanele KLM au scaune la culoar și scaune din mijloc cu cotiere mobile, astfel încât să vă puteți transfera mai ușor în scaun.\t\t\t\n\nScaune cu rotile pliabile, concepute pentru a se potrivi pe culoarele aeronavelor noastre, sunt disponibile la bordul tuturor aeronavelor KLM și KLM Cityhopper.\t\t\t\n\nNotă: KLM poate transporta doar un număr limitat de scaune cu rotile pe zbor, în funcție de tipul aeronavei și de dimensiunea și greutatea scaunului dvs. cu rotile.\t\t\t"
+          },
+          "title": {
+            "en": "Accessibility on board",
+            "ro": "Accesibilitate la bord"
+          }
+        },
+        {
+          "details": {
+            "en": "If you need medication during the flight, make sure to pack it in your hand baggage. Bring a doctor’s prescription, in English, for medication and any syringes - customs or security officers can check the prescription if they have any questions. Medications in small packaging can be stored in the onboard refrigerator.\t\t\t\n\nWhether you’re bringing your own supplemental oxygen, or you’d like KLM to provide it for you, please make sure to contact KLM Cares team (klmcares@klm.com) at least 48 hours before departure.\t\t\t\n\nIn both cases, you will have to fill out the medical information A and B forms:\t\t\t\n- Medical information A form: https://img.static-kl.com/m/65a886d613da0630/original/Medical-Information-Form-A-English-only.pdf\t\t\t\n- Medical information B form: https://img.static-kl.com/m/1bd4fad26dbb11f0/original/Medical-Information-Form-B-English-only.pdf\t\t\t\n\nPlease note that you’ll need to pay a fee of EUR 275 per flight when using supplemental oxygen provided by KLM. The oxygen can be adjusted to the exact amount required for your medical condition (with a maximum of 5.2 litres per minute). KLM cabin crew will assist you in the use of this equipment.\t\t\t\n\nIf you bring your own oxygen such as a portable oxygen concentrator (POC), these devices can be used onboard if they are battery-operated, optionally also operating on net power.\t\t\t\n\nBring enough charged batteries with you. Your batteries need to last for at least 150 per cent of the expected maximum duration of your flight because of a possible delay. Please stow the batteries under your seat so you can easily reach them.\t\t\t\n\nYou may bring certain other pieces of medical equipment or aids with you onboard if they can be stowed under a seat or strapped to an adjoining seat:\t\t\t\n- Bi-level positive airway pressure (BiPAP) equipment\t\t\t\n- Continuous positive airway pressure (CPAP) equipment\t\t\t\n- Respirators\t\t\t\n\nWhen flying with special medical requirements, you may need to arrange medical clearance.\t\t\t\n\nYou need to arrange medical clearance if you:\t\t\t\n- are suffering from a contagious disease;\t\t\t\n- need medical care or are dependent on specific medical equipment;\t\t\t\n- have a medical condition that could result in a life-threatening situation or could require exceptional medical care for your safety;\t\t\t\n- cannot use the seats in a standard, upright position;\t\t\t\n- are suffering from a disease or physical condition that results in unusual behaviour that could have an effect on the welfare and comfort of other passengers or crew, or could be considered a potential hazard to the safety of the flight or its punctuality;\t\t\t\n- have a psychological disorder and are unaccompanied but require assistance;\t\t\t\n- have recently had surgery (including all cosmetic treatments).\t\t\t\n\nPlease consult your physician to arrange medical clearance. Please fill out the medical information form A yourself and ask your doctor to complete and sign form B. Make sure to submit these forms to KLM Cares team (klmcares@klm.com) at least 48 hours before departure.\t\t\t\n\nMedical information A form: https://img.static-kl.com/m/65a886d613da0630/original/Medical-Information-Form-A-English-only.pdf\t\t\t\nMedical information B form: https://img.static-kl.com/m/1bd4fad26dbb11f0/original/Medical-Information-Form-B-English-only.pdf\t\t\t",
+            "ro": "Dacă aveți nevoie de medicamente în timpul zborului, asigurați-vă că le puneți în bagajul de mână. Aduceți o rețetă medicală, în limba engleză, pentru medicamente și seringi - ofițerii vamali sau de securitate pot verifica rețeta dacă au întrebări. Medicamentele în ambalaje mici pot fi păstrate în frigiderul de la bord.\t\t\t\n\nIndiferent dacă aduceți propriul oxigen suplimentar sau doriți ca KLM să vi-l furnizeze, vă rugăm să contactați echipa KLM Cares (klmcares@klm.com) cu cel puțin 48 de ore înainte de plecare.\t\t\t\n\nÎn ambele cazuri, va trebui să completați formularele de informații medicale A și B:\t\t\t\n- Formularul de informații medicale A: https://img.static-kl.com/m/65a886d613da0630/original/Medical-Information-Form-A-English-only.pdf\t\t\t\n - Formularul cu informații medicale B: https://img.static-kl.com/m/1bd4fad26dbb11f0/original/Medical-Information-Form-B-English-only.pdf\t\t\t\n\nVă rugăm să rețineți că va trebui să plătiți o taxă de 275 EUR per zbor atunci când utilizați oxigenul suplimentar furnizat de KLM. Oxigenul poate fi ajustat la cantitatea exactă necesară pentru starea dumneavoastră medicală (cu un maxim de 5,2 litri pe minut). Echipajul de cabină KLM vă va ajuta să utilizați acest echipament.\t\t\t\n\nDacă aduceți propriul oxigen, cum ar fi un concentrator portabil de oxigen (POC), aceste dispozitive pot fi utilizate la bord dacă funcționează cu baterii, opțional și cu alimentare de la rețea.\t\t\t\n\nAduceți cu dvs. suficiente baterii încărcate. Bateriile trebuie să aibă o autonomie de cel puțin 150% din durata maximă estimată a zborului, pentru a face față eventualelor întârzieri. Vă rugăm să depozitați bateriile sub scaun, astfel încât să le puteți accesa cu ușurință.\t\t\t\n\nPuteți aduce la bord anumite alte echipamente medicale sau dispozitive de asistență, dacă acestea pot fi depozitate sub un scaun sau fixate cu curele de scaunul alăturat:\t\t\t\n - Echipament de presiune pozitivă în două niveluri în căile respiratorii (BiPAP)\t\t\t\n- Echipament de presiune pozitivă continuă în căile respiratorii (CPAP)\t\t\t\n- Respiratoare\t\t\t\n\nCând călătoriți cu cerințe medicale speciale, este posibil să fie necesar să obțineți o autorizație medicală.\t\t\t\n\nTrebuie să obțineți o autorizație medicală dacă:\t\t\t\n - suferiți de o boală contagioasă;\t\t\t\n- aveți nevoie de îngrijiri medicale sau depindeți de echipamente medicale specifice;\t\t\t\n- aveți o afecțiune medicală care ar putea duce la o situație care vă pune viața în pericol sau care ar putea necesita îngrijiri medicale excepționale pentru siguranța dumneavoastră;\t\t\t\n- nu puteți utiliza scaunele în poziție standard, verticală;\t\t\t\n - suferiți de o boală sau afecțiune fizică care duce la un comportament neobișnuit care ar putea afecta bunăstarea și confortul celorlalți pasageri sau al echipajului sau ar putea fi considerat un potențial pericol pentru siguranța zborului sau punctualitatea acestuia;\t\t\t\n- aveți o tulburare psihologică și nu sunteți însoțit, dar aveți nevoie de asistență;\t\t\t\n- ați suferit recent o intervenție chirurgicală (inclusiv toate tratamentele cosmetice).\t\t\t\nVă rugăm să consultați medicul dumneavoastră pentru a obține avizul medical. Vă rugăm să completați formularul A cu informații medicale și să solicitați medicului dumneavoastră să completeze și să semneze formularul B. Asigurați-vă că trimiteți aceste formulare echipei KLM Cares (klmcares@klm.com) cu cel puțin 48 de ore înainte de plecare. t\t\t\n\nFormularul de informații medicale A: https://img.static-kl.com/m/65a886d613da0630/original/Medical-Information-Form-A-English-only.pdf\t\t\t\nFormularul de informații medicale B: https://img.static-kl.com/m/1bd4fad26dbb11f0/original/Medical-Information-Form-B-English-only.pdf\t\t\t"
+          },
+          "title": {
+            "en": "Medicine & Health",
+            "ro": "Medicină și sănătate"
+          }
+        },
+        {
+          "details": {
+            "en": "The Sunflower lanyard offers a discreet way of showing that you have an invisible disability. The lanyard enables passengers with an invisible disability to discreetly let others knows that you might need some extra support, help or extra time.\t\t\t\n\nYou can order a Sunflower lanyard on the Hidden Disabilities Sunflower website: https://hiddendisabilitiesstore.com/row/shop.html\t\t\t",
+            "ro": "Cordonul Sunflower oferă o modalitate discretă de a arăta că aveți o dizabilitate invizibilă. Cordonul permite pasagerilor cu o dizabilitate invizibilă să le comunice discret celorlalți că ar putea avea nevoie de sprijin suplimentar, ajutor sau timp suplimentar. \t\t\t\n\nPuteți comanda un cordon Sunflower pe site-ul web Hidden Disabilities Sunflower: https://hiddendisabilitiesstore.com/row/shop.html\t\t\t"
+          },
+          "title": {
+            "en": "Sunflower (Hidden disabilities)",
+            "ro": "Floarea-soarelui (Dizabilități ascunse)"
+          }
+        },
+        {
+          "details": {
+            "en": "All KLM passengers should have a comfortable flight. To ensure this, you need to be able to move the armrests of your seat up and down. The space in between armrests varies per aircraft type.\t\t\t\n\nEconomy Class:\t\t\n- Airbus A330s - 46 cm\n- Boeing 737s - 43 cm\t\n- Boeing 777s and 787s - 43 cm\t\n- Embraer 175s, 190s, and 195-E2s - 45 cm\n\nPremium Comfort Class\t\t\t\n48 - 50 cm on all flights\t\n\nBusiness Class\t\t\t\n- Airbus A330s - 50cm\t\n- Boeing 737s - 43 cm (and an empty seat next to you)\t\n- Boeing 777 - 50 cm\n- Boeing 787-9 - 53 cm\t\n- Embraer 175s, 190s, and 195-E2s - 45 cm (and an empty seat next to you)\n\nThe seatbelt length on KLM flights depends on your travel class:\t\t\t\n- between 107 cm and 155 cm in Economy Class\t\t\t\n- 124 cm in Premium Comfort Class\t\t\t\n- between 124 cm and 148 cm in Business Class\t\t\t\n\nIf you need a seat belt extender, you can ask crew on board to provide you with one. These add 63 cm to the seatbelt length. Because of safety, you cannot use your own seat belt extender. If your seat is too small, you can book a second seat on flights operated by KLM at a 25% discount. Make sure to do this in advance by contacting KLM:\t\t\t\n- WhatsApp - https://api.whatsapp.com/send?phone=31206490787\t\t\t\n\nNote that you won’t get extra baggage allowance by booking an extra seat, and you will need to check in at the airport. If there’s another seat available in the same travel class at the time of departure, you can request a refund of the costs of your extra seat.\t\t\t\n\nPlease note that you may not be allowed to fly if you have not booked an extra seat and there are no seats available in the same travel class.\t\t\t",
+            "ro": "Toți pasagerii KLM ar trebui să aibă parte de un zbor confortabil. Pentru a asigura acest lucru, trebuie să puteți mișca cotierele scaunului în sus și în jos. Spațiul dintre cotiere variază în funcție de tipul de aeronavă. Clasa economică: - Airbus A330 - 46 cm - Boeing 737 - 43 cm - Boeing 777 și 787 - 43 cm\t\n- Embraer 175, 190 și 195-E2 - 45 cm\n\nClasa Premium Comfort\t\t\t\n48 - 50 cm pe toate zborurile\t\n\nClasa Business\t\t\t\n - Airbus A330 - 50 cm\t\n- Boeing 737 - 43 cm (și un scaun liber lângă dumneavoastră)\t\n- Boeing 777 - 50 cm\n- Boeing 787-9 - 53 cm\t\n - Embraer 175, 190 și 195-E2 - 45 cm (și un scaun liber lângă dumneavoastră)\n\nLungimea centurii de siguranță pe zborurile KLM depinde de clasa în care călătoriți:\t\t\t\n- între 107 cm și 155 cm în clasa Economy\t\t\t\n - 124 cm în clasa Premium Comfort\t\t\t\n- între 124 cm și 148 cm în clasa Business\t\t\t\n\nDacă aveți nevoie de o prelungire pentru centura de siguranță, puteți solicita echipajului de bord să vă furnizeze una. Acestea adaugă 63 cm la lungimea centurii de siguranță. Din motive de siguranță, nu puteți utiliza propria prelungire pentru centura de siguranță. Dacă scaunul dvs. este prea mic, puteți rezerva un al doilea scaun pe zborurile operate de KLM cu o reducere de 25%. Asigurați-vă că faceți acest lucru în avans, contactând KLM:\t\t\t\n- WhatsApp - https://api.whatsapp.com/send?phone=31206490787\t\t\t\n\nRețineți că nu veți beneficia de o limită suplimentară de bagaje prin rezervarea unui loc suplimentar și că va trebui să faceți check-in la aeroport. Dacă la momentul plecării este disponibil un alt loc în aceeași clasă de călătorie, puteți solicita rambursarea costurilor pentru locul suplimentar.\t\t\t\n\nVă rugăm să rețineți că este posibil să nu vi se permită să zburați dacă nu ați rezervat un loc suplimentar și nu sunt disponibile locuri în aceeași clasă de călătorie.\t\t\t"
+          },
+          "title": {
+            "en": "Passengers of size",
+            "ro": "Pasageri de dimensiuni mari"
+          }
+        },
+        {
+          "details": {
+            "en": "For your intercontinental flight, you can order a meal tailored to your dietary needs:\t\t\t\n- low-fat;\t\t\t\n- low-salt;\t\t\t\n- for a diabetic diet;\t\t\t\n- for a gluten-intolerance diet;\t\t\t\n- for a lactose-intolerance diet.\t\t\t\n\nMake order at least 24 hours before departure. Order the meals separately for your outbound and return flight. You can only select dietary needs for your main meal, not for any further meals or snacks during flight.\t\t\t\n\nIn case of severe food allergy KLM recommends taking your allergy medicine with you in hand baggage. You may also bring your own meal, but crew cannot heat it for you because of safety rules.\t\t\t\n\nKLM meals do not contain any whole or ground peanuts or peanut paste. Still, it cannot be guaranteed that KLM flights are 100% free of peanut contamination. Unfortunately, when serving a mixed-nut snack, crew doesn’t have an alternative to offer you.\t\t\t\n\nOn each flight, there’s a limited number of vegetarian meals available. Make sure to order at least 24 hours before departure.\t\t\t\n\nKLM serve meals tailored to your religion: Islam, Judaism, or Hinduism. Make sure to order your Muslim meal or Hindu meal at least 24 hours before departure. Kosher meals need to be reserved at least 48 hours before departure.\t\t\t",
+            "ro": "Pentru zborul intercontinental, puteți comanda o masă adaptată nevoilor dvs. alimentare:\t\t\t\n- cu conținut redus de grăsimi;\t\t\t\n- cu conținut redus de sare;\t\t\t\n- pentru diabetici;\t\t\t\n- pentru persoane cu intoleranță la gluten;\t\t\t\n- pentru persoane cu intoleranță la lactoză.\t\t\t\n\nFaceți comanda cu cel puțin 24 de ore înainte de plecare. Comandați separat mesele pentru zborul de plecare și cel de întoarcere. Puteți selecta nevoile alimentare numai pentru masa principală, nu și pentru alte mese sau gustări servite în timpul zborului.\t\t\t\n\nÎn cazul unei alergii alimentare severe, KLM vă recomandă să luați medicamentele pentru alergie cu dumneavoastră în bagajul de mână. Puteți aduce și propria masă, dar echipajul nu o poate încălzi din motive de siguranță.\t\t\n\nMesele KLM nu conțin arahide întregi sau măcinate sau pastă de arahide. Cu toate acestea, nu se poate garanta că zborurile KLM sunt 100% lipsite de contaminare cu arahide. Din păcate, atunci când se servește o gustare cu nuci mixte, echipajul nu are o alternativă să vă ofere. Pe fiecare zbor, există un număr limitat de mese vegetariene disponibile. Asigurați-vă că comandați cu cel puțin 24 de ore înainte de plecare. KLM servește mese adaptate religiei dumneavoastră: islam, iudaism sau hinduism. Asigurați-vă că comandați masa musulmană sau hindusă cu cel puțin 24 de ore înainte de plecare. Mesele kosher trebuie rezervate cu cel puțin 48 de ore înainte de plecare."
+          },
+          "title": {
+            "en": "Dietary needs",
+            "ro": "Nevoi dietetice"
+          }
+        }
+      ],
+      "background_image": "https://firebasestorage.googleapis.com/v0/b/your-accessible-flight.appspot.com/o/airline_klm_background.png?alt=media&token=b32a58dd-910c-468b-8aa3-dd3d9702da4e",
+      "sub_rules": [
+        {
+          "icon": "",
+          "id": "sub_rule_0",
+          "subtitle": {
+            "en": "Airbus A330s / Boeing 777s and 787s",
+            "ro": "Airbus A330s / Boeing 777s and 787s"
+          },
+          "name": {
+            "en": "Intercontinental flights",
+            "ro": "Zboruri intercontinentale"
+          }
+        },
+        {
+          "icon": "",
+          "id": "sub_rule_1",
+          "subtitle": {
+            "en": "Boeing 737s",
+            "ro": "Boeing 737s"
+          },
+          "name": {
+            "en": "Flights within Europe",
+            "ro": "Zboruri în Europa"
+          }
+        },
+        {
+          "icon": "",
+          "id": "sub_rule_2",
+          "subtitle": {
+            "en": "Embraer 175s, 190s, and 195-E2s",
+            "ro": "Embraer 175s, 190s, și 195-E2s"
+          },
+          "name": {
+            "en": "Flights within Europe",
+            "ro": "Zboruri în Europa"
+          }
+        }
+      ],
+      "accessibility_contacts": {
+        "availability": {
+          "en": "Mon – Sun, 6:00 am – 9:00 pm",
+          "ro": "Lun – Dum, 6:00 am – 9:00 pm"
+        },
+        "email": "klmcares@klm.com",
+        "whatsapp": "",
+        "phone": "00 800-55 62 27 37",
+        "url": ""
+      },
+      "id": "1"
+    }
+  },
+  "m5039tGWrtuhTJavDShl": {
+    "entity_type": "airline",
+    "domain": "britishairways.com",
+    "static": {
+      "icon": "https://firebasestorage.googleapis.com/v0/b/your-accessible-flight.appspot.com/o/airline_british_airways_icon.png?alt=media&token=1acf68c0-47a7-4052-b70e-f6ee3c851921",
+      "name": {
+        "en": "British Airways",
+        "ro": "British Airways"
+      },
+      "accessibility_info": [
+        {
+          "details": {
+            "en": "There are wheelchairs on BA aircraft to assist you on board. You'll need to be able to lift yourself from your seat onto the wheelchair, or travel with a safety assistant who can help you do that.\t\t\n\nMost BA aircraft offer accessible toilets but they're not large enough to accommodate wheelchairs. On board BA Airbus A380 there are two wheelchair-accessible toilets on the upper deck and one on the main deck. On Boeing 787 aircraft BA offers one wheelchair-accessible toilet.\t\t\n\nPlease remember that you will need to be able to look after your personal care in the toilet. BA cabin crew won't be able to help with this.\t\t\n\nNote: BA may be able to store one collapsible manual wheelchair in the cabin, depending on available space. This is allocated on a 'first come, first served' basis.\t\t",
+            "ro": "Există scaune cu rotile disponibile la bordul aeronavelor BA pentru a vă ajuta la bord. Va trebui să puteți să vă ridicați singur din scaun pe scaunul cu rotile sau să călătoriți cu un asistent de siguranță care să vă poată ajuta.\t\t\n\nMajoritatea aeronavelor BA oferă toalete accesibile, dar acestea nu sunt suficient de mari pentru a acomoda scaune cu rotile. La bordul aeronavei BA Airbus A380 există două toalete accesibile cu scaun cu rotile pe puntea superioară și una pe puntea principală. Pe aeronavele Boeing 787, BA oferă o toaletă accesibilă cu scaun cu rotile.\t\t\n\nVă rugăm să rețineți că va trebui să vă puteți îngriji de propria igienă în toaletă. Echipajul BA nu vă poate ajuta cu acest lucru.\t\t\n\nNotă: BA poate depozita un singur scaun cu rotile manual pliabil în cabină, în funcție de spațiul disponibil. Acesta este oferit după principiul „primul venit, primul servit”.\t\t"
+          },
+          "title": {
+            "en": "Accessibility on board",
+            "ro": "Accesibilitate la bord"
+          }
+        },
+        {
+          "details": {
+            "en": "If you are travelling with medicines, please carry any medication you'll need for your flight, including liquid medicines, or medical supplies, such as syringes, in your smaller item of hand baggage. If possible, keep the medication in the original packaging and bring along a prescription or supporting letter from your doctor that confirms this medication is prescribed to you, to avoid delays at security or customs (in English).\t\t\n\nYou can check in up to two extra standard bags at the airport for journeys outside of the USA, if your bags carry essential medical supplies like dialysis fluid or colostomy bags. This applies when you’ve exceeded your hold baggage allowance, and the supplies are for your own personal use. They can weigh up to 23kg each and can be carried free of charge. These bags will be subject to authorisation at the airport.\t\t\n\nOn journeys that include travel to the USA, an unlimited number of standard bags weighing 23kg each can be checked in free of charge, subject to authorisation of their contents at the airport.\t\t\n\nThese additional bags should only contain medical supplies. If you include any other personal items, they won’t be authorised and you’ll have to pay extra to take them.\t\t\n\nPlease ensure that you provide an official medical letter signed and dated by your personal doctor/medical practitioner stating the following:\t\t\n- Your name and flight information, including booking reference details\t\t\n- List of medical supplies/medication to be carried and what their purpose is\t\t\n- Approximate weight/number of the items to be carried\t\t\n- Name and contact phone number/email of your physician or medical practitioner\t\t\n\nFor some medical conditions you need to get medical clearance before you can fly, for example:\t\t\n- Recent illness, hospitalisation, injury or surgery\t\t\n- Existing unstable medical condition\t\t\n- Need for additional oxygen or use of medical equipment on board\t\t\n- Travelling for medical reasons or treatment\t\t\n\nTo get medical clearance:\t\t\n- Download BA medical information form (pdf, in English) and fill out part one - https://www.britishairways.com/cms/global/pdfs/health/BA_Medical_Information_Form.pdf\t\t\n- Ask your doctor to complete part two.\t\t\n- Email the completed form to BA Passenger Medical Clearance Unit (PMCU) to pmcu.pmcu@ba.com. Medical forms should be mailed to PMCU a minimum of 7 days prior to departure.\t\t\n\nCustomers requiring therapeutic oxygen on short-haul flights will be required to make their own provisions for all short-haul segments of their itinerary. Acceptable therapeutic oxygen provisions are outlined below. Customers need to obtain medical clearance for approval of their own therapeutic oxygen provisions. Medical forms should be despatched to the medical clearance team a minimum of 7 days prior to departure - https://www.britishairways.com/cms/global/pdfs/health/BA_Medical_Information_Form.pdf\t\t\n\nOn long-haul flights BA can only provide in-flight therapeutic oxygen to one person on board so if you need to use oxygen you must book it in advance. It's important to contact the Passenger Medical Clearance Unit to check availability prior to booking your flights. Please note BA cannot provide oxygen on the ground at an airport.\t\t\n\nOn board Airbus A380 and Boeing 787 aircraft BA offers the Avia Technique Pulse dose cylinder: Oxygen is provided ‘on demand’ and your doctor will need to confirm that you can use this. There is no charge for in-flight therapeutic oxygen.\t\t\n\nIf therapeutic oxygen is required, you will need medical clearance to fly.\t\t\n\nhttps://www.britishairways.com/cms/global/pdfs/health/BA_Medical_Information_Form.pdf\t\t\n\nPlease allow the medical clearance team 48 hours to process your request. Medical forms should be sent to the team a minimum of 7 days prior to departure.\t\t",
+            "ro": "Dacă călătoriți cu medicamente, vă rugăm să transportați toate medicamentele de care aveți nevoie pentru zbor, inclusiv medicamentele lichide sau consumabilele medicale, cum ar fi seringile, în bagajul de mână mai mic. Dacă este posibil, păstrați medicamentele în ambalajul original și aduceți cu dvs. o rețetă sau o scrisoare de la medicul dvs. care să confirme că aceste medicamente vă sunt prescrise, pentru a evita întârzierile la controlul de securitate sau vamă (în limba engleză). t\t\n\nPuteți înregistra până la două bagaje standard suplimentare la aeroport pentru călătorii în afara SUA, dacă bagajele dvs. conțin consumabile medicale esențiale, cum ar fi lichid pentru dializă sau pungi pentru colostomie. Acest lucru se aplică atunci când ați depășit limita de bagaj de cală și consumabilele sunt pentru uz personal. Acestea pot cântări până la 23 kg fiecare și pot fi transportate gratuit. Aceste bagaje vor fi supuse autorizării la aeroport.\t\t\n\nÎn cazul călătoriilor care includ SUA, se pot înregistra gratuit un număr nelimitat de bagaje standard cu greutatea de 23 kg fiecare, sub rezerva autorizării conținutului lor la aeroport.\t\t\n\nAceste bagaje suplimentare trebuie să conțină numai consumabile medicale. Dacă includeți alte articole personale, acestea nu vor fi autorizate și va trebui să plătiți un supliment pentru a le transporta.\t\t\n\nAsigurați-vă că furnizați o scrisoare medicală oficială semnată și datată de medicul dumneavoastră personal/medicul curant, în care se menționează următoarele:\t\t\n- Numele dumneavoastră și informațiile despre zbor, inclusiv detaliile referitoare la rezervare\t\t\n- Lista produselor medicale/medicamentelor care urmează să fie transportate și scopul acestora\t\t\n- Greutatea aproximativă/numărul articolelor care urmează să fie transportate\t\t\n - Numele și numărul de telefon/adresa de e-mail de contact ale medicului dumneavoastră sau ale medicului curant\t\t\n\nPentru anumite afecțiuni medicale, trebuie să obțineți aviz medical înainte de a putea zbura, de exemplu:\t\t\n- Boală recentă, spitalizare, leziune sau intervenție chirurgicală\t\t\n- Afecțiune medicală instabilă existentă\t\t\n- Necesitatea de oxigen suplimentar sau utilizarea de echipamente medicale la bord\t\t\n - Călătorie din motive medicale sau pentru tratament\t\t\n\nPentru a obține avizul medical:\t\t\n- Descărcați formularul de informații medicale BA (pdf, în limba engleză) și completați prima parte - https://www.britishairways.com/cms/global/pdfs/health/BA_Medical_Information_Form.pdf\t\t\n - Rugați medicul să completeze partea a doua.\t\t\n- Trimiteți formularul completat prin e-mail la Unitatea de autorizare medicală a pasagerilor (PMCU) a BA, la adresa pmcu.pmcu@ba.com. Formularele medicale trebuie trimise prin poștă la PMCU cu cel puțin 7 zile înainte de plecare.\t\t\n\nClienții care au nevoie de oxigen terapeutic pe zborurile pe distanțe scurte vor trebui să își asigure singuri proviziile pentru toate segmentele pe distanțe scurte ale itinerariului lor. Proviziile acceptabile de oxigen terapeutic sunt prezentate mai jos. Clienții trebuie să obțină autorizație medicală pentru aprobarea propriilor provizii de oxigen terapeutic. Formularele medicale trebuie trimise echipei de autorizare medicală cu cel puțin 7 zile înainte de plecare - https://www.britishairways.com/cms/global/pdfs/health/BA_Medical_Information_Form.pdf\t\t\n\nPe zborurile lungi, BA poate furniza oxigen terapeutic la bord doar unei singure persoane, așa că, dacă aveți nevoie de oxigen, trebuie să îl rezervați în avans. Este important să contactați Unitatea de autorizare medicală a pasagerilor pentru a verifica disponibilitatea înainte de a rezerva zborurile. Vă rugăm să rețineți că BA nu poate furniza oxigen la sol, în aeroport.\t\t\n\nLa bordul aeronavelor Airbus A380 și Boeing 787, BA oferă cilindrul Avia Technique Pulse dose: oxigenul este furnizat „la cerere”, iar medicul dumneavoastră va trebui să confirme că puteți utiliza acest cilindru. Nu se percepe nicio taxă pentru oxigenul terapeutic în timpul zborului. Dacă aveți nevoie de oxigen terapeutic, veți avea nevoie de autorizație medicală pentru a zbura. https://www.britishairways.com/cms/global/pdfs/health/BA_Medical_Information_Form.pdf Vă rugăm să acordați echipei de autorizare medicală 48 de ore pentru a vă procesa cererea. Formularele medicale trebuie trimise echipei cu cel puțin 7 zile înainte de plecare."
+          },
+          "title": {
+            "en": "Medicine & Health",
+            "ro": "Medicină și sănătate"
+          }
+        },
+        {
+          "details": {
+            "en": "The sunflower lanyard is a UK airport authority initiative designed as a subtle way of indicating someone has a non-visible disability and may require some extra assistance. Lanyards are available at all participating airports and can be collected from Airport Assistance. For BA customers travelling from London Heathrow, you can order your lanyard to be sent to you by post before you travel.\t\t\n\nBA understands that having a non-visible disability can often make travelling feel daunting. As an airline BA committed to making your journey as accessible and smooth as possible. The assistance provided at many airports for physical disabilities is also available for our customers with non-visible ones too.\t\t\n\nAirport assistance can be booked at least 48 hours prior to your departure.\t\t",
+            "ro": "Lănțișorul cu floarea-soarelui este o inițiativă a autorităților aeroportuare din Marea Britanie, menită să ofere o modalitate discretă de a indica faptul că cineva are o dizabilitate nevăzută și ar putea avea nevoie de asistență suplimentară. Lănțișoare sunt disponibile în toate aeroporturile participante și pot fi ridicate de la biroul de Asistență Aeroportuară. Pentru clienții BA care călătoresc din Londra Heathrow, puteți comanda lănțișorul pentru a vă fi trimis prin poștă înainte de călătorie.\t\t\n\nBA înțelege că a avea o dizabilitate ascunsă poate face călătoria să pară descurajantă. Ca companie aeriană, BA este angajată să facă drumul dumneavoastră cât mai accesibil și lin posibil. Asistența oferită în multe aeroporturi pentru dizabilități fizice este disponibilă și pentru clienții noștri cu dizabilități nevăzute.\t\t\n\nAsistența la aeroport poate fi rezervată cu cel puțin 48 de ore înaintea plecării.\t\t"
+          },
+          "title": {
+            "en": "Sunflower (Hidden disabilities)",
+            "ro": "Floarea-soarelui (Dizabilități ascunse)"
+          }
+        },
+        {
+          "details": {
+            "en": "If you would like the seat next to you to be kept free for additional personal space, you can buy it as an extra seat for comfort.\t\t\n\nYou'll need to buy yourself an extra seat for comfort if:\t\t\n- You're travelling in economy and need more space to easily fasten your seatbelt for take-off, landing or during periods of turbulence, or\t\t\n- You're unable to fully lower both armrests of your seat. It's a safety requirement to have a fully lowered armrest between each passenger during take-off, landing and turbulence.\t\t\n\nWe can give you an extension seatbelt if you need it.\t\t\n\nPlease note:\t\t\n- An extra seat doesn't give additional seat width – see our seat dimensions guide below for the minimum seat widths on our aircraft.\t\t\n- On most of our long-haul aircraft, the armrests in the economy cabin don't fold away into the seat back completely. They stop at an angle of 45 degrees when lifted and can't be raised further.\t\t\n- There must be a fully lowered armrest between each passenger during take-off, landing and turbulence.\t\t\n- Armrests are fixed in our First, business (Club World) and premium economy (World Traveller Plus) cabins and can't be raised or lowered.\t\t\n- You can't buy an extra seat for comfort at the bulkhead or on an exit row.\t\t\n- You won't be able to buy an extra seat on a British Airways-operated flight if your journey includes a flight operated by another airline.\t\t\n\nSeat dimensions:\t\t\n- Euro Traveller (economy short haul): 43cm to 45cm\t\t\n\nAll armrests lift fully so two seats can be used together.\t\t\n- World Traveller (economy long haul): 43cm to 45cm\t\t\nAll armrests lift to some degree. On a few of our aircraft they stop at a 45-degree angle, so they can't be positioned completely flat against the seat back (eg. A380).\t\t\n\n- World Traveller Plus (premium economy long-haul): 46cm\t\t\nArmrests don't lift apart from certain aisle seats for customers requiring disability or mobility assistance. Front row armrests are fixed and don't lift.\t\t\n\n- Club Europe (business short haul): 45cm\t\t\nAll armrests lift, however, each set of seats may be divided by a fixed width centre console that cannot be raised.\t\t\n\n- Club World (business long haul): 48cm to 52cm\t\t\nAs these seats are contoured individual units, the arm rests are fixed, and can't be widened/changed.\t\t\n\n- First: 55cm\t\t\nAs these seats are contoured individual units, the arm rests are fixed, and can't be widened/changed.\t\t",
+            "ro": "Dacă doriți ca locul de lângă dvs. să rămână liber pentru a avea mai mult spațiu personal, îl puteți cumpăra ca loc suplimentar pentru confort.\t\t\n\nVa trebui să cumpărați un loc suplimentar pentru confort dacă:\t\t\n- Călătoriți la clasa economică și aveți nevoie de mai mult spațiu pentru a vă fixa cu ușurință centura de siguranță la decolare, aterizare sau în perioadele de turbulențe, sau\t\t\n - Nu puteți coborî complet ambele cotiere ale scaunului. Este o cerință de siguranță ca cotiere să fie complet coborâte între fiecare pasager în timpul decolării, aterizării și turbulențelor.\t\t\n\nVă putem oferi o centură de siguranță extensibilă, dacă aveți nevoie.\t\t\n\nVă rugăm să rețineți:\t\t\n - Un scaun suplimentar nu oferă o lățime suplimentară a scaunului – consultați ghidul nostru privind dimensiunile scaunelor de mai jos pentru lățimile minime ale scaunelor din aeronavele noastre.\t\t\n- În majoritatea aeronavelor noastre de cursă lungă, cotierele din cabina economică nu se pliază complet în spătarul scaunului. Acestea se opresc la un unghi de 45 de grade când sunt ridicate și nu pot fi ridicate mai mult. - Între fiecare pasager trebuie să existe o cotieră complet coborâtă în timpul decolării, aterizării și turbulențelor. - Cotierele sunt fixe în cabinele noastre First, Business (Club World) și Premium Economy (World Traveller Plus) și nu pot fi ridicate sau coborâte. - Nu puteți cumpăra un loc suplimentar pentru confort la peretele despărțitor sau pe un rând de ieșire.\t\t\n- Nu veți putea cumpăra un loc suplimentar pe un zbor operat de British Airways dacă călătoria dvs. include un zbor operat de o altă companie aeriană.\t\t\n\nDimensiunile scaunelor:\t\t\n - Euro Traveller (clasa economică pe distanțe scurte): 43 cm până la 45 cm\t\t\n\nToate cotierele se ridică complet, astfel încât două scaune pot fi utilizate împreună.\t\t\n- World Traveller (clasa economică pe distanțe lungi): 43 cm până la 45 cm\t\t\nToate cotierele se ridică într-o anumită măsură. În câteva dintre aeronavele noastre, acestea se opresc la un unghi de 45 de grade, astfel încât nu pot fi poziționate complet plat împotriva spătarului scaunului (de exemplu, A380).\t\t\n\n- World Traveller Plus (clasa economică premium pe distanțe lungi): 46 cm\t\t\nCotierele nu se ridică, cu excepția anumitor scaune de la culoar pentru clienții care necesită asistență pentru persoane cu dizabilități sau cu mobilitate redusă. Cotierele din rândul din față sunt fixe și nu se ridică.\t\t\n\n- Club Europe (clasa business pe distanțe scurte): 45 cm\t\t\nToate cotierele se ridică, însă fiecare set de scaune poate fi separat de o consolă centrală cu lățime fixă, care nu poate fi ridicată.\t\t\n\n - Club World (clasa business pe distanțe lungi): 48 cm până la 52 cm\t\t\nDeoarece aceste scaune sunt unități individuale conturate, cotierele sunt fixe și nu pot fi lărgite/modificate.\t\t\n\n- First: 55 cm\t\t\nDeoarece aceste scaune sunt unități individuale conturate, cotierele sunt fixe și nu pot fi lărgite/modificate.\t\t"
+          },
+          "title": {
+            "en": "Passengers of size",
+            "ro": "Pasageri de dimensiuni mari"
+          }
+        },
+        {
+          "details": {
+            "en": "Meals available on British Airways:\t\t\nVegetarian, Vegan, Hindu – vegetarian, Hindu – non-vegetarian, Halal, Jain, Kosher, Child meal, Baby meal, Diabetic, Gluten intolerant, Low calorie, Low fat, Low salt, Low lactose.\t\t\n\nYou can request Kosher meals on flights from London Heathrow up to 24 hours before departure, and at least 48 hours before your flight departs from all other airports.\t\t\n\nIf you have another dietary requirement, you can request an alternative meal at least 24 hours before your flight departs.\t\t\n\nMeals for specific dietary requirements aren't available when you're flying in Euro Traveller, our economy cabin on our short-haul routes. We don’t serve a complimentary meal during these flights.\t\t\n\nIf you have a food allergy, BA offers alternative meals on flights suitable for those who need to avoid potential allergens, including seafood, dairy, eggs and gluten. Alternative meals are available to order on all flights, except when you’re flying in Euro Traveller, BA economy cabin on short-haul routes. BA does not serve a complimentary meal during these flights.\t\t\n\nYou must let cabin crew know of your food allergy when boarding your flight. You can bring your own food on board. Upon request and following boarding, cabin crew will be able to provide information relating to the allergens contained within the meals served.\t\t\n\nOur in-flight meals do not contain peanuts or peanut products. However, they may be produced at a facility that handles peanuts. BA unable to offer a peanut-free alternative meal. BA does not provide an alternative meal option for customers with tree nut or sesame allergies. Airline also cannot guarantee an allergen-free environment while travelling.\t\t\n\nMeals containing tree nuts may continue to be served throughout the aircraft and tree nut based snacks may also continue to be served in other cabins of travel depending on the aircraft type. BA uses the recommendations of IATA for allergen-sensitive passengers to make sure your flight is as comfortable as we can make it. BA does not currently offer any alternative meals free from sesame, tree nuts, lupin, soya, sulphites, mustard or celery.\t\t\n\nIf your diabetes is stable you can fly with no restrictions, however you need to take care to look after yourself during your trip.\t\t\n- If you are crossing time zones, make sure you know how to manage your insulin regime throughout the trip.\t\t\n- You should carry your insulin in your hand baggage, otherwise it may freeze in the hold.\t\t\n- Your insulin should be in the original packaging, easily identifiable and accessible during the flight.\t\t\n- Always carry a prescription or supporting letter from your doctor to avoid delays at security or customs.\t\t\n\nTo help you plan your meals and medication for your flight:\t\t\n- Long-haul flights: a complimentary meal is usually served within two hours of take-off, followed by a smaller meal within two hours of landing. There are also snacks available between meal services.\t\t\n- Short-haul flights: a complimentary snack and bottle of water is provided. You can also order food before your flight to be delivered to your seat from our High Life Cafe.  Orders can be placed up to 12 hours before departing the UK, and up to 24 hours before flying into the UK.\t\t",
+            "ro": "Mese disponibile pe British Airways:\t\t\nVegetariene, vegane, hinduse – vegetariene, hinduse – non-vegetariene, halal, jainiste, kosher, mese pentru copii, mese pentru bebeluși, pentru diabetici, pentru persoane cu intoleranță la gluten, cu conținut redus de calorii, cu conținut redus de grăsimi, cu conținut redus de sare, cu conținut redus de lactoză.\t\t\n\nPuteți solicita mese Kosher pe zborurile din Londra Heathrow cu până la 24 de ore înainte de plecare și cu cel puțin 48 de ore înainte de plecarea zborului dvs. din toate celelalte aeroporturi.\t\t\n\nDacă aveți alte cerințe dietetice, puteți solicita o masă alternativă cu cel puțin 24 de ore înainte de plecarea zborului dvs.\t\t\n\nMesele pentru cerințe dietetice specifice nu sunt disponibile când zburați cu Euro Traveller, cabina noastră economică pe rutele noastre de scurtă distanță. Nu servim mese gratuite în timpul acestor zboruri.\t\t\n\nDacă aveți o alergie alimentară, BA oferă mese alternative pe zboruri, potrivite pentru cei care trebuie să evite potențialii alergeni, inclusiv fructe de mare, lactate, ouă și gluten. Mesele alternative pot fi comandate pe toate zborurile, cu excepția celor efectuate în clasa Euro Traveller, clasa economică BA pe rutele scurte. BA nu servește mese gratuite pe aceste zboruri.\t\t\n\nTrebuie să informați personalul de bord cu privire la alergiile alimentare pe care le aveți la îmbarcarea în avion. Puteți aduce propria mâncare la bord. La cerere și după îmbarcare, personalul de bord vă poate furniza informații cu privire la alergenii conținuți în mesele servite.\t\t\n\nMâncărurile servite la bord nu conțin arahide sau produse din arahide. Cu toate acestea, ele pot fi produse într-o unitate care prelucrează arahide. BA nu poate oferi o masă alternativă fără arahide. BA nu oferă o opțiune de masă alternativă pentru clienții cu alergii la nuci sau susan. De asemenea, compania aeriană nu poate garanta un mediu fără alergeni în timpul călătoriei.\t\t\n\nMesele care conțin nuci pot fi servite în continuare în întreaga aeronavă, iar gustările pe bază de nuci pot fi servite în continuare și în alte cabine de călătorie, în funcție de tipul aeronavei. BA utilizează recomandările IATA pentru pasagerii sensibili la alergeni, pentru a se asigura că zborul dvs. este cât mai confortabil posibil. În prezent, BA nu oferă mese alternative fără susan, nuci, lupin, soia, sulfiți, muștar sau țelină.\t\t\n\nDacă diabetul dumneavoastră este stabil, puteți zbura fără restricții, însă trebuie să aveți grijă de dumneavoastră în timpul călătoriei.\t\t\n- Dacă traversați fusuri orare, asigurați-vă că știți cum să vă gestionați regimul de insulină pe durata călătoriei.\t\t\n- Trebuie să transportați insulina în bagajul de mână, altfel aceasta poate îngheța în cală.\t\t\n - Insulina trebuie să fie în ambalajul original, ușor de identificat și accesibilă în timpul zborului.\t\t\n- Aveți întotdeauna la dumneavoastră o rețetă sau o scrisoare de la medicul dumneavoastră pentru a evita întârzierile la controlul de securitate sau vamă.\t\t\n\nPentru a vă ajuta să vă planificați mesele și medicamentele pentru zbor:\t\t\n- Zboruri lungi: de obicei, se servește o masă gratuită în termen de două ore de la decolare, urmată de o masă mai mică în termen de două ore de la aterizare. De asemenea, sunt disponibile gustări între mesele servite.\t\t\n- Zboruri pe distanțe scurte: se oferă o gustare gratuită și o sticlă de apă. De asemenea, puteți comanda mâncare înainte de zbor, care vă va fi livrată la locul dvs. de către High Life Cafe.  Comenzile pot fi plasate cu până la 12 ore înainte de plecarea din Marea Britanie și cu până la 24 de ore înainte de aterizarea în Marea Britanie.\t\t"
+          },
+          "title": {
+            "en": "Dietary needs",
+            "ro": "Nevoi dietetice"
+          }
+        }
+      ],
+      "background_image": "https://firebasestorage.googleapis.com/v0/b/your-accessible-flight.appspot.com/o/airline_british_airways_background.png?alt=media&token=9a081219-0df3-4ea0-bd24-f6e4ccccfc79",
+      "sub_rules": [
+        {
+          "icon": "",
+          "id": "sub_rule_0",
+          "subtitle": {
+            "en": "except London City",
+            "ro": "cu excepția orașului Londra"
+          },
+          "name": {
+            "en": "Within UK and Europe",
+            "ro": "În Regatul Unit și Europa"
+          }
+        },
+        {
+          "icon": "",
+          "id": "sub_rule_1",
+          "subtitle": {
+            "en": "from / to London City",
+            "ro": "de la / la orașul Londra"
+          },
+          "name": {
+            "en": "Within UK and Europe",
+            "ro": "În Regatul Unit și Europa"
+          }
+        },
+        {
+          "icon": "",
+          "id": "sub_rule_2",
+          "subtitle": {
+            "en": "from / to",
+            "ro": "de la / la"
+          },
+          "name": {
+            "en": "Rest of the world",
+            "ro": "Restul lumii"
+          }
+        }
+      ],
+      "accessibility_contacts": {
+        "availability": {
+          "en": "Mon – Sat, 8:00 am – 6:00 pm",
+          "ro": "Lun – Sâm, 8:00 am – 6:00 pm"
+        },
+        "email": "ba.assistance@email.ba.com",
+        "whatsapp": "",
+        "phone": "0800 408 1100",
+        "url": ""
+      },
+      "id": "2"
+    }
+  },
+  "rALEi1r9nmneBaupDrgQ": {
+    "entity_type": "airport",
+    "domain": "portoairport.pt",
+    "static": {
+      "airport_url": "https://www.portoairport.pt",
+      "full_name": "Francisco Sá Carneiro Airport",
+      "name": "Porto",
+      "background_image": "https://firebasestorage.googleapis.com/v0/b/your-accessible-flight.appspot.com/o/airport_background_opo.jpg?alt=media&token=84560a14-3ba7-45a8-a37c-78cd416b8dec",
+      "email": "porto.airport@ana.pt",
+      "accessibility_url": "https://www.portoairport.pt/en/opo/services-shopping/essential-services/reduced-mobility",
+      "phone": "+351 229 432 400",
+      "image": "https://firebasestorage.googleapis.com/v0/b/your-accessible-flight.appspot.com/o/airport_opo.jpg?alt=media&token=94b91473-42dc-4f8b-8aba-a7bc7d929278",
+      "id": "1",
+      "code": "OPO"
+    }
+  },
+  "BFHXjIKvD5vV7bgTjj9h": {
+    "entity_type": "airport",
+    "domain": "madeiraairport.pt",
+    "static": {
+      "airport_url": "https://www.madeiraairport.pt/en/fnc/home",
+      "full_name": "Madeira Airport",
+      "name": "Madeira",
+      "background_image": "https://firebasestorage.googleapis.com/v0/b/your-accessible-flight.appspot.com/o/airport_fnc.png?alt=media&token=ccf78f8c-5956-4c94-8ed3-e947118cd7fa",
+      "code": "FNC",
+      "accessibility_url": "https://www.madeiraairport.pt/en/fnc/home",
+      "phone": "+351 291 520 700",
+      "image": "https://firebasestorage.googleapis.com/v0/b/your-accessible-flight.appspot.com/o/airport_background_fnc.jpg?alt=media&token=8d26beb9-30da-4927-9326-f0e2fd8d9267",
+      "id": "3"
+    }
+  },
+  "BSYBocSUduqgvkNnfFKj": {
+    "entity_type": "airport",
+    "domain": "aena.es",
+    "static": {
+      "airport_url": "www.aena.es",
+      "full_name": "Valencia Airport",
+      "name": "Valencia",
+      "background_image": "https://firebasestorage.googleapis.com/v0/b/your-accessible-flight.appspot.com/o/airport_background_vlc.png?alt=media&token=adf6cdf3-f9d7-4853-9c08-fe6411ab51ab",
+      "code": "VLC",
+      "accessibility_url": "www.aena.es/en/valencia/airports-services/barrier-free-assistance-service.html",
+      "phone": "+34 913 21 10 00",
+      "image": "https://firebasestorage.googleapis.com/v0/b/your-accessible-flight.appspot.com/o/airport_vlc.png?alt=media&token=2138f24e-d7ca-4b98-ac0d-e7fb2cf716e5",
+      "id": "6"
+    }
+  },
+  "IovTojuhO54xSxLnDv5D": {
+    "entity_type": "airport",
+    "domain": "ana.pt",
+    "static": {
+      "airport_url": "https://www.aeroportofaro.pt/pt/fao/home",
+      "full_name": "Faro Airport",
+      "name": "Faro",
+      "background_image": "https://firebasestorage.googleapis.com/v0/b/your-accessible-flight.appspot.com/o/airport_fao.png?alt=media&token=20f62a40-47cd-4e9a-8107-9c0fc3c0a381",
+      "code": "FAO",
+      "accessibility_url": "https://www.aeroportofaro.pt/pt/fao/home",
+      "phone": "+351 289 800 617",
+      "image": "https://firebasestorage.googleapis.com/v0/b/your-accessible-flight.appspot.com/o/airport_background_fao.jpeg?alt=media&token=e31143c4-e5e5-49ab-bec1-11f06e10bcf1",
+      "id": "4"
+    }
+  },
+  "PXAlYYpQkQgv2wF1RWxm": {
+    "entity_type": "airport",
+    "domain": "dubaiairports.ae",
+    "static": {
+      "airport_url": "www.dubaiairports.ae",
+      "full_name": "Dubai Airport",
+      "name": "Dubai",
+      "background_image": "https://firebasestorage.googleapis.com/v0/b/your-accessible-flight.appspot.com/o/airport_background_dxb.png?alt=media&token=e9680eb8-ba1b-4700-bb47-b4d34c538984",
+      "code": "DXB",
+      "accessibility_url": "www.dubaiairports.ae/people-of-determination",
+      "phone": "+971 4 224 5555",
+      "image": "https://firebasestorage.googleapis.com/v0/b/your-accessible-flight.appspot.com/o/airport_dxb.png?alt=media&token=957de1af-7501-479c-8901-4998612b5a78",
+      "id": "7",
+      "whatsapp": "wa.me/97142245555"
+    }
+  },
+  "mNufBUXCPQmA6eB7NAI2": {
+    "entity_type": "airport",
+    "domain": "airport.md",
+    "static": {
+      "airport_url": "https://airport.md",
+      "full_name": "Chișinău International Airport",
+      "name": "Chișinău",
+      "background_image": "https://firebasestorage.googleapis.com/v0/b/your-accessible-flight.appspot.com/o/airport_background_rmo.jpg?alt=media&token=4acd168e-9be4-4fdd-8320-3cee6188b1e7",
+      "code": "RMO",
+      "accessibility_url": "https://airport.md/en/prm",
+      "phone": "+373 22 817 817",
+      "image": "https://firebasestorage.googleapis.com/v0/b/your-accessible-flight.appspot.com/o/airport_rmo.jpg?alt=media&token=3593b45a-97b7-4355-b6ac-695b0eb98f98",
+      "id": "2",
+      "whatsapp": ""
+    }
+  },
+  "mIm85XEjY7gkFQnz7d3G": {
+    "entity_type": "airport",
+    "domain": "lisbon-airport.com",
+    "static": {
+      "airport_url": "www.lisbonairport.pt",
+      "full_name": "Lisbon Airport",
+      "name": "Lisbon",
+      "background_image": "https://firebasestorage.googleapis.com/v0/b/your-accessible-flight.appspot.com/o/airport_background_lis.png?alt=media&token=3f6a1048-bdc9-4164-a377-ae13c7b6ef1e",
+      "code": "LIS",
+      "image": "https://firebasestorage.googleapis.com/v0/b/your-accessible-flight.appspot.com/o/airport_lis.png?alt=media&token=7ca5a08c-791b-4098-b06a-e2a751f69b97",
+      "phone": "+351 218 413 500",
+      "id": "5"
+    }
+  }
+}

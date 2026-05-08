@@ -207,6 +207,33 @@ class RuleValidator:
             json.dump(report["clean_entities"], f, indent=2)
         print(f"[Validator] Clean entities saved → {output_path}")
 
+    def save_clean_entities_split(self, report: dict, output_dir: str):
+        """
+        Save each clean entity to its own file under output_dir/airlines/ or output_dir/airports/.
+
+        Airlines → <output_dir>/airlines/<airline_id>.json
+        Airports → <output_dir>/airports/<airport_id>.json
+        """
+        airlines_dir = Path(output_dir) / "airlines"
+        airports_dir = Path(output_dir) / "airports"
+        airlines_dir.mkdir(parents=True, exist_ok=True)
+        airports_dir.mkdir(parents=True, exist_ok=True)
+
+        entities = report["clean_entities"]
+        for entity in entities:
+            if entity.get("airline_id"):
+                dest = airlines_dir / f"{entity['airline_id']}.json"
+            elif entity.get("airport_id"):
+                dest = airports_dir / f"{entity['airport_id']}.json"
+            else:
+                print(f"[Validator] Skipping entity with no airline_id/airport_id: {entity}")
+                continue
+            with open(dest, "w", encoding="utf-8") as f:
+                json.dump(entity, f, indent=2)
+            print(f"[Validator] Saved → {dest}")
+
+        print(f"[Validator] Split save complete — {len(entities)} clean entities written to {output_dir}")
+
     def print_summary(self, report: dict):
         """Print a human-readable summary to stdout."""
         print("\n" + "=" * 50)
