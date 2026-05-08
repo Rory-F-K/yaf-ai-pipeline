@@ -66,7 +66,7 @@ async def _make_context(playwright):
     context = await browser.new_context(
         viewport={"width": 1440, "height": 900},
         device_scale_factor=1,
-        locale="en-GB",               # EUR-Lex serves EN-GB content
+        locale="en-GB", # EUR-Lex serves EN-GB content
         timezone_id="Europe/Brussels",
         user_agent=(
             "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "

@@ -39,10 +39,14 @@ from pipeline_flow_doc_process import Doc_Process_Pipeline
 from extractor.rule_extractor import RuleExtractor
 from firestore.client import FirestoreClient
 
+from parser.social_media.twitter_rapid import RapidXProvider
+
 # ── Paths ──────────────────────────────────────────────────────────────────────
-SOURCES_DIR   = Path("sources")
-AGENTIC_DIR   = Path("chunk_store/agentic")
-EXTRACTED_DIR = Path("rules/extracted")
+SOURCES_DIR    = Path("sources")
+SOCIAL_RAW_DIR = Path("chunk_store") / "social" / "raw"
+AGENTIC_DIR    = Path("chunk_store/agentic")
+EXTRACTED_DIR  = Path("rules/extracted")
+VALIDATED_DIR  = Path("rules/validated")
 
 ALL_ENTITIES_PATH  = EXTRACTED_DIR / "all_entities.json"
 MANIFEST_PATH      = EXTRACTED_DIR / ".manifest.json"
@@ -64,6 +68,7 @@ def stage_chunk():
         agentic_rpm=3,
         batch_size=3,
         checkpoint_every=10,
+        social_provider=RapidXProvider(), # add social provider
     )
 
     local_files = []
@@ -86,7 +91,10 @@ def stage_chunk():
         print(f"[Chunk] Remote: {input_id}")
         pipeline.process(src)
 
-    print("[Done] All sources chunked")
+    # Social media sources
+    pipeline.process_social(run_id="x_social")
+
+    print("[Done] All sources processed")
 
 
 # ── Stage 2: Fetch existing Firestore data ─────────────────────────────────────
