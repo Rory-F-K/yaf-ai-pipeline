@@ -41,7 +41,7 @@ def _issue(entity_id: str, check: str, severity: str, message: str) -> dict:
 
 def _entity_id(entity: dict) -> str:
     """Return a stable display ID for an entity dict."""
-    return entity.get("airline_id") or entity.get("airport_id") or "UNKNOWN"
+    return entity.get("entity_name") or entity.get("source_id") or "UNKNOWN"
 
 
 # ── Validation checks ──────────────────────────────────────────────────────────
@@ -51,7 +51,7 @@ def check_entity_structure(entities: list) -> list:
     issues = []
     for e in entities:
         eid = _entity_id(e)
-        for field in ("name", "source"):
+        for field in ("entity_name", "entity_type", "source_id"):
             val = e.get(field)
             if not val or not str(val).strip():
                 issues.append(_issue(eid, "entity_structure", "error",
@@ -60,19 +60,15 @@ def check_entity_structure(entities: list) -> list:
 
 
 def check_entity_type(entities: list) -> list:
-    """Check that each entity has exactly one of airline_id or airport_id."""
+    """Check that each entity has entity_type of 'airline' or 'airport'."""
     issues = []
+    valid_types = {"airline", "airport"}
     for e in entities:
         eid = _entity_id(e)
-        has_airline = bool(e.get("airline_id", "").strip() if isinstance(e.get("airline_id"), str) else e.get("airline_id"))
-        has_airport = bool(e.get("airport_id", "").strip() if isinstance(e.get("airport_id"), str) else e.get("airport_id"))
-
-        if has_airline and has_airport:
+        et = e.get("entity_type", "")
+        if et not in valid_types:
             issues.append(_issue(eid, "entity_type", "error",
-                "Entity has both airline_id and airport_id — must have exactly one"))
-        elif not has_airline and not has_airport:
-            issues.append(_issue(eid, "entity_type", "error",
-                "Entity has neither airline_id nor airport_id"))
+                f"entity_type must be 'airline' or 'airport', got {et!r}"))
     return issues
 
 
@@ -92,7 +88,7 @@ def check_services_present(entities: list) -> list:
 
 
 def check_service_structure(entities: list) -> list:
-    """Check each service dict for required fields and minimum description length."""
+    """Check each service for required fields including bilingual description."""
     issues = []
     for e in entities:
         eid = _entity_id(e)
@@ -106,16 +102,22 @@ def check_service_structure(entities: list) -> list:
                     f"{prefix} is not a dict"))
                 continue
             svc_type = str(svc.get("type", "")).strip()
-            desc = str(svc.get("description", "")).strip()
             if not svc_type:
                 issues.append(_issue(eid, "service_structure", "error",
                     f"{prefix}: 'type' is missing or empty"))
-            if not desc:
+            desc = svc.get("description", {})
+            if not isinstance(desc, dict):
                 issues.append(_issue(eid, "service_structure", "error",
-                    f"{prefix}: 'description' is missing or empty"))
-            elif len(desc) < 20:
-                issues.append(_issue(eid, "service_structure", "error",
-                    f"{prefix}: description too short ({len(desc)} chars)"))
+                    f"{prefix}: 'description' must be {{en, ro}} dict, got {type(desc).__name__}"))
+            else:
+                en = str(desc.get("en", "")).strip()
+                if not en or len(en) < 20:
+                    issues.append(_issue(eid, "service_structure", "error",
+                        f"{prefix}: description.en is missing or too short"))
+                ro = str(desc.get("ro", "")).strip()
+                if not ro:
+                    issues.append(_issue(eid, "service_structure", "warning",
+                        f"{prefix}: description.ro is empty"))
             if "is_presented" in svc and not isinstance(svc["is_presented"], bool):
                 issues.append(_issue(eid, "service_structure", "warning",
                     f"{prefix}: 'is_presented' should be a boolean"))

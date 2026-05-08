@@ -109,12 +109,16 @@ class Doc_Process_Pipeline:
             input_id = input_item.get("id", "remote")
             source_url = input_item.get("url")
             source_type = "remote"
+            entity = input_item.get("entity")
+            entity_type = input_item.get("entity_type")
         else:
             text = ingest_local(input_item)
             pages = [{"text": text}]
             input_id = Path(input_item).stem
             source_url = str(input_item)
             source_type = "local"
+            entity = None
+            entity_type = None
 
         print(f"[Ingest] {input_id} → {len(pages)} pages")
 
@@ -131,9 +135,6 @@ class Doc_Process_Pipeline:
 
             for page in pages:
                 sem_chunks = semantic_chunk(page["text"])
-
-                entity = input_item.get("entity") if isinstance(input_item, dict) else None
-                entity_type = input_item.get("entity_type") if isinstance(input_item, dict) else None
 
                 for c in sem_chunks:
                     c["source"] = source_url

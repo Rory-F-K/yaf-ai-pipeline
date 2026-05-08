@@ -1,34 +1,6 @@
-# main.py - Entry point for the full pipeline
-#
-# Stages (run top-to-bottom when you execute: python main.py):
-#
-#   1. SCRAPE & CHUNK
-#      - Local files (sources/*.pdf / *.txt / *.html / *.json) → chunker
-#      - Remote URLs from Config.SOURCES → chunker
-#      - All output goes to chunk_store/semantic/ + chunk_store/agentic/
-#      - Skips sources whose agentic output already exists (cached)
-#
-#   2. ENTITY EXTRACTION  (semantic + agentic stores)
-#      - Reads every completed *.json in both chunk stores
-#      - Classifies each source as airline or airport via DOMAIN_MAP
-#      - Calls Gemini to extract a services array per entity
-#      - Unrecognised sources (iata.org, eur-lex, etc.) are skipped
-#      - Entities from both stores are merged by airline_id / airport_id
-#      - Hash-cached: skips extraction if chunk files are unchanged
-#      - Output saved to rules/extracted/all_entities.json
-#
-#   3. VALIDATION
-#      - Runs structure and service-level checks on all entities
-#      - Saves full report  → rules/validated/report.json
-#      - Saves clean entities → rules/validated/clean_entities.json
-#
-#   4. FIRESTORE PUSH
-#      - Airlines → v2_airlines collection
-#      - Airports → v2_airports collection
-#      - Document ID = airline_id / airport_id (overwrites existing doc)
-
 import json
 import hashlib
+import time
 from pathlib import Path
 
 from config import Config
@@ -37,17 +9,15 @@ from extractor.rule_extractor import RuleExtractor
 from validator.rule_validator import RuleValidator
 from firestore.client import FirestoreClient
 
-from parser.social_media.twitter_rapid import RapidXProvider
-
 # ── Paths ──────────────────────────────────────────────────────────────────────
-SOURCES_DIR    = Path("sources")
-SOCIAL_RAW_DIR = Path("chunk_store") / "social" / "raw"
-AGENTIC_DIR    = Path("chunk_store/agentic")
+SOURCES_DIR  = Path("sources")
+AGENTIC_DIR  = Path("chunk_store/agentic")
+
 EXTRACTED_DIR  = Path("rules/extracted")
 VALIDATED_DIR  = Path("rules/validated")
+PER_FILE_DIR   = EXTRACTED_DIR / "per_file"   # one JSON per agentic source
 
 ALL_ENTITIES_PATH      = EXTRACTED_DIR / "all_entities.json"
-MANIFEST_PATH          = EXTRACTED_DIR / ".manifest.json"
 CLEAN_ENTITIES_PATH    = str(VALIDATED_DIR / "clean_entities.json")
 VALIDATION_REPORT_PATH = str(VALIDATED_DIR / "report.json")
 
@@ -57,11 +27,6 @@ LOCAL_EXTENSIONS = ["*.pdf", "*.txt", "*.html", "*.json"]
 # ── Stage 1: Scrape + chunk ALL sources ───────────────────────────────────────
 
 def stage_chunk():
-    """
-    Run the scrape → semantic → agentic chunker for every source.
-    Local files and remote URLs are both processed here.
-    Skips any source whose agentic output file already exists.
-    """
     print("\n" + "=" * 60)
     print("  STAGE 1: SCRAPE & CHUNK")
     print("=" * 60)
@@ -71,10 +36,8 @@ def stage_chunk():
         agentic_rpm=3,
         batch_size=3,
         checkpoint_every=10,
-        social_provider=RapidXProvider(), # add social provider
     )
 
-    # Local files
     local_files = []
     for pattern in LOCAL_EXTENSIONS:
         local_files.extend(SOURCES_DIR.glob(pattern))
@@ -84,36 +47,26 @@ def stage_chunk():
         if (AGENTIC_DIR / f"{input_id}.json").exists():
             print(f"[Skip] Already chunked: {input_id}")
             continue
-        if (AGENTIC_DIR / f"{input_id}_partial.json").exists():
-            print(f"[Skip] Partial exists: {input_id}")
-            continue
         print(f"[Chunk] Local: {file_path.name}")
         pipeline.process(str(file_path))
 
     print("[Done] Local files processed")
 
-    # Remote sources
     for src in Config.SOURCES:
         input_id = src.get("id", "remote")
         if (AGENTIC_DIR / f"{input_id}.json").exists():
             print(f"[Skip] Already chunked: {input_id}")
             continue
-        if (AGENTIC_DIR / f"{input_id}_partial.json").exists():
-            print(f"[Skip] Partial exists: {input_id}")
-            continue
         print(f"[Chunk] Remote: {input_id}")
         pipeline.process(src)
 
-    # Social media sources
     pipeline.process_social(run_id="x_social")
-
     print("[Done] All sources processed")
 
 
-# ── Stage 2: Entity extraction from both semantic + agentic stores ─────────────
+# ── Stage 2: Extract — per-file caching ───────────────────────────────────────
 
 def _file_hash(path: Path) -> str:
-    """SHA-256 of a file's raw bytes — used to detect chunk file changes."""
     h = hashlib.sha256()
     with open(path, "rb") as f:
         for block in iter(lambda: f.read(65536), b""):
@@ -121,141 +74,126 @@ def _file_hash(path: Path) -> str:
     return h.hexdigest()
 
 
-def _load_manifest() -> dict:
-    if MANIFEST_PATH.exists():
-        with open(MANIFEST_PATH, "r", encoding="utf-8") as f:
+def _load_per_file_cache(source_id: str) -> dict | None:
+    """Load a previously extracted result for one source file, or None if missing."""
+    cache_file = PER_FILE_DIR / f"{source_id}.json"
+    if cache_file.exists():
+        with open(cache_file, "r", encoding="utf-8") as f:
+            return json.load(f)
+    return None
+
+
+def _save_per_file_cache(source_id: str, data: dict):
+    PER_FILE_DIR.mkdir(parents=True, exist_ok=True)
+    cache_file = PER_FILE_DIR / f"{source_id}.json"
+    with open(cache_file, "w", encoding="utf-8") as f:
+        json.dump(data, f, indent=2)
+
+
+def _load_hash_manifest() -> dict:
+    manifest_path = EXTRACTED_DIR / ".manifest.json"
+    if manifest_path.exists():
+        with open(manifest_path, "r", encoding="utf-8") as f:
             return json.load(f)
     return {}
 
 
-def _save_manifest(manifest: dict):
+def _save_hash_manifest(manifest: dict):
     EXTRACTED_DIR.mkdir(parents=True, exist_ok=True)
-    with open(MANIFEST_PATH, "w", encoding="utf-8") as f:
+    manifest_path = EXTRACTED_DIR / ".manifest.json"
+    with open(manifest_path, "w", encoding="utf-8") as f:
         json.dump(manifest, f, indent=2)
-
-
-def _extract_from_file(extractor: RuleExtractor, chunk_file: Path, label: str) -> list:
-    """Extract entity from one chunk file. Returns [entity] or []."""
-    with open(chunk_file, "r", encoding="utf-8") as f:
-        chunks = json.load(f)
-
-    if not chunks:
-        print(f"[Extractor] {label}/{chunk_file.stem}: empty — skipping")
-        return []
-
-    print(f"[Extractor] {label}/{chunk_file.stem}: {len(chunks)} chunks...")
-    entities = extractor.run(chunks)
-    print(f"[Extractor] {label}/{chunk_file.stem}: {len(entities)} entity/entities extracted")
-    return entities
-
-
-def _merge_entities(entities: list) -> list:
-    """
-    Merge entities from both stores that share the same airline_id or airport_id.
-    Services are combined and deduplicated by type, keeping first occurrence.
-    """
-    merged: dict[str, dict] = {}
-    for entity in entities:
-        key = entity.get("airline_id") or entity.get("airport_id")
-        if not key:
-            continue
-        if key not in merged:
-            merged[key] = {**entity, "services": list(entity.get("services", []))}
-        else:
-            existing_types = {s["type"] for s in merged[key]["services"]}
-            for svc in entity.get("services", []):
-                if svc["type"] not in existing_types:
-                    merged[key]["services"].append(svc)
-                    existing_types.add(svc["type"])
-    return list(merged.values())
 
 
 def stage_extract() -> list:
     """
-    Extract entities from BOTH chunk_store/semantic/ and chunk_store/agentic/.
+    Extract PRM services from every agentic chunk file.
 
-    Hash-based caching:
-      - .manifest.json maps each chunk file key → its SHA-256 hash.
-      - All hashes match AND all_entities.json exists → return cached (no Gemini calls).
-      - Any file is new or changed → re-extract everything, update manifest.
-      - Bootstrap: if all_entities.json exists but manifest is missing, write manifest now.
+    Per-file caching:
+      - Each file gets its own cache at rules/extracted/per_file/{source_id}.json
+      - A .manifest.json tracks the SHA-256 hash of each agentic chunk file
+      - If a file's hash is unchanged AND its per-file cache exists → use cache (no Gemini call)
+      - If a file changed or has no cache → re-extract that file only
+
+    Only files whose entity_type is 'airline' or 'airport' trigger a Gemini call.
+    Regulatory/industry sources (IATA, EUR-LEX, etc.) are skipped automatically
+    based on the entity_type field already set in each chunk by the pipeline.
     """
     print("\n" + "=" * 60)
-    print("  STAGE 2: ENTITY EXTRACTION  (semantic + agentic → single file)")
+    print("  STAGE 2: ENTITY EXTRACTION  (per-file cache)")
     print("=" * 60)
 
     EXTRACTED_DIR.mkdir(parents=True, exist_ok=True)
+    PER_FILE_DIR.mkdir(parents=True, exist_ok=True)
 
-    semantic_files = sorted(Path("chunk_store/semantic").glob("*.json"))
-    agentic_files  = sorted(
+    agentic_files = sorted(
         p for p in AGENTIC_DIR.glob("*.json")
         if not p.name.endswith("_partial.json")
     )
 
-    if not semantic_files and not agentic_files:
-        print("[Extractor] No chunk files found in either store.")
+    if not agentic_files:
+        print("[Extractor] No agentic chunk files found.")
         return []
 
-    print(f"[Extractor] Semantic files : {len(semantic_files)}")
-    print(f"[Extractor] Agentic files  : {len(agentic_files)}")
+    print(f"[Extractor] Found {len(agentic_files)} agentic chunk file(s)")
 
-    current_hashes = {}
-    all_chunk_files = (
-        [(f, "semantic") for f in semantic_files] +
-        [(f, "agentic")  for f in agentic_files]
-    )
-    for f, label in all_chunk_files:
-        current_hashes[f"{label}/{f.stem}"] = _file_hash(f)
+    manifest = _load_hash_manifest()
+    extractor = None   # initialise lazily (avoids Gemini init if all cached)
+    all_entities = []
+    first_extract = True
 
-    manifest = _load_manifest()
+    for chunk_file in agentic_files:
+        source_id   = chunk_file.stem
+        current_hash = _file_hash(chunk_file)
+        cached_data  = _load_per_file_cache(source_id)
 
-    # Bootstrap: manifest missing but output already exists
-    if not manifest and ALL_ENTITIES_PATH.exists():
-        _save_manifest(current_hashes)
-        print("[Extractor] Manifest bootstrapped — loading existing all_entities.json")
-        with open(ALL_ENTITIES_PATH, "r", encoding="utf-8") as f:
-            entities = json.load(f)
-        print(f"[Extractor] {len(entities)} entities loaded (no changes detected)")
-        return entities
+        if manifest.get(source_id) == current_hash and cached_data is not None:
+            print(f"[Extractor] {source_id}: unchanged — using cache")
+            all_entities.append(cached_data)
+            continue
 
-    changed = [k for k, h in current_hashes.items() if manifest.get(k) != h]
+        # File is new or changed — re-extract
+        print(f"[Extractor] {source_id}: {'changed' if source_id in manifest else 'new'} — extracting...")
 
-    if not changed and ALL_ENTITIES_PATH.exists():
-        print(f"[Extractor] All {len(current_hashes)} chunk files unchanged — skipping extraction")
-        with open(ALL_ENTITIES_PATH, "r", encoding="utf-8") as f:
-            entities = json.load(f)
-        print(f"[Extractor] {len(entities)} entities loaded from cache")
-        return entities
+        with open(chunk_file, "r", encoding="utf-8") as f:
+            chunks = json.load(f)
 
-    if changed:
-        print(f"[Extractor] {len(changed)} chunk file(s) changed: {', '.join(changed)}")
+        if not chunks:
+            print(f"[Extractor] {source_id}: empty file — skipping")
+            manifest[source_id] = current_hash
+            continue
 
-    extractor       = RuleExtractor()
-    semantic_entities = []
-    agentic_entities  = []
+        if extractor is None:
+            extractor = RuleExtractor()
 
-    for f in semantic_files:
-        semantic_entities.extend(_extract_from_file(extractor, f, "semantic"))
-    for f in agentic_files:
-        agentic_entities.extend(_extract_from_file(extractor, f, "agentic"))
+        # Pace calls to stay within Gemini rate limits
+        if not first_extract:
+            time.sleep(4)
+        first_extract = False
 
-    print(f"\n[Extractor] Before merge — Semantic: {len(semantic_entities)} | Agentic: {len(agentic_entities)}")
+        entity = extractor.extract_entity_from_chunks(chunks)
 
-    merged = _merge_entities(semantic_entities + agentic_entities)
-    print(f"[Extractor] After merge — {len(merged)} unique entities")
+        manifest[source_id] = current_hash   # always update hash (even if skipped)
 
-    _save_manifest(current_hashes)
+        if entity is None:
+            continue   # non-airline/airport source — no cache entry needed
+
+        _save_per_file_cache(source_id, entity)
+        all_entities.append(entity)
+
+    _save_hash_manifest(manifest)
+
+    # Also merge results into the combined all_entities.json for reference
     with open(ALL_ENTITIES_PATH, "w", encoding="utf-8") as f:
-        json.dump(merged, f, indent=2)
-    print(f"[Extractor] All entities saved → {ALL_ENTITIES_PATH}")
+        json.dump(all_entities, f, indent=2)
 
-    return merged
+    print(f"[Extractor] Done — {len(all_entities)} entities ready")
+    return all_entities
 
 
 # ── Stage 3: Validation ────────────────────────────────────────────────────────
 
 def stage_validate(entities: list) -> list:
-    """Validate entities — return only error-free ones."""
     print("\n" + "=" * 60)
     print("  STAGE 3: VALIDATION")
     print("=" * 60)
@@ -279,28 +217,33 @@ def stage_validate(entities: list) -> list:
 # ── Stage 4: Firestore push ────────────────────────────────────────────────────
 
 def stage_firestore(entities: list):
-    """Push entities to Firestore — airlines → v2_airlines, airports → v2_airports."""
+    """
+    1. Delete any wrong-format docs created by earlier pipeline versions.
+    2. Find each entity's existing Firestore document by name (case-insensitive).
+    3. Update ONLY the `services` field of that existing document.
+    """
     print("\n" + "=" * 60)
     print("  STAGE 4: FIRESTORE PUSH")
     print("=" * 60)
 
-    if not entities:
-        print("[Firestore] Nothing to push.")
-        return
-
     try:
         client = FirestoreClient()
-        stats  = client.push_entities(entities)
+        client.cleanup_wrong_format_docs()
+
+        if not entities:
+            print("[Firestore] Nothing to push.")
+            return
+
+        stats = client.push_entities(entities)
         print(
             f"[Firestore] Summary — "
             f"Total: {stats['total']} | "
-            f"Airlines: {stats['airlines_pushed']} | "
-            f"Airports: {stats['airports_pushed']} | "
+            f"Updated: {stats['updated']} | "
+            f"Skipped: {stats['skipped']} | "
             f"Errors: {stats['errors']}"
         )
     except (ValueError, FileNotFoundError) as e:
         print(f"[Firestore] Configuration error: {e}")
-        print("[Firestore] Add FIRESTORE_PROJECT_ID and FIREBASE_CREDENTIALS_PATH to .env")
     except Exception as e:
         print(f"[Firestore] Push failed: {e}")
         print("[Firestore] Clean entities saved locally at:", CLEAN_ENTITIES_PATH)
@@ -309,16 +252,8 @@ def stage_firestore(entities: list):
 # ── Main ───────────────────────────────────────────────────────────────────────
 
 if __name__ == "__main__":
-    # Stage 1: Chunk all sources (local PDFs + remote URLs)
     stage_chunk()
-
-    # Stage 2: Extract airline/airport entities from chunk stores
-    all_entities = stage_extract()
-
-    # Stage 3: Validate, save report + clean entities
+    all_entities   = stage_extract()
     clean_entities = stage_validate(all_entities)
-
-    # Stage 4: Push entities to Firestore (v2_airlines / v2_airports)
-    # stage_firestore(clean_entities)
-
+    stage_firestore(clean_entities)
     print("\n[Pipeline] All stages complete.")
