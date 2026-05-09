@@ -1,65 +1,5 @@
 [
   {
-    "id": "b081944636d9ad1261d041382bbb4763",
-    "parent_id": "ef0bfcdab1fe9471bb599b595d51ac2f",
-    "section": "Industry Commitment to Accessibility",
-    "text": "The airline industry is dedicated to enhancing air travel accessibility to ensure a safe, reliable, and dignified journey for all passengers, including those with physical or hidden disabilities. Airlines and airports are collaborating with the accessibility community to remove barriers and transform air travel into an inclusive, hassle-free experience.",
-    "source": "https://www.iata.org/en/programs/passenger/accessibility/",
-    "source_id": "iata_accessibility_program",
-    "type": "remote",
-    "sent": false,
-    "entity": "IATA",
-    "entity_type": "industry_body"
-  },
-  {
-    "id": "46a430807ad569e97947dd11503dc71b",
-    "parent_id": "5e6b14dcb0155961879f37af9c38224e",
-    "section": "Goal of Equal Access",
-    "text": "IATA, represented by Assistant Director of External Affairs Linda Ristagno, emphasizes the airline industry's goal to achieve equal access to air travel for everyone, including passengers with physical or hidden disabilities.",
-    "source": "https://www.iata.org/en/programs/passenger/accessibility/",
-    "source_id": "iata_accessibility_program",
-    "type": "remote",
-    "sent": false,
-    "entity": "IATA",
-    "entity_type": "industry_body"
-  },
-  {
-    "id": "fba8db5052dc57452c1c450228e848fd",
-    "parent_id": "5e6b14dcb0155961879f37af9c38224e",
-    "section": "Harmonization of Disability Legislation",
-    "text": "The lack of a universal definition for passengers with disabilities and the variation in disability legislation globally cause confusion for passengers, operational difficulties for airlines, and potential safety issues. There is currently no global consensus on the minimum service levels passengers with disabilities should expect when flying.",
-    "source": "https://www.iata.org/en/programs/passenger/accessibility/",
-    "source_id": "iata_accessibility_program",
-    "type": "remote",
-    "sent": false,
-    "entity": "IATA",
-    "entity_type": "industry_body"
-  },
-  {
-    "id": "c69c4edc8f1d9241ca31f8ad88ac0dd6",
-    "parent_id": "5e6b14dcb0155961879f37af9c38224e",
-    "section": "IATA Advocacy and International Standards",
-    "text": "IATA advocates for a joint government and industry approach to meet the needs of passengers with disabilities. Working with the International Civil Aviation Organization (ICAO), IATA urges states to involve the airline industry in integrating the UN Convention on the Rights of People with Disabilities (UN CRPD) into national aviation legislation and policies.",
-    "source": "https://www.iata.org/en/programs/passenger/accessibility/",
-    "source_id": "iata_accessibility_program",
-    "type": "remote",
-    "sent": false,
-    "entity": "IATA",
-    "entity_type": "industry_body"
-  },
-  {
-    "id": "7dddce2810482192d5d9427e58af0979",
-    "parent_id": "431a0382d0453c50c0164a07b2300f46",
-    "section": "One Person One Fare (1P1F) Policy",
-    "text": "The 'One Person One Fare' (1P1F) concept suggests that travelers requiring extra seats due to disabilities or obesity\u2014including those needing an accompanying carer\u2014should only pay for one seat. While recommended in some countries, this is not a legal requirement globally, except on certain domestic routes in Canada.",
-    "source": "https://www.iata.org/en/programs/passenger/accessibility/",
-    "source_id": "iata_accessibility_program",
-    "type": "remote",
-    "sent": false,
-    "entity": "IATA",
-    "entity_type": "industry_body"
-  },
-  {
     "id": "1c4c2fe4e8ecd8c7645fbd13cd0113e4",
     "parent_id": null,
     "section": "Industry Position on 1P1F (One Person One Fare)",
@@ -67,9 +7,9 @@
     "source": "https://www.iata.org/en/programs/passenger/accessibility/",
     "source_id": "iata_accessibility_program",
     "type": "remote",
-    "sent": false,
     "entity": "IATA",
-    "entity_type": "industry_body"
+    "entity_type": "industry_body",
+    "sent": false
   },
   {
     "id": "5f7dfe8fb8828665cf36ba7f4d6352c9",
@@ -79,9 +19,9 @@
     "source": "https://www.iata.org/en/programs/passenger/accessibility/",
     "source_id": "iata_accessibility_program",
     "type": "remote",
-    "sent": false,
     "entity": "IATA",
-    "entity_type": "industry_body"
+    "entity_type": "industry_body",
+    "sent": false
   },
   {
     "id": "46920c23d96135d26aabadfb4624b287",
@@ -91,9 +31,9 @@
     "source": "https://www.iata.org/en/programs/passenger/accessibility/",
     "source_id": "iata_accessibility_program",
     "type": "remote",
-    "sent": false,
     "entity": "IATA",
-    "entity_type": "industry_body"
+    "entity_type": "industry_body",
+    "sent": false
   },
   {
     "id": "e2754b30fe9b66082862f5ece76da3fb",
@@ -103,9 +43,9 @@
     "source": "https://www.iata.org/en/programs/passenger/accessibility/",
     "source_id": "iata_accessibility_program",
     "type": "remote",
-    "sent": false,
     "entity": "IATA",
-    "entity_type": "industry_body"
+    "entity_type": "industry_body",
+    "sent": false
   },
   {
     "id": "390f1030d3ec344603de64df1b05432a",
@@ -115,9 +55,9 @@
     "source": "https://www.iata.org/en/programs/passenger/accessibility/",
     "source_id": "iata_accessibility_program",
     "type": "remote",
-    "sent": false,
     "entity": "IATA",
-    "entity_type": "industry_body"
+    "entity_type": "industry_body",
+    "sent": false
   },
   {
     "id": "f2b309c34925c236987682f0c5b8487f",
@@ -127,9 +67,9 @@
     "source": "https://www.iata.org/en/programs/passenger/accessibility/",
     "source_id": "iata_accessibility_program",
     "type": "remote",
-    "sent": false,
     "entity": "IATA",
-    "entity_type": "industry_body"
+    "entity_type": "industry_body",
+    "sent": false
   },
   {
     "id": "727cea962274beb64fd39be488f0dc67",
@@ -139,9 +79,9 @@
     "source": "https://www.iata.org/en/programs/passenger/accessibility/",
     "source_id": "iata_accessibility_program",
     "type": "remote",
-    "sent": false,
     "entity": "IATA",
-    "entity_type": "industry_body"
+    "entity_type": "industry_body",
+    "sent": false
   },
   {
     "id": "3887c1856afc3310e374a4683e5766c6",
@@ -151,8 +91,8 @@
     "source": "https://www.iata.org/en/programs/passenger/accessibility/",
     "source_id": "iata_accessibility_program",
     "type": "remote",
-    "sent": false,
     "entity": "IATA",
-    "entity_type": "industry_body"
+    "entity_type": "industry_body",
+    "sent": false
   }
 ]

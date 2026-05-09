@@ -135,29 +135,10 @@ class RuleExtractor:
                 unique.append(s)
         return unique
 
-    # ── public API ─────────────────────────────────────────────────────────────
+    # ── shared text extraction ─────────────────────────────────────────────────
 
-    def extract_entity_from_chunks(self, chunks: list) -> Optional[dict]:
-        """
-        Extract PRM services from a list of agentic chunks.
-
-        Uses the `entity`, `entity_type`, and `source_id` fields already embedded
-        in every chunk by the pipeline (set from Config.SOURCES). No DOMAIN_MAP needed.
-
-        Returns an entity dict or None if the chunk type is not airline/airport.
-        """
-        if not chunks:
-            return None
-
-        first = chunks[0]
-        entity_name  = first.get("entity")
-        entity_type  = first.get("entity_type")
-        source_id    = first.get("source_id", "unknown")
-
-        if not entity_name or entity_type not in _SUPPORTED_TYPES:
-            print(f"[RuleExtractor] Skipping {source_id} — entity_type={entity_type!r}")
-            return None
-
+    def _extract_text_and_call(self, chunks: list, source_id: str, label: str) -> list:
+        """Join chunk text, split into batches, call Gemini, return deduped services."""
         text = "\n\n".join(
             f"{c.get('section', '')}\n{c.get('text', '')}".strip()
             for c in chunks
@@ -165,10 +146,10 @@ class RuleExtractor:
         )
         if not text.strip():
             print(f"[RuleExtractor] Skipping {source_id} — no text in chunks")
-            return None
+            return []
 
         batches = self._split_text(text)
-        print(f"[RuleExtractor] {entity_name} ({entity_type}) | {len(text)} chars → {len(batches)} batch(es)")
+        print(f"[RuleExtractor] {label} | {len(text)} chars → {len(batches)} batch(es)")
 
         all_services = []
         for i, batch in enumerate(batches, start=1):
@@ -179,17 +160,66 @@ class RuleExtractor:
             print(f"[RuleExtractor] Batch {i} → {len(svcs)} services")
             all_services.extend(svcs)
 
-        all_services = self._dedupe_services(all_services)
+        return self._dedupe_services(all_services)
 
-        if not all_services:
+    # ── public API ─────────────────────────────────────────────────────────────
+
+    def extract_entity_from_chunks(self, chunks: list) -> Optional[dict]:
+        """
+        Extract PRM services from airline/airport agentic chunks.
+        Uses entity_name/entity_type already embedded by the pipeline.
+        Returns None if entity_type is not 'airline' or 'airport'.
+        """
+        if not chunks:
+            return None
+
+        first       = chunks[0]
+        entity_name = first.get("entity")
+        entity_type = first.get("entity_type")
+        source_id   = first.get("source_id", "unknown")
+
+        if not entity_name or entity_type not in _SUPPORTED_TYPES:
+            print(f"[RuleExtractor] Skipping {source_id} — entity_type={entity_type!r}")
+            return None
+
+        services = self._extract_text_and_call(chunks, source_id, f"{entity_name} ({entity_type})")
+        if not services:
             print(f"[RuleExtractor] No services extracted for {entity_name}")
             return None
 
-        print(f"[RuleExtractor] {entity_name} → {len(all_services)} services total")
-
+        print(f"[RuleExtractor] {entity_name} → {len(services)} services total")
         return {
             "source_id":   source_id,
             "entity_name": entity_name,
             "entity_type": entity_type,
-            "services":    all_services,
+            "services":    services,
+        }
+
+    def extract_reference_from_chunks(self, chunks: list) -> Optional[dict]:
+        """
+        Extract PRM rules from regulatory/industry reference chunks (IATA, EUR-LEX, etc.).
+        No entity_type restriction — all sources are processed.
+        Returns None only if the file is empty or yields no services.
+        """
+        if not chunks:
+            return None
+
+        first       = chunks[0]
+        source_id   = first.get("source_id", "unknown")
+        entity_name = first.get("entity") or source_id
+        entity_type = first.get("entity_type", "reference")
+        source_url  = first.get("source", "")
+
+        services = self._extract_text_and_call(chunks, source_id, f"{entity_name} ({entity_type})")
+        if not services:
+            print(f"[RuleExtractor] No rules extracted for {entity_name}")
+            return None
+
+        print(f"[RuleExtractor] {entity_name} → {len(services)} rules total")
+        return {
+            "source_id":   source_id,
+            "entity":      entity_name,
+            "entity_type": entity_type,
+            "source_url":  source_url,
+            "services":    services,
         }
