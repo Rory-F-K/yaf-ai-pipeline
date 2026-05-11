@@ -14,24 +14,24 @@ sys.path.insert(0, str(DASHBOARD_DIR))
 
 from dashboard_utils import load_json, domain, run_stage_streaming
 
-REPORT_PATH    = PROJECT_ROOT / "rules" / "validated" / "report.json"
-ALL_RULES_PATH = PROJECT_ROOT / "rules" / "extracted" / "all_rules.json"
+REPORT_PATH       = PROJECT_ROOT / "rules" / "validated" / "report.json"
+ALL_ENTITIES_PATH = PROJECT_ROOT / "rules" / "extracted" / "all_entities.json"
 
 st.set_page_config(page_title="Validation", page_icon=None, layout="wide")
 
 CHECK_LABELS = {
-    "structure":    "Structure",
-    "quality":      "Content Quality",
-    "consistency":  "Consistency",
-    "duplicates":   "Duplicates",
-    "cross_source": "Source Conflicts",
+    "entity_structure":  "Entity Structure",
+    "entity_type":       "Entity Type",
+    "services_present":  "Services Present",
+    "service_structure": "Service Structure",
+    "duplicate_types":   "Duplicate Types",
 }
 CHECK_DESC = {
-    "structure":    "Required fields present, correct format",
-    "quality":      "Description length, no vague or generic text",
-    "consistency":  "Unique IDs, known categories, correct ordering",
-    "duplicates":   "No near-identical rules within the set",
-    "cross_source": "No contradictory rules across different sources",
+    "entity_structure":  "Required top-level fields present and non-empty",
+    "entity_type":       "entity_type is 'airline' or 'airport'",
+    "services_present":  "Services array exists and is non-empty",
+    "service_structure": "Each service has type, bilingual description ≥20 chars",
+    "duplicate_types":   "No duplicate service types within the same entity",
 }
 SEV_ICON = {"error": "E", "warning": "W", "info": "I"}
 
@@ -62,7 +62,7 @@ with st.sidebar:
             format_func=lambda k: CHECK_LABELS.get(k, k),
             label_visibility="collapsed",
         )
-        failed_only = st.toggle("Show failed rules only", value=False)
+        failed_only = st.toggle("Show failed entities only", value=False)
         st.divider()
     else:
         sev_filter   = ["error", "warning"]
@@ -105,8 +105,8 @@ if run_btn:
 
 st.title("3. Validation")
 st.caption(
-    "Every extracted rule passes through five independent quality checks. "
-    "Rules that fail are excluded from the final output. Only clean, verified rules move forward."
+    "Every extracted entity (airline or airport) passes through five independent quality checks. "
+    "Entities that fail are excluded from the final output. Only clean, verified entities move forward."
 )
 st.divider()
 
@@ -116,14 +116,14 @@ if report is None:
     st.info("Validation hasn't been run yet. Use **Run Stage 3** in the sidebar.")
     st.stop()
 
-# Build rule lookup from all_rules.json for detail inspection
-all_rules   = load_json(ALL_RULES_PATH) or []
-rule_lookup = {r["rule_id"]: r for r in all_rules}
+# Build entity lookup from all_entities.json for detail inspection
+all_entities  = load_json(ALL_ENTITIES_PATH) or []
+entity_lookup = {e.get("entity_name") or e.get("source_id"): e for e in all_entities}
 
 total   = report.get("total", 0)
 passed  = report.get("passed", 0)
-error_n = sum(1 for i in issues if i["severity"] == "error")
-warn_n  = sum(1 for i in issues if i["severity"] == "warning")
+error_n = sum(1 for i in issues if i.get("severity") == "error")
+warn_n  = sum(1 for i in issues if i.get("severity") == "warning")
 
 # ── Metric cards ──────────────────────────────────────────────────────────────
 
@@ -133,19 +133,19 @@ pass_rate = f"{round(passed / total * 100)}%" if total else "N/A"
 _cards = [
     {
         "value": str(total),
-        "label": "Rules Checked",
-        "detail": "Total rules evaluated",
+        "label": "Entities Checked",
+        "detail": "Total entities evaluated",
         "bg": "#f7f9fc", "border": "#d0dae4", "vc": "#1a1a1a", "dc": "#777",
     },
     {
         "value": str(passed),
-        "label": "Rules Accepted",
+        "label": "Entities Accepted",
         "detail": f"{pass_rate} pass rate",
         "bg": "#f0faf4", "border": "#9fcfb0", "vc": "#1d6a3a", "dc": "#4a8a60",
     },
     {
         "value": str(excluded),
-        "label": "Rules Excluded",
+        "label": "Entities Excluded",
         "detail": "Failed quality checks",
         "bg": "#fff3f3" if excluded else "#f0faf4",
         "border": "#f5a0a0" if excluded else "#9fcfb0",
@@ -207,27 +207,28 @@ st.divider()
 
 # ── Issues table ───────────────────────────────────────────────────────────────
 
-error_ids = {i["rule_id"] for i in issues if i["severity"] == "error"}
+error_ids = {i.get("entity_id") for i in issues if i.get("severity") == "error"}
 
 if failed_only:
-    source_rules = [r for r in all_rules if r.get("rule_id") in error_ids]
+    failed_entities = [e for e in all_entities
+                       if (e.get("entity_name") or e.get("source_id")) in error_ids]
 else:
     shown_issues = [
         i for i in issues
-        if i["severity"] in sev_filter and i["check"] in check_filter
+        if i.get("severity") in sev_filter and i.get("check") in check_filter
     ]
 
 if not failed_only:
-    st.caption(f"**Issues** - {len(shown_issues)} of {len(issues)} shown. Click a row to inspect the rule.")
+    st.caption(f"**Issues** - {len(shown_issues)} of {len(issues)} shown. Click a row to inspect the entity.")
 
     if shown_issues:
         df_i = pd.DataFrame([
             {
-                "":        SEV_ICON.get(i["severity"], ""),
-                "Rule":    i["rule_id"],
-                "Check":   CHECK_LABELS.get(i["check"], i["check"]),
-                "Severity":i["severity"],
-                "Issue":   i["message"],
+                "":        SEV_ICON.get(i.get("severity"), ""),
+                "Entity":  i.get("entity_id"),
+                "Check":   CHECK_LABELS.get(i.get("check"), i.get("check")),
+                "Severity":i.get("severity"),
+                "Issue":   i.get("message"),
             }
             for i in shown_issues
         ])
@@ -236,42 +237,40 @@ if not failed_only:
             selection_mode="single-row", on_select="rerun",
             column_config={
                 "":        st.column_config.TextColumn(width="small"),
-                "Rule":    st.column_config.TextColumn(width="small"),
+                "Entity":  st.column_config.TextColumn(width="small"),
                 "Severity":st.column_config.TextColumn(width="small"),
                 "Issue":   st.column_config.TextColumn(width="large"),
             },
         )
         sel = ev.selection.rows if ev.selection else []
         if sel:
-            issue = shown_issues[sel[0]]
-            rule  = rule_lookup.get(issue["rule_id"])
-            if rule:
+            issue  = shown_issues[sel[0]]
+            entity = entity_lookup.get(issue.get("entity_id"))
+            if entity:
                 with st.container(border=True):
                     h1, h2 = st.columns([4, 1])
-                    h1.markdown(f"### {rule.get('title', issue['rule_id'])}")
-                    h2.markdown(f"`{rule.get('rule_id')}`")
+                    h1.markdown(f"### {entity.get('entity_name', issue.get('entity_id'))}")
+                    h2.markdown(f"`{entity.get('entity_type','')}`")
                     c1, c2, c3 = st.columns(3)
-                    c1.markdown(f"**Category:** {rule.get('category','')}")
-                    c2.markdown(f"**Source:** {domain(rule.get('source',''))}")
-                    c3.markdown(f"**Issue:** {SEV_ICON.get(issue['severity'],'')} {issue['severity']}")
+                    c1.markdown(f"**Type:** {entity.get('entity_type','')}")
+                    c2.markdown(f"**Services:** {len(entity.get('services', []))}")
+                    c3.markdown(f"**Issue:** {SEV_ICON.get(issue.get('severity'),'')} {issue.get('severity')}")
                     st.markdown("---")
-                    st.write(rule.get("description",""))
-                    st.caption(f"Flagged by **{CHECK_LABELS.get(issue['check'], issue['check'])}** check: {issue['message']}")
+                    st.caption(f"Flagged by **{CHECK_LABELS.get(issue.get('check'), issue.get('check'))}** check: {issue.get('message')}")
             else:
-                st.info(f"Rule `{issue['rule_id']}` detail not available.")
+                st.info(f"Entity `{issue.get('entity_id')}` detail not available.")
     else:
         st.success("No issues match the current filters.")
 
 else:
-    st.caption(f"**Excluded rules** - {len(error_ids)} rules with errors")
+    st.caption(f"**Excluded entities** - {len(error_ids)} entities with errors")
     df_fail = pd.DataFrame([
         {
-            "Rule":     r.get("rule_id"),
-            "Category": r.get("category"),
-            "Title":    r.get("title"),
-            "Source":   domain(r.get("source","")),
+            "Entity": e.get("entity_name") or e.get("source_id"),
+            "Type":   e.get("entity_type"),
+            "Services": len(e.get("services", [])),
         }
-        for r in source_rules
+        for e in failed_entities
     ])
     st.dataframe(df_fail, use_container_width=True, hide_index=True)
 
