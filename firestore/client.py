@@ -11,6 +11,7 @@ load_dotenv()
 FIRESTORE_PROJECT_ID      = os.getenv("FIRESTORE_PROJECT_ID")
 FIREBASE_CREDENTIALS_PATH = os.getenv("FIREBASE_CREDENTIALS_PATH")
 
+RULES_COLLECTION    = "rules"
 AIRLINES_COLLECTION = "v2_airlines"
 AIRPORTS_COLLECTION = "v2_airports"
 
@@ -96,6 +97,10 @@ class FirestoreClient:
 
     def _find_airport_ref(self, entity_name: str) -> "firestore.DocumentReference | None":
         return self._token_match(self._airport_index, entity_name)
+    
+    def fetch_all_rules(self) -> list:
+        docs = self.db.collection(RULES_COLLECTION).stream()
+        return [doc.to_dict() for doc in docs]
 
     @staticmethod
     def _new_doc_template(entity_name: str, entity_type: str, services: list, timestamp: str) -> dict:
