@@ -17,7 +17,7 @@ from dashboard_utils import domain, run_stage_streaming
 
 AGENTIC_DIR = PROJECT_ROOT / "chunk_store" / "agentic"
 
-st.set_page_config(page_title="Scrape & Chunk", page_icon=None, layout="wide")
+st.set_page_config(page_title="Scrape & Chunk", page_icon="🌐", layout="wide")
 
 # ── Load sources ───────────────────────────────────────────────────────────────
 
@@ -95,10 +95,10 @@ if run_btn:
 
 # ── Header ─────────────────────────────────────────────────────────────────────
 
-st.title("1. Scrape & Document Processing")
+st.title("Stage 1: Scrape & Chunk")
 st.caption(
-    "Fetches content from aviation websites and regulatory documents, "
-    "then breaks them into small segments for the AI to process."
+    "Fetches live content from aviation websites and regulatory documents, "
+    "then splits it into segments ready for AI processing."
 )
 st.divider()
 

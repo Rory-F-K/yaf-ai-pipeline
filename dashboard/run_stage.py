@@ -6,7 +6,6 @@ Usage:
   python dashboard/run_stage.py chunk
   python dashboard/run_stage.py extract
   python dashboard/run_stage.py validate
-  python dashboard/run_stage.py version
   python dashboard/run_stage.py firestore
   python dashboard/run_stage.py all
 """
@@ -31,39 +30,39 @@ if stage == "chunk":
     main.stage_chunk()
 
 elif stage == "extract":
-    rules = main.stage_extract()
-    print(f"\n[Runner] Extracted {len(rules)} rules.")
+    entities = main.stage_extract()
+    print(f"\n[Runner] Extracted {len(entities)} entities.")
 
 elif stage == "validate":
-    p = PROJECT_ROOT / "rules" / "extracted" / "all_rules.json"
+    p = PROJECT_ROOT / "rules" / "extracted" / "all_entities.json"
     if not p.exists():
-        print("[Runner][Error] rules/extracted/all_rules.json not found. Run extraction first.")
+        print("[Runner][Error] rules/extracted/all_entities.json not found. Run extraction first.")
         sys.exit(1)
-    rules = load_json(p)
-    main.stage_validate(rules)
+    entities = load_json(p)
+    main.stage_validate(entities)
 
 elif stage == "version":
-    p = PROJECT_ROOT / "rules" / "validated" / "clean_rules.json"
+    # Versioning is not a separate stage in the current pipeline.
+    # clean_entities.json already reflects the latest validated output.
+    p = PROJECT_ROOT / "rules" / "validated" / "clean_entities.json"
     if not p.exists():
-        print("[Runner][Error] rules/validated/clean_rules.json not found. Run validation first.")
+        print("[Runner][Error] rules/validated/clean_entities.json not found. Run validation first.")
         sys.exit(1)
-    rules = load_json(p)
-    main.stage_version(rules)
+    print("[Runner] Versioning: clean_entities.json is up to date from the last validation run.")
 
 elif stage == "firestore":
-    p = PROJECT_ROOT / "rules" / "validated" / "clean_rules.json"
+    p = PROJECT_ROOT / "rules" / "validated" / "clean_entities.json"
     if not p.exists():
-        print("[Runner][Error] rules/validated/clean_rules.json not found. Run validation first.")
+        print("[Runner][Error] rules/validated/clean_entities.json not found. Run validation first.")
         sys.exit(1)
-    rules = load_json(p)
-    main.stage_firestore(rules)
+    entities = load_json(p)
+    main.stage_firestore(entities)
 
 elif stage == "all":
     main.stage_chunk()
-    all_rules   = main.stage_extract()
-    clean_rules = main.stage_validate(all_rules)
-    versioned   = main.stage_version(clean_rules)
-    # main.stage_firestore(versioned)  # uncomment to enable Firestore push
+    all_entities   = main.stage_extract()
+    clean_entities = main.stage_validate(all_entities)
+    main.stage_firestore(clean_entities)
     print("\n[Runner] All stages complete.")
 
 else:

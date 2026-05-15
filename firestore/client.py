@@ -11,9 +11,10 @@ load_dotenv()
 FIRESTORE_PROJECT_ID      = os.getenv("FIRESTORE_PROJECT_ID")
 FIREBASE_CREDENTIALS_PATH = os.getenv("FIREBASE_CREDENTIALS_PATH")
 
-RULES_COLLECTION    = "rules"
-AIRLINES_COLLECTION = "v2_airlines"
-AIRPORTS_COLLECTION = "v2_airports"
+RULES_COLLECTION       = "rules"
+AIRLINES_COLLECTION    = "v2_airlines"
+AIRPORTS_COLLECTION    = "v2_airports"
+REGULATIONS_COLLECTION = "v2_regulations"
 
 
 def _normalize(name: str) -> str:
@@ -101,6 +102,53 @@ class FirestoreClient:
     def fetch_all_rules(self) -> list:
         docs = self.db.collection(RULES_COLLECTION).stream()
         return [doc.to_dict() for doc in docs]
+
+    def fetch_all_entities(self) -> list:
+        """
+        Fetch all entities from v2_airlines, v2_airports, and v2_regulations.
+        Returns a normalized list where each item has:
+          entity_name, entity_type, source_id, n_services, updated_at, collection
+        """
+        results = []
+
+        for doc in self.db.collection(AIRLINES_COLLECTION).stream():
+            d = doc.to_dict()
+            name_field = d.get("name", {})
+            name = name_field.get("en", doc.id) if isinstance(name_field, dict) else str(name_field)
+            results.append({
+                "entity_name": name,
+                "entity_type": "airline",
+                "source_id":   doc.id,
+                "n_services":  len(d.get("services", [])),
+                "updated_at":  str(d.get("updated_at", ""))[:10],
+                "collection":  AIRLINES_COLLECTION,
+            })
+
+        for doc in self.db.collection(AIRPORTS_COLLECTION).stream():
+            d = doc.to_dict()
+            name = d.get("name") or d.get("full_name") or doc.id
+            results.append({
+                "entity_name": name,
+                "entity_type": "airport",
+                "source_id":   doc.id,
+                "n_services":  len(d.get("services", [])),
+                "updated_at":  str(d.get("updated_at", ""))[:10],
+                "collection":  AIRPORTS_COLLECTION,
+            })
+
+        for doc in self.db.collection(REGULATIONS_COLLECTION).stream():
+            d = doc.to_dict()
+            name = d.get("entity") or doc.id
+            results.append({
+                "entity_name": name,
+                "entity_type": d.get("entity_type", "reference"),
+                "source_id":   doc.id,
+                "n_services":  len(d.get("services", [])),
+                "updated_at":  str(d.get("updated_at", ""))[:10],
+                "collection":  REGULATIONS_COLLECTION,
+            })
+
+        return results
 
     @staticmethod
     def _new_doc_template(entity_name: str, entity_type: str, services: list, timestamp: str) -> dict:

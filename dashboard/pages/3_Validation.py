@@ -17,7 +17,7 @@ from dashboard_utils import load_json, domain, run_stage_streaming
 REPORT_PATH       = PROJECT_ROOT / "rules" / "validated" / "report.json"
 ALL_ENTITIES_PATH = PROJECT_ROOT / "rules" / "extracted" / "all_entities.json"
 
-st.set_page_config(page_title="Validation", page_icon=None, layout="wide")
+st.set_page_config(page_title="Validation", page_icon="🛡️", layout="wide")
 
 CHECK_LABELS = {
     "entity_structure":  "Entity Structure",
@@ -103,10 +103,10 @@ if run_btn:
 
 # ── Header ─────────────────────────────────────────────────────────────────────
 
-st.title("3. Validation")
+st.title("Stage 3: Validation")
 st.caption(
     "Every extracted entity (airline or airport) passes through five independent quality checks. "
-    "Entities that fail are excluded from the final output. Only clean, verified entities move forward."
+    "Only clean, fully-formed entities are accepted; failed entities are excluded from the final output."
 )
 st.divider()
 

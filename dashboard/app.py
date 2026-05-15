@@ -17,8 +17,8 @@ sys.path.insert(0, str(DASHBOARD_DIR))
 from dashboard_utils import load_json, count_json_files, domain
 
 st.set_page_config(
-    page_title="Accessibility Rule Pipeline",
-    page_icon=None,
+    page_title="Aviation Accessibility Pipeline",
+    page_icon="✈️",
     layout="wide",
     initial_sidebar_state="expanded",
 )
@@ -42,9 +42,10 @@ except Exception:
 # ── Header ─────────────────────────────────────────────────────────────────────
 
 st.markdown(
-    "<h1 style='margin-bottom:2px'>Aviation Accessibility Pipeline</h1>"
-    "<p style='color:#666;font-size:1.05rem;margin-top:0'>AI-powered extraction of "
-    "accessibility rules from airline websites, airports, and regulatory documents</p>",
+    "<h1 style='margin-bottom:4px'>Aviation Accessibility Pipeline</h1>"
+    "<p style='color:#555;font-size:1.08rem;margin-top:0;margin-bottom:0'>"
+    "Automated extraction, validation, and versioning of accessibility rules "
+    "from airlines, airports, and regulatory bodies, powered by AI</p>",
     unsafe_allow_html=True,
 )
 st.divider()
@@ -52,31 +53,31 @@ st.divider()
 # ── Pipeline stage cards ───────────────────────────────────────────────────────
 
 STEPS = [
-    ("1", "Scrape",    "Fetch content from sources",        agentic_n > 0,       f"{agentic_n} sources done" if agentic_n else "Not run"),
-    ("2", "Extract",   "AI identifies rules from content",  all_rules  is not None, f"{len(all_rules):,} rules found" if all_rules else "Not run"),
-    ("3", "Validate",  "Quality checks on every rule",      report     is not None, f"{report['passed']}/{report['total']} passed"  if report  else "Not run"),
-    ("4", "Version",   "Track what changed since last run", snapshot   is not None, "Changes recorded" if snapshot else "Not run"),
-    ("5", "Database",  "Rules stored in Firebase",          None,                   "Live in Firebase"),
+    ("1", "Scrape & Chunk", "Fetch and segment source content", "",   agentic_n > 0,          f"{agentic_n} sources done" if agentic_n else "Not yet run"),
+    ("2", "Extract",        "AI identifies accessibility rules", "",   all_rules is not None,  f"{len(all_rules):,} rules found" if all_rules else "Not yet run"),
+    ("3", "Validate",       "Quality checks on every rule",     "",   report is not None,     f"{report['passed']}/{report['total']} passed" if report else "Not yet run"),
+    ("4", "Version",        "Track changes since last run",     "",   snapshot is not None,   "Changes recorded" if snapshot else "Not yet run"),
+    ("5", "Database",       "Rules stored in Firestore",        "🗄️", None,                   "Live in Firestore"),
 ]
 
 cols = st.columns(5)
-for col, (num, label, sublabel, done, detail) in zip(cols, STEPS):
+for col, (num, label, sublabel, stage_icon, done, detail) in zip(cols, STEPS):
     with col:
         if done is None:
-            icon, bg, border, tc = "", "#f7f9fc", "#d0dae4", "#555"
+            icon, bg, border, tc = stage_icon, "#f7f9fc", "#d0dae4", "#555"
         elif done:
             icon, bg, border, tc = "✅", "#f0faf4", "#9fcfb0", "#1d6a3a"
         else:
-            icon, bg, border, tc = "", "#fafafa", "#e0e0e0", "#aaa"
+            icon, bg, border, tc = stage_icon, "#fafafa", "#e0e0e0", "#aaa"
 
         st.markdown(
             f"""<div style="background:{bg};border:1.5px solid {border};border-radius:10px;
-                padding:18px 12px;text-align:center;height:130px;
+                padding:18px 12px;text-align:center;height:135px;
                 display:flex;flex-direction:column;justify-content:center;gap:3px;">
-                <div style="font-size:1.4rem;line-height:1">{icon}</div>
+                <div style="font-size:1.5rem;line-height:1">{icon}</div>
                 <div style="font-weight:700;font-size:0.95rem;color:#1a1a1a;margin-top:4px">{num}. {label}</div>
                 <div style="font-size:0.72rem;color:#777">{sublabel}</div>
-                <div style="font-size:0.78rem;font-weight:600;color:{tc};margin-top:3px">{detail}</div>
+                <div style="font-size:0.78rem;font-weight:600;color:{tc};margin-top:4px">{detail}</div>
             </div>""",
             unsafe_allow_html=True,
         )
@@ -104,16 +105,19 @@ with left:
     st.markdown("#### How it works")
     st.markdown(
         "This pipeline automatically monitors aviation accessibility sources: airline websites, "
-        "airport portals, and regulatory documents such as IATA guidelines and EU regulations.  \n\n"
-        "For each source it fetches the content, breaks it into segments, and uses AI to identify "
-        "specific accessibility rules and policies. Every rule is then quality-checked, version-tracked, "
-        "and stored in a database ready for downstream applications.  \n\n"
-        "**Use the sidebar to navigate through each stage.**"
+        "airport portals, and regulatory documents (IATA guidelines, EU regulations, US DOT rules) "
+        "and turns them into structured, queryable data.\n\n"
+        "- **Scrape & Chunk**: fetches live content and splits it into segments\n"
+        "- **Extract**: AI reads each segment and identifies specific accessibility rules\n"
+        "- **Validate**: five quality checks ensure every rule is complete and well-formed\n"
+        "- **Version**: detects new, updated, and unchanged rules across runs\n"
+        "- **Database**: clean rules are stored in Firestore, ready for downstream use\n\n"
+        "Navigate through each stage using the sidebar."
     )
 
 with right:
     if clean_rules:
-        st.markdown("#### Rules by category")
+        st.markdown("#### Validated Rules by Category")
         cat_counts = Counter(r.get("category", "Unknown") for r in clean_rules)
         df_cat = (
             pd.DataFrame(cat_counts.most_common(), columns=["Category", "Rules"])

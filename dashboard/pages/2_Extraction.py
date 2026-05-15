@@ -16,7 +16,7 @@ from dashboard_utils import load_json, domain, run_stage_streaming
 
 ALL_RULES_PATH = PROJECT_ROOT / "rules" / "extracted" / "all_rules.json"
 
-st.set_page_config(page_title="Rule Extraction", page_icon=None, layout="wide")
+st.set_page_config(page_title="Rule Extraction", page_icon="🔍", layout="wide")
 
 # ── Load data ──────────────────────────────────────────────────────────────────
 
@@ -88,11 +88,10 @@ if run_btn:
 
 # ── Header ─────────────────────────────────────────────────────────────────────
 
-st.title("2. Rule Extraction")
+st.title("Stage 2: Rule Extraction")
 st.caption(
     "The AI reads every document segment and identifies specific accessibility rules, "
-    "policies, and entitlements. Near-duplicate rules from different documents are "
-    "automatically merged."
+    "policies, and entitlements. Near-duplicate rules are automatically merged."
 )
 st.divider()
 

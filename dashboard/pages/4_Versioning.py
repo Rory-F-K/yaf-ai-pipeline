@@ -17,7 +17,7 @@ from dashboard_utils import load_json, domain, run_stage_streaming
 CLEAN_RULES_PATH = PROJECT_ROOT / "rules" / "validated" / "clean_rules.json"
 SNAPSHOT_PATH    = PROJECT_ROOT / "rules" / "snapshots"  / "snapshot.json"
 
-st.set_page_config(page_title="Versioning", page_icon=None, layout="wide")
+st.set_page_config(page_title="Versioning", page_icon="🔖", layout="wide")
 
 # ── Load data ──────────────────────────────────────────────────────────────────
 
@@ -73,9 +73,9 @@ if run_btn:
 
 # ── Header ─────────────────────────────────────────────────────────────────────
 
-st.title("4. Versioning")
+st.title("Stage 4: Versioning")
 st.caption(
-    "Compares the current rules against the previous run to track what's new, "
+    "Compares the current rule set against the previous run, tracking what is new, "
     "what changed, and what stayed the same. Each rule carries a version number "
     "that increments whenever its content is updated."
 )
